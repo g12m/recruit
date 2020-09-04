@@ -1,0 +1,50 @@
+<include file="public@header"/>
+</head>
+<body>
+<div class="wrap">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="{:url('AdminPoster/index')}">广告位管理</a></li>
+        <li ><a href="{:url('AdminPoster/add')}">添加广告位</a></li>
+    </ul>
+    <form method="post" class="js-ajax-form margin-top-20">
+        <div class="table-actions">
+            <!--<button type="submit" class="btn btn-primary btn-sm js-ajax-submit">{:lang('SORT')}</button>-->
+        </div>
+        <table class="table table-hover table-bordered table-list">
+            <thead>
+            <tr>
+                <th width="50">ID</th>
+                <th>版位名称</th>
+                <th>版位尺寸</th>
+                <th>广告数</th>
+                <th>版位描述</th>
+                <th width="160">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <foreach name="list" item="vo">
+                <tr>
+                    <td>{$vo.id}</td>
+                    <td>{$vo.name}</td>
+                    <td>{$vo.width} * {$vo.height}</td>
+                    <td>{$vo.number}</td>
+                    <td>{$vo.desc}</td>
+                    <td>
+                        <a  href="{:url('AdminPosterData/index',['pid'=>$vo['id']])}">信息管理</a>|
+                        <a class="" href="{:url('AdminPoster/edit',['id'=>$vo['id']])}">修改</a>|
+                        <a class="js-ajax-delete" href="{:url('AdminPoster/delete',['id'=>$vo['id']])}">删除</a>
+                    </td>
+                </tr>
+            </foreach>
+            </tbody>
+
+        </table>
+        <div class="table-actions">
+            <!--<button type="submit" class="btn btn-primary btn-sm js-ajax-submit">{:lang('SORT')}</button>-->
+        </div>
+    </form>
+    <ul class="pagination">{$page|default=''}</ul>
+</div>
+<script src="__STATIC__/js/admin.js"></script>
+</body>
+</html>

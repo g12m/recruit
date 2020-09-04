@@ -1,0 +1,9 @@
+{
+    "name": "产品展示页",
+    "action": "portal/Articleen/index",
+    "description": "产品展示模板文件",
+    "order": 10.0,
+    "more": {
+
+    }
+}

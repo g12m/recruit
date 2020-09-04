@@ -1,0 +1,93 @@
+<include file="public@header"/>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+      <php>$pid=input('pid')</php>
+      	<li ><a href="{:url('AdminPoster/index')}">广告版位管理</a></li>
+        <li ><a href="{:url('AdminPosterData/index',array('pid'=>$pid))}">广告信息</a></li>
+        <li class="active"><a>点击统计</a></li>
+    </ul>
+    <form class="well form-inline margin-top-20" method="get" action="{:url('AdminPosterData/stat',array('id'=>$id,'pid'=>$pid))}">
+
+        点击统计：
+
+        时间:
+        <input type="text" class="form-control js-bootstrap-date" name="start_time"
+               value="{$start_time|default=''}"
+               style="width: 140px;" autocomplete="off">-
+        <input type="text" class="form-control js-bootstrap-date" name="end_time"
+               value="{$end_time|default=''}"
+               style="width: 140px;" autocomplete="off"> &nbsp; &nbsp;
+        今日:
+        <input type="radio" name="clicktime" class="radio" value="1" <?php if($clicktime ==1) echo 'checked';?>>
+        昨日:
+        <input type="radio" name="clicktime" class="radio" value="2" <?php if($clicktime ==2) echo 'checked';?>>
+        一周:
+        <input type="radio" name="clicktime" class="radio" value="3" <?php if($clicktime ==3) echo 'checked';?>>
+        一月:
+        <input type="radio" name="clicktime" class="radio" value="4" <?php if($clicktime ==4) echo 'checked';?>>
+        <input type="submit" class="btn btn-primary" style="margin-left:20px;" value="搜索"/>
+        <a class="btn btn-danger"  href="{:url('AdminPosterData/stat',array('id'=>$id,'pid'=>$pid))}">清空</a>
+    </form>
+
+    <form method="post" class="js-ajax-form margin-top-20">
+          <div class="table-actions">
+              <button class="btn btn-danger btn-sm js-ajax-submit" type="submit"
+                      data-action="{:url('AdminPosterData/statDelete')}" data-subcheck="true" data-msg="您确定删除吗？">
+                  {:lang('DELETE')}
+              </button>
+
+          </div>
+        <table class="table table-hover table-bordered table-list">
+            <thead>
+            <tr>
+              <th width="16"><label><input type="checkbox" class="js-check-all" data-direction="x"
+                                           data-checklist="js-check-x"></label></th>
+                <th width="50">ID</th>
+                <th>访问IP</th>
+                <th>地址</th>
+                <th>所属推荐位</th>
+                <th>访问时间</th>
+                <th>来源</th>
+                <th width="160">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <foreach name="list" item="vo">
+                <tr>
+                  <td><input type="checkbox" class="js-check" data-yid="js-check-y" data-xid="js-check-x" name="ids[]"
+                             value="{$vo.id}"></td>
+                    <td>{$vo.id}</td>
+                    <td>{$vo.ip}</td>
+                    <td>{$vo.address}</td>
+                    <td>
+                      <span class="label label-default">
+                          <a  style="color: #fff;" >{$vo.name}</a>
+                      </span>
+                    </td>
+                    <td>{:date('Y-m-d H:i:s',$vo.time)}</td>
+                    <td>{$vo.refer}</td>
+                    <td>
+                        <a class="js-ajax-delete" href="{:url('AdminPosterData/delete',['id'=>$vo['id'],'pid'=>$vo['pid']])}">删除</a>
+                    </td>
+                </tr>
+            </foreach>
+            </tbody>
+        </table>
+        <div class="table-actions">
+        </div>
+    </form>
+    <ul class="pagination">{$page|default=''}</ul>
+</div>
+<script src="__STATIC__/js/admin.js"></script>
+<script type="text/javascript">
+  $('input[name=clicktime]').click(function(){
+    window.location.href="{:url('Portal/AdminPosterData/stat',array('id'=>$id,'pid'=>$pid),false)}/clicktime/"+$(this).val();
+  })
+</script>
+<style media="screen">
+  .radio{margin-right:10px !important;}
+</style>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<extend name="public@baseen"/>
+
+<block name="content">
+
+<div data-scroll-reveal="enter bottom" class="banner shou">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+
+        <slides id="1">
+            <div class="swiper-slide">
+                <img src="{:cmf_get_image_url($vo.image)}" alt="">
+                <img src="{:cmf_get_image_url($vo.image_m)}" alt="">
+            </div>
+        </slides>
+        </div>
+    </div>
+</div>
+<div data-scroll-reveal="enter left" class="xitong">
+    <div class="jishi">
+        <div class="container">
+            <portal:subCategoriesen categoryId="4" item="vo">
+            <div class="fl">
+                <a href="{:cmf_url('portal/List/index',array('id'=>$vo['id']))}">
+                    <i class="iconfont shang">&#{$vo.name_en};</i>
+                    <h3>{$vo.name}</h3>
+                    <php>
+                    
+                        $array=explode(PHP_EOL,$vo['description']);
+                        $con=implode('<br />',$array);
+                    </php>
+                    <p>{$con}</p>
+                    <i class="iconfont xia">&#xe718;</i>
+                </a>
+            </div>
+           </portal:subCategoriesen>
+        </div>
+    </div>
+</div>
+
+
+<!--公司简介-->
+<div class="gongsi">
+    <php>$article=\app\portal\service\ApiService::article(14);</php>
+    <div class="container clearfix">
+        <div class="fr" data-scroll-reveal="enter right">
+            <img src="{:cmf_get_image_url($article['more']['thumbnail'])}">
+        </div>
+        <div class="fl" data-scroll-reveal="enter left">
+            <h2>公司简介</h2>
+            <h3>北京永创合利体育发展有限公司</h3>
+        {$article.post_content}
+            <a class="geng" href="{:cmf_url('portal/List/index',array('id'=>8))}" style="background-image: url(__TMPL__/public/assets/images/default/jiantou.jpg)">查看更多</a>
+        </div>
+    </div>
+</div>
+<!--产品展示-->
+<div class="zhanshi" style="background-image: url(__TMPL__/public/assets/images/default/zhanshi.jpg)">
+    <div class="container clearfix">
+        <div class="fr" data-scroll-reveal="enter bottom">
+            <div class="ch_r_1">
+                <?php  $info= get_cat_info(3);?>
+                <h3>{$info['name']}</h3>
+                <p>{$info['description']}</p>
+                <a class="geng" href="{:cmf_url('portal/List/index',array('id'=>13))}" style="background-image: url(__TMPL__/public/assets/images/default/jiantou.jpg)">查看更多</a>
+            </div>
+            <div class="img ch_r_2">
+                <img src="__TMPL__/public/assets/images/default/chan2.jpg">
+            </div>
+            <?php  $info18= get_cat_info(18);$image=json_decode($info18['more'],true);?>
+            <div class="clearfix ch_r_3">
+                <div class="fl">
+                    <div class="img">
+                        <img src="{:cmf_get_image_url($image['thumbnail'])}">
+                    </div>
+                </div>
+                <div class="fr">
+                    <a href="{:cmf_url('portal/List/index',array('id'=>18))}">
+                        <span></span>
+                        <h3>{$info18['name']}</h3>
+                        <i class="iconfont">&#xe718;</i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="fl" data-scroll-reveal="enter top">
+            <?php  $info13= get_cat_info(13);$image=json_decode($info13['more'],true);?>
+            <div class="clearfix ch_l_1">
+                <div class="fl">
+                    <a href="{:cmf_url('portal/List/index',array('id'=>13))}">
+                        <span></span>
+                            <h3>{$info13['name']}</h3>
+                        <i class="iconfont">&#xe718;</i>
+                    </a>
+                </div>
+                <div class="fr">
+                    <div class="img">
+                        <img src="{:cmf_get_image_url($image['thumbnail'])}">
+                    </div>
+                </div>
+            </div>
+            <?php  
+            $info15= get_cat_info(15);
+            $info17= get_cat_info(17);
+
+            $image15=json_decode($info15['more'],true);
+            $image17=json_decode($info17['more'],true);
+            ?>
+            <div class="clearfix ch_l_2">
+                <div class="fl">
+                    <div class="img">
+                        <img src="{:cmf_get_image_url($image17['thumbnail'])}">
+                    </div>
+                </div>
+                <div class="fr">
+                    <a href="{:cmf_url('portal/List/index',array('id'=>15))}">
+                        <span></span>
+                        <h3>{$info15['name']}</h3>
+                        <i class="iconfont">&#xe718;</i>
+                    </a>
+                </div>
+            </div>
+          
+            <div class="clearfix ch_l_3">
+                <div class="fl">
+                    <a href="{:cmf_url('portal/List/index',array('id'=>17))}">
+                        <span></span>
+                        <h3>{$info17['name']}</h3>
+                        <i class="iconfont">&#xe718;</i>
+                    </a>
+                </div>
+                <div class="fr">
+                    <div class="img">
+                        <img src="{:cmf_get_image_url($image15['thumbnail'])}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--新闻中心-->
+<div class="xinwen">
+    <div class="container">
+        <div class="biaoti" data-scroll-reveal="enter top">
+            <h2>新闻中心</h2>
+            <span></span>
+        </div>
+        <div class="clearfix" data-scroll-reveal="enter left">
+            <portal:position positionId="1" order="listorder DESC">
+            <div class="fl">
+                <a href="{:cmf_url('portal/Article/index',array('id'=>$vo['id'],'cid'=>$vo['category_id']))}">
+                    <h2>{$vo.published_time|date="m-d",###}</h2>
+                    <h3>{$vo.post_title}</h3>
+                    <span></span>
+                    <p>{$vo.post_excerpt}</p>
+                    <i class="iconfont">&#xe718;</i>
+                </a>
+            </div>
+        </portal:position>
+        </div>
+        <a data-scroll-reveal="enter right" class="geng" href="{:cmf_url('portal/List/index',array('id'=>11))}"
+            style="background-image: url(__TMPL__/public/assets/images/default/jiantou.jpg)">查看更多</a>
+    </div>
+</div>
+
+<!--合作伙伴-->
+<div class="hezuo">
+    <div class="container">
+        <div class="biaoti" data-scroll-reveal="enter top">
+            <h2>合作伙伴</h2>
+            <span></span>
+        </div>
+        <div class="clearfix" data-scroll-reveal="enter right">
+           
+            <php>
+                $where=[
+                'post.create_time'=>['egt',0]
+                ];
+            </php>
+            <portal:articles item="vo" where="$where" order="post.published_time DESC" page="6" relation="categories"
+                categoryIds="5" returnVarName="articles_data">
+            
+                <foreach name="$vo['more']['photos']" item="vo">
+                    <div  class="fl">
+                        <img src="{:cmf_get_image_url($vo.url)}">
+                    </div>
+                </foreach>
+            </portal:articles>
+
+        </div>
+        <a data-scroll-reveal="enter left" class="geng" href="{:cmf_url('portal/List/index',array('id'=>5))}"
+            style="background-image: url(__TMPL__/public/assets/images/default/jiantou.jpg)">查看更多</a>
+    </div>
+</div>
+   
+
+  </block>

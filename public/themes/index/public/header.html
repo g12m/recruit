@@ -1,0 +1,67 @@
+
+
+<header>
+  <div class="header-top">
+    <div class="container clearfix">
+      <div class="fl logo">
+      <a href="/"><img src="__TMPL__/public/assets/images/default/logo1.png"></a>
+      </div>
+      <div class="fr">
+        <div class="fl nav">
+          <ul class="clearfix">
+              <li <if empty($category['id'])>class="fl active"
+                <else /> class="fl"</if>><a href="/">首页</a></li>
+              <php>
+                $where=['parent_id'=>0,'id'=>['neq','27']];
+                $category['id']=isset($category['id'])? $category['id']:'';
+                if(isset($category['id'])){
+                $top_catid = cmf_get_top_catid($category['id']);
+                }
+              </php>
+              <portal:categories where="$where" order="list_order DESC,id asc" item="vo">
+                <php>$ids=get_cid($vo['id']);</php>
+                <li <if $top_catid==$vo['id']> class="fl active"
+                  <else /> class="fl"</if>><a <if empty($ids)>href="{:cmf_url('portal/List/index',array('id'=>$vo.id))}"
+                    <else />href="{:cmf_url('portal/List/index',array('id'=>$ids))}"</if>>{$vo.name}</a></li>
+              </portal:categories>
+        
+          </ul>
+        </div>
+        <div class="fl yu">
+          <a href="/"><img src="__TMPL__/public/assets/images/default/zh.png"></a>
+          <a href="{:cmf_url('portal/index/indexen')}"><img src="__TMPL__/public/assets/images/default/en.png"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="header-xiang">
+    <div class="xiang-top">
+      <div class="container clearfix">
+        <div class="fl">
+          <img src="__TMPL__/public/assets/images/default/logo.png">
+        </div>
+        <div class="fr">
+          <i class="iconfont">&#xe648;</i>
+          <i class="iconfont">&#xe600;</i>
+        </div>
+      </div>
+    </div>
+    <div class="xiang-bottom">
+      <ul>
+        <li><a href="/">首页</a></li>
+        <php>
+          $where=['parent_id'=>0,'id'=>['neq','27']];
+          $category['id']=isset($category['id'])? $category['id']:'';
+          if(isset($category['id'])){
+          $top_catid = cmf_get_top_catid($category['id']);
+          }
+        </php>
+        <portal:categories where="$where" order="list_order DESC,id asc" item="vo">
+          <php>$ids=get_cid($vo['id']);</php>
+        <li><a <if empty($ids)>href="{:cmf_url('portal/List/index',array('id'=>$vo.id))}"
+                    <else />href="{:cmf_url('portal/List/index',array('id'=>$ids))}"</if>>{$vo.name}</a></li>
+         </portal:categories>
+      </ul>
+    </div>
+  </div>
+</header>

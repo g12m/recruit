@@ -1,0 +1,82 @@
+<extend name="public@base"/>
+<block name="header">
+    <include file="public@header_list" />
+</block>
+<block name="content">
+    <include file="public@banner">
+    <!-- <div class="about xinwen">
+        <div class="container">
+            <h2><?php echo get_cat_info(3)['name']?></h2>
+            <div class="lian">
+                <portal:subCategories categoryId="3" item="vo">
+                <a <if $vo['id']==$category['id']>class="active"</if> href="{:cmf_url('portal/List/index',array('id'=>$vo.id))}">{$vo.name}</a>
+                </portal:subCategories>
+              
+            </div>
+        </div>
+    </div>
+   
+    <div class="leixing">
+        <div class="container clearfix">
+            <php>
+                $where=[
+                'post.create_time'=>['egt',0]
+                ];
+            </php>
+            <portal:articles item="vo" where="$where" order="post.create_time DESC" page="10" relation="categories"
+                categoryIds="$category.id" returnVarName="articles_data">
+            <div class="fl">
+                <div class="img">
+                    <img src="__TMPL__/public/assets/__TMPL__/public/assets/images/default/default/lei1.jpg">
+                </div>
+                <h3>{$vo.post_title}</h3>
+                <p>{$vo.post_excerpt}</p>
+                <a class="dg" href="{:cmf_url('portal/Article/index',array('id'=>$vo['id'],'cid'=>$category['id']))}">查看详情</a>
+            </div>
+            </portal:articles>
+    
+        </div>
+    </div> -->
+    <div class="chanpin" style="background-image: url(__TMPL__/public/assets/images/default/chanpin_bg.jpg); background-repeat: no-repeat;">
+        <div class="container clearfix">
+            <div class="pin fr box">
+                <h3><?php echo get_cat_info(3)['name']?></h3>
+                <ul>
+                    <portal:subCategories categoryId="3" item="vo">
+                            <li <if $vo['id']==$category['id']>class="active"</if>><a 
+                            href="{:cmf_url('portal/List/index',array('id'=>$vo.id))}">{$vo.name}</a></li>
+                    </portal:subCategories>
+         
+            
+                </ul>
+            </div>
+            <div class="fl chan">
+                <p>{$category.name}</p>
+                <div class="clearfix">
+                    <php>
+                        $where=[
+                        'post.create_time'=>['egt',0]
+                        ];
+                    </php>
+                    <portal:articles item="vo" where="$where" order="post.published_time DESC" page="6" relation="categories"
+                        categoryIds="$category.id" returnVarName="articles_data">
+                    <div data-scroll-reveal="enter left" class="fl">
+                        <div class="img">
+                            <a href="{:cmf_url('portal/Article/index',array('id'=>$vo['id'],'cid'=>$category['id']))}"><img src="{:cmf_get_image_url($vo.more.thumbnail)}"></a>
+                        </div>
+                        <a href="{:cmf_url('portal/Article/index',array('id'=>$vo['id'],'cid'=>$category['id']))}"><p>{$vo.post_title}</p></a>
+                    </div>
+                  </portal:articles>
+                </div>
+                <div data-scroll-reveal="enter bottom" class="fenye">
+    
+                </div>
+            </div>
+        </div>
+    
+    </div>
+
+ 
+
+</block>
+  

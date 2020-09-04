@@ -1,0 +1,24 @@
+
+<div data-scroll-reveal="enter bottom" class="banner">
+  <if $category['id']==11|| $category['id']==12>
+          <php>$cat_image=get_cat_info(2)['more'];$thumb=json_decode($cat_image,true);</php>
+         <img src="{:cmf_get_image_url($thumb.thumbnail)}">
+         <img src="{:cmf_get_image_url($thumb.thumbnail_m)}">
+  <elseif $category['id']==8>
+      <php>$cat_image=get_cat_info(1)['more'];$thumb=json_decode($cat_image,true);</php>
+      <img src="{:cmf_get_image_url($thumb.thumbnail)}">
+      <img src="{:cmf_get_image_url($thumb.thumbnail_m)}">
+   <elseif $category['id']==22 || $category['id']==23 || $category['id']==24 >
+      <php>$cat_image=get_cat_info(4)['more'];$thumb=json_decode($cat_image,true);</php>
+      <img src="{:cmf_get_image_url($thumb.thumbnail)}">
+      <img src="{:cmf_get_image_url($thumb.thumbnail_m)}">
+   <elseif $category['id']==13 || $category['id']==14 || $category['id']==15 || $category['id']==16 || $category['id']==17 || $category['id']==18 || $category['id']==19  || $category['id']==20 || $category['id']==21>
+      <php>$cat_image=get_cat_info(3)['more'];$thumb=json_decode($cat_image,true);</php>
+      <img src="{:cmf_get_image_url($thumb.thumbnail)}">
+      <img src="{:cmf_get_image_url($thumb.thumbnail_m)}">
+    <else/>
+     <php>$cat_image=get_cat_info($category['id'])['more'];$thumb=json_decode($cat_image,true);</php>
+     <img src="{:cmf_get_image_url($thumb.thumbnail)}">
+     <img src="{:cmf_get_image_url($thumb.thumbnail_m)}">
+  </if>
+        </div>

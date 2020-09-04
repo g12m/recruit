@@ -1,0 +1,51 @@
+<include file="public@header"/>
+</head>
+<body>
+<div class="wrap">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="{:url('AdminPositionen/index')}">推荐位管理</a></li>
+        <li ><a href="{:url('AdminPositionen/add')}">添加推荐位</a></li>
+    </ul>
+    <form method="post" class="js-ajax-form margin-top-20">
+        <div class="table-actions">
+            <!--<button type="submit" class="btn btn-primary btn-sm js-ajax-submit">{:lang('SORT')}</button>-->
+        </div>
+        <table class="table table-hover table-bordered table-list">
+            <thead>
+            <tr>
+                <th width="50">ID</th>
+                <th>名称</th>
+                <th>所属栏目</th>
+                <th width="160">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <foreach name="list" item="vo">
+                <tr>
+                    <td>{$vo.id}</td>
+
+                    <td>{$vo.name}</td>
+                    <td>
+                      <span class="label label-default">
+                                <a  style="color: #fff;" >{$vo.cname}</a>
+                      </span>
+                    </td>
+                    <td>
+                        <a  href="{:url('AdminPositionenData/index',['posid'=>$vo['id']])}">信息管理</a>|
+                        <a class="" href="{:url('AdminPositionen/edit',['id'=>$vo['id'],'catid'=>$vo['catid']])}">修改</a>|
+                        <a class="js-ajax-delete" href="{:url('AdminPositionen/delete',['id'=>$vo['id']])}">删除</a>
+                    </td>
+                </tr>
+            </foreach>
+            </tbody>
+
+        </table>
+        <div class="table-actions">
+            <!--<button type="submit" class="btn btn-primary btn-sm js-ajax-submit">{:lang('SORT')}</button>-->
+        </div>
+    </form>
+    <ul class="pagination">{$page|default=''}</ul>
+</div>
+<script src="__STATIC__/js/admin.js"></script>
+</body>
+</html>

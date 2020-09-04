@@ -1,0 +1,157 @@
+<extend name="public@base"/>
+<block name="header">
+    <include file="public@header_list"/>
+</block>
+
+<block name="content">
+
+   
+<include file="public@banner">
+
+<div class="about-top" style="background-image: url(__TMPL__/public/assets/images/default/about_top_bg.jpg); background-repeat: no-repeat;">
+    <div class="container">
+        <div data-scroll-reveal="enter left" class="top">
+            <h2>北京永创合利体育发展有限<span>公司简介</span></h2>
+            <span class="span"></span>
+            <?php $content=get_cat_info(8)['description'];?>
+            <php>
+            
+                $array=explode(PHP_EOL,$content);
+                $con=implode('<br />',$array);
+            </php>
+            <p>{$con}</p>
+        </div>
+        <div class="bottom box clearfix">
+<php>
+    $n=1;
+    $where=[
+    'post.create_time'=>['egt',0]
+    ];
+</php>
+<portal:articles item="vo" where="$where" order="post.published_time DESC" page="3" relation="categories"
+    categoryIds="$category.id" returnVarName="articles_data">
+    <if $vo['id']==14>
+        <else/>
+    <if $n%2==0>
+        <div class="fl">
+            <div class="text">
+                <p>{$vo.post_content}
+                </p>
+            </div>
+            <div class="img">
+                <img src="{:cmf_get_image_url($vo.more.thumbnail)}">
+            </div>
+        </div>
+        <else/>
+            <div class="fl">
+                <div class="img">
+                    <img src="{:cmf_get_image_url($vo.more.thumbnail)}">
+                </div>
+                <div class="text">
+                    <p>{$vo.post_content}   </p>
+                </div>
+            </div>
+          </if>
+          </if>
+            <?php $n++;?>
+        </portal:articles>
+        </div>
+    </div>
+</div>
+<?php $content=get_cat_info(9)['description'];
+$info=get_cat_info(9)['more'];$image=json_decode($info,true);
+?>
+
+<div data-scroll-reveal="enter left" class="linian clearfix">
+    <div class="fl">
+        <img src="{:cmf_get_image_url($image.thumbnail)}">
+    </div>
+    <div class="fr">
+        <h3>公司理念</h3>
+        <php>
+        
+            $array=explode(PHP_EOL,$content);
+            $con=implode('<br />',$array);
+        </php>
+        <p>{$con}</p>  </div>
+</div>
+
+<div class="about-bottom" style="background-image: url(__TMPL__/public/assets/images/default/about_bottom_bg.jpg); background-repeat: no-repeat;">
+    <div class="container">
+        <div data-scroll-reveal="enter right" class="top">
+            <h2>公司<span>业绩</span></h2>
+            <span class="span"></span>
+
+            <?php $content=get_cat_info(10)['description'];?>
+            <php>
+            
+                $array=explode(PHP_EOL,$content);
+                $con=implode('<br />',$array);
+            </php>
+            <p>{$con}</p>
+        </div>
+        <div data-scroll-reveal="enter left" class="bottom box">
+            <h3>2017年羽毛球比赛</h3>
+            <div class="clearfix ming">
+                <div class="fl xu">序号</div>
+                <div class="fl bi">比赛名称</div>
+                <div class="fl shi">比赛时间</div>
+                <div class="fl di">比赛地点</div>
+            </div>
+            <div class="clearfix">
+                <div class="fl xu">1</div>
+                <div class="fl bi">全国少年乙组羽毛球比赛</div>
+                <div class="fl shi">4.8-4.15</div>
+                <div class="fl di">河北迁安</div>
+            </div>
+            <div class="clearfix">
+                <div class="fl xu">2</div>
+                <div class="fl bi">全国青年羽毛球锦标赛</div>
+                <div class="fl shi">5.5-5.19</div>
+                <div class="fl di">安徽铜陵</div>
+            </div>
+            <div class="clearfix">
+                <div class="fl xu">3</div>
+                <div class="fl bi">全国青少年羽毛球分站赛（淮北站）</div>
+                <div class="fl shi">6.6-6.15</div>
+                <div class="fl di">安徽淮北</div>
+            </div>
+            <div class="clearfix">
+                <div class="fl xu">4</div>
+                <div class="fl bi">十三届全运会羽毛球资格赛</div>
+                <div class="fl shi">6.15-7.11</div>
+                <div class="fl di">广东佛山</div>
+            </div>
+            <div class="clearfix">
+                <div class="fl xu">5</div>
+                <div class="fl bi">第十三届运动会羽毛球比赛</div>
+                <div class="fl shi">8.26-9.8</div>
+                <div class="fl di">天津宝坻区体育馆</div>
+            </div>
+            <div class="clearfix">
+                <div class="fl xu">6</div>
+                <div class="fl bi">全国少年甲组羽毛球比赛</div>
+                <div class="fl shi">9.13-9.21</div>
+                <div class="fl di">江西瑞昌</div>
+            </div>
+            <div class="clearfix">
+                <div class="fl xu">7</div>
+                <div class="fl bi">全国青少年分站赛（宁波站）</div>
+                <div class="fl shi">10.15-10.24</div>
+                <div class="fl di">浙江宁波</div>
+            </div>
+            <div class="clearfix">
+                <div class="fl xu">8</div>
+                <div class="fl bi">全国羽毛球冠军赛</div>
+                <div class="fl shi">10.28-11.10</div>
+                <div class="fl di">广东佛山</div>
+            </div>
+        </div>
+        <a data-scroll-reveal="enter right" class="geng box" href=""
+            style="background-image: url(__TMPL__/public/assets/images/default/jiantou.jpg)">查看更多</a>
+    </div>
+</div>
+    
+
+</block>
+  

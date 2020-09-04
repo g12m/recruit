@@ -1,0 +1,45 @@
+<extend name="public@base" />
+<block name="header">
+    <include file="public@header_list" />
+</block>
+<block name="content">
+<include file="public@banner">
+
+<div class="fuwu" style="background-image: url(__TMPL__/public/assets/images/default/chanpin_bg.jpg); background-repeat: no-repeat;">
+    <div class="container">
+        <div data-scroll-reveal="enter left" class="fuwu-top">
+            <h2>服务支持</h2>
+            <p>
+                <portal:subCategories categoryId="4" item="vo">
+                    <a <if $vo['id']==$category['id']>class="active"</if>
+                        href="{:cmf_url('portal/List/index',array('id'=>$vo.id))}">{$vo.name}</a>
+                </portal:subCategories>
+            </p>
+        </div>
+        <div class="clearfix">
+            <php>
+                $where=[
+                'post.create_time'=>['egt',0]
+                ];
+            </php>
+            <portal:articles item="vo" where="$where" order="post.published_time DESC" page="6" relation="categories"
+                categoryIds="$category.id" returnVarName="articles_data">
+            <div data-scroll-reveal="enter right" class="fl">
+                <div class="img">
+                    <a href="{:cmf_url('portal/Article/index',array('id'=>$vo['id'],'cid'=>$category['id']))}"><img src="{:cmf_get_image_url($vo.more.thumbnail)}"></a>
+                </div>
+                <div class="text">
+                    <a href="{:cmf_url('portal/Article/index',array('id'=>$vo['id'],'cid'=>$category['id']))}"><h3>{$vo.post_title}</h3></a>
+                    <p>{$vo.post_excerpt}</p>
+                    <a href="{:cmf_url('portal/Article/index',array('id'=>$vo['id'],'cid'=>$category['id']))}">更多...</a>
+                </div>
+            </div>
+          </portal:articles>
+          
+       
+        </div>
+    </div>
+</div>
+
+
+</block>

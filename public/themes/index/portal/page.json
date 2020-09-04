@@ -1,0 +1,14 @@
+{
+    "name": "单页",
+    "action": "portal/Page/index",
+    "description": "单页模板",
+    "order": 10.0,
+    "more": {
+        "vars": {
+
+        },
+        "widgets":{
+
+        }
+    }
+}

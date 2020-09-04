@@ -1,0 +1,14 @@
+{
+    "name": "服务与支持页",
+    "action": "portal/Listen/index",
+    "description": "服务与支持模板文件",
+    "order": 10.0,
+    "more": {
+        "vars": {
+
+        },
+        "widgets":{
+
+        }
+    }
+}

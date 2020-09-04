@@ -1,0 +1,37 @@
+<include file="public@header"/>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+	<ul class="nav nav-tabs">
+		<li ><a href="{:url('AdminMsg/index')}">信息列表</a></li>
+		<li class="active"><a href="{:url('AdminMsg/edit')}">查看信息</a></li>
+	</ul>
+&nbsp;
+<div class="order-box">
+  <table class="table  table-bordered">
+  <th class="well" colspan="4"align="right">个人基本情况</th>
+	<!--订单号-->
+
+  <tr>
+  <th align="left" width=300>姓名：</th>
+  <td>{$info.name}</td>
+  
+  </tr>
+	<!--会员-->
+	<tr>
+  <th align="left" width=300>留言内容:</th>
+  <td>{$info.year}</td>
+
+  <tr>
+
+
+  </table>
+
+<!--收货人信息-->
+
+
+</div>
+</div>
+<script src="__STATIC__/js/admin.js"></script>
+</body>
+</html>

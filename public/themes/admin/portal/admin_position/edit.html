@@ -1,0 +1,56 @@
+<include file="public@header" />
+</head>
+<body>
+	<div class="wrap">
+		<ul class="nav nav-tabs">
+			<li><a href="{:url('AdminPosition/index')}">推荐位管理</a></li>
+			<li class="active"><a>编辑</a></li>
+		</ul>
+		<form method="post" class="form-horizontal  margin-top-20" action="{:url('AdminPosition/editPost')}">
+			<div class="form-group">
+				<label for="input-user_login" class="col-sm-2 control-label"><span class="form-required">*</span>推荐位名称</label>
+				<div class="col-md-6 col-sm-10">
+					<input type="text" class="form-control" id="input-user_login" name="name" value="{$info.name}">
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="input-user_email" class="col-sm-2 control-label"><span class="form-required">*</span>所属栏目</label>
+				<div class="col-md-6 col-sm-10">
+				   <select name="catid" id="select-href" class="form-control">
+             <foreach name="navs" item="vo">
+                 <optgroup label="{$vo.name}">
+                     {$vo.html}
+                 </optgroup>
+             </foreach>
+         </select>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="input-user_email" class="col-sm-2 control-label"><span class="form-required">*</span>最大保存条数</label>
+				<div class="col-md-6 col-sm-10">
+					<input type="text" class="form-control" id="input-user_email" name="maxnum" value="{$info.maxnum}">
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<input type="hidden" name="id" value="{$info.id}" />
+					<button type="submit" class="btn btn-primary js-ajax-submit">{:lang('SAVE')}</button>
+					<a class="btn btn-default" href="javascript:history.back(-1);">{:lang('BACK')}</a>
+				</div>
+			</div>
+		</form>
+	</div>
+	<script src="__STATIC__/js/admin.js"></script>
+  <script type="text/javascript">
+  var catid="{$info.catid}"
+    $('#select-href').find('option').each(function(k,v){
+      if($(v).attr('data-catid') == catid)
+      {
+          $(this).prop('selected', true);
+      }
+    })
+  </script>
+</body>
+</html>
