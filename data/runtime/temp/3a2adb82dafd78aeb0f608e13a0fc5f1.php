@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:31:"themes/index/portal\\index.html";i:1563360381;s:72:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\base.html";i:1543484706;s:72:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\head.html";i:1563266601;s:74:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\header.html";i:1563428030;s:74:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\footer.html";i:1563267248;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:31:"themes/index/portal\\index.html";i:1599199034;s:72:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\base.html";i:1599199035;s:72:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\head.html";i:1599199035;s:74:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\header.html";i:1599199035;s:74:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\footer.html";i:1599199035;}*/ ?>
 <!DOCTYPE html>
 <html>
 
