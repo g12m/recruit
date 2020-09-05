@@ -12,7 +12,8 @@ class EntPositionModel extends Model
     }
     //添加职位
     public function pos_add($arr){
-        $this->insert($arr);
+        $res= $this->insert($arr);
+        var_dump($res);
     }
     // 删除职位
     public function pos_del($id){
