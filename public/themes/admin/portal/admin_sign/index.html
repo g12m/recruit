@@ -1,0 +1,58 @@
+<include file="public@header"/>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="{:url('AdminSign/index')}">用户申请</a></li>
+    </ul>
+    <form method="post" class="js-ajax-form margin-top-20">
+        <div class="table-actions">
+          <button class="btn btn-danger btn-sm js-ajax-submit" type="submit"
+                  data-action="{:url('AdminSign/delete')}" data-subcheck="true" data-msg="您确定删除吗？">
+              {:lang('DELETE')}
+          </button>
+        </div>
+        <table class="table table-hover table-bordered table-list">
+            <thead>
+            <tr>
+              <th width="16"><label><input type="checkbox" class="js-check-all" data-direction="x"
+                                           data-checklist="js-check-x"></label></th>
+                <th width="50">ID</th>
+                <th>姓名</th>
+                <th>所属类型</th>
+                <th>电话</th>
+                <th>年龄</th>
+                <th>时间</th>
+                <th width="160">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <foreach name="list" item="vo">
+                <tr>
+                  <td><input type="checkbox" class="js-check" data-yid="js-check-y" data-xid="js-check-x" name="ids[]"
+                             value="{$vo.id}"></td>
+                    <td>{$vo.id}</td>
+                    <td>{$vo.name}</td>
+                    <?php $name=get_cat_info($vo['catid'])['name']?>
+                    <td>{$name}</td>
+                    <td>{$vo.tel}</td>
+                    <td>{$vo.year}</td>
+                    <td>{$vo.createtime|date="Y-m-d",###}</td>
+                    <td>
+                          <a  href="{:url('AdminSign/edit',['id'=>$vo['id']])}">查看详情</a>
+                        <a class="js-ajax-delete" href="{:url('AdminSign/delete',['id'=>$vo['id']])}">删除</a>
+                    </td>
+                </tr>
+            </foreach>
+            </tbody>
+
+        </table>
+        <div class="table-actions">
+            <!--<button type="submit" class="btn btn-primary btn-sm js-ajax-submit">{:lang('SORT')}</button>-->
+        </div>
+    </form>
+    <ul class="pagination">{$page|default=''}</ul>
+</div>
+<script src="__STATIC__/js/admin.js"></script>
+</body>
+</html>

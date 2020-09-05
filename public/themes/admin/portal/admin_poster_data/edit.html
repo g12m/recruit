@@ -1,0 +1,87 @@
+<include file="public@header" />
+</head>
+<body>
+	<div class="wrap">
+		<ul class="nav nav-tabs">
+			<li ><a href="{:url('AdminPoster/index')}">广告版位管理</a></li>
+			<li ><a href="{:url('AdminPosterData/index',array('pid'=>$info.pid))}">广告信息管理</a></li>
+			<li class="active"><a>编辑广告</a></li>
+		</ul>
+		<form method="post" class="form-horizontal js-ajax-form margin-top-20" action="{:url('AdminPosterData/editPost')}">
+			<div class="form-group">
+				<label for="input-user_login" class="col-sm-2 control-label"><span class="form-required">*</span>广告名称</label>
+				<div class="col-md-6 col-sm-10">
+					<input type="text" class="form-control" id="input-user_login" name="title" value="{$info.title}">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="input-user_email" class="col-sm-2 control-label"><span class="form-required">*</span>所属版位</label>
+				<div class="col-md-6 col-sm-10">
+				   <select name="pid" id="select-href" class="form-control" disabled>
+						 <option>请选择分类</option>
+             <foreach name="posters" item="vo">
+							 <option value="{$vo.id}" <?php if($info['pid'] == $vo['id']) echo 'selected';?>>{$vo.name}</option>
+             </foreach>
+         </select>
+				 <input type="hidden" name="pid" value="{$info.pid}">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="input-user_login" class="col-sm-2 control-label"><span class="form-required">*</span>上线时间</label>
+				<div class="col-md-6 col-sm-10">
+					<input class="form-control js-bootstrap-datetime" type="text" name="starttime"
+								 value="{:date('Y-m-d H:i:s',$info.starttime)}">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="input-user_login" class="col-sm-2 control-label"><span class="form-required">*</span>下线时间</label>
+				<div class="col-md-6 col-sm-10">
+					<input class="form-control js-bootstrap-datetime" type="text" name="endtime"
+								 value="{:date('Y-m-d H:i:s',$info.endtime)}">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="input-user_login" class="col-sm-2 control-label">图片设置</label>
+			</div>
+			<div class="form-group">
+				<div class="col-md-6 col-sm-10" style="margin-left:200px;">
+						<input type="hidden" name="img" id="thumbnail" value="{$info.img|default=''}">
+						<a href="javascript:uploadOneImage('图片上传','#thumbnail');">
+								<if condition="empty($info.img)">
+										<img src="__TMPL__/public/assets/images/default-thumbnail.png"
+												 id="thumbnail-preview"
+												 width="135" style="cursor: pointer"/>
+										<else/>
+										<img src="{:cmf_get_image_preview_url($info.img)}"
+												 id="thumbnail-preview"
+												 width="135" style="cursor: pointer"/>
+								</if>
+						</a>
+						<input type="button" class="btn btn-sm btn-cancel-thumbnail" value="取消图片">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="input-user_login" class="col-sm-2 control-label">URL</label>
+				<div class="col-md-6 col-sm-10">
+					<input class="form-control" type="text" name="url"
+								 value="{$info.url}">
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<input type="hidden" name="id" value="{$info.id}">
+					<button type="submit" class="btn btn-primary js-ajax-submit">{:lang('SAVE')}</button>
+					<a class="btn btn-default" href="javascript:history.back(-1);">{:lang('BACK')}</a>
+				</div>
+			</div>
+		</form>
+	</div>
+	<script src="__STATIC__/js/admin.js"></script>
+	<script type="text/javascript">
+	$('.btn-cancel-thumbnail').click(function () {
+			$('#thumbnail-preview').attr('src', '__TMPL__/public/assets/images/default-thumbnail.png');
+			$('#thumbnail').val('');
+	});
+	</script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+    "name": "加入我们页",
+    "action": "portal/List/index",
+    "description": "加入我们模板文件",
+    "order": 10.0,
+    "more": {
+        "vars": {
+
+        },
+        "widgets":{
+
+        }
+    }
+}

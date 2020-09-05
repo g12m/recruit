@@ -1,0 +1,38 @@
+<include file="public@header" />
+</head>
+<body>
+	<div class="wrap js-check-wrap">
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="{:url('LinkType/index')}">分类列表</a></li>
+			<li><a href="{:url('LinkType/add')}">添加分类</a></li>
+		</ul>
+		<table class="table table-hover table-bordered margin-top-20">
+			<thead>
+				<tr>
+					<th width="50">ID</th>
+					<th>分类</th>
+					<th width="160">{:lang('ACTIONS')}</th>
+				</tr>
+			</thead>
+			<tbody>
+				<php>
+
+				</php>
+				<foreach name="list" item="vo">
+				<tr>
+					<td>{$vo.id}</td>
+					<td>{$vo.name}</td>
+					<td>
+            <a href="{:url('LinkType/edit',array('id'=>$vo['id']))}">{:lang('EDIT')}</a>
+						<a href="javascript:parent.openIframeLayer('{:url('Link/index',array('type_id'=>$vo['id']))}','管理 {$vo.name} 页面',{});">管理信息</a>
+            <a href="{:url('LinkType/delete',array('id'=>$vo['id']))}" class="js-ajax-delete">{:lang('DELETE')}</a>
+          </td>
+				</tr>
+				</foreach>
+			</tbody>
+		</table>
+
+	</div>
+	<script src="__STATIC__/js/admin.js"></script>
+</body>
+</html>
