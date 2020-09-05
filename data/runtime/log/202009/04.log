@@ -3443,3 +3443,744 @@
 [ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/portal\lang\zh-cn\common.php
 [ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.006295s ]
 [ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-09-04T16:45:44+08:00 ] 127.0.0.1 GET /ldadmin
+[ info ] www.zhaopin.com:8080/ldadmin [运行时间：0.153031s][吞吐率：6.53req/s] [内存消耗：2,106.60kb] [文件加载：70]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.008295s ]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Index',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.zhaopin.com:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.005261s ]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/admin\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/admin\lang\zh-cn\admin_menu.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/admin\lang\zh-cn\admin.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/user\lang\zh-cn\admin_menu.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../data/lang/zh-cn/admin_menu.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\AdminLangBehavior @admin_init [ RunTime:0.018209s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-09-04T16:45:44+08:00 ] 127.0.0.1 GET /admin/public/login.html
+[ info ] www.zhaopin.com:8080/admin/public/login.html [运行时间：0.128443s][吞吐率：7.79req/s] [内存消耗：2,316.19kb] [文件加载：73]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.007050s ]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'public',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=mphpp95f6em5rtgrsaqg326290',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.zhaopin.com:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.005607s ]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/admin\lang\zh-cn.php
+[ info ] [ RUN ] app\admin\controller\PublicController->login[ E:\phpStudy\PHPTutorial\WWW\zhaopin\app\admin\controller\PublicController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] themes/admin/admin\\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-09-04T16:45:45+08:00 ] 127.0.0.1 GET /captcha/new.html?height=32&width=150&font_size=18
+[ info ] www.zhaopin.com:8080/captcha/new.html?height=32&width=150&font_size=18 [运行时间：0.360781s][吞吐率：2.77req/s] [内存消耗：1,847.90kb] [文件加载：57]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.023112s ]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\cmf\\controller\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=mphpp95f6em5rtgrsaqg326290',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.zhaopin.com:8080/admin/public/login.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.zhaopin.com:8080',
+)
+[ info ] [ PARAM ] array (
+  'height' => '32',
+  'width' => '150',
+  'font_size' => '18',
+)
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.028883s ]
+[ info ] [ RUN ] cmf\controller\CaptchaController->index[ E:\phpStudy\PHPTutorial\WWW\zhaopin\simplewind\cmf\controller\CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-09-04T16:45:53+08:00 ] 127.0.0.1 POST /admin/public/dologin.html
+[ info ] www.zhaopin.com:8080/admin/public/dologin.html [运行时间：0.414007s][吞吐率：2.42req/s] [内存消耗：2,801.21kb] [文件加载：76]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.005098s ]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'public',
+    2 => 'dologin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; PHPSESSID=mphpp95f6em5rtgrsaqg326290',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.zhaopin.com:8080/admin/public/login.html',
+  'origin' => 'http://www.zhaopin.com:8080',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '66',
+  'connection' => 'close',
+  'host' => 'www.zhaopin.com:8080',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'admin',
+  'password' => '123123',
+  'captcha' => 'dcc4',
+  '_captcha_id' => '',
+  'redirect' => '',
+)
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.004107s ]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/admin\lang\zh-cn.php
+[ info ] [ RUN ] app\admin\controller\PublicController->doLogin[ E:\phpStudy\PHPTutorial\WWW\zhaopin\app\admin\controller\PublicController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.090208s ] mysql:host=47.92.238.166;port=3306;dbname=zhaopin;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ld_user` [ RunTime:0.020747s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_user` WHERE  `user_login` = 'admin' LIMIT 1 [ RunTime:0.020762s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ld_role_user` [ RunTime:0.020018s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `ld_role_user` `a` INNER JOIN `ld_role` `b` ON `a`.`role_id`=`b`.`id` WHERE  `user_id` = 2  AND `status` = 1 LIMIT 1 [ RunTime:0.019763s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ld_user_token` [ RunTime:0.020129s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_user_token` WHERE  `user_id` = 2  AND `device_type` = 'web' LIMIT 1 [ RunTime:0.020045s ]
+[ sql ] [ SQL ] UPDATE `ld_user_token`  SET `token`='f83d13f0aaf6df33a847e4f80e5f929783c9945dc27af0deccf1b4624efc82c3',`expire_time`=1614761153,`create_time`=1599209153  WHERE  `user_id` = 2  AND `device_type` = 'web' [ RunTime:0.025599s ]
+[ sql ] [ SQL ] UPDATE `ld_user`  SET `user_type`=1,`sex`=0,`birthday`=0,`last_login_time`=1599209153,`score`=0,`coin`=0,`balance`=0,`create_time`=0,`user_status`=1,`user_login`='admin',`user_pass`='###cb39128d82274f80018dc1d48a212ba0',`user_nickname`='',`user_email`='111111@qq.com',`user_url`='',`avatar`='',`signature`='',`last_login_ip`='127.0.0.1',`user_activation_key`='',`mobile`='',`more`=NULL  WHERE  `id` = 2 [ RunTime:0.044620s ]
+---------------------------------------------------------------
+[ 2020-09-04T16:45:58+08:00 ] 127.0.0.1 GET /ldadmin.html
+[ info ] www.zhaopin.com:8080/ldadmin.html [运行时间：3.062758s][吞吐率：0.33req/s] [内存消耗：3,609.11kb] [文件加载：88]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.006644s ]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Index',
+    2 => 'index',
+  ),
+  'convert' => false,
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=mphpp95f6em5rtgrsaqg326290; admin_username=admin',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.zhaopin.com:8080/admin/public/login.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.zhaopin.com:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.007333s ]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/admin\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/admin\lang\zh-cn\admin_menu.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/admin\lang\zh-cn\admin.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/user\lang\zh-cn\admin_menu.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../data/lang/zh-cn/admin_menu.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\AdminLangBehavior @admin_init [ RunTime:0.013862s ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\IndexController->index[ E:\phpStudy\PHPTutorial\WWW\zhaopin\app\admin\controller\IndexController.php ]
+[ info ] [ VIEW ] themes/admin/admin\index\index.html [ array (
+  0 => 'admin',
+  1 => 'menus',
+  2 => 'menus_js_var',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.039418s ] mysql:host=47.92.238.166;port=3306;dbname=zhaopin;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ld_user` [ RunTime:0.023199s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_user` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.022839s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ld_admin_menu` [ RunTime:0.021745s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_admin_menu` WHERE  `parent_id` = 0  AND `status` = 1 ORDER BY `list_order` ASC [ RunTime:0.021678s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ld_auth_rule` [ RunTime:0.022251s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ld_auth_rule` WHERE  `name` = 'admin/setting/default' LIMIT 1 [ RunTime:0.021702s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ld_role_user` [ RunTime:0.021914s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `ld_role_user` `a` INNER JOIN `ld_role` `r` ON `a`.`role_id`=`r`.`id` WHERE  `a`.`user_id` = 2  AND `r`.`status` = 1 [ RunTime:0.021171s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ld_auth_rule` WHERE  `name` = 'user/adminindex/default' LIMIT 1 [ RunTime:0.021275s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `ld_role_user` `a` INNER JOIN `ld_role` `r` ON `a`.`role_id`=`r`.`id` WHERE  `a`.`user_id` = 2  AND `r`.`status` = 1 [ RunTime:0.020908s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ld_auth_rule` WHERE  `name` = 'portal/adminindex/default' LIMIT 1 [ RunTime:0.020711s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `ld_role_user` `a` INNER JOIN `ld_role` `r` ON `a`.`role_id`=`r`.`id` WHERE  `a`.`user_id` = 2  AND `r`.`status` = 1 [ RunTime:0.021247s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ld_auth_rule` WHERE  `name` = 'portal/adminpicture/default' LIMIT 1 [ RunTime:0.020920s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `ld_role_user` `a` INNER JOIN `ld_role` `r` ON `a`.`role_id`=`r`.`id` WHERE  `a`.`user_id` = 2  AND `r`.`status` = 1 [ RunTime:0.020920s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ld_auth_rule` WHERE  `name` = 'portal/admincategory1/index' LIMIT 1 [ RunTime:0.021040s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `ld_role_user` `a` INNER JOIN `ld_role` `r` ON `a`.`role_id`=`r`.`id` WHERE  `a`.`user_id` = 2  AND `r`.`status` = 1 [ RunTime:0.020891s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_admin_menu` WHERE  `parent_id` = 6  AND `status` = 1 ORDER BY `list_order` ASC [ RunTime:0.021675s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ld_auth_rule` WHERE  `name` = 'admin/setting/site' LIMIT 1 [ RunTime:0.021510s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `ld_role_user` `a` INNER JOIN `ld_role` `r` ON `a`.`role_id`=`r`.`id` WHERE  `a`.`user_id` = 2  AND `r`.`status` = 1 [ RunTime:0.020585s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ld_auth_rule` WHERE  `name` = 'admin/theme/index' LIMIT 1 [ RunTime:0.020917s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `ld_role_user` `a` INNER JOIN `ld_role` `r` ON `a`.`role_id`=`r`.`id` WHERE  `a`.`user_id` = 2  AND `r`.`status` = 1 [ RunTime:0.020839s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ld_auth_rule` WHERE  `name` = 'admin/slide/index' LIMIT 1 [ RunTime:0.020743s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `ld_role_user` `a` INNER JOIN `ld_role` `r` ON `a`.`role_id`=`r`.`id` WHERE  `a`.`user_id` = 2  AND `r`.`status` = 1 [ RunTime:0.020906s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ld_auth_rule` WHERE  `name` = 'admin/linktype/index' LIMIT 1 [ RunTime:0.020782s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `ld_role_user` `a` INNER JOIN `ld_role` `r` ON `a`.`role_id`=`r`.`id` WHERE  `a`.`user_id` = 2  AND `r`.`status` = 1 [ RunTime:0.020721s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ld_auth_rule` WHERE  `name` = 'admin/setting/upload' LIMIT 1 [ RunTime:0.022968s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `ld_role_user` `a` INNER JOIN `ld_role` `r` ON `a`.`role_id`=`r`.`id` WHERE  `a`.`user_id` = 2  AND `r`.`status` = 1 [ RunTime:0.045974s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_admin_menu` WHERE  `parent_id` = 71  AND `status` = 1 ORDER BY `list_order` ASC [ RunTime:0.020233s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_admin_menu` WHERE  `parent_id` = 95  AND `status` = 1 ORDER BY `list_order` ASC [ RunTime:0.028400s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_admin_menu` WHERE  `parent_id` = 78  AND `status` = 1 ORDER BY `list_order` ASC [ RunTime:0.020652s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_admin_menu` WHERE  `parent_id` = 7  AND `status` = 1 ORDER BY `list_order` ASC [ RunTime:0.024853s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_admin_menu` WHERE  `parent_id` = 75  AND `status` = 1 ORDER BY `list_order` ASC [ RunTime:0.021358s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_admin_menu` WHERE  `parent_id` = 109  AND `status` = 1 ORDER BY `list_order` ASC [ RunTime:0.021294s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ld_auth_rule` WHERE  `name` = 'admin/user/default' LIMIT 1 [ RunTime:0.021023s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `ld_role_user` `a` INNER JOIN `ld_role` `r` ON `a`.`role_id`=`r`.`id` WHERE  `a`.`user_id` = 2  AND `r`.`status` = 1 [ RunTime:0.020864s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ld_auth_rule` WHERE  `name` = 'user/adminindex/default1' LIMIT 1 [ RunTime:0.020640s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `ld_role_user` `a` INNER JOIN `ld_role` `r` ON `a`.`role_id`=`r`.`id` WHERE  `a`.`user_id` = 2  AND `r`.`status` = 1 [ RunTime:0.020757s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_admin_menu` WHERE  `parent_id` = 49  AND `status` = 1 ORDER BY `list_order` ASC [ RunTime:0.021314s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ld_auth_rule` WHERE  `name` = 'admin/rbac/index' LIMIT 1 [ RunTime:0.020846s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `ld_role_user` `a` INNER JOIN `ld_role` `r` ON `a`.`role_id`=`r`.`id` WHERE  `a`.`user_id` = 2  AND `r`.`status` = 1 [ RunTime:0.020739s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ld_auth_rule` WHERE  `name` = 'admin/user/index' LIMIT 1 [ RunTime:0.020839s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `ld_role_user` `a` INNER JOIN `ld_role` `r` ON `a`.`role_id`=`r`.`id` WHERE  `a`.`user_id` = 2  AND `r`.`status` = 1 [ RunTime:0.020806s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_admin_menu` WHERE  `parent_id` = 50  AND `status` = 1 ORDER BY `list_order` ASC [ RunTime:0.021396s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_admin_menu` WHERE  `parent_id` = 110  AND `status` = 1 ORDER BY `list_order` ASC [ RunTime:0.021743s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_admin_menu` WHERE  `parent_id` = 152  AND `status` = 1 ORDER BY `list_order` ASC [ RunTime:0.021543s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ld_auth_rule` WHERE  `name` = 'user/adminindex/index' LIMIT 1 [ RunTime:0.020953s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `ld_role_user` `a` INNER JOIN `ld_role` `r` ON `a`.`role_id`=`r`.`id` WHERE  `a`.`user_id` = 2  AND `r`.`status` = 1 [ RunTime:0.021002s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ld_auth_rule` WHERE  `name` = 'user/adminoauth/index' LIMIT 1 [ RunTime:0.020848s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `ld_role_user` `a` INNER JOIN `ld_role` `r` ON `a`.`role_id`=`r`.`id` WHERE  `a`.`user_id` = 2  AND `r`.`status` = 1 [ RunTime:0.023041s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_admin_menu` WHERE  `parent_id` = 153  AND `status` = 1 ORDER BY `list_order` ASC [ RunTime:0.021114s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_admin_menu` WHERE  `parent_id` = 156  AND `status` = 1 ORDER BY `list_order` ASC [ RunTime:0.021527s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_admin_menu` WHERE  `parent_id` = 120  AND `status` = 1 ORDER BY `list_order` ASC [ RunTime:0.021432s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ld_auth_rule` WHERE  `name` = 'portal/adminarticle/index' LIMIT 1 [ RunTime:0.021033s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `ld_role_user` `a` INNER JOIN `ld_role` `r` ON `a`.`role_id`=`r`.`id` WHERE  `a`.`user_id` = 2  AND `r`.`status` = 1 [ RunTime:0.020824s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ld_auth_rule` WHERE  `name` = 'portal/adminabout/index' LIMIT 1 [ RunTime:0.021230s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `ld_role_user` `a` INNER JOIN `ld_role` `r` ON `a`.`role_id`=`r`.`id` WHERE  `a`.`user_id` = 2  AND `r`.`status` = 1 [ RunTime:0.021827s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ld_auth_rule` WHERE  `name` = 'portal/adminres/index' LIMIT 1 [ RunTime:0.020870s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `ld_role_user` `a` INNER JOIN `ld_role` `r` ON `a`.`role_id`=`r`.`id` WHERE  `a`.`user_id` = 2  AND `r`.`status` = 1 [ RunTime:0.020851s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ld_auth_rule` WHERE  `name` = 'portal/adminproducts/index' LIMIT 1 [ RunTime:0.021281s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `ld_role_user` `a` INNER JOIN `ld_role` `r` ON `a`.`role_id`=`r`.`id` WHERE  `a`.`user_id` = 2  AND `r`.`status` = 1 [ RunTime:0.020751s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ld_auth_rule` WHERE  `name` = 'portal/adminsource/index' LIMIT 1 [ RunTime:0.021216s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `ld_role_user` `a` INNER JOIN `ld_role` `r` ON `a`.`role_id`=`r`.`id` WHERE  `a`.`user_id` = 2  AND `r`.`status` = 1 [ RunTime:0.020988s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ld_auth_rule` WHERE  `name` = 'portal/adminconwe/index' LIMIT 1 [ RunTime:0.021010s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `ld_role_user` `a` INNER JOIN `ld_role` `r` ON `a`.`role_id`=`r`.`id` WHERE  `a`.`user_id` = 2  AND `r`.`status` = 1 [ RunTime:0.020762s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ld_auth_rule` WHERE  `name` = 'portal/admindownload/index' LIMIT 1 [ RunTime:0.020766s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `ld_role_user` `a` INNER JOIN `ld_role` `r` ON `a`.`role_id`=`r`.`id` WHERE  `a`.`user_id` = 2  AND `r`.`status` = 1 [ RunTime:0.020677s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ld_auth_rule` WHERE  `name` = 'portal/adminposition/index' LIMIT 1 [ RunTime:0.020608s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `ld_role_user` `a` INNER JOIN `ld_role` `r` ON `a`.`role_id`=`r`.`id` WHERE  `a`.`user_id` = 2  AND `r`.`status` = 1 [ RunTime:0.020609s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_admin_menu` WHERE  `parent_id` = 121  AND `status` = 1 ORDER BY `list_order` ASC [ RunTime:0.021295s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_admin_menu` WHERE  `parent_id` = 179  AND `status` = 1 ORDER BY `list_order` ASC [ RunTime:0.020977s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_admin_menu` WHERE  `parent_id` = 180  AND `status` = 1 ORDER BY `list_order` ASC [ RunTime:0.021405s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_admin_menu` WHERE  `parent_id` = 181  AND `status` = 1 ORDER BY `list_order` ASC [ RunTime:0.021308s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_admin_menu` WHERE  `parent_id` = 182  AND `status` = 1 ORDER BY `list_order` ASC [ RunTime:0.021031s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_admin_menu` WHERE  `parent_id` = 183  AND `status` = 1 ORDER BY `list_order` ASC [ RunTime:0.021307s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_admin_menu` WHERE  `parent_id` = 190  AND `status` = 1 ORDER BY `list_order` ASC [ RunTime:0.021656s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_admin_menu` WHERE  `parent_id` = 163  AND `status` = 1 ORDER BY `list_order` ASC [ RunTime:0.020999s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_admin_menu` WHERE  `parent_id` = 168  AND `status` = 1 ORDER BY `list_order` ASC [ RunTime:0.021198s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ld_auth_rule` WHERE  `name` = 'portal/adminarticleen/index' LIMIT 1 [ RunTime:0.020616s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `ld_role_user` `a` INNER JOIN `ld_role` `r` ON `a`.`role_id`=`r`.`id` WHERE  `a`.`user_id` = 2  AND `r`.`status` = 1 [ RunTime:0.020887s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ld_auth_rule` WHERE  `name` = 'portal/adminabouten/index' LIMIT 1 [ RunTime:0.020838s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `ld_role_user` `a` INNER JOIN `ld_role` `r` ON `a`.`role_id`=`r`.`id` WHERE  `a`.`user_id` = 2  AND `r`.`status` = 1 [ RunTime:0.020511s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ld_auth_rule` WHERE  `name` = 'portal/adminsourceen/index' LIMIT 1 [ RunTime:0.020686s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `ld_role_user` `a` INNER JOIN `ld_role` `r` ON `a`.`role_id`=`r`.`id` WHERE  `a`.`user_id` = 2  AND `r`.`status` = 1 [ RunTime:0.020910s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ld_auth_rule` WHERE  `name` = 'portal/adminresen/index' LIMIT 1 [ RunTime:0.020776s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `ld_role_user` `a` INNER JOIN `ld_role` `r` ON `a`.`role_id`=`r`.`id` WHERE  `a`.`user_id` = 2  AND `r`.`status` = 1 [ RunTime:0.020763s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ld_auth_rule` WHERE  `name` = 'portal/adminproductsen/index' LIMIT 1 [ RunTime:0.020917s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `ld_role_user` `a` INNER JOIN `ld_role` `r` ON `a`.`role_id`=`r`.`id` WHERE  `a`.`user_id` = 2  AND `r`.`status` = 1 [ RunTime:0.020830s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ld_auth_rule` WHERE  `name` = 'portal/adminconween/index' LIMIT 1 [ RunTime:0.020816s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `ld_role_user` `a` INNER JOIN `ld_role` `r` ON `a`.`role_id`=`r`.`id` WHERE  `a`.`user_id` = 2  AND `r`.`status` = 1 [ RunTime:0.021431s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ld_auth_rule` WHERE  `name` = 'portal/admindownloaden/index' LIMIT 1 [ RunTime:0.021359s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `ld_role_user` `a` INNER JOIN `ld_role` `r` ON `a`.`role_id`=`r`.`id` WHERE  `a`.`user_id` = 2  AND `r`.`status` = 1 [ RunTime:0.020771s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ld_auth_rule` WHERE  `name` = 'portal/adminpositionen/index' LIMIT 1 [ RunTime:0.021148s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `ld_role_user` `a` INNER JOIN `ld_role` `r` ON `a`.`role_id`=`r`.`id` WHERE  `a`.`user_id` = 2  AND `r`.`status` = 1 [ RunTime:0.020608s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_admin_menu` WHERE  `parent_id` = 170  AND `status` = 1 ORDER BY `list_order` ASC [ RunTime:0.021113s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_admin_menu` WHERE  `parent_id` = 171  AND `status` = 1 ORDER BY `list_order` ASC [ RunTime:0.021189s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_admin_menu` WHERE  `parent_id` = 172  AND `status` = 1 ORDER BY `list_order` ASC [ RunTime:0.021286s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_admin_menu` WHERE  `parent_id` = 173  AND `status` = 1 ORDER BY `list_order` ASC [ RunTime:0.021187s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_admin_menu` WHERE  `parent_id` = 175  AND `status` = 1 ORDER BY `list_order` ASC [ RunTime:0.021528s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_admin_menu` WHERE  `parent_id` = 189  AND `status` = 1 ORDER BY `list_order` ASC [ RunTime:0.021254s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_admin_menu` WHERE  `parent_id` = 191  AND `status` = 1 ORDER BY `list_order` ASC [ RunTime:0.021423s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_admin_menu` WHERE  `parent_id` = 194  AND `status` = 1 ORDER BY `list_order` ASC [ RunTime:0.021599s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_admin_menu` WHERE  `parent_id` = 184  AND `status` = 1 ORDER BY `list_order` ASC [ RunTime:0.021757s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ld_auth_rule` WHERE  `name` = 'portal/admincategory/index' LIMIT 1 [ RunTime:0.021236s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `ld_role_user` `a` INNER JOIN `ld_role` `r` ON `a`.`role_id`=`r`.`id` WHERE  `a`.`user_id` = 2  AND `r`.`status` = 1 [ RunTime:0.021209s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ld_auth_rule` WHERE  `name` = 'portal/admincategoryen/index' LIMIT 1 [ RunTime:0.021100s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `ld_role_user` `a` INNER JOIN `ld_role` `r` ON `a`.`role_id`=`r`.`id` WHERE  `a`.`user_id` = 2  AND `r`.`status` = 1 [ RunTime:0.020735s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_admin_menu` WHERE  `parent_id` = 185  AND `status` = 1 ORDER BY `list_order` ASC [ RunTime:0.021428s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_admin_menu` WHERE  `parent_id` = 188  AND `status` = 1 ORDER BY `list_order` ASC [ RunTime:0.021345s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_admin_menu` ORDER BY `app` ASC,`controller` ASC,`action` ASC [ RunTime:0.033608s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ld_auth_rule` WHERE  `name` = 'admin/setting/site' LIMIT 1 [ RunTime:0.020543s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `ld_role_user` `a` INNER JOIN `ld_role` `r` ON `a`.`role_id`=`r`.`id` WHERE  `a`.`user_id` = 2  AND `r`.`status` = 1 [ RunTime:0.020692s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ld_auth_rule` WHERE  `name` = 'admin/user/userinfo' LIMIT 1 [ RunTime:0.020849s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `ld_role_user` `a` INNER JOIN `ld_role` `r` ON `a`.`role_id`=`r`.`id` WHERE  `a`.`user_id` = 2  AND `r`.`status` = 1 [ RunTime:0.020994s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ld_auth_rule` WHERE  `name` = 'admin/setting/password' LIMIT 1 [ RunTime:0.020795s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `ld_role_user` `a` INNER JOIN `ld_role` `r` ON `a`.`role_id`=`r`.`id` WHERE  `a`.`user_id` = 2  AND `r`.`status` = 1 [ RunTime:0.020585s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ld_auth_rule` WHERE  `name` = 'portal/admincategory/index' LIMIT 1 [ RunTime:0.021474s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `ld_role_user` `a` INNER JOIN `ld_role` `r` ON `a`.`role_id`=`r`.`id` WHERE  `a`.`user_id` = 2  AND `r`.`status` = 1 [ RunTime:0.020757s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ld_auth_rule` WHERE  `name` = 'portal/adminarticle/index' LIMIT 1 [ RunTime:0.020682s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `ld_role_user` `a` INNER JOIN `ld_role` `r` ON `a`.`role_id`=`r`.`id` WHERE  `a`.`user_id` = 2  AND `r`.`status` = 1 [ RunTime:0.020492s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ld_auth_rule` WHERE  `name` = 'user/adminasset/index' LIMIT 1 [ RunTime:0.021086s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `ld_role_user` `a` INNER JOIN `ld_role` `r` ON `a`.`role_id`=`r`.`id` WHERE  `a`.`user_id` = 2  AND `r`.`status` = 1 [ RunTime:0.021418s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ld_auth_rule` WHERE  `name` = 'admin/setting/clearcache' LIMIT 1 [ RunTime:0.021485s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `ld_role_user` `a` INNER JOIN `ld_role` `r` ON `a`.`role_id`=`r`.`id` WHERE  `a`.`user_id` = 2  AND `r`.`status` = 1 [ RunTime:0.020543s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ld_auth_rule` WHERE  `name` = 'admin/recyclebin/index' LIMIT 1 [ RunTime:0.020682s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `ld_role_user` `a` INNER JOIN `ld_role` `r` ON `a`.`role_id`=`r`.`id` WHERE  `a`.`user_id` = 2  AND `r`.`status` = 1 [ RunTime:0.020730s ]
+---------------------------------------------------------------
+[ 2020-09-04T16:45:58+08:00 ] 127.0.0.1 GET /admin/main/index.html
+[ info ] www.zhaopin.com:8080/admin/main/index.html [运行时间：0.366039s][吞吐率：2.73req/s] [内存消耗：3,020.13kb] [文件加载：83]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.008709s ]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'main',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=mphpp95f6em5rtgrsaqg326290; admin_username=admin',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.zhaopin.com:8080/ldadmin.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.zhaopin.com:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.013834s ]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/admin\lang\zh-cn.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/admin\lang\zh-cn\admin_menu.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/admin\lang\zh-cn\admin.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/user\lang\zh-cn\admin_menu.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../data/lang/zh-cn/admin_menu.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\AdminLangBehavior @admin_init [ RunTime:0.050982s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\MainController->index[ E:\phpStudy\PHPTutorial\WWW\zhaopin\app\admin\controller\MainController.php ]
+[ info ] [ VIEW ] themes/admin/admin\main\index.html [ array (
+  0 => 'admin',
+  1 => 'dashboard_widgets',
+  2 => 'dashboard_widget_plugins',
+  3 => 'has_smtp_setting',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.032350s ] mysql:host=47.92.238.166;port=3306;dbname=zhaopin;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ld_user` [ RunTime:0.018516s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_user` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.018695s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ld_option` [ RunTime:0.018473s ]
+[ sql ] [ SQL ] SELECT `option_value` FROM `ld_option` WHERE  `option_name` = 'admin_dashboard_widgets' LIMIT 1 [ RunTime:0.018029s ]
+---------------------------------------------------------------
+[ 2020-09-04T16:46:08+08:00 ] 127.0.0.1 GET /admin/main/index.html
+[ info ] www.zhaopin.com:8080/admin/main/index.html [运行时间：0.240648s][吞吐率：4.16req/s] [内存消耗：3,020.25kb] [文件加载：83]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.007271s ]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'main',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; PHPSESSID=mphpp95f6em5rtgrsaqg326290; admin_username=admin',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.zhaopin.com:8080/admin/main/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.zhaopin.com:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.007734s ]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/admin\lang\zh-cn.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/admin\lang\zh-cn\admin_menu.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/admin\lang\zh-cn\admin.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/user\lang\zh-cn\admin_menu.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../data/lang/zh-cn/admin_menu.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\AdminLangBehavior @admin_init [ RunTime:0.008977s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\MainController->index[ E:\phpStudy\PHPTutorial\WWW\zhaopin\app\admin\controller\MainController.php ]
+[ info ] [ VIEW ] themes/admin/admin\main\index.html [ array (
+  0 => 'admin',
+  1 => 'dashboard_widgets',
+  2 => 'dashboard_widget_plugins',
+  3 => 'has_smtp_setting',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.028366s ] mysql:host=47.92.238.166;port=3306;dbname=zhaopin;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ld_user` [ RunTime:0.018326s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_user` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.017978s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ld_option` [ RunTime:0.017915s ]
+[ sql ] [ SQL ] SELECT `option_value` FROM `ld_option` WHERE  `option_name` = 'admin_dashboard_widgets' LIMIT 1 [ RunTime:0.017291s ]
+---------------------------------------------------------------
+[ 2020-09-04T16:56:29+08:00 ] 127.0.0.1 GET /portal/admin_category/index.html
+[ info ] www.zhaopin.com:8080/portal/admin_category/index.html [运行时间：0.383952s][吞吐率：2.60req/s] [内存消耗：3,330.08kb] [文件加载：89]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.006686s ]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'portal',
+    1 => 'admin_category',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=mphpp95f6em5rtgrsaqg326290; admin_username=admin',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.zhaopin.com:8080/ldadmin.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.zhaopin.com:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.007588s ]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/portal\lang\zh-cn.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/admin\lang\zh-cn\admin_menu.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/admin\lang\zh-cn\admin.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/user\lang\zh-cn\admin_menu.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../data/lang/zh-cn/admin_menu.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\AdminLangBehavior @admin_init [ RunTime:0.007483s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\portal\controller\AdminCategoryController->index[ E:\phpStudy\PHPTutorial\WWW\zhaopin\app\portal\controller\AdminCategoryController.php ]
+[ info ] [ VIEW ] themes/admin/portal\admin_category\index.html [ array (
+  0 => 'admin',
+  1 => 'category_tree',
+  2 => 'keyword',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.039360s ] mysql:host=47.92.238.166;port=3306;dbname=zhaopin;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ld_user` [ RunTime:0.019748s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_user` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.019249s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ld_auth_rule` [ RunTime:0.019129s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ld_auth_rule` WHERE  `name` = 'portal/admincategory/index' LIMIT 1 [ RunTime:0.018257s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ld_role_user` [ RunTime:0.019273s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `ld_role_user` `a` INNER JOIN `ld_role` `r` ON `a`.`role_id`=`r`.`id` WHERE  `a`.`user_id` = 2  AND `r`.`status` = 1 [ RunTime:0.018763s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ld_portal_category` [ RunTime:0.019607s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_portal_category` WHERE  `delete_time` = 0 ORDER BY `list_order` ASC [ RunTime:0.019931s ]
+---------------------------------------------------------------
+[ 2020-09-04T16:56:32+08:00 ] 127.0.0.1 GET /portal/admin_categoryen/index.html
+[ info ] www.zhaopin.com:8080/portal/admin_categoryen/index.html [运行时间：0.470338s][吞吐率：2.13req/s] [内存消耗：3,458.12kb] [文件加载：92]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.005849s ]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'portal',
+    1 => 'admin_categoryen',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=mphpp95f6em5rtgrsaqg326290; admin_username=admin',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.zhaopin.com:8080/ldadmin.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.zhaopin.com:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.007988s ]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/portal\lang\zh-cn.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/admin\lang\zh-cn\admin_menu.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/admin\lang\zh-cn\admin.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/user\lang\zh-cn\admin_menu.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../data/lang/zh-cn/admin_menu.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\AdminLangBehavior @admin_init [ RunTime:0.008420s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\portal\controller\AdminCategoryenController->index[ E:\phpStudy\PHPTutorial\WWW\zhaopin\app\portal\controller\AdminCategoryenController.php ]
+[ info ] [ VIEW ] themes/admin/portal\admin_categoryen\index.html [ array (
+  0 => 'admin',
+  1 => 'category_tree',
+  2 => 'keyword',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.033133s ] mysql:host=47.92.238.166;port=3306;dbname=zhaopin;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ld_user` [ RunTime:0.021814s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_user` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.021873s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ld_auth_rule` [ RunTime:0.021082s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ld_auth_rule` WHERE  `name` = 'portal/admincategoryen/index' LIMIT 1 [ RunTime:0.020085s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ld_role_user` [ RunTime:0.021336s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `ld_role_user` `a` INNER JOIN `ld_role` `r` ON `a`.`role_id`=`r`.`id` WHERE  `a`.`user_id` = 2  AND `r`.`status` = 1 [ RunTime:0.020835s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ld_portal_categoryen` [ RunTime:0.021760s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_portal_categoryen` WHERE  `delete_time` = 0 ORDER BY `list_order` ASC [ RunTime:0.022986s ]
+---------------------------------------------------------------
+[ 2020-09-04T16:56:40+08:00 ] 127.0.0.1 GET /portal/admin_categoryen/index.html
+[ info ] www.zhaopin.com:8080/portal/admin_categoryen/index.html [运行时间：0.327352s][吞吐率：3.05req/s] [内存消耗：3,458.14kb] [文件加载：92]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.005050s ]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'portal',
+    1 => 'admin_categoryen',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; PHPSESSID=mphpp95f6em5rtgrsaqg326290; admin_username=admin',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.zhaopin.com:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.004404s ]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/portal\lang\zh-cn.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/admin\lang\zh-cn\admin_menu.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/admin\lang\zh-cn\admin.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/user\lang\zh-cn\admin_menu.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../data/lang/zh-cn/admin_menu.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\AdminLangBehavior @admin_init [ RunTime:0.009000s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\portal\controller\AdminCategoryenController->index[ E:\phpStudy\PHPTutorial\WWW\zhaopin\app\portal\controller\AdminCategoryenController.php ]
+[ info ] [ VIEW ] themes/admin/portal\admin_categoryen\index.html [ array (
+  0 => 'admin',
+  1 => 'category_tree',
+  2 => 'keyword',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.034582s ] mysql:host=47.92.238.166;port=3306;dbname=zhaopin;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ld_user` [ RunTime:0.017922s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_user` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.017421s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ld_auth_rule` [ RunTime:0.017434s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ld_auth_rule` WHERE  `name` = 'portal/admincategoryen/index' LIMIT 1 [ RunTime:0.016529s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ld_role_user` [ RunTime:0.017486s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `ld_role_user` `a` INNER JOIN `ld_role` `r` ON `a`.`role_id`=`r`.`id` WHERE  `a`.`user_id` = 2  AND `r`.`status` = 1 [ RunTime:0.016638s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ld_portal_categoryen` [ RunTime:0.017517s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_portal_categoryen` WHERE  `delete_time` = 0 ORDER BY `list_order` ASC [ RunTime:0.017913s ]
+---------------------------------------------------------------
+[ 2020-09-04T16:58:47+08:00 ] 127.0.0.1 GET /portal/admin_categoryen/index.html
+[ info ] www.zhaopin.com:8080/portal/admin_categoryen/index.html [运行时间：0.355343s][吞吐率：2.81req/s] [内存消耗：3,458.14kb] [文件加载：92]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.008317s ]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'portal',
+    1 => 'admin_categoryen',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; PHPSESSID=mphpp95f6em5rtgrsaqg326290; admin_username=admin',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.zhaopin.com:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.004547s ]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/portal\lang\zh-cn.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/admin\lang\zh-cn\admin_menu.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/admin\lang\zh-cn\admin.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/user\lang\zh-cn\admin_menu.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../data/lang/zh-cn/admin_menu.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\AdminLangBehavior @admin_init [ RunTime:0.007987s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\portal\controller\AdminCategoryenController->index[ E:\phpStudy\PHPTutorial\WWW\zhaopin\app\portal\controller\AdminCategoryenController.php ]
+[ info ] [ VIEW ] themes/admin/portal\admin_categoryen\index.html [ array (
+  0 => 'admin',
+  1 => 'category_tree',
+  2 => 'keyword',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.029707s ] mysql:host=47.92.238.166;port=3306;dbname=zhaopin;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ld_user` [ RunTime:0.018841s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_user` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.018439s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ld_auth_rule` [ RunTime:0.019049s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ld_auth_rule` WHERE  `name` = 'portal/admincategoryen/index' LIMIT 1 [ RunTime:0.017426s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ld_role_user` [ RunTime:0.016803s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `ld_role_user` `a` INNER JOIN `ld_role` `r` ON `a`.`role_id`=`r`.`id` WHERE  `a`.`user_id` = 2  AND `r`.`status` = 1 [ RunTime:0.019288s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ld_portal_categoryen` [ RunTime:0.021763s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_portal_categoryen` WHERE  `delete_time` = 0 ORDER BY `list_order` ASC [ RunTime:0.018411s ]

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:34:"themes/admin/admin\main\index.html";i:1543480324;s:70:"E:\phpStudy\PHPTutorial\WWW\xsj\public\themes\admin\public\header.html";i:1543480324;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:34:"themes/admin/admin\main\index.html";i:1599199032;s:74:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\admin\public\header.html";i:1599199034;}*/ ?>
   <div class="panel panel-default">
     <div class="panel-heading">
       <h3 class="panel-title">系统概览</h3>
@@ -137,7 +137,7 @@
 
 </style>
 <?php 
-    \think\Hook::listen('admin_before_head_end',$temp5d3008a231f7f,null,false);
+    \think\Hook::listen('admin_before_head_end',$temp5f51fed05f838,null,false);
  ?>
 </head>
 <body>
@@ -268,7 +268,7 @@
         });
 </script>
 <?php 
-    \think\Hook::listen('admin_before_body_end',$temp5d3008a231f92,null,false);
+    \think\Hook::listen('admin_before_body_end',$temp5f51fed05f84a,null,false);
  ?>
 </body>
 </html>

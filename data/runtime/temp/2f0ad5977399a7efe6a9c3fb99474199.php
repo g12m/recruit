@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:45:"themes/admin/portal\admin_category\index.html";i:1563346188;s:70:"E:\phpStudy\PHPTutorial\WWW\xsj\public\themes\admin\public\header.html";i:1543480324;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:45:"themes/admin/portal\admin_category\index.html";i:1599199033;s:74:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\admin\public\header.html";i:1599199034;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
