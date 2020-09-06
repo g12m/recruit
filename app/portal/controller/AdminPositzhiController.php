@@ -34,21 +34,13 @@ class AdminPositzhiController extends AdminBaseController
      */
     public function index()
     {
-        $where=[];
-        $param = $this->request->param();
-          $list                  = Db::name('jobfair')
-        ->where($where)
-        ->paginate(6)
-         ->each(function($item,$key){
-           $item['pos_ids'] = get_zhiwei_info($item['id']);
-             return   $item;
-           });
-        ;
+        $where                 = [];
+        $param                 = $this->request->param();
+        $list                  = Db::name('ent_position')->order('time DESC')->paginate(10);
         $list->appends($param);
         $this->assign('page', $list->render());
-        $this->assign('list', $list);    
-
-        return $this->fetch();
+        $this->assign('list', $list);
+        return     $this->fetch();
     }
 
 
@@ -68,13 +60,12 @@ class AdminPositzhiController extends AdminBaseController
      */
     public function edit()
     {
-        $id = $this->request->param('id', 0, 'intval');
+        $id                = $this->request->param('id', 0, 'intval');
 
-        $portalPostModel = new PortalPostModel();
-        $post            = $portalPostModel->where('id', $id)->find();
-        $postCategories  = $post->categories()->alias('a')->column('a.name', 'a.id');
-        $postCategoryIds = implode(',', array_keys($postCategories));
-
+        $portalPostModel   = new PortalPostModel();
+        $post              = $portalPostModel->where('id', $id)->find();
+        $postCategories    = $post->categories()->alias('a')->column('a.name', 'a.id');
+        $postCategoryIds   = implode(',', array_keys($postCategories));
         $themeModel        = new ThemeModel();
         $articleThemeFiles = $themeModel->getActionThemeFiles('portal/Article/index');
         // 获取当前栏目(顶级栏目)推荐位

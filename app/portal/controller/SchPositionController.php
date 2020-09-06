@@ -24,7 +24,6 @@ class   SchPositionController extends HomeBaseController
         $list->appends($param);
         $this->assign('page', $list->render());
         $this->assign('list', $list);
-        
         return $this->fetch();
     }
  

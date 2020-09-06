@@ -4,7 +4,7 @@
 <div class="wrap js-check-wrap">
     <ul class="nav nav-tabs">
         <li class="active"><a href="javascript:;">所有文章</a></li>
-        <li><a href="{:url('AdminPositzhi/add')}">添加文章</a></li>
+        <!-- <li><a href="{:url('AdminPositzhi/add')}">添加文章</a></li> -->
     </ul>
 
     <form class="js-ajax-form" action="" method="post">
@@ -30,7 +30,8 @@
 
               
                 <th width="50">ID</th>
-                <th>会场名称</th>
+                <th>公司名称</th>
+                <th>职位</th>
                   <th>容纳人数</th>
                 <th width="130">发布时间</th>
 
@@ -39,22 +40,32 @@
             </thead>
             <foreach name="list" item="vo">
                 <tr>
+                    <php>
+                        $ress=get_schnum($vo['uid']);
+                        $num=get_countsch($vo['uid']);
+                        foreach($ress as $k=>$v)
+                        {
+                        $arr[] = $v['title'];
+                        }
+                        $str = implode('、',$arr);
+                    </php>
                     <td>
                         <input type="checkbox" class="js-check" data-yid="js-check-y" data-xid="js-check-x" name="ids[]"
                                value="{$vo.id}" title="ID:{$vo.id}">
                     </td>
 
-                      
-
                     <td><b>{$vo.id}</b></td>
                     <td>
-                      <a>{$vo.address}</a>
+                      <a>{$vo.title}</a>
                     </td>
                     <td>
-                        <a >{$vo.num}</a>
+                        <a>{$str}</a>
                     </td>
                     <td>
-                      {:date('Y-m-d H:i',$vo['cre_time'])}
+                        <a >{$num}</a>
+                    </td>
+                    <td>
+                      {:date('Y-m-d H:i',$vo['time'])}
                     </td>
                     <td>
                         <a href="{:url('AdminPositzhi/edit',array('id'=>$vo['id']))}">{:lang('EDIT')}</a>

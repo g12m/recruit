@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:45:"themes/admin/portal\admin_positzhi\index.html";i:1599372286;s:74:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\admin\public\header.html";i:1599199034;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:45:"themes/admin/portal\admin_positzhi\index.html";i:1599389042;s:74:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\admin\public\header.html";i:1599199034;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -85,7 +85,7 @@
 <div class="wrap js-check-wrap">
     <ul class="nav nav-tabs">
         <li class="active"><a href="javascript:;">所有文章</a></li>
-        <li><a href="<?php echo url('AdminPositzhi/add'); ?>">添加文章</a></li>
+        <!-- <li><a href="<?php echo url('AdminPositzhi/add'); ?>">添加文章</a></li> -->
     </ul>
 
     <form class="js-ajax-form" action="" method="post">
@@ -111,7 +111,8 @@
 
               
                 <th width="50">ID</th>
-                <th>会场名称</th>
+                <th>公司名称</th>
+                <th>职位</th>
                   <th>容纳人数</th>
                 <th width="130">发布时间</th>
 
@@ -120,22 +121,32 @@
             </thead>
             <?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): if( count($list)==0 ) : echo "" ;else: foreach($list as $key=>$vo): ?>
                 <tr>
+                    <?php 
+                        $ress=get_schnum($vo['uid']);
+                        $num=get_countsch($vo['uid']);
+                        foreach($ress as $k=>$v)
+                        {
+                        $arr[] = $v['title'];
+                        }
+                        $str = implode('、',$arr);
+                     ?>
                     <td>
                         <input type="checkbox" class="js-check" data-yid="js-check-y" data-xid="js-check-x" name="ids[]"
                                value="<?php echo $vo['id']; ?>" title="ID:<?php echo $vo['id']; ?>">
                     </td>
 
-                      
-
                     <td><b><?php echo $vo['id']; ?></b></td>
                     <td>
-                      <a><?php echo $vo['address']; ?></a>
+                      <a><?php echo $vo['title']; ?></a>
                     </td>
                     <td>
-                        <a ><?php echo $vo['num']; ?></a>
+                        <a><?php echo $str; ?></a>
                     </td>
                     <td>
-                      <?php echo date('Y-m-d H:i',$vo['cre_time']); ?>
+                        <a ><?php echo $num; ?></a>
+                    </td>
+                    <td>
+                      <?php echo date('Y-m-d H:i',$vo['time']); ?>
                     </td>
                     <td>
                         <a href="<?php echo url('AdminPositzhi/edit',array('id'=>$vo['id'])); ?>"><?php echo lang('EDIT'); ?></a>
