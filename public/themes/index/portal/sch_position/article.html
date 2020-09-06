@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        4有限公司
+        招聘人数 {$num}
+        联系人
+        电话
+       
+        <empty name="value">
+        <a href="{:url('portal/sch_position/release')}">发布</a>
+        <else/>
+        已关联
+        </empty>
+        
+        
+      
+    </ul>
+    ----------------------------------
+    招聘职位
+    <table>
+        <foreach name="info" item="v3">
+    
+        
+                    <tr>
+                        <td>职位名称：{$v3.title}</td>
+                        <td>专业：{$v3.major}</td>
+                        <td>招聘人数：
+                            {$v3.num}
+                        </td>
+    
+                        <td>职位类型：
+                            <?php echo $v3['type']==1?'正式':"实习";?>
+                        </td>
+                        <td>薪资范围：{$v3.salary_min}~{$v3.salary_max}</td>
+                        <td>有效期：{$v3.effective_time|date="Y年m月d日",###}</td>
+    
+                        <td>职位描述：
+                            {$v3.desc}
+                        </td>
+    
+                    </tr>
+                </foreach>
+         
+    </table>
+ 
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+       
+        
+    <php>
+        $ress=get_schnum(4);
+        $num=get_countsch(4);
+    foreach($ress as $k=>$v)
+    {
+        $arr[] = $v['title'];
+    }
+    $str = implode('、',$arr);
+    </php>
+  <table>
+      <tr>
+        <td>公司名称</td>
+        <td>招聘人数</td>
+        <td>职位</td>
+      </tr>
+      <tr>
+          <td>4有限公司</td>
+        <td>{$num}</td>
+        <td>{$str}</td>
+      </tr>
+  </table>
+            <!-- <li>
+                <foreach name="list" item="vo">
+                场地：
+             
+              
+                </foreach>
+            </li> -->
+
+        <!-- </foreach> -->
+    </ul>
+ 
+</body>
+</html>

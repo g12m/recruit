@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <foreach name="list" item="vo">
+           <tr>
+            <td>场地：{$vo.title}</td>
+            <td>招聘人数：{$vo.num}</td>
+            <td>招聘职位：
+                <foreach name="$vo['pos_ids']" item="v">
+               
+                <?php echo get_zhiwei_name($v['pos_id']);?>
+                </foreach>
+            </td>
+            <php>
+                $res=json_decode($vo['alt_time'],true);
+            </php>
+            <td>备选日期：
+                <foreach name="res" item="v">
+                {$v|date="m-d H:i",###}
+                </foreach>
+            </td>
+            <td>开启日期：{$vo.time|date="m-d H:i",###}</td>
+            <td>截止日期：{$vo.dea_time|date="m-d H:i",###}</td>
+            <td>预约人数：{$vo.app_num}</td>
+            <td>状态：<?php echo $vo['status']==1?'未关联':($vo['status']==2?"已关联":"已失效");?></td>
+            </tr>
+        </foreach>
+    </table>
+ 
+</body>
+</html>

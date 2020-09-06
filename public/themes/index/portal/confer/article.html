@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        
+        
+            <li>场地：{$article.address}--容纳人数{$article.num}</li>
+        
+      
+    </ul>
+    ------------------------------------------------------------------
+<table>
+    <empty name="zp">
+        未关联
+        <else/>
+    <foreach name="zp" item="vo">
+        <?php $res=get_job($vo['fair_id']);?>
+    <foreach name="$res" item="v3">
+                
+                <tr>
+                    <td>招聘会名称：{$v3.title}</td>
+                    <td>关联日期：
+                        <php>
+                            $time=get_zptime($v3['id']);
+                        </php>
+                        {$time|date="m月d日 H:i",###}</td>
+                <td>招聘人数：{$v3.num}</td>
+                <td>招聘职位：
+                    <foreach name="$v3['pos_ids']" item="v">
+                
+                        <?php echo get_zhiwei_name($v['pos_id']);?>
+
+                    </foreach>
+                </td>
+                <php>
+                    $restime=json_decode($v3['alt_time'],true);
+                </php>
+                <td>备选日期：
+                    <foreach name="restime" item="v">
+                        {$v|date="m-d H:i",###}
+                    </foreach>
+                </td>
+                <td>开启日期：{$v3.time|date="m-d H:i",###}</td>
+              
+             <td>预约人数：{$v3.app_num}</td>
+             <td>简历：</td>
+            <td>公司名称：</td>
+                </tr>
+           
+        </foreach>
+    </foreach>
+    </empty>
+</table>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <foreach name="list" item="vo">
+       
+            <li>场地：{$vo.address}--容纳人数{$vo.num}---招聘排期
+                <?php $num=get_pqnum($vo['id']);?>
+                <empty name="num" item="vo">
+                    无
+                <else/>
+                  {$num}场
+                </empty>
+            </li>
+
+        </foreach>
+    </ul>
+ 
+</body>
+</html>

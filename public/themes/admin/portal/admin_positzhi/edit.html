@@ -1,0 +1,204 @@
+<include file="public@header"/>
+<style type="text/css">
+    .pic-list li {
+        margin-bottom: 5px;
+    }
+</style>
+<script type="text/html" id="photos-item-tpl">
+    <li id="saved-image{id}">
+        <input id="photo-{id}" type="hidden" name="photo_urls[]" value="{filepath}">
+        <input class="form-control" id="photo-{id}-name" type="text" name="photo_names[]" value="{name}"
+               style="width: 200px;" title="图片名称">
+        <img id="photo-{id}-preview" src="{url}" style="height:36px;width: 36px;"
+             onclick="imagePreviewDialog(this.src);">
+        <a href="javascript:uploadOneImage('图片上传','#photo-{id}');">替换</a>
+        <a href="javascript:(function(){$('#saved-image{id}').remove();})();">移除</a>
+    </li>
+</script>
+<script type="text/html" id="files-item-tpl">
+    <li id="saved-file{id}">
+        <input id="file-{id}" type="hidden" name="file_urls[]" value="{filepath}">
+        <input class="form-control" id="file-{id}-name" type="text" name="file_names[]" value="{name}"
+               style="width: 200px;" title="文件名称">
+        <a id="file-{id}-preview" href="{preview_url}" target="_blank">下载</a>
+        <a href="javascript:uploadOne('文件上传','#file-{id}','file');">替换</a>
+        <a href="javascript:(function(){$('#saved-file{id}').remove();})();">移除</a>
+    </li>
+</script>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li><a href="{:url('AdminPositzhi/index')}">文章管理</a></li>
+        <li>
+            <a href="{:url('AdminPositzhi/add')}">添加文章</a>
+        </li>
+        <li class="active"><a href="#">编辑文章</a></li>
+    </ul>
+    <form action="{:url('AdminPositzhi/editPost')}" method="post" class="form-horizontal js-ajax-form margin-top-20">
+        <div class="row">
+            <div class="col-md-9">
+                <table class="table table-bordered">
+
+                    <tr>
+                        <th width="100">标题<span class="form-required">*</span></th>
+                        <td>
+                            <input id="post-id" type="hidden" name="post[id]" value="{$post.id}">
+                            <input class="form-control" type="text" name="post[name]"
+                                   required value="{$post.name}" placeholder="请输入标题"/>
+                        </td>
+                    </tr>
+            
+                    <tr>
+                        <th>X≤1W</th>
+                        <td>
+                            <input class="form-control" type="text" name="post[p1]"
+                                   id="title"  value="{$post.p1}" placeholder="请输入内容"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>1W≤X≤2W</th>
+                        <td>
+                            <input class="form-control" type="text" name="post[p2]"
+                                   id="title"  value="{$post.p2}" placeholder="请输入内容"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>2W≤X≤6W</th>
+                        <td>
+                            <input class="form-control" type="text" name="post[p3]"
+                                   id="title"  value="{$post.p3}" placeholder="请输入内容"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>6W≤X≤10W</th>
+                        <td>
+                            <input class="form-control" type="text" name="post[p4]"
+                                   id="title"  value="{$post.p4}" placeholder="请输入内容"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>10W≤X≤30W</th>
+                        <td>
+                            <input class="form-control" type="text" name="post[p5]"
+                                   id="title" value="{$post.p5}" placeholder="请输入内容"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>30W≤X≤50W</th>
+                        <td>
+                            <input class="form-control" type="text" name="post[p6]"
+                                   id="title"  value="{$post.p6}" placeholder="请输入内容"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>50W≤X≤100W</th>
+                        <td>
+                            <input class="form-control" type="text" name="post[p7]"
+                                   id="title"  value="{$post.p7}" placeholder="请输入内容"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>X>100W</th>
+                        <td>
+                            <input class="form-control" type="text" name="post[p8]"
+                                   id="title"  value="{$post.p8}" placeholder="请输入内容"/>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>发布时间</th>
+                        <td>
+                          <input class="form-control js-bootstrap-datetime" type="text" name="post[creatime]"
+                                 value="{:date('Y-m-d H:i',$post['creatime'])}" style="width:200px;">
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+            <div class="col-md-3">
+                <table class="table table-bordered">
+                    <!-- <tr>
+                        <th>缩略图</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div style="text-align: center;">
+                                <input type="hidden" name="post[more][thumbnail]" id="thumbnail"
+                                       value="{$post.more.thumbnail|default=''}">
+                                <a href="javascript:uploadOneImage('图片上传','#thumbnail');">
+                                    <if condition="empty($post.more.thumbnail)">
+                                        <img src="__TMPL__/public/assets/images/default-thumbnail.png"
+                                             id="thumbnail-preview"
+                                             width="135" style="cursor: pointer"/>
+                                        <else/>
+                                        <img src="{:cmf_get_image_preview_url($post.more.thumbnail)}"
+                                             id="thumbnail-preview"
+                                             width="135" style="cursor: pointer"/>
+                                    </if>
+                                </a>
+                                <input type="button" class="btn btn-sm btn-cancel-thumbnail" value="取消图片">
+                            </div>
+                        </td>
+                    </tr> -->
+
+                    <!-- <tr>
+                        <th>评论</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label style="width: 88px"><a
+                                    href="javascript:openIframeDialog('{:url('comment/commentadmin/index',array('post_id'=>$post['id']))}','评论列表')">查看评论</a></label>
+                        </td>
+                    </tr> -->
+
+
+
+
+                </table>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-primary js-ajax-submit">{:lang('SAVE')}</button>
+                <a class="btn btn-default" href="javascript:history.back(-1);">{:lang('BACK')}</a>
+            </div>
+        </div>
+    </form>
+</div>
+<script type="text/javascript" src="__STATIC__/js/admin.js"></script>
+<script type="text/javascript">
+    //编辑器路径定义
+    var editorURL = GV.WEB_ROOT;
+</script>
+
+<script type="text/javascript">
+    $(function () {
+
+        $('.btn-cancel-thumbnail').click(function () {
+            $('#thumbnail-preview').attr('src', '__TMPL__/public/assets/images/default-thumbnail.png');
+            $('#thumbnail').val('');
+        });
+        $('.btn-cancel-thumbnail_m').click(function () {
+            $('#thumbnail_m-preview').attr('src', '__TMPL__/public/assets/images/default-thumbnail.png');
+            $('#thumbnail_m').val('');
+        });
+        $('#more-template-select').val("{$post.more.template|default=''}");
+    });
+
+
+      function in_array(search,array)
+      {
+       // 检测数组中是否存在某变量
+        for(var i in array){
+            if(array[i]==search){
+                return true;
+            }
+        }
+        return false;
+      }
+</script>
+
+
+</body>
+</html>
