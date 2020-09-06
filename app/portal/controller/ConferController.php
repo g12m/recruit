@@ -67,7 +67,7 @@ class   ConferController extends HomeBaseController
         $article = Db::name('stu_conference')->where('id',$id)->delete(); 
         if($article)
         {
-            $this->success('删除会场成功');
+           return 1;
         }
         
     }
