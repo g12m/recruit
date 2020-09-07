@@ -142,10 +142,14 @@
 </style>
 <?php 
 <<<<<<< HEAD
+<<<<<<< HEAD
     \think\Hook::listen('admin_before_head_end',$temp5f52fe0f0028f,null,false);
 =======
     \think\Hook::listen('admin_before_head_end',$temp5f542d7be5609,null,false);
 >>>>>>> dev2
+=======
+    \think\Hook::listen('admin_before_head_end',$temp5f54bd9444514,null,false);
+>>>>>>> dev
  ?>
 </head>
 <body>
@@ -277,10 +281,14 @@
 </script>
 <?php 
 <<<<<<< HEAD
+<<<<<<< HEAD
     \think\Hook::listen('admin_before_body_end',$temp5f52fe0f002a0,null,false);
 =======
     \think\Hook::listen('admin_before_body_end',$temp5f542d7be561a,null,false);
 >>>>>>> dev2
+=======
+    \think\Hook::listen('admin_before_body_end',$temp5f54bd944452f,null,false);
+>>>>>>> dev
  ?>
 </body>
 </html>

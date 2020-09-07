@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:31:"themes/index/portal\\index.html";i:1599285134;s:64:"D:\phpstudy_pro\WWW\zhaopin\public\themes\index\public\base.html";i:1599285135;s:64:"D:\phpstudy_pro\WWW\zhaopin\public\themes\index\public\head.html";i:1599285135;s:66:"D:\phpstudy_pro\WWW\zhaopin\public\themes\index\public\header.html";i:1599285135;s:66:"D:\phpstudy_pro\WWW\zhaopin\public\themes\index\public\footer.html";i:1599285135;}*/ ?>
+=======
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:31:"themes/index/portal\\index.html";i:1599270477;s:72:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\base.html";i:1599199035;s:72:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\head.html";i:1599199035;s:74:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\header.html";i:1599269481;s:74:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\footer.html";i:1599199035;}*/ ?>
+>>>>>>> dev
 <!DOCTYPE html>
 <html>
 

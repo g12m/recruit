@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:34:"themes/admin/admin\user\index.html";i:1599199032;s:66:"D:\phpstudy_pro\WWW\zhaopin\public\themes\admin\public\header.html";i:1599199034;}*/ ?>
+=======
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:34:"themes/admin/admin\user\index.html";i:1599199032;s:74:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\admin\public\header.html";i:1599199034;}*/ ?>
+>>>>>>> dev
 <!DOCTYPE html>
 <html>
 <head>
