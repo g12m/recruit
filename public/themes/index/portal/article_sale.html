@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <extend name="public@base" />
 <block name="header">
 	<include file="public@header_list" />
@@ -16,4 +17,24 @@
 
 
 
+=======
+<extend name="public@base" />
+<block name="header">
+	<include file="public@header_list" />
+</block>
+<block name="content">
+<include file="public@banner">
+	<div class="fuwu-xiang" style="background-image: url(images/chanpin_bg.jpg); background-repeat: no-repeat;">
+		<div class="container">
+			<h2>{$article.post_title}</h2>
+			{$article.post_content}
+			<a data-scroll-reveal="enter right" href="{:cmf_url('portal/List/index',array('id'=>$category['id']))}" class="fan">返回列表页</a>
+		</div>
+	</div>
+
+	
+
+
+
+>>>>>>> dev2
 </block>
