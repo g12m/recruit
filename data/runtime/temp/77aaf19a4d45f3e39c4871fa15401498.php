@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:37:"themes/index/portal\confer\index.html";i:1599399001;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:37:"themes/index/portal\confer\index.html";i:1599439360;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -90,8 +90,7 @@
                             </div>
                         </a>
                         <?php endforeach; endif; else: echo "" ;endif; ?>
-                    
-                      
+
                     </div>
                 </div>
             </div>
