@@ -1,5 +1,5 @@
 /*!
- * fancyBox - jQuery Plugin
+ * fancBox - jQuery Plugin
  * version: 2.1.0 (Mon, 20 Aug 2012)
  * @requires jQuery v1.6 or later
  *

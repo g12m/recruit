@@ -11,9 +11,30 @@ namespace api\user\controller;
 use think\Db;
 use think\Validate;
 use cmf\controller\RestBaseController;
+<<<<<<< HEAD
 
 class PublicController extends RestBaseController
 {
+=======
+use api\user\model\UserModel;
+class PublicController extends RestBaseController
+{
+
+    public function user_login()
+    {
+        $param          = $this->request->param();
+        $userModel      = new UserModel();
+        $result         = $userModel->check_openid($param['openid'],$param);
+        $info           = Db::name('user')->where(['openid'=>$param['openid']])->find();
+        return $this->success('登录成功!',$info);
+    }
+    public function edit_user(){
+        $param          = $this->request->param();
+        $userModel      = new UserModel();
+        $userModel->insert($param);
+    }
+
+>>>>>>> dev2
     // 用户注册
     public function register()
     {

@@ -39,6 +39,7 @@ class   SchPositionController extends HomeBaseController
            $value = Db::name('stu_user')
            ->where('ent_id',4)
            ->where(['sch_id'=>3])
+           ->where('status',1)
            ->value('status');
          
         $this->assign('info', $info);
@@ -50,17 +51,18 @@ class   SchPositionController extends HomeBaseController
     public function release()
     {
          $id      = $this->request->param('id');
+         $sch_id  =  $this->request->param('sch_id');
         //根据企业io，发布
         $data=[
-            'ent_id'=>4,
-            'sch_id'=>3,
+            'ent_id'=>$id,
+            'sch_id'=>$sch_id,
             'time'  =>time(),
             'status'=>1
         ];
         $status=Db::name('stu_user')->insert($data);
           if($status)
         {
-            $this->success('发布职位成功');
+           return 1;
         }
     }
     //撤回职位
@@ -68,11 +70,12 @@ class   SchPositionController extends HomeBaseController
     {
         //会场与招聘会关联
         $id      = $this->request->param('id');
-        $uid      = $this->request->param('uid');
-        $article = Db::name('stu_user')->where('ent_id',$uid)->where(['sch_id'=>$id])->update(['status'=>2,'ctime'=>time()]); 
+         $sch_id  =  $this->request->param('sch_id');
+       
+        $article = Db::name('stu_user')->where('ent_id',$id)->where(['sch_id'=>$sch_id])->update(['status'=>2,'ctime'=>time()]); 
         if($article)
         {
-            $this->success('撤回职位成功');
+           return  1;
         }
         
     }

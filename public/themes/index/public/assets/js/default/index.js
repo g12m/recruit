@@ -1,3 +1,7 @@
+
+
+
+
 window.onload = function () {
     // layUI加载模块
     layui.use('element', function () {
@@ -32,6 +36,7 @@ window.onload = function () {
         });
     });
 
+
     layui.use('layer', function () {
         var layer = layui.layer;
         $('.schc').click(function () {
@@ -53,6 +58,10 @@ window.onload = function () {
                 type: "post",
                 async: true,
                 success: function (data) {
+                    if(data==2)
+                    {
+                        layer.msg('下面有关联!');
+                    }
                     if (data == '1') {
                         layer.msg('删除成功!');
                         var path = "/portal/Confer/index";
@@ -75,7 +84,22 @@ window.onload = function () {
             layer.close(layer.index)
         })
         $('#fb .qr').click(function () {
-            console.log('发布成功')
+         
+            var q_id = $('.q_id').val();
+            var sch_id = $('.sch_id').val();
+            $.ajax({
+                url: "/portal/sch_position/release",
+                data: {"id": q_id,"sch_id":sch_id},
+                type: "post",
+                async: true,
+                success: function (data) {
+                    if (data == '1') {
+                        layer.msg('发布成功!');
+                        var path = '/portal/sch_position/article/id/'+q_id;
+                        location.href = path;
+                    }
+                }
+            });
             layer.close(layer.index)
         })
 
@@ -91,6 +115,37 @@ window.onload = function () {
             layer.close(layer.index)
         })
         $('#ch .qr').click(function () {
+            var q_id = $('.q_id').val();
+            var sch_id = $('.sch_id').val();
+            $.ajax({
+                url: "/portal/sch_position/withdraw",
+                data: { "id": q_id, "sch_id": sch_id },
+                type: "post",
+                async: true,
+                success: function (data) {
+                    if (data == '1') {
+                        layer.msg('撤回成功!');
+                        var path = '/portal/sch_position/article/id/' + q_id;
+                        location.href = path;
+                    }
+                }
+            });
+          
+
+            layer.close(layer.index)
+        })
+        $('.fbtz').click(function () {
+            layer.open({
+                type: 1,
+                title: '发布通知',
+                content: $('#fbtz'),
+                area: '750px'
+            });
+        })
+        $('#fbtz .qx').click(function () {
+            layer.close(layer.index)
+        })
+        $('#fbtz .qr').click(function () {
             console.log('发布成功')
             layer.close(layer.index)
         })
@@ -105,6 +160,34 @@ window.onload = function () {
         interTime: 50,
         trigger: "click"
     });
+
+    $('#fbtz .linput').click(function () {
+        $('#fbtz .linput').eq($(this).index()).addClass("check").siblings().removeClass('check');
+    })
+
+    // 图片上传预览
+    $("#yyzz").change(function () {
+        var objUrl = getObjectURL(this.files[0]); //获取文件信息
+        console.log("objUrl = " + objUrl);
+        if (objUrl) {
+            $(".img").attr("src", objUrl);
+        }
+    });
+    function getObjectURL(file) {
+        var url = null;
+        if (window.createObjectURL != undefined) {
+            url = window.createObjectURL(file);
+        } else if (window.URL != undefined) {
+            url = window.URL.createObjectURL(file);
+        } else if (window.webkitURL != undefined) {
+            url = window.webkitURL.createObjectURL(file);
+        }
+        return url;
+    }
+
+
+
+
 
     // 城市职位需求图表配置项
     // echarts.init($('#echart1')[0]).setOption({
@@ -143,3 +226,4 @@ window.onload = function () {
     //     }
     // });
 }
+

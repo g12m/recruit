@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:43:"themes/index/portal\scheduling\article.html";i:1599355284;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:43:"themes/index/portal\scheduling\article.html";i:1599469395;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -69,3 +69,6 @@
 容纳人数：<?php echo $list['num']; ?>
 </body>
 </html>
+
+
+

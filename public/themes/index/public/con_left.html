@@ -1,8 +1,24 @@
-<div class="contactUs">
-  <ul class="title">
-  </ul>
-  <ul class="content">
-    <p>地址：{:cmf_get_option('server_settings')['q_email']}</p><p>电话：{:cmf_get_option('server_settings')['k_tel']}</p><p>传真：{:cmf_get_option('server_settings')['q_tel']}</p><p>邮箱：{:cmf_get_option('server_settings')['k_email']}</p>
-   <li class="gotoMessage"><a href="{:url('portal/Msg/index')}" tppabs="http://www.bgri.com/channels/43.html"><img src="__TMPL__/public/assets/images/default/btnMessage.jpg" tppabs="http://www.bgri.com/images/btnMessage.jpg" /></a></li>
-   </ul>
-</div>
+
+
+<?php dump($_SERVER['PHP_SELF']);?>
+  <div class="layui-side layui-bg-black" style="background: url(__TMPL__/public/assets/images/default/navbg.png);">
+    <div class="layui-logo"><img src="__TMPL__/public/assets/images/default/logo.png" alt=""></div>
+    <div class="layui-side-scroll">
+      <ul class="layui-nav layui-nav-tree" lay-filter="test">
+        <li class="layui-nav-item"><a href="javascript:;"><img src="__TMPL__/public/assets/images/default/icon_kb.png"
+              alt="">招聘大看板 <span class="jian">></span></a></li>
+        <li class="layui-nav-item"><a href="{:url('portal/Scheduling/index')}"><img src="__TMPL__/public/assets/images/default/icon_pq.png"
+              alt=""> 排期管理 <span class="jian">></span></a></li>
+        <li class="layui-nav-item  layui-nav-itemed layui-this"><a href="{:url('portal/confer/index')}"><img
+              src="__TMPL__/public/assets/images/default/icon_hc.png" alt=""> 会场管理 <span class="jian">></span></a></li>
+        <li class="layui-nav-item"><a href="/sch_position"><img src="__TMPL__/public/assets/images/default/icon_zw.png"
+              alt=""> 职位管理 <span class="jian">></span></a></li>
+        <li class="layui-nav-item"><a href="javascript:;"><img src="__TMPL__/public/assets/images/default/icon_jl.png"
+              alt=""> 简历管理 <span class="jian">></span></a></li>
+        <li class="layui-nav-item"><a href="javascript:;"><img src="__TMPL__/public/assets/images/default/icon_js.png"
+              alt=""> 角色管理 <span class="jian">></span></a></li>
+        <li class="layui-nav-item"><a href="javascript:;"><img src="__TMPL__/public/assets/images/default/icon_ry.png"
+              alt=""> 人员管理 <span class="jian">></span></a></li>
+      </ul>
+    </div>
+  </div>

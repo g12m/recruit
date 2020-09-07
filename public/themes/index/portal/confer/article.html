@@ -38,35 +38,7 @@
             </ul>
         </div>
         <!-- 左侧导航 -->
-        <div class="layui-side layui-bg-black"
-            style="background: url(__TMPL__/public/assets/images/default/navbg.png);">
-            <div class="layui-logo"><img src="__TMPL__/public/assets/images/default/logo.png" alt=""></div>
-            <div class="layui-side-scroll">
-                <ul class="layui-nav layui-nav-tree" lay-filter="test">
-                    <li class="layui-nav-item"><a href="javascript:;"><img
-                                src="__TMPL__/public/assets/images/default/icon_kb.png" alt="">招聘大看板 <span
-                                class="jian">></span></a></li>
-                    <li class="layui-nav-item"><a href="javascript:;"><img
-                                src="__TMPL__/public/assets/images/default/icon_pq.png" alt=""> 排期管理 <span
-                                class="jian">></span></a></li>
-                    <li class="layui-nav-item  layui-nav-itemed layui-this"><a href="javascript:;"><img
-                                src="__TMPL__/public/assets/images/default/icon_hc.png" alt=""> 会场管理 <span
-                                class="jian">></span></a></li>
-                    <li class="layui-nav-item"><a href="javascript:;"><img
-                                src="__TMPL__/public/assets/images/default/icon_zw.png" alt=""> 职位管理 <span
-                                class="jian">></span></a></li>
-                    <li class="layui-nav-item"><a href="javascript:;"><img
-                                src="__TMPL__/public/assets/images/default/icon_jl.png" alt=""> 简历管理 <span
-                                class="jian">></span></a></li>
-                    <li class="layui-nav-item"><a href="javascript:;"><img
-                                src="__TMPL__/public/assets/images/default/icon_js.png" alt=""> 角色管理 <span
-                                class="jian">></span></a></li>
-                    <li class="layui-nav-item"><a href="javascript:;"><img
-                                src="__TMPL__/public/assets/images/default/icon_ry.png" alt=""> 人员管理 <span
-                                class="jian">></span></a></li>
-                </ul>
-            </div>
-        </div>
+        <include file="public@con_left" />
         <!-- 主体部分 -->
     <!-- 主体部分 -->
     <div class="layui-body">
@@ -96,6 +68,7 @@
                                     <div class="xx-box">
                                         <div class="xx-box-h">{$v3.title}</div>
                                         <div class="xx-box-m">
+                                            <?php $restime=json_decode($v3['alt_time'],true);?>
                                             <p><i>备选日期：<foreach name="restime" item="v">
                                                 <span>{$v|date="m-d H:i",###}</span>
                                             </foreach></i></p>

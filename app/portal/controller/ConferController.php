@@ -19,11 +19,18 @@ class   ConferController extends HomeBaseController
     public function index()
     {
         $param                 = $this->request->param();
+        $address               =empty($param['title'])?'':$param['title'];
         $uid                   = 4;
-        $list                  = Db::name('stu_conference')->where('uid',$uid)->order('cre_time DESC')->paginate(9);
+        $where                 =[];
+        if(!empty($address))
+        {
+            $where['a.address']=['like',"%$address%"];
+        }
+        $list                  = Db::name('stu_conference a')->where('a.uid',$uid)->where($where)->order('cre_time DESC')->paginate(9);
         $list->appends($param);
         $this->assign('page', $list->render());
         $this->assign('list', $list);
+        $this->assign('title', $address);
         return $this->fetch();
     }
     //添加会场
@@ -64,11 +71,20 @@ class   ConferController extends HomeBaseController
     {
         //会场与招聘会关联
         $id      = $this->request->param('id');
-        $article = Db::name('stu_conference')->where('id',$id)->delete(); 
-        if($article)
+        $num=Db::name('stu_pz')->where('h_id',$id)->count();
+      
+        if($num>=1)
         {
-           return 1;
+            return 2;
         }
+         if($num==0){
+            $article = Db::name('stu_conference')->where('id',$id)->delete(); 
+                if($article)
+                {
+                return 1;
+                }
+        }
+      
         
     }
 

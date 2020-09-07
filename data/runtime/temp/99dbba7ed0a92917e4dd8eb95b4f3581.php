@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:36:"themes/admin/admin\setting\site.html";i:1599199032;s:74:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\admin\public\header.html";i:1599199034;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:36:"themes/admin/admin\setting\site.html";i:1599441244;s:74:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\admin\public\header.html";i:1599439176;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -317,7 +317,7 @@
                         </div>
                     </div>
                     <div class="tab-pane" id="H">
-                      <div style="margin:auto;text-align:left;padding-left:100px;"><h5>联系方式</h5></div>
+                      <!-- <div style="margin:auto;text-align:left;padding-left:100px;"><h5>联系方式</h5></div>
                       <div class="form-group">
                           <label for="input-cdn_static_root" class="col-sm-2 control-label">电话</label>
                           <div class="col-md-6 col-sm-10">
@@ -325,7 +325,7 @@
                                    name="server_settings[k_tel]"
                                    value="<?php echo (isset($server_settings['k_tel']) && ($server_settings['k_tel'] !== '')?$server_settings['k_tel']:''); ?>">
                           </div>
-                      </div>
+                      </div> -->
                       <!-- <div class="form-group">
                           <label for="input-cdn_static_root" class="col-sm-2 control-label">传真</label>
                           <div class="col-md-6 col-sm-10">
@@ -334,16 +334,16 @@
                                    value="<?php echo (isset($server_settings['q_tel']) && ($server_settings['q_tel'] !== '')?$server_settings['q_tel']:''); ?>">
                           </div>
                       </div> -->
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label for="input-cdn_static_root" class="col-sm-2 control-label">邮箱</label>
                             <div class="col-md-6 col-sm-10">
                                 <input type="text" class="form-control"
                                        name="server_settings[k_email]"
                                        value="<?php echo (isset($server_settings['k_email']) && ($server_settings['k_email'] !== '')?$server_settings['k_email']:''); ?>">
                             </div>
-                        </div>
+                        </div> -->
 
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label for="input-cdn_static_root" class="col-sm-2 control-label">地址</label>
                             <div class="col-md-6 col-sm-10">
                               <input type="text" class="form-control"
@@ -358,7 +358,7 @@
                                      name="server_settings[q_emailen]"
                                      value="<?php echo (isset($server_settings['q_emailen']) && ($server_settings['q_emailen'] !== '')?$server_settings['q_emailen']:''); ?>">
                             </div>
-                        </div>
+                        </div> -->
                       <!-- <div class="form-group">
                             <label for="input-cdn_static_root" class="col-sm-2 control-label">英文地址</label>
                             <div class="col-md-6 col-sm-10">
@@ -383,7 +383,7 @@
                                      value="<?php echo (isset($server_settings['q_banquan']) && ($server_settings['q_banquan'] !== '')?$server_settings['q_banquan']:''); ?>">
                             </div>
                         </div>
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label for="input-cdn_static_root" class="col-sm-2 control-label">微博地址</label>
                             <div class="col-md-6 col-sm-10">
                               <input type="text" class="form-control"
@@ -398,9 +398,9 @@
                                      name="server_settings[q_banquanen]"
                                      value="<?php echo (isset($server_settings['q_banquanen']) && ($server_settings['q_banquanen'] !== '')?$server_settings['q_banquanen']:''); ?>">
                             </div>
-                        </div>
+                        </div> -->
 
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label for="input-cdn_static_root" class="col-sm-2 control-label">关注微信</label>
                             <div class="col-md-6 col-sm-10">
                               <input type="hidden" name="server_settings[thumbnail]" id="thumbnail" value="<?php echo cmf_get_image_url($server_settings['thumbnail']); ?>">
@@ -418,7 +418,7 @@
                               </a>
                               <input type="button" class="btn btn-sm btn-cancel-thumbnail" value="取消图片">
                             </div>
-                        </div>
+                        </div> -->
 
                             <!-- <div class="form-group">
                               <label for="input-image" class="col-sm-2 control-label">底部日历</label>

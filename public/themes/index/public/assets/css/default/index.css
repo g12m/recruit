@@ -27,7 +27,7 @@ i{font-style: normal;}
 .layui-nav .layui-badge-dot{margin:-15px 0 0 -5px}
 .layui-layout-admin .layui-body{top:80px; bottom: 0px}
 .layui-layout-admin .layui-body .RightBody{padding:30px}
-.layui-form-label{width: auto;padding-left: 35px;font-size: 16px;}
+.layui-layout-admin .layui-form-label{width: auto;padding-left: 35px;font-size: 16px;}
 .layui-btn{background-image: linear-gradient(to bottom right, #0d703b , #0d9942);font-size: 16px;padding:0;min-width: 80px;}
 .layui-btn a{color:#fff;display: block;}
 .layui-btn.btn-qx{background: #e6e9ec;color:#333;}
@@ -36,6 +36,73 @@ i{font-style: normal;}
 .layui-btn.btn-ysx{background: #e6e9ec;color:#333;cursor: not-allowed;}
 .layui-btn.btn-shanchu{background: #ff4f00;}
 .layui-btn.btn-xq{height:34px;width: 75px;line-height: 34px;}
+
+/* login */
+.login{width: 100%;height:100%;overflow: hidden;}
+.login .center{position: relative;height:100%;}
+.login .center .logo{position: absolute;top:30px;left:0;z-index: 2;}
+.login .center .copy{position: absolute;bottom: 50px;left:50%;transform: translateX(-50%); z-index: 5;color:#fff;}
+.login .center .loginbox{width: 550px;height:480px; position: absolute;right:0;top:50%;transform: translateY(-50%);z-index: 10;background: #50b27b;border-radius: 10px;}
+.login .center .loginbox .login-in{width: 530px;height:460px;background: #fff;border-radius: 10px;margin:10px;padding:45px;box-sizing: border-box;}
+.login .center .loginbox .login-in .login-h{font-size: 26px;font-weight: 900;margin-bottom: 35px;}
+.login .center .loginbox .login-in .num{position: relative;width: 100%;height:60px;margin-bottom: 20px;}
+.login .center .loginbox .login-in .num input{width: 100%;height:60px;padding-left: 60px;border-radius: 5px;}
+.login .center .loginbox .login-in .num img{position: absolute;left:15px;top:15px;width: 30px;height:30px;}
+.login .center .loginbox .login-in .password{position: relative;width: 100%;height:60px;margin-bottom: 20px;}
+.login .center .loginbox .login-in .password input{width: 100%;height:60px;padding-left: 60px;border-radius: 5px;}
+.login .center .loginbox .login-in .password img{position: absolute;left:15px;top:15px;width: 30px;height:30px;}
+.login .center .loginbox .login-in button{width: 100%;height:60px;margin-top:20px;color:#fff;font-size: 18px;}
+.login .center .loginbox .login-in p{float:right;margin-top:30px;color:707070;}
+.login .center .loginbox .login-in p a{color:#ff6600;text-decoration: underline;}
+.register_check{width: 100%;height:100%;overflow: hidden;}
+.register_check .center{position: relative;height:100%;}
+.register_check .center .logo{position: absolute;top:30px;left:0;z-index: 2;}
+.register_check .center .copy{position: absolute;bottom: 50px;left:50%;transform: translateX(-50%); z-index: 5;color:#fff;}
+.register_check .center .register_check_list{position: absolute;top: 50%;left:50%;transform: translate(-50% , -50%); z-index: 5;color:#fff;display: flex;}
+.register_check .center .register_check_list .check_box{ width: 400px;height:560px;background:#50b27b;border-radius: 10px;margin-right: 200px;}
+.register_check .center .register_check_list .check_box:last-child{margin-right:0px;}
+.register_check .center .register_check_list .check_box .check_box_in{width: 380px;height:540px;background:#fff;border-radius: 10px;box-sizing: border-box;margin:10px;padding:50px 45px;text-align: center;}
+.register_check .center .register_check_list .check_box .check_box_in .h{color:#000;font-size: 26px;font-weight: 900;margin-bottom: 40px;}
+.register_check .center .register_check_list .check_box button{width: 100%;height:60px;margin-top:45px;border-radius: 5px;font-size: 18px;}
+.zcsuccess{width: 100%;height:100%;overflow: hidden;}
+.zcsuccess .center{position: relative;height:100%;}
+.zcsuccess .center .logo{position: absolute;top:30px;left:0;z-index: 2;}
+.zcsuccess .center .copy{position: absolute;bottom: 50px;left:50%;transform: translateX(-50%); z-index: 5;color:#fff;}
+.zcsuccess .center .success{position: absolute;top: 50%;left:50%;transform: translate(-50% , -50%); z-index: 5;width: 100%;height:calc(100% - 190px);text-align: center;}
+.zcsuccess .center .success .success-h{font-size: 26px;font-weight: 900;margin:40px 0 30px;color:#fff;}
+.zcsuccess .center .success .successout{width: 80%;height:70%;background:#50b27b;border-radius: 10px;margin:0 auto;padding-top:10px;}
+.zcsuccess .center .success .successin{width: calc(100% - 20px);height:calc(100% - 10px);background:#fff;border-radius: 10px;margin:0 auto;box-sizing: border-box;}
+.zcsuccess .center .success .successin img{margin-top:80px;margin-bottom: 40px;}
+.zcsuccess .center .success .successin p{margin-bottom: 80px;}
+.zcsuccess .center .success .successin button{width: 210px;height:50px;border-radius: 5px;}
+.register-form{width: 100%;height:auto;}
+.register-form .center{position: relative;height:auto;}
+.register-form .center .logo{position: absolute;top:30px;left:0;z-index: 2;}
+.register-form .center .copy{position: absolute;bottom: 50px;left:50%;transform: translateX(-50%); z-index: 5;color:#fff;}
+.register-form .center .register{width: 100%;height:auto;padding-bottom: 125px;padding-top:100px;}
+.register-form .center .register .register-h{font-size: 26px;font-weight: 900;margin:40px 0 30px;color:#fff;text-align: center;}
+.register-form .center .register .form{width: 100%;height:auto;background: #fff;border:10px solid #50b27b;border-radius: 10px;padding:20px 45px;box-sizing: border-box;}
+.register-form .center .register .form .form-h{border-bottom: 1px solid #dcdcdc;font-size: 20px;color:#333;font-weight: 900;padding: 20px 0;}
+.register-form .center .register .form .form-m{padding:25px 0;}
+.register-form .center .register .form .form-m .layui-form-item{width: 49%;display: inline-block;}
+.register-form .center .register .form .form-m .layui-form-item:nth-of-type(2n){float: right;}
+.register-form .center .register .form .form-m .layui-form-item.width{width: 100%;display:block;}
+.register-form .center .register .form .form-m .layui-form-item input{height:53px;background: #fafafa;border:1px solid #dcdcdc;border-radius: 6px;}
+.register-form .center .register .form .form-m .layui-form-item select{height:53px;background: #fafafa;border:1px solid #dcdcdc;border-radius: 6px;padding:0 10px;}
+.register-form .center .register .form .form-m .layui-form-item textarea{background: #fafafa;border:1px solid #dcdcdc;border-radius: 6px;}
+.register-form .center .register .form .form-m .layui-form-item .layui-form-label{width: 100px;line-height: 35px;}
+.register-form .center .register .form .form-m .layui-form-item .layui-input-block{margin-left: 130px;position: relative;}
+.register-form .center .register .form .form-m .layui-form-item .layui-input-block .fsyzm{border-radius: 0 6px 6px 0; font-size: 13px; position: absolute;right:0;top:0;height:53px;width: 105px;line-height: 53px;}
+.register-form .center .register .form .form-m .sctp label{padding-right: 15px;vertical-align: top;}
+.register-form .center .register .form .form-m .sctp span{vertical-align: bottom;font-size: 14px;color:#969696;margin-left: 15px;}
+.register-form .center .register .form .form-m .sctp .scinput{display: inline-block; height:120px;width: 120px;margin:0;background: transparent;border:1px solid #dcdcdc;border-radius: 6px;position: relative;}
+.register-form .center .register .form .form-m .sctp .scinput .scbtn{height:120px;width: 120px;opacity: 0;z-index: 5;position: absolute;top:0;left:0;right:0;}
+.register-form .center .register .form .form-m .sctp .scinput .img{position: absolute;top:50%;left:50%;z-index: 2;transform: translate(-50%,-50%);max-width: 100%;max-height: 100%;}
+.register-form .center .register .form .zc{text-align: center;}
+.register-form .center .register .form button{width: 210px;height:50px;text-align: center;margin-top:50px;margin-bottom: 20px;}
+
+
+
 
 /* box类列表组件 */
 .RightBody .list{padding:0 35px 30px;}
@@ -85,70 +152,42 @@ i{font-style: normal;}
 .tc{width: 100%;text-align: center;padding:30px 0;}
 .tc img{width: 80px;height:80px;}
 .tc p{font-size: 20px;font-weight: 900;color:#333;margin:30px 0 40px;}
+.tc form{padding:0 30px;}
+.tc form .layui-form-label{width: 115px;padding:0px;}
+.tc form .layui-form-item .linput{width: 180px;padding:0px;height:38px;border:1px solid #ccc;border-radius: 5px;display: inline-block;line-height: 38px;cursor: pointer;}
+.tc form .layui-form-item .linput.check{background: #0d793b;color:#fff;}
+.tc form .layui-form-item .linput input{display: none;}
+.tc form .layui-form-item .layui-input{width: 180px;margin-left: 15px;border-radius: 5px;padding-left: 5px;}
 
-/* login */
-.login{width: 100%;height:100%;overflow: hidden;}
-.login .center{position: relative;height:100%;}
-.login .center .logo{position: absolute;top:30px;left:0;z-index: 2;}
-.login .center .copy{position: absolute;bottom: 50px;left:50%;transform: translateX(-50%); z-index: 5;color:#fff;}
-.login .center .loginbox{width: 550px;height:480px; position: absolute;right:0;top:50%;transform: translateY(-50%);z-index: 10;background: #50b27b;border-radius: 10px;}
-.login .center .loginbox .login-in{width: 530px;height:460px;background: #fff;border-radius: 10px;margin:10px;padding:45px;box-sizing: border-box;}
-.login .center .loginbox .login-in .login-h{font-size: 26px;font-weight: 900;margin-bottom: 35px;}
-.login .center .loginbox .login-in .num{position: relative;width: 100%;height:60px;margin-bottom: 20px;}
-.login .center .loginbox .login-in .num input{width: 100%;height:60px;padding-left: 60px;border-radius: 5px;}
-.login .center .loginbox .login-in .num img{position: absolute;left:15px;top:15px;width: 30px;height:30px;}
-.login .center .loginbox .login-in .password{position: relative;width: 100%;height:60px;margin-bottom: 20px;}
-.login .center .loginbox .login-in .password input{width: 100%;height:60px;padding-left: 60px;border-radius: 5px;}
-.login .center .loginbox .login-in .password img{position: absolute;left:15px;top:15px;width: 30px;height:30px;}
-.login .center .loginbox .login-in button{width: 100%;height:60px;margin-top:20px;color:#fff;font-size: 18px;}
-.login .center .loginbox .login-in p{float:right;margin-top:30px;color:707070;}
-.login .center .loginbox .login-in p a{color:#ff6600;text-decoration: underline;}
-
-.register_check{width: 100%;height:100%;overflow: hidden;}
-.register_check .center{position: relative;height:100%;}
-.register_check .center .logo{position: absolute;top:30px;left:0;z-index: 2;}
-.register_check .center .copy{position: absolute;bottom: 50px;left:50%;transform: translateX(-50%); z-index: 5;color:#fff;}
-.register_check .center .register_check_list{position: absolute;top: 50%;left:50%;transform: translate(-50% , -50%); z-index: 5;color:#fff;display: flex;}
-.register_check .center .register_check_list .check_box{ width: 400px;height:560px;background:#50b27b;border-radius: 10px;margin-right: 200px;}
-.register_check .center .register_check_list .check_box:last-child{margin-right:0px;}
-.register_check .center .register_check_list .check_box .check_box_in{width: 380px;height:540px;background:#fff;border-radius: 10px;box-sizing: border-box;margin:10px;padding:50px 45px;text-align: center;}
-.register_check .center .register_check_list .check_box .check_box_in .h{color:#000;font-size: 26px;font-weight: 900;margin-bottom: 40px;}
-.register_check .center .register_check_list .check_box button{width: 100%;height:60px;margin-top:45px;border-radius: 5px;font-size: 18px;}
-
-.zcsuccess{width: 100%;height:100%;overflow: hidden;}
-.zcsuccess .center{position: relative;height:100%;}
-.zcsuccess .center .logo{position: absolute;top:30px;left:0;z-index: 2;}
-.zcsuccess .center .copy{position: absolute;bottom: 50px;left:50%;transform: translateX(-50%); z-index: 5;color:#fff;}
-.zcsuccess .center .success{position: absolute;top: 50%;left:50%;transform: translate(-50% , -50%); z-index: 5;width: 100%;height:calc(100% - 190px);text-align: center;}
-.zcsuccess .center .success .success-h{font-size: 26px;font-weight: 900;margin:40px 0 30px;color:#fff;}
-.zcsuccess .center .success .successout{width: 80%;height:70%;background:#50b27b;border-radius: 10px;margin:0 auto;padding-top:10px;}
-.zcsuccess .center .success .successin{width: calc(100% - 20px);height:calc(100% - 10px);background:#fff;border-radius: 10px;margin:0 auto;box-sizing: border-box;}
-.zcsuccess .center .success .successin img{margin-top:80px;margin-bottom: 40px;}
-.zcsuccess .center .success .successin p{margin-bottom: 80px;}
-.zcsuccess .center .success .successin button{width: 210px;height:50px;border-radius: 5px;}
-
-
-
-/* 排期 */
+/* 主体部分 */
 .RightBody .pq{background:#fff;border-radius: 10px;}
 .RightBody .pq .title{padding:15px 35px}
 .RightBody .pq .title p{font-size: 16px;line-height: 40px;}
 .RightBody .pq .title p a{display: inline-block;width: 70px;height:40px;color:#707070;text-align: center;margin:0 10px}
 .RightBody .pq .title p a.checktitle{background-image: linear-gradient(to bottom right, #0d703b , #0d9942);color:#fff}
 .RightBody .pq .title p a:hover{background-image: linear-gradient(to bottom right, #0d703b , #0d9942);color:#fff}
-
-/* 会场 */
 .RightBody .hc{background: #fff;border-radius: 10px;padding-top:45px;}
 .RightBody .hc .list .box{width: 23%;margin-right: 2%;min-height:220px;}
 .RightBody .hc .list .box:nth-of-type(3n){margin-right: 2%;}
 .RightBody .hc .list .box:nth-of-type(4n){margin-right: 0;}
 .RightBody .hcxq .xx .xx-list .xx-box .xx-box-m p{line-height: 40px;}
 .RightBody .hcxq .xx .xx-list .xx-box .xx-box-m p i span{margin-right: 30px;}
+.RightBody .jlxq .fujian{text-align: center;padding-top:88px;}
+.RightBody .jlxq .fujian .word{display: block;margin:0 auto;width: 150px;font-size: 15px;color:#707070;margin-bottom: 45px;}
+.RightBody .jlxq .fujian .word p{margin-top:18px;}
+.RightBody .jlxq .fujian button{margin-bottom:100px;width: 166px;}
+
+
 
 #table tr th{text-align: center;font-size: 16px;}
 #table tr td{text-align: center;font-size: 16px;}
+#table .layui-badge-dot{margin-right:5px;vertical-align: middle;}
+
+
+
 
 
 @media only screen and (max-width:1400px){
     .center{width:90%;}
 }
+
