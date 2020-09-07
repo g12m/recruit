@@ -2,9 +2,10 @@
 //招聘会管理
 
 namespace app\portal\controller;
+use think\Db;
 use cmf\controller\HomeBaseController;
 use app\portal\model\JobfairModel;
-class FairController extends HomeBaseController
+class EntfairController extends HomeBaseController
 {
     public function index()
     {
@@ -63,15 +64,23 @@ class FairController extends HomeBaseController
     // 招聘会详情
     public function fair_desc(){
         $param = $this->request->param();
-        $id = $param['id'];
+        // $id = $param['id'];
+        $id = 1;
         $pos = new JobfairModel();
         $res = $pos->getfair($id);
+        $res['alt_time'] = json_decode($res['alt_time'],true);
         //获取关联学校
         $stu = Db::name('fair_stu')->where('fair_id',$id)->select()->toArray();
         $stunum = count($stu);
         //获取职位
-        $stu = Db::name('fair_pos')->where('fair_id',$id)->select()->toArray();
-        
+        $pos = Db::name('fair_pos')->alias('fp')->join('ent_position ep','fp.pos_id=ep.id','LEFT')->where('fp.fair_id',$id)->field('ep.title,ep.major,ep.num,ep.salary_min,ep.salary_max,ep.effective_time,ep.desc')->select()->toArray();
+
+        $this->assign('user_info',session('Ent_user')['user_info']);
+        $this->assign('stunum',$stunum);
+        $this->assign('stu',$stu);
+        $this->assign('pos',$pos);
+        $this->assign('res',$res);
+        return $this->fetch();
     }
     //发布通知
     public function addtz(){

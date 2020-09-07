@@ -16,18 +16,13 @@ use think\Model;
 
 class UserModel extends Model
 {
-    protected $type = [
-        'more' => 'array',
-    ];
-
-
-    /**
-     * avatar 自动转化
-     * @param $value
-     * @return string
-     */
-    public function getAvatarAttr($value)
+    public function  check_openid($openid,$param)
     {
-        return cmf_get_user_avatar_url($value);
+        $result = $this->where(['openid'=>$openid])->count();
+        if(empty($result))
+        {
+            $data  = ['user_type'=>'2','user_nickname'=>$param['name'],'openid'=>$openid,'sex'=>$param['gender'],'create_time'=>time(),'avatar'=>$param['head_pic']];
+            $this->allowField(true)->data($data, true)->isUpdate(false)->save();
+        }
     }
 }

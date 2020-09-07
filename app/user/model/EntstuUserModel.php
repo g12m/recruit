@@ -1,5 +1,5 @@
 <?php
-namespace app\portal\model;
+namespace app\user\model;
 use think\Db;
 use think\Model;
 class EntstuUserModel extends Model
@@ -23,6 +23,9 @@ class EntstuUserModel extends Model
     }
     public function deletuser($id){
         $this->where('id',$id)->delete();
+    }
+    public function get_one($username){
+        return $this->where('login_name',$username)->find();
     }
 
 }
