@@ -1,5 +1,29 @@
 
 
+<div class="layui-header">
+      <ul class="layui-nav layui-layout-right">
+            <li class="layui-nav-item">
+                  <a href="javascript:;">
+                        <i class="layui-icon layui-icon-notice"></i>
+                        <span class="layui-badge-dot"></span>
+                  </a>
+            </li>
+            <li class="layui-nav-item">
+                  <a href="javascript:;">
+                        <?php $user=cmf_get_current_user_id();
+                              $name=get_user_info($user);
+                        ?>
+                        {$name}
+                  </a>
+                  <dl class="layui-nav-child">
+                        <dd><a href="{:url('user/index/logout')}">退出</a></dd>
+                  </dl>
+            </li>
+      </ul>
+</div>
+
+
+
 <?php dump($_SERVER['PHP_SELF']);?>
   <div class="layui-side layui-bg-black" style="background: url(__TMPL__/public/assets/images/default/navbg.png);">
     <div class="layui-logo"><img src="__TMPL__/public/assets/images/default/logo.png" alt=""></div>

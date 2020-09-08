@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:45:"themes/index/portal\sch_position\article.html";i:1599457479;s:76:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\con_left.html";i:1599459379;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:45:"themes/index/portal\sch_position\article.html";i:1599457479;s:76:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\con_left.html";i:1599556636;}*/ ?>
 
 <!DOCTYPE html>
 <html>
@@ -48,9 +48,9 @@
       <ul class="layui-nav layui-nav-tree" lay-filter="test">
         <li class="layui-nav-item"><a href="javascript:;"><img src="/themes/index/public/assets/images/default/icon_kb.png"
               alt="">招聘大看板 <span class="jian">></span></a></li>
-        <li class="layui-nav-item"><a href="<?php echo url('portal/Scheduling/index'); ?>"><img src="/themes/index/public/assets/images/default/icon_pq.png"
+        <li class="layui-nav-item layui-nav-itemed layui-this"><a href="<?php echo url('portal/Scheduling/index'); ?>"><img src="/themes/index/public/assets/images/default/icon_pq.png"
               alt=""> 排期管理 <span class="jian">></span></a></li>
-        <li class="layui-nav-item  layui-nav-itemed layui-this"><a href="<?php echo url('portal/confer/index'); ?>"><img
+        <li class="layui-nav-item  "><a href="<?php echo url('portal/confer/index'); ?>"><img
               src="/themes/index/public/assets/images/default/icon_hc.png" alt=""> 会场管理 <span class="jian">></span></a></li>
         <li class="layui-nav-item"><a href="/sch_position"><img src="/themes/index/public/assets/images/default/icon_zw.png"
               alt=""> 职位管理 <span class="jian">></span></a></li>

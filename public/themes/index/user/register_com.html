@@ -167,7 +167,8 @@
                     result = re.data.file;
                     var results = "/upload/" + result;
                     $('#demo1').attr('src', results); //图片链接（base64）
-                    $('#yyzz').val(result); //图片链接（base64）	
+                    $('#yyzz').attr('value',result); //图片链接（base64）
+                  
                     return false;
                 })
         }

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:36:"themes/index/user\\register_com.html";i:1599558940;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:36:"themes/index/user\\register_com.html";i:1599560231;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -168,7 +168,8 @@
                     result = re.data.file;
                     var results = "/upload/" + result;
                     $('#demo1').attr('src', results); //图片链接（base64）
-                    $('#yyzz').val(result); //图片链接（base64）	
+                    $('#yyzz').attr('value',result); //图片链接（base64）
+                    console.log(result)	
                     return false;
                 })
         }
