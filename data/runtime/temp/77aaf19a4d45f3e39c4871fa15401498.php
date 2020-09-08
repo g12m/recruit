@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:37:"themes/index/portal\confer\index.html";i:1599470062;s:76:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\con_left.html";i:1599459379;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:37:"themes/index/portal\confer\index.html";i:1599528195;s:76:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\con_left.html";i:1599556636;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -38,7 +38,7 @@
             </ul>
         </div>
         <!-- 左侧导航 -->
-        
+    
 
 <?php dump($_SERVER['PHP_SELF']);?>
   <div class="layui-side layui-bg-black" style="background: url(/themes/index/public/assets/images/default/navbg.png);">
@@ -47,9 +47,9 @@
       <ul class="layui-nav layui-nav-tree" lay-filter="test">
         <li class="layui-nav-item"><a href="javascript:;"><img src="/themes/index/public/assets/images/default/icon_kb.png"
               alt="">招聘大看板 <span class="jian">></span></a></li>
-        <li class="layui-nav-item"><a href="<?php echo url('portal/Scheduling/index'); ?>"><img src="/themes/index/public/assets/images/default/icon_pq.png"
+        <li class="layui-nav-item layui-nav-itemed layui-this"><a href="<?php echo url('portal/Scheduling/index'); ?>"><img src="/themes/index/public/assets/images/default/icon_pq.png"
               alt=""> 排期管理 <span class="jian">></span></a></li>
-        <li class="layui-nav-item  layui-nav-itemed layui-this"><a href="<?php echo url('portal/confer/index'); ?>"><img
+        <li class="layui-nav-item  "><a href="<?php echo url('portal/confer/index'); ?>"><img
               src="/themes/index/public/assets/images/default/icon_hc.png" alt=""> 会场管理 <span class="jian">></span></a></li>
         <li class="layui-nav-item"><a href="/sch_position"><img src="/themes/index/public/assets/images/default/icon_zw.png"
               alt=""> 职位管理 <span class="jian">></span></a></li>
@@ -77,7 +77,7 @@
                             </div>
                             <div class="layui-inline">
                                 <button class="layui-btn" lay-submit lay-filter="formDemo">搜索</button>
-                                <button class="layui-btn btn-shanchu">新建会场</button>
+                                <div class="layui-btn btn-shanchu xjhc">新建会场</div>
                             </div>
                         </div>
                     </form>
@@ -85,23 +85,42 @@
                 <div class="hc">
                     <div class="list">
                         <?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): if( count($list)==0 ) : echo "" ;else: foreach($list as $key=>$vo): ?>
-                        <a href="<?php echo url('portal/confer/article',array('id'=>$vo['id'])); ?>" class="box">
-                            <div class="box-title"><?php echo $vo['address']; ?></div>
-                            <div class="box-xx">
-                                <p>容纳人数：<span><?php echo $vo['num']; ?>人</span></p>
-                                <p>招聘排期：<span><?php $num=get_pqnum($vo['id']);if(empty($num) || (($num instanceof \think\Collection || $num instanceof \think\Paginator ) && $num->isEmpty())): ?>
-                                    无
-                                    <?php else: ?>
-                                    <?php echo $num; ?>场
-                                <?php endif; ?></span></p>
-                            </div>
-                        </a>
+                            <a href="<?php echo url('portal/confer/article',array('id'=>$vo['id'])); ?>" class="box">
+                                <div class="box-title"><?php echo $vo['address']; ?></div>
+                                <div class="box-xx">
+                                    <p>容纳人数：<span><?php echo $vo['num']; ?>人</span></p>
+                                    <p>招聘排期：<span><?php $num=get_pqnum($vo['id']);if(empty($num) || (($num instanceof \think\Collection || $num instanceof \think\Paginator ) && $num->isEmpty())): ?>
+                                                无
+                                                <?php else: ?>
+                                                <?php echo $num; ?>场
+                                            <?php endif; ?></span></p>
+                                </div>
+                            </a>
                         <?php endforeach; endif; else: echo "" ;endif; ?>
-
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    <div id="xjhc" class="tc">
+        <form class="layui-form" action="" >
+            <div class="layui-form-item">
+                <label class="layui-form-label">地点：</label>
+                <div class="layui-input-block">
+                    <input type="text" name="address" required lay-verify="required" autocomplete="off"
+                        class="layui-input address">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">容纳人数：</label>
+                <div class="layui-input-block">
+                    <input type="text" name="num" required lay-verify="required" autocomplete="off"
+                        class="layui-input num">
+                </div>
+            </div>
+            <div class="layui-btn btn-qx qx">取消</div>
+            <button class="layui-btn qr">确认</button>
+        </form>
     </div>
 </body>
 

@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:32:"themes/index/user\\register.html";i:1599551224;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -7,20 +8,20 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
     <title></title>
 </head>
-<link rel="stylesheet" href="__TMPL__/public/assets/css/default/layui/css/layui.css">
-<link rel='stylesheet' href='__TMPL__/public/assets/css/default/index.css'>
-<script src='__TMPL__/public/assets/js/default/jquery-1.11.3.min.js'></script>
-<script src='__TMPL__/public/assets/css/default/layui/layui.all.js'></script>
-<script src='__TMPL__/public/assets/js/default/SuperSlide.js'></script>
-<script src='__TMPL__/public/assets/js/default/index.js'></script>
+<link rel="stylesheet" href="/themes/index/public/assets/css/default/layui/css/layui.css">
+<link rel='stylesheet' href='/themes/index/public/assets/css/default/index.css'>
+<script src='/themes/index/public/assets/js/default/jquery-1.11.3.min.js'></script>
+<script src='/themes/index/public/assets/css/default/layui/layui.all.js'></script>
+<script src='/themes/index/public/assets/js/default/SuperSlide.js'></script>
+<script src='/themes/index/public/assets/js/default/index.js'></script>
 
-<body style="background: url(__TMPL__/public/assets/images/default/bg_clear.jpg)" class="register-form">
+<body style="background: url(/themes/index/public/assets/images/default/bg_clear.jpg)" class="register-form">
     <div class="center">
-        <img class="logo" src="__TMPL__/public/assets/images/default/logo_h.png" alt="">
+        <img class="logo" src="/themes/index/public/assets/images/default/logo_h.png" alt="">
         <div class="register">
             <p class="register-h">注册学校账号</p>
             <div class="form">
-                <form action="{:url('user/Register/doRegister')}" method="POST">
+                <form action="<?php echo url('user/Register/doRegister'); ?>" method="POST">
                     <div class="form-h">账号信息</div>
                     <div class="form-m">
                         <div class="layui-form-item">
@@ -89,7 +90,7 @@
                                 <select class=" area" name="area">
                                 </select>
                             </div>
-                            <script src="__TMPL__/public/assets/js/default/jsAddress.js"></script>
+                            <script src="/themes/index/public/assets/js/default/jsAddress.js"></script>
                             <script>
                                 addressInit('province', 'city', 'area');
                             </script>

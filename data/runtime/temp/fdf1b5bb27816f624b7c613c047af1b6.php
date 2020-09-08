@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:41:"themes/index/portal\scheduling\index.html";i:1599469242;s:76:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\con_left.html";i:1599459379;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:41:"themes/index/portal\scheduling\index.html";i:1599556559;s:76:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\con_left.html";i:1599556636;}*/ ?>
 
 <!DOCTYPE html>
 <html>
@@ -31,9 +31,14 @@
                     </a>
                 </li>
                 <li class="layui-nav-item">
-                    <a href="javascript:;">王奇博</a>
+                    <a href="javascript:;">
+                        <?php $user=cmf_get_current_user_id();
+                              $name=get_user_info($user);
+                        ?>
+                        <?php echo $name; ?>
+                    </a>
                     <dl class="layui-nav-child">
-                        <dd><a href="">退出</a></dd>
+                        <dd><a href="<?php echo url('user/index/logout'); ?>">退出</a></dd>
                     </dl>
                 </li>
             </ul>
@@ -48,9 +53,9 @@
       <ul class="layui-nav layui-nav-tree" lay-filter="test">
         <li class="layui-nav-item"><a href="javascript:;"><img src="/themes/index/public/assets/images/default/icon_kb.png"
               alt="">招聘大看板 <span class="jian">></span></a></li>
-        <li class="layui-nav-item"><a href="<?php echo url('portal/Scheduling/index'); ?>"><img src="/themes/index/public/assets/images/default/icon_pq.png"
+        <li class="layui-nav-item layui-nav-itemed layui-this"><a href="<?php echo url('portal/Scheduling/index'); ?>"><img src="/themes/index/public/assets/images/default/icon_pq.png"
               alt=""> 排期管理 <span class="jian">></span></a></li>
-        <li class="layui-nav-item  layui-nav-itemed layui-this"><a href="<?php echo url('portal/confer/index'); ?>"><img
+        <li class="layui-nav-item  "><a href="<?php echo url('portal/confer/index'); ?>"><img
               src="/themes/index/public/assets/images/default/icon_hc.png" alt=""> 会场管理 <span class="jian">></span></a></li>
         <li class="layui-nav-item"><a href="/sch_position"><img src="/themes/index/public/assets/images/default/icon_zw.png"
               alt=""> 职位管理 <span class="jian">></span></a></li>
@@ -135,7 +140,14 @@
                                     <p>预约人数：<span><?php echo $vo['app_num']; ?>人</span></p>
                                     <p>投递简历：<span>5份</span></p>
                                     <div>
-                                        <button class="layui-btn btn-ygl"><?php echo $vo['status']==1?'未关联':($vo['status']==2?"已关联":"已失效");?></button>
+                                        <?php if($vo['status']==1): ?>
+                                            <button class="layui-btn btn-gl">关联</button>
+                                         <?php elseif($vo['status']==2): ?> 
+                                            <button class="layui-btn btn-ygl">已关联</button>
+                                        <?php else: ?>
+                                        <button class="layui-btn btn-ysx">已失效</button>
+                                         <?php endif; ?>      
+                                       
                                     </div>
                                 </div>
                             </div>

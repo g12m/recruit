@@ -61,5 +61,33 @@ class ListController extends HomeBaseController
         $pInfo  = Db::name('portal_posten')->where('id',$id)->find();
         return $pInfo['post_hits'];
     }
+       public function avatarUpload()
+    {
+        $file   = $this->request->file('file');
+        $result = $file->validate([
+            'ext'  => 'jpg,jpeg,png',
+            'size' => 1024 * 1024
+        ])->move('.' . DS . 'upload' . DS . 'avatar' . DS);
+
+        if ($result) {
+            $avatarSaveName = str_replace('//', '/', str_replace('\\', '/', $result->getSaveName()));
+            $avatar         = 'avatar/' . $avatarSaveName;
+            session('avatar', $avatar);
+
+            return json_encode([
+                'code' => 1,
+                "msg"  => "上传成功",
+                "data" => ['file' => $avatar],
+                "url"  => ''
+            ]);
+        } else {
+            return json_encode([
+                'code' => 0,
+                "msg"  => $file->getError(),
+                "data" => "",
+                "url"  => ''
+            ]);
+        }
+    }
 
 }

@@ -10,10 +10,10 @@
 // +----------------------------------------------------------------------
 namespace app\portal\controller;
 
-use cmf\controller\HomeBaseController;
+use cmf\controller\UserBaseController;
 use app\portal\model\PortalCategoryModel;
 use think\Db;
-class   SchedulingController extends HomeBaseController
+class   SchedulingController extends UserBaseController
 {    
     //学校排期管理
     public function index()

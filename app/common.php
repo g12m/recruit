@@ -145,7 +145,11 @@ function get_countsch($uid)
   return $data;
 }
 
-
+function get_user_info($uid)
+{
+   $data=Db::name('entstu')->where(['uid'=>$uid])->value('user_name');
+  return $data;
+}
 
 
 // 获取某个分类下的第一个分类

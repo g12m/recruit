@@ -51,17 +51,24 @@
                 <div class="btns">
                     <button class="layui-btn btn-shanchu schc">删除会场</button>
                 </div>
+                <input type="hidden" name="id" value="{$article.id}" class="h_id">
             </div>
+            <empty name="zp">
+            <div class="hcxq">
+                <div class="none">
+                    <img src="__TMPL__/public/assets/images/default/kong.png" alt="">
+                    <p>暂无关联招聘会</p>
+                </div>
+            </div>
+                <else />
             <div class="hcxq">
                 <div class="xx">
                     <div class="xx-title">
                         <div class="a">该会场关联的招聘会</div>
                     </div>
                     <div class="xx-list">
-                        <input type="hidden" name="id" value="{$article.id}" class="h_id">
-                        <empty name="zp">
-                            未关联
-                            <else />
+                        
+                        
                             <foreach name="zp" item="vo">
                                 <?php $res=get_job($vo['fair_id']);?>
                                 <foreach name="$res" item="v3">
@@ -89,12 +96,13 @@
                                     </div>
                                 </foreach>
                             </foreach>
-                        </empty>
+                    
 
 
                     </div>
                 </div>
             </div>
+            </empty>
         </div>
     </div>
     </div>

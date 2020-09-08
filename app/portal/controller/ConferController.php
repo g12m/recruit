@@ -10,10 +10,10 @@
 // +----------------------------------------------------------------------
 namespace app\portal\controller;
 
-use cmf\controller\HomeBaseController;
+use cmf\controller\UserBaseController;
 use app\portal\model\PortalCategoryModel;
 use think\Db;
-class   ConferController extends HomeBaseController
+class   ConferController extends UserBaseController
 {    
     //学校会场详情
     public function index()
@@ -41,16 +41,21 @@ class   ConferController extends HomeBaseController
      public function addpost()
     {
         $data     = $this->request->param();
-        $data=[
-            'address'   =>'A101',
-            'num'       =>30,
+        if(empty($data['address']) && empty($data['num']))
+        {
+            return  2;
+        }
+        $datas=[
+            'address'   =>$data['address'],
+            'num'       =>$data['num'],
             'uid'       =>4,
             'cre_time'  =>time()
         ];
-       $res= Db::name('stu_conference')->insert($data); 
+
+       $res= Db::name('stu_conference')->insert($datas); 
        if($res)
         {
-            $this->success('添加会场成功');
+            return  1;
         }        
     }
 

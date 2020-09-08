@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:39:"themes/index/portal\confer\article.html";i:1599443574;s:76:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\con_left.html";i:1599459379;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:39:"themes/index/portal\confer\article.html";i:1599529308;s:76:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\con_left.html";i:1599459379;}*/ ?>
 
 <!DOCTYPE html>
 <html>
@@ -76,17 +76,25 @@
                 <div class="btns">
                     <button class="layui-btn btn-shanchu schc">删除会场</button>
                 </div>
+                <input type="hidden" name="id" value="<?php echo $article['id']; ?>" class="h_id">
             </div>
+            <?php if(empty($zp) || (($zp instanceof \think\Collection || $zp instanceof \think\Paginator ) && $zp->isEmpty())): ?>
+            <div class="hcxq">
+                <div class="none">
+                    <img src="/themes/index/public/assets/images/default/kong.png" alt="">
+                    <p>暂无关联招聘会</p>
+                </div>
+            </div>
+                <?php else: ?>
             <div class="hcxq">
                 <div class="xx">
                     <div class="xx-title">
                         <div class="a">该会场关联的招聘会</div>
                     </div>
                     <div class="xx-list">
-                        <input type="hidden" name="id" value="<?php echo $article['id']; ?>" class="h_id">
-                        <?php if(empty($zp) || (($zp instanceof \think\Collection || $zp instanceof \think\Paginator ) && $zp->isEmpty())): ?>
-                            未关联
-                            <?php else: if(is_array($zp) || $zp instanceof \think\Collection || $zp instanceof \think\Paginator): if( count($zp)==0 ) : echo "" ;else: foreach($zp as $key=>$vo): $res=get_job($vo['fair_id']);if(is_array($res) || $res instanceof \think\Collection || $res instanceof \think\Paginator): if( count($res)==0 ) : echo "" ;else: foreach($res as $key=>$v3): ?>
+                        
+                        
+                            <?php if(is_array($zp) || $zp instanceof \think\Collection || $zp instanceof \think\Paginator): if( count($zp)==0 ) : echo "" ;else: foreach($zp as $key=>$vo): $res=get_job($vo['fair_id']);if(is_array($res) || $res instanceof \think\Collection || $res instanceof \think\Paginator): if( count($res)==0 ) : echo "" ;else: foreach($res as $key=>$v3): ?>
                                     <div class="xx-box">
                                         <div class="xx-box-h"><?php echo $v3['title']; ?></div>
                                         <div class="xx-box-m">
@@ -107,12 +115,14 @@
                                             
                                         </div>
                                     </div>
-                                <?php endforeach; endif; else: echo "" ;endif; endforeach; endif; else: echo "" ;endif; endif; ?>
+                                <?php endforeach; endif; else: echo "" ;endif; endforeach; endif; else: echo "" ;endif; ?>
+                    
 
 
                     </div>
                 </div>
             </div>
+            <?php endif; ?>
         </div>
     </div>
     </div>

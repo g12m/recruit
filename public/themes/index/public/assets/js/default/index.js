@@ -60,7 +60,8 @@ window.onload = function () {
                 success: function (data) {
                     if(data==2)
                     {
-                        layer.msg('下面有关联!');
+                            layer.alert('该会场有关联的招聘会，请取消关联后删除', { icon: 2 })
+                        // layer.msg('下面有关联!');
                     }
                     if (data == '1') {
                         layer.msg('删除成功!');
@@ -149,6 +150,56 @@ window.onload = function () {
             console.log('发布成功')
             layer.close(layer.index)
         })
+        $('.xjhc').click(function () {
+            layer.open({
+                type: 1,
+                title: '新建会场',
+                content: $('#xjhc'),
+                area: '400px'
+            });
+        })
+        $('#xjhc .qx').click(function () {
+            layer.close(layer.index)
+        })
+        $('#xjhc .qr').click(function () {
+            var address = $('.address').val();
+            var num = $('.num').val();
+           
+                $.ajax({
+                    url: "/portal/confer/addpost",
+                    data: { "address": address, "num": num },
+                    type: "post",
+                    async: true,
+                    success: function (data) {
+                        if (data == '1') {
+                            layer.msg('新建成功!');
+                            var path = '/portal/confer/index';
+                            location.href = path;
+                        }
+                        if(data=='2')
+                        {
+                            layer.msg('新建失败!');
+                        }
+                    }
+                });
+          
+           
+         
+            layer.close(layer.index)
+        })
+
+        $('.qxgl').click(function () {
+            layer.prompt({
+                formType: 2,
+                value: '取消原因',
+                title: '取消关联',
+                area: ['500px', '200px']
+            }, function (value, index, elem) {
+                alert(value);
+                layer.close(index);
+            });
+        })
+       
     });
 
     // 滚动字幕配置项
@@ -165,25 +216,25 @@ window.onload = function () {
         $('#fbtz .linput').eq($(this).index()).addClass("check").siblings().removeClass('check');
     })
 
-    // 图片上传预览
-    $("#yyzz").change(function () {
-        var objUrl = getObjectURL(this.files[0]); //获取文件信息
-        console.log("objUrl = " + objUrl);
-        if (objUrl) {
-            $(".img").attr("src", objUrl);
-        }
-    });
-    function getObjectURL(file) {
-        var url = null;
-        if (window.createObjectURL != undefined) {
-            url = window.createObjectURL(file);
-        } else if (window.URL != undefined) {
-            url = window.URL.createObjectURL(file);
-        } else if (window.webkitURL != undefined) {
-            url = window.webkitURL.createObjectURL(file);
-        }
-        return url;
-    }
+    // // 图片上传预览
+    // $("#yyzz").change(function () {
+    //     var objUrl = getObjectURL(this.files[0]); //获取文件信息
+    //     console.log("objUrl = " + objUrl);
+    //     if (objUrl) {
+    //         $(".img").attr("src", objUrl);
+    //     }
+    // });
+    // function getObjectURL(file) {
+    //     var url = null;
+    //     if (window.createObjectURL != undefined) {
+    //         url = window.createObjectURL(file);
+    //     } else if (window.URL != undefined) {
+    //         url = window.URL.createObjectURL(file);
+    //     } else if (window.webkitURL != undefined) {
+    //         url = window.webkitURL.createObjectURL(file);
+    //     }
+    //     return url;
+    // }
 
 
 

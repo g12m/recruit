@@ -10,10 +10,10 @@
 // +----------------------------------------------------------------------
 namespace app\portal\controller;
 
-use cmf\controller\HomeBaseController;
+use cmf\controller\UserBaseController;
 use app\portal\model\PortalCategoryModel;
 use think\Db;
-class   SchPositionController extends HomeBaseController
+class   SchPositionController extends UserBaseController
 {    
     //学校职位管理
     public function index()
