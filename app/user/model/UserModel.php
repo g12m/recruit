@@ -18,6 +18,10 @@ class UserModel extends Model
     protected $type = [
         'more' => 'array',
     ];
+    public function getuser($username){
+        $res = $this->where('user_login',$username)->find();
+        return $res;
+    }
 
     public function doMobile($user)
     {

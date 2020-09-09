@@ -9,7 +9,8 @@ class EntfairController extends HomeBaseController
 {
     public function index()
     {
-        $where = [];
+        $user_info = session('Ent_user');
+        $where['ent_id'] = $user_info['entstu_id'];
         $request = '';
         $request = input('request.');
         if(!empty($request['title']))
@@ -37,35 +38,52 @@ class EntfairController extends HomeBaseController
         $page = $list->render();
         $this->assign('list',$list);
         $this->assign('page',$page);
-        // return $this->fetch();
-        var_dump($list);
+        return $this->fetch();
     }
     // 添加招聘会
     public function addfair(){
+        $user_info = session('Ent_user');
         if($this->request->ispost()){
-            // $alttime = array('1598716888','1598803255');
-            // $param['title'] = 'C公司8月招聘专场';
-            // $param['num'] = '50';
-            // $param['alt_time'] = json_encode($alttime);
-            // $param['time'] = 1598716844;
-            // $param['dea_time'] = 1598630102;
-            // $param['app_num'] = '80';
             //添加
             $param = $this->request->param();
+            $param['status'] = 1;
+            $param['uid'] = $user_info['id'];
+            $param['ent_id'] = $user_info['entstu_id'];
+            $param['add_time'] = time();
+            $param['dea_time'] = strtotime($param['dea_time']);
+            $zws = $param['zws'];
+            $posarr = $param['posarr'];
+            unset($param['zws']);
+            unset($param['posarr']);
+            unset($param['zw']);
+            foreach($param['alt_time'] as $k=>$v){
+                $param['alt_time'][$k] = strtotime($v);
+            }
+            $param['alt_time'] = json_encode($param['alt_time']);
             $pos = new JobfairModel();
-            $pos->fair_add($param);
-            // $this->redirect('index');
+            $id = $pos->fair_add($param);
+            //添加关联
+            $posarr = explode(',',$posarr);
+            if(count($posarr)>0){
+                foreach($posarr as $k=>$v){
+                    $data[$k]['pos_id'] = $v;
+                    $data[$k]['fair_id'] = $id;
+                    $data[$k]['time'] = time();
+                }
+                Db::name('fair_pos')->insertAll($data);
+            }
+            $this->redirect('index');
         }else{
             //页面
-
-            // return $this->fetch();
+            $pos = Db::name('ent_position')->where('uid',$user_info['entstu_id'])->select()->toArray();
+            $this->assign('pos',$pos);
+            return $this->fetch();
         }
     }
     // 招聘会详情
     public function fair_desc(){
         $param = $this->request->param();
-        // $id = $param['id'];
-        $id = 1;
+        $id = $param['id'];
         $pos = new JobfairModel();
         $res = $pos->getfair($id);
         $res['alt_time'] = json_decode($res['alt_time'],true);
@@ -75,7 +93,7 @@ class EntfairController extends HomeBaseController
         //获取职位
         $pos = Db::name('fair_pos')->alias('fp')->join('ent_position ep','fp.pos_id=ep.id','LEFT')->where('fp.fair_id',$id)->field('ep.title,ep.major,ep.num,ep.salary_min,ep.salary_max,ep.effective_time,ep.desc')->select()->toArray();
 
-        $this->assign('user_info',session('Ent_user')['user_info']);
+        $this->assign('user_info',session('Ent_user'));
         $this->assign('stunum',$stunum);
         $this->assign('stu',$stu);
         $this->assign('pos',$pos);
