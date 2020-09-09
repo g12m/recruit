@@ -32,36 +32,59 @@
                     
                     <div class="xq-h">{$vo.title}</div>
                     <div class="riqi">
+                       
                         <php>
                             $res=json_decode($vo['alt_time'],true);
+                            $status=get_gltime($vo['id'])['status'];
                         </php>
+                    <if $status==1>
+                        <empty name="$confer['fair_time']">
                         <i>【备选日期】
                             <foreach name="res" item="v">
                                 <span>{$v|date="m/d H:i",###}</span>
                             </foreach>
                         </i>
+                            <else />
+                        <i>【开始日期】
+                             
+                                <span>{$confer.fair_time|date="m/d H:i",###}</span>
+                              
+                        </i>
+                        </empty>
+                        <else/>
+                        <i>【备选日期】
+                            <foreach name="res" item="v">
+                                <span>{$v|date="m/d H:i",###}</span>
+                            </foreach>
+                        </i>
+                        </if>
                         <i>【截止日期】<span>{$vo.dea_time|date="m/d H:i",###}</span></i>
+                        <if $status==1>
                         <i>【关联日期】<span>{$confer.time|date="m/d H:i",###}</span></i>
+                        </if>
                         <i>【招聘人数】<span>{$vo.num}人</span></i>
                         <i>【预约人数】<span>{$vo.app_num}人</span></i>
-                        <i>【投递简历】<span>5份 XX有限公司</span></i>
+                        <i>【投递简历】<span>5份 <?php echo get_userlist_info($vo['uid'])['ent_name'];?></span></i>
                     </div>
                     </foreach>
                     <div class="btns">
-                        <if $vo['status']==1>
-                            <button class="layui-btn btn-gl">关联</button>
-                            <elseif $vo['status']==2>
-                                <button class="layui-btn btn-qxgl">取消关联</button>
+                       
+                        <if $status==2>
+                            <button class="layui-btn btn-gl glzph" id="{$vo.id}">关联</button>
+                            <elseif  $status==1>
+                                <button class="layui-btn qxgl">取消关联</button>
+                                <input type="hidden" value="{$vo.id}" class="qxyy">
                                 <else />
-                                <button class="layui-btn btn-ysx">已失效</button>
+                                <button class="layui-btn btn-gl glzph" id="{$vo.id}">关联</button>
+                                <!-- <button class="layui-btn btn-ysx">已失效</button> -->
                         </if>
                     
                     </div>
                     <div class="rightlogo">
                         <img src="__TMPL__/public/assets/images/default/phone.png" alt="">
                         <div class="right">
-                            <p class="rname">企业联系人：王芳</p>
-                            <a class="rphone" href="tel:13800001111">13800001111</a>
+                            <p class="rname">企业联系人：<?php echo get_userlist_info($vo['uid'])['user_name'];?></p>
+                            <a class="rphone" href="tel:<?php echo get_userlist_info($vo['uid'])['phone'];?>"><?php echo get_userlist_info($vo['uid'])['phone'];?></a>
                         </div>
                     </div>
                 </div>
@@ -111,6 +134,42 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div id="glzph" class="tc">
+        <form action="">
+            <div class="layui-form-item">
+                <span class="layui-form-label">选择时间：</span>
+                <div class="layui-input-block alttime">
+                    <label for="time1" class="linput check">
+                        <input type="radio" name="time" value="2020年09月10日 13:00" id="time1" checked>2020年09月10日 13:00
+                    </label>
+                </div>
+            </div>
+            <p style="font-size:14px;color:#707070;font-weight: 100;">以上为企业备选时间，请关联后与企业相关负责人联系，确定最终时间</p>
+            <div class="layui-btn btn-qx qx">取消</div>
+            <div class="layui-btn next">下一步</div>
+        </form>
+    </div>
+    <div id="next" class="tc">
+        <form action="">
+            <table class="layui-table" lay-skin="line">
+                <thead>
+                    <tr>
+                        <th>地点</th>
+                        <th>容纳人数</th>
+                    </tr>
+                </thead>
+                <tbody class="hcxx">
+                    <tr>
+                        <td><label for="A101"><input type="radio" name="room" id="A101" value="A101">A101</label></td>
+                        <td>30人</td>
+                    </tr>
+    
+                </tbody>
+            </table>
+            <div class="layui-btn btn-qx prev">上一步</div>
+            <button class="layui-btn qr" lay-submit>确定</button>
+        </form>
     </div>
 </body>
 

@@ -13,15 +13,33 @@ namespace app\portal\controller;
 use cmf\controller\UserBaseController;
 use app\portal\model\PortalCategoryModel;
 use think\Db;
-class   ConferController extends UserBaseController
+class   SturoleController extends UserBaseController
 {    
-    //学校会场详情
+    //学校角色详情
     public function index()
     {
         $param                 = $this->request->param();
-        $address               = empty($param['title'])?'':$param['title'];
-        $uid                   = cmf_get_current_user_id();
-        $where                 = [];
+        $address               =empty($param['title'])?'':$param['title'];
+        $uid                   = 4;
+        $where                 =[];
+        if(!empty($address))
+        {
+            $where['a.address']=['like',"%$address%"];
+        }
+        $list                  = Db::name('stu_conference a')->where('a.uid',$uid)->where($where)->order('cre_time DESC')->paginate(9);
+        $list->appends($param);
+        $this->assign('page', $list->render());
+        $this->assign('list', $list);
+        $this->assign('title', $address);
+        return $this->fetch();
+    }
+    //人员管理
+    public function pindex()
+    {
+        $param                 = $this->request->param();
+        $address               =empty($param['title'])?'':$param['title'];
+        $uid                   = 4;
+        $where                 =[];
         if(!empty($address))
         {
             $where['a.address']=['like',"%$address%"];
@@ -41,7 +59,6 @@ class   ConferController extends UserBaseController
      public function addpost()
     {
         $data     = $this->request->param();
-        $uid=cmf_get_current_user_id();
         if(empty($data['address']) && empty($data['num']))
         {
             return  2;
@@ -49,7 +66,7 @@ class   ConferController extends UserBaseController
         $datas=[
             'address'   =>$data['address'],
             'num'       =>$data['num'],
-            'uid'       =>$uid,
+            'uid'       =>4,
             'cre_time'  =>time()
         ];
 
@@ -65,9 +82,8 @@ class   ConferController extends UserBaseController
     {
         //会场与招聘会关联
         $id      = $this->request->param('id');
-        $uid=cmf_get_current_user_id();
         $article = Db::name('stu_conference')->where('id',$id)->find(); 
-        $zp=Db::name('stu_pz')->where('h_id',$id)->where(['status'=>1,'uid'=>$uid])->field('fair_id')->select()->toArray();
+        $zp=Db::name('stu_pz')->where('h_id',$id)->field('fair_id')->select()->toArray();
        
         $this->assign('article', $article);
         $this->assign('zp', $zp);

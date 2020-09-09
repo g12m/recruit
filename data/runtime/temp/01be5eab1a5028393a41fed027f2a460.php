@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:37:"themes/index/user\register_check.html";i:1599549996;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:37:"themes/index/user\register_check.html";i:1599561007;}*/ ?>
 <!DOCTYPE html>
 <html>
 

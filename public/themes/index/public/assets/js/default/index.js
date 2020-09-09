@@ -195,9 +195,275 @@ window.onload = function () {
                 title: '取消关联',
                 area: ['500px', '200px']
             }, function (value, index, elem) {
-                alert(value);
+                    var fair_id = $('.qxyy').val();
+                    $.ajax({
+                        url: "/portal/scheduling/dis",
+                        data: {"value": value,'fair_id':fair_id},
+                        type: "post",
+                        async: true,
+                        success: function (data) {
+                           if(data==1)
+                           {
+                               layer.msg('取消关联');
+                               var path = '/portal/scheduling/article/id' + fair_id;
+                               location.href = path;
+                           }
+                        }
+                    });
+                   
                 layer.close(index);
             });
+        })
+        $('.glzph').click(function () {
+            layer.open({
+                type: 1,
+                title: '关联招聘会',
+                content: $('#glzph'),
+                area: '750px'
+            });
+            var lid=$(this).attr('id');
+         
+            $.ajax({
+                url: "/portal/scheduling/ajax_guan",
+                data: { "lid": lid},
+                type: "post",
+                async: true,
+                success: function (data) {
+                    var res = data
+                    var html = ''
+                  
+             
+                    $.each(res,function(k,v){
+                       
+                        var vt=format(v*1000,'YYYY年MM月DD日 hh:mm')
+                            html += '<label for="time' + k + '" class="linput">'
+                            + '<input type="radio" name="time" value="' + v + '" id="time' + k + '" >'+'<input type="hidden" value="' + lid + '" class="lid">' + vt + '</label>'
+                    })
+                    $(".alttime").text('')
+                    $(".alttime").append(html)
+                    qiehuan()
+                }
+            });
+            
+        })
+        $('#glzph .qx').click(function () {
+
+            layer.close(layer.index)
+        })
+        $('#glzph .next').click(function () {
+            layer.close(layer.index)
+            layer.open({
+                type: 1,
+                title: '关联招聘会',
+                content: $('#next'),
+                area: '750px'
+            });
+          
+            $.ajax({
+                url: "/portal/scheduling/ajax_hui",
+                type: "post",
+                async: true,
+                success: function (data) {
+                    var res = data
+                    var html = ''
+                    $.each(res, function (k, v) {
+                        console.log(v)
+                        html += '<tr >'
+                            + '<td><label for="' + v.address +'" class="h_id"><input type="radio"  name="room" id="'+v.address+'" value="'+v.id+'">'+v.address+'</label></td>'
+                            +'<td>'+v.num+'</td>'
+                             +'</tr>'   
+                    })
+                     $(".hcxx").text('')
+                     $(".hcxx").append(html)
+                    // qiehuan()
+                }
+            });
+        
+        })
+        $('#next .prev').click(function () {
+            layer.close(layer.index)
+            layer.open({
+                type: 1,
+                title: '关联招聘会',
+                content: $('#glzph'),
+                area: '750px'
+            });
+        })
+        $('#next .qr').click(function () {
+            var nid = $('.check').children().val();
+            var id = $('.lid').val();
+            var h_id = $("[name='room']:checked").val();
+            if (h_id ==undefined)
+            {
+                layer.close(layer.index) 
+            }
+            else{
+                if (nid == undefined)
+                {
+                    nid=0;
+                }
+            
+                $.ajax({
+                    url: "/portal/scheduling/relation",
+                    data: {"nid": nid,"id":id,"h_id":h_id},
+                    type: "post",
+                    async: true,
+                    success: function (data) {
+                        if(data==1)
+                        {
+                            layer.msg('关联成功')
+                        }
+                        // qiehuan()
+                    }
+                });
+        
+                layer.close(layer.index)  
+            }
+           
+        })
+
+        $('.yyms').click(function () {
+            layer.open({
+                type: 1,
+                title: '预约面试',
+                content: $('#yyms'),
+                area: '500px'
+            });
+        })
+        $('#yyms .qx').click(function () {
+            layer.close(layer.index)
+        })
+        $('#yyms .qr').click(function () {
+            console.log('预约成功')
+            layer.close(layer.index)
+        })
+
+        $('.tjzpzw').click(function () {
+            layer.open({
+                type: 1,
+                title: '添加招聘职位',
+                content: $('#tjzpzw'),
+                area: '750px'
+            });
+        })
+        $('#tjzpzw .qx').click(function () {
+            layer.close(layer.index)
+        })
+        $('#tjzpzw .qr').click(function () {
+            console.log('添加成功')
+            layer.close(layer.index)
+        })
+
+        $('.sfjjw').click(function () {
+            layer.open({
+                type: 1,
+                title: '确认交换',
+                content: $('#sfjjw'),
+                area: '500px'
+            });
+        })
+        $('#sfjjw .qx').click(function () {
+            layer.close(layer.index)
+        })
+        $('#sfjjw .qr').click(function () {
+            console.log('交换成功')
+            layer.close(layer.index)
+        })
+
+        $('.bjm').click(function () {
+            layer.open({
+                type: 1,
+                title: '编辑名称',
+                content: $('#bjm'),
+                area: '500px'
+            });
+        })
+        $('#bjm .qx').click(function () {
+            layer.close(layer.index)
+        })
+        $('#bjm .qr').click(function () {
+            console.log('编辑成功')
+            layer.close(layer.index)
+        })
+
+        $('.bjsq').click(function () {
+            layer.open({
+                type: 1,
+                title: '编辑权限',
+                content: $('#bjsq'),
+                area: '300px'
+            });
+        })
+        $('#bjsq .qx').click(function () {
+            layer.close(layer.index)
+        })
+        $('#bjsq .qr').click(function () {
+            console.log('编辑成功')
+            layer.close(layer.index)
+        })
+
+        $('.cbjm').click(function () {
+            layer.open({
+                type: 1,
+                title: '编辑名称',
+                content: $('#cbjm'),
+                area: '500px'
+            });
+        })
+        $('#cbjm .qx').click(function () {
+            layer.close(layer.index)
+        })
+        $('#cbjm .qr').click(function () {
+            console.log('编辑成功')
+            layer.close(layer.index)
+        })
+
+        $('.cbjsq').click(function () {
+            layer.open({
+                type: 1,
+                title: '编辑权限',
+                content: $('#cbjsq'),
+                area: '300px'
+            });
+        })
+        $('#cbjsq .qx').click(function () {
+            layer.close(layer.index)
+        })
+        $('#cbjsq .qr').click(function () {
+            console.log('编辑成功')
+            layer.close(layer.index)
+        })
+        // 滚动字幕配置项
+        $("#gun1").slide({
+            mainCell: ".bd ul",
+            autoPlay: true,
+            effect: "topMarquee",
+            vis: 5,
+            interTime: 50,
+            trigger: "click"
+        });
+        $("#gun2").slide({
+            mainCell: ".bd ul",
+            autoPlay: true,
+            effect: "topMarquee",
+            vis: 5,
+            interTime: 50,
+            trigger: "click"
+        });
+
+        function qiehuan(){
+            $('.tc .linput').click(function () {
+            $('.tc .linput').eq($(this).index()).addClass("check").siblings().removeClass('check');
+        })
+        }
+        qiehuan()
+
+        // 鼠标移动显示退出按钮 点击返回上一页
+        $('.dkb').mousemove(function () {
+            $('.dkb .tuichu').fadeIn()
+        });
+        $('.dkb .tuichu').click(function () {
+            history.go(-1)
         })
        
     });
@@ -216,6 +482,31 @@ window.onload = function () {
         $('#fbtz .linput').eq($(this).index()).addClass("check").siblings().removeClass('check');
     })
 
+    function format(time, format) {
+        time = time ? new Date(time) : new Date();
+        format = format || 'YYYY-MM-DD';
+        function tf(i) {
+            return (i < 10 ? '0' : '') + i;
+        }
+        return format.replace(/YYYY|MM|DD|hh|mm|ss|WW/g, function (a) {
+            switch (a) {
+                case 'YYYY':
+                    return tf(time.getFullYear());
+                case 'MM':
+                    return tf(time.getMonth() + 1);
+                case 'DD':
+                    return tf(time.getDate());
+                case 'mm':
+                    return tf(time.getMinutes());
+                case 'hh':
+                    return tf(time.getHours());
+                case 'ss':
+                    return tf(time.getSeconds());
+                case 'WW':
+                    return ['日', '一', '二', '三', '四', '五', '六'][time.getDay()];
+            }
+        });
+    };
     // // 图片上传预览
     // $("#yyzz").change(function () {
     //     var objUrl = getObjectURL(this.files[0]); //获取文件信息

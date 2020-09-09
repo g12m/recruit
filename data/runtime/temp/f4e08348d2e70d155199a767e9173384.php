@@ -1,5 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:43:"themes/index/portal\sch_position\index.html";i:1599561007;s:76:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\con_left.html";i:1599568033;}*/ ?>
-
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:37:"themes/index/portal\resume\index.html";i:1599563098;s:76:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\con_left.html";i:1599568033;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -22,7 +21,7 @@
 <body class="layui-layout-body">
     <div class="layui-layout layui-layout-admin">
         <!-- 头部 -->
-   
+       
         <!-- 左侧导航 -->
         
 
@@ -88,27 +87,17 @@
                             <div class="layui-inline">
                                 <label class="layui-form-label">日期：</label>
                                 <div class="layui-input-inline" style="width: 200px;">
-                                    <input id="timestart-zw" type="text" name="price_min" placeholder="开始时间" autocomplete="off"
-                                        class="layui-input">
+                                    <input id="timestart-zw" type="text" name="price_min" placeholder="开始时间"
+                                        autocomplete="off" class="layui-input">
                                 </div>
                                 <div class="layui-form-mid">-</div>
                                 <div class="layui-input-inline" style="width: 200px;">
-                                    <input id="timeend-zw" type="text" name="price_max" placeholder="结束时间" autocomplete="off"
-                                        class="layui-input">
+                                    <input id="timeend-zw" type="text" name="price_max" placeholder="结束时间"
+                                        autocomplete="off" class="layui-input">
                                 </div>
                             </div>
                             <div class="layui-inline">
-                                <label class="layui-form-label">状态：</label>
-                                <div class="layui-input-block" style="width: 100px;">
-                                    <select name="city" lay-verify="">
-                                        <option value="0">全部</option>
-                                        <option value="1">开始</option>
-                                        <option value="2">结束</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="layui-inline">
-                                <button class="layui-btn" lay-submit lay-filter="formDemo">搜索</button>
+                                <button class="layui-btn" lay-submit>搜索</button>
                             </div>
                         </div>
                     </form>
@@ -117,36 +106,100 @@
                     <table class="layui-table" lay-skin="line">
                         <thead>
                             <tr>
+                                <th>姓名</th>
+                                <th>专业</th>
                                 <th>公司名称</th>
-                                <th>招聘人数</th>
-                                <th>职位</th>
+                                <th>投递职位</th>
+                                <th>职位类型</th>
+                                <th>投递时间</th>
                                 <th>操作</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php 
-                                $ress=get_schnum(4);
-                                $num=get_countsch(4);
-                                foreach($ress as $k=>$v)
-                                {
-                                $arr[] = $v['title'];
-                                }
-                                $str = implode('、',$arr);
-                             ?>
                             <tr>
+                                <td>
+                                    <p><span class="layui-badge-dot"></span>王琪琪</p>
+                                </td>
+                                <td>
+                                    <p>软件设计</p>
+                                </td>
                                 <td>
                                     <p>北京XXX软件开发公司</p>
                                 </td>
                                 <td>
-                                    <p><?php echo $num; ?>人</p>
+                                    <p>软件开发工程师</p>
                                 </td>
                                 <td>
-                                    <p><?php echo $str; ?></p>
+                                    <p>正式</p>
                                 </td>
-                                <td><button class="layui-btn btn-xq"><a href="<?php echo url('portal/sch_position/article',array('id'=>4)); ?>">详情</a></button></td>
+                                <td>
+                                    <p>8月23日 12:34</p>
+                                </td>
+                                <td><button class="layui-btn btn-xq">详情</button></td>
                             </tr>
-                     
-                         
+                            <tr>
+                                <td>
+                                    <p><span class="layui-badge-dot"></span>王琪琪</p>
+                                </td>
+                                <td>
+                                    <p>软件设计</p>
+                                </td>
+                                <td>
+                                    <p>北京XXX软件开发公司</p>
+                                </td>
+                                <td>
+                                    <p>软件开发工程师</p>
+                                </td>
+                                <td>
+                                    <p>正式</p>
+                                </td>
+                                <td>
+                                    <p>8月23日 12:34</p>
+                                </td>
+                                <td><button class="layui-btn btn-xq">详情</button></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p><span class="layui-badge-dot"></span>王琪琪</p>
+                                </td>
+                                <td>
+                                    <p>软件设计</p>
+                                </td>
+                                <td>
+                                    <p>北京XXX软件开发公司</p>
+                                </td>
+                                <td>
+                                    <p>软件开发工程师</p>
+                                </td>
+                                <td>
+                                    <p>正式</p>
+                                </td>
+                                <td>
+                                    <p>8月23日 12:34</p>
+                                </td>
+                                <td><button class="layui-btn btn-xq">详情</button></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p><span class="layui-badge-dot"></span>王琪琪</p>
+                                </td>
+                                <td>
+                                    <p>软件设计</p>
+                                </td>
+                                <td>
+                                    <p>北京XXX软件开发公司</p>
+                                </td>
+                                <td>
+                                    <p>软件开发工程师</p>
+                                </td>
+                                <td>
+                                    <p>正式</p>
+                                </td>
+                                <td>
+                                    <p>8月23日 12:34</p>
+                                </td>
+                                <td><button class="layui-btn btn-xq">详情</button></td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>

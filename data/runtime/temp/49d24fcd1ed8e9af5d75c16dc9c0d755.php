@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:37:"themes/index/portal\confer\index.html";i:1599561007;s:76:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\con_left.html";i:1599568033;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:39:"themes/index/portal\resume\article.html";i:1599563234;s:76:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\con_left.html";i:1599563572;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -21,14 +21,14 @@
 <body class="layui-layout-body">
     <div class="layui-layout layui-layout-admin">
         <!-- 头部 -->
- 
-        <!-- 左侧导航 -->
     
+        <!-- 左侧导航 -->
+        
 
 <div class="layui-header">
       <ul class="layui-nav layui-layout-right">
             <li class="layui-nav-item">
-                  <a href="<?php echo url('portal/msg/index'); ?>">
+                  <a href="javascript:;">
                         <i class="layui-icon layui-icon-notice"></i>
                         <span class="layui-badge-dot"></span>
                   </a>
@@ -54,7 +54,7 @@
     <div class="layui-logo"><img src="/themes/index/public/assets/images/default/logo.png" alt=""></div>
     <div class="layui-side-scroll">
       <ul class="layui-nav layui-nav-tree" lay-filter="test">
-        <li class="layui-nav-item"><a href="<?php echo url('portal/msg/kanban'); ?>"><img src="/themes/index/public/assets/images/default/icon_kb.png"
+        <li class="layui-nav-item"><a href="javascript:;"><img src="/themes/index/public/assets/images/default/icon_kb.png"
               alt="">招聘大看板 <span class="jian">></span></a></li>
         <li class="layui-nav-item layui-nav-itemed layui-this"><a href="<?php echo url('portal/Scheduling/index'); ?>"><img src="/themes/index/public/assets/images/default/icon_pq.png"
               alt=""> 排期管理 <span class="jian">></span></a></li>
@@ -66,7 +66,7 @@
               alt=""> 简历管理 <span class="jian">></span></a></li>
         <li class="layui-nav-item"><a href="<?php echo url('portal/Sturole/index'); ?>"><img src="/themes/index/public/assets/images/default/icon_js.png"
               alt=""> 角色管理 <span class="jian">></span></a></li>
-        <li class="layui-nav-item"><a href="<?php echo url('portal/Sturole/pindex'); ?>"><img src="/themes/index/public/assets/images/default/icon_ry.png"
+        <li class="layui-nav-item"><a href="javascript:;"><img src="/themes/index/public/assets/images/default/icon_ry.png"
               alt=""> 人员管理 <span class="jian">></span></a></li>
       </ul>
     </div>
@@ -75,61 +75,34 @@
         <!-- 主体部分 -->
         <div class="layui-body">
             <div class="RightBody">
-                <div class="sousuo">
-                    <form class="layui-form" action="" method="post">
-                        <div class="layui-form-item">
-                            <div class="layui-inline">
-                                <label class="layui-form-label">搜索：</label>
-                                <div class="layui-input-inline" style="width: 240px;">
-                                    <input type="text" name="title" autocomplete="off" class="layui-input" value="<?php echo $title; ?>">
-                                </div>
-                            </div>
-                            <div class="layui-inline">
-                                <button class="layui-btn" lay-submit lay-filter="formDemo">搜索</button>
-                                <div class="layui-btn btn-shanchu xjhc">新建会场</div>
-                            </div>
-                        </div>
-                    </form>
+                <div class="xq-title layui-clear">
+                    <div class="xq-h">王琪琪</div>
+                    <div class="riqi">
+                        <i>【专业】<span>软件设计</span></i>
+                        <i>【公司名称】<span>北京XXX互联网科技公司</span></i>
+                        <i>【投递职位】<span>软件开发工程师</span></i>
+                        <i>【职位类型】<span>正式</span></i>
+                        <i>【投递时间】<span>8月23日 12:34</span></i>
+                        <i>【微信】<span>123456789</span></i>
+                        <i>【手机号】<span>12812345678</span></i>
+                    </div>
                 </div>
-                <div class="hc">
-                    <div class="list">
-                        <?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): if( count($list)==0 ) : echo "" ;else: foreach($list as $key=>$vo): ?>
-                            <a href="<?php echo url('portal/confer/article',array('id'=>$vo['id'])); ?>" class="box">
-                                <div class="box-title"><?php echo $vo['address']; ?></div>
-                                <div class="box-xx">
-                                    <p>容纳人数：<span><?php echo $vo['num']; ?>人</span></p>
-                                    <p>招聘排期：<span><?php $num=get_pqnum($vo['id']);if(empty($num) || (($num instanceof \think\Collection || $num instanceof \think\Paginator ) && $num->isEmpty())): ?>
-                                                无
-                                                <?php else: ?>
-                                                <?php echo $num; ?>场
-                                            <?php endif; ?></span></p>
-                                </div>
+                <div class="jlxq">
+                    <div class="xx">
+                        <div class="xx-title">
+                            <div class="a">附件</div>
+                        </div>
+                        <div class="fujian">
+                            <a class="word" href="">
+                                <img src="/themes/index/public/assets/images/default/word.png" alt="">
+                                <p>【点击在线预览】</p>
                             </a>
-                        <?php endforeach; endif; else: echo "" ;endif; ?>
+                            <button class="layui-btn"><a href="">下载</a></button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div id="xjhc" class="tc">
-        <form class="layui-form" action="" >
-            <div class="layui-form-item">
-                <label class="layui-form-label">地点：</label>
-                <div class="layui-input-block">
-                    <input type="text" name="address" required lay-verify="required" autocomplete="off"
-                        class="layui-input address">
-                </div>
-            </div>
-            <div class="layui-form-item">
-                <label class="layui-form-label">容纳人数：</label>
-                <div class="layui-input-block">
-                    <input type="text" name="num" required lay-verify="required" autocomplete="off"
-                        class="layui-input num">
-                </div>
-            </div>
-            <div class="layui-btn btn-qx qx">取消</div>
-            <button class="layui-btn qr">确认</button>
-        </form>
     </div>
 </body>
 

@@ -97,22 +97,23 @@ function get_zhiwei_name($catid)
 //获取会场信息
 function get_hui($catid)
 {
-  $data=Db::name('stu_conference')->where(['id'=>$catid,'uid'=>4])->find();
+  $uid=cmf_get_current_user_id();
+  $data=Db::name('stu_conference')->where(['id'=>$catid,'uid'=>$uid])->find();
   return $data;
 }
 
 //获取招聘会信息
 function get_job($catid)
 {
+   $uid=cmf_get_current_user_id();
  $data= Db::name('jobfair')
-        ->where(['id'=>$catid,'uid'=>4])
+        ->where(['id'=>$catid])
         ->select()
          ->each(function($item,$key){
            $item['pos_ids'] = get_zhiwei_info($item['id']);
              return   $item;
            });
         ;
-
   return $data;
 }
 
@@ -128,7 +129,8 @@ function get_zptime($catid)
 
 function get_pqnum($catid)
 {
-  $data=Db::name('stu_pz')->where(['h_id'=>$catid,'uid'=>4])->count('h_id');
+  $uid=cmf_get_current_user_id();
+  $data=Db::name('stu_pz')->where(['h_id'=>$catid,'uid'=>$uid,'status'=>1])->count('h_id');
   return $data;
 }
 
@@ -151,7 +153,19 @@ function get_user_info($uid)
   return $data;
 }
 
-
+function get_userlist_info($uid)
+{
+   $data=Db::name('entstu')->where(['uid'=>$uid])->find();
+  return $data;
+}
+//学校排期关联日期
+function get_gltime($id)
+{
+  $uid=cmf_get_current_user_id();
+   $confer = Db::name('stu_pz')->where('fair_id',$id)->where('uid',$uid)->find(); 
+    return $confer;   
+      
+}
 // 获取某个分类下的第一个分类
 function get_cid($catid)
 {

@@ -20,8 +20,11 @@ class   SchedulingController extends UserBaseController
     {
         $param                 = $this->request->param();
         $where                 =[];
-        
-        $list                  = Db::name('jobfair')
+        if(!empty($param['status']))
+        {
+            $where['a.status']=$param['status'];
+        }
+        $list                  = Db::name('jobfair a')
         ->where($where)
         ->paginate(6)
          ->each(function($item,$key){
@@ -39,20 +42,21 @@ class   SchedulingController extends UserBaseController
 
      public function relation()
     {
-        //$data     = $this->request->param();
-
-        $data=[
-            'h_id'   =>'["1"]',
-            'fair_id'       =>2,
-            'uid'       =>4,
+        $data     = $this->request->param();
+         $uid=cmf_get_current_user_id();
+        $datas=[
+            'h_id'   =>$data['h_id'],
+            'fair_id'       =>$data['id'],
+            'uid'       =>$uid,
             'time'  =>time(),
-             'fair_time'=>["1598716800","1598889600"]
+             'fair_time'=>$data['nid']
         ];
-       $res= Db::name('stu_pz')->insert($data); 
-       Db::name('jobfair')->where('id',$data['fair_id'])->update(['status'=>2]);
+       $res= Db::name('stu_pz')->insert($datas); 
+     
+       Db::name('jobfair')->where('id',$data['id'])->update(['status'=>2]);
        if($res)
         {
-            $this->success('关联成功');
+            return 1;
         }        
     }
 
@@ -61,6 +65,7 @@ class   SchedulingController extends UserBaseController
     {
         //会场与招聘会关联
         $id      = $this->request->param('id');
+         $uid=cmf_get_current_user_id();
         $article                  = Db::name('jobfair')
         ->where('id',$id)
         ->select()
@@ -73,7 +78,7 @@ class   SchedulingController extends UserBaseController
       
         $this->assign('article', $article);
         //获取绑定的会场
-          $confer = Db::name('stu_pz')->where('fair_id',$id)->find(); 
+          $confer = Db::name('stu_pz')->where(['fair_id'=>$id,'uid'=>$uid,'status'=>1])->find(); 
        
          $this->assign('confer', $confer);
         return $this->fetch();
@@ -82,14 +87,34 @@ class   SchedulingController extends UserBaseController
     public function dis()
     {
         //会场与招聘会关联
-        $id      = $this->request->param('id');
-        $job     = Db::name('jobfair')->where('id',$id)->update(['status'=>1]);
-        $confer  = Db::name('stu_pz')->where('fair_id',$id)->update(['status'=>2]);
-        if($job)
+        $id      = $this->request->param('fair_id');
+         $des      = $this->request->param('value');
+          $uid=cmf_get_current_user_id();
+        $confer  = Db::name('stu_pz')->where('fair_id',$id)->where('uid',$uid)->update(['status'=>2,'de_mes'=>$des,'q_time'=>time()]);
+        Db::name('jobfair')->where('id',$id)->update(['status'=>1]);
+        if($confer)
         {
-            $this->success('取消关联成功');
+            return  1;
         }
         
+    }
+    public function ajax_guan()
+    {
+         $lid      = $this->request->param('lid');
+        $alttime = Db::name('jobfair')->where('id',$lid)->field('alt_time')->find();
+        $arr = json_decode($alttime['alt_time'],true);
+        foreach($arr as $k=>$v){
+            $arr[$k] = $v;
+        }
+
+          return $arr;
+    }
+
+    public function  ajax_hui()
+    {
+        $uid=cmf_get_current_user_id();
+        $list   = Db::name('stu_conference a')->where('a.uid',$uid)->select()->toArray();
+        return $list;
     }
 
 
