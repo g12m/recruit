@@ -1,0 +1,82 @@
+<extend name="public@base" />
+        <!-- 主体部分 -->
+        <block name="content">
+        <!-- 主体部分 -->
+        <div class="layui-body">
+            <div class="RightBody">
+                <div class="xq-title layui-clear">
+                    <div class="xq-h">{$article.address}</div>
+                    <div class="riqi">
+                        <i>【容纳人数】<span>{$article.num}人</span></i>
+                    </div>
+                    <div class="btns">
+                        <button class="layui-btn btn-shanchu schc">删除会场</button>
+                    </div>
+                    <input type="hidden" name="id" value="{$article.id}" class="h_id">
+                </div>
+                <empty name="zp">
+                    <div class="hcxq">
+                        <div class="none">
+                            <img src="__TMPL__/public/assets/images/default/kong.png" alt="">
+                            <p>暂无关联招聘会</p>
+                        </div>
+                    </div>
+                    <else />
+                    <div class="hcxq">
+                        <div class="xx">
+                            <div class="xx-title">
+                                <div class="a">该会场关联的招聘会</div>
+                            </div>
+                            <div class="xx-list">
+
+
+                                <foreach name="zp" item="vo">
+                                    <?php $res=get_job($vo['fair_id']);?>
+                                    <foreach name="$res" item="v3">
+                                        <div class="xx-box">
+                                            <div class="xx-box-h">{$v3.title}</div>
+                                            <div class="xx-box-m">
+                                                <?php $restime=json_decode($v3['alt_time'],true);?>
+                                                <p><i>备选日期：<foreach name="restime" item="v">
+                                                            <span>{$v|date="m-d H:i",###}</span>
+                                                        </foreach></i></p>
+                                                <p><i>关联日期：<span>
+                                                            <php>
+                                                                $time=get_zptime($v3['id']);
+                                                            </php>
+                                                            {$time|date="m月d日 H:i",###}
+                                                        </span></i></p>
+                                                <p><i>招聘人数：<span>{$v3.num}人</span></i></p>
+                                                <p><i>招聘职位：<span>
+                                                            <foreach name="$v3['pos_ids']" item="v">
+
+                                                                <?php echo get_zhiwei_name($v['pos_id']);?>
+
+                                                            </foreach>
+                                                        </span></i></p>
+                                                <p><i>预约人数：<span>{$v3.app_num}人</span></i></p>
+                                                <p><i>投递简历：<span>5份</span></i></p>
+
+                                            </div>
+                                        </div>
+                                    </foreach>
+                                </foreach>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </empty>
+            </div>
+        </div>
+    </div>
+    <div id="schc" class="tc">
+        <img src="__TMPL__/public/assets/images/default/ku.png" alt="">
+        <p>删除该会场后将无法恢复，确认删除吗？</p>
+        <button class="layui-btn btn-qx qx">取消</button>
+        <button class="layui-btn qr">确认</button>
+    </div>
+
+    </div>
+</block>

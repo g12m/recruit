@@ -139,7 +139,7 @@ class UserModel extends Model
         return 2;
     }
 
-    public function register($user, $type)
+    public function register($user, $type,$user_type,$datas)
     {
         switch ($type) {
             case 1:
@@ -163,7 +163,7 @@ class UserModel extends Model
 
         if (empty($result)) {
             $data   = [
-                'user_login'      => empty($user['user_login']) ? '' : $user['user_login'],
+                'user_login'      => empty($user['mobile']) ? '' : $user['mobile'],
                 'user_email'      => empty($user['user_email']) ? '' : $user['user_email'],
                 'mobile'          => empty($user['mobile']) ? '' : $user['mobile'],
                 'user_nickname'   => '',
@@ -172,9 +172,45 @@ class UserModel extends Model
                 'create_time'     => time(),
                 'last_login_time' => time(),
                 'user_status'     => $userStatus,
-                "user_type"       => 2,//会员
+                "user_type"       => $user['user_type'],//3.学校，4.企业
             ];
+
             $userId = Db::name("user")->insertGetId($data);
+            if($user['user_type']==3)
+            {
+                $newData=[
+                'user_name'=>$datas['user_name'],
+                'phone'=>$datas['phone'],
+                'ent_name'=>$datas['ent_name'],
+                'province'=>$datas['province'],
+                'city'=>$datas['city'],
+                'area'=>$datas['area'],
+                'major'=>$datas['major'],
+                'num'=>$datas['num'],
+                'desc'=>$datas['desc'],
+                'type'=>$datas['user_type'],
+                'uid'=>$userId,
+                'time'=>time()
+            ];
+            }
+            else{
+                  $newData=[
+                'user_name'=>$datas['user_name'],
+                'phone'=>$datas['phone'],
+                'ent_name'=>$datas['ent_name'],
+                'Industry'=>$datas['Industry'],
+                'city'=>$datas['city'],
+                'area'=>$datas['area'],
+                
+                'img'=>$datas['img'],
+                'desc'=>$datas['desc'],
+                'type'=>$datas['user_type'],
+                'uid'=>$userId,
+                'time'=>time()
+            ];
+            }
+          
+            Db::name("entstu")->insert($newData);
             $data   = Db::name("user")->where('id', $userId)->find();
             cmf_update_current_user($data);
             $token = cmf_generate_user_token($userId, 'web');

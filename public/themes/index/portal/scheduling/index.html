@@ -1,0 +1,142 @@
+<extend name="public@base" />
+<!-- 主体部分 -->
+<block name="content">
+        <!-- 主体部分 -->
+        <div class="layui-body">
+            <div class="RightBody">
+                <div class="sousuo">
+                    <form class="layui-form" action="" method="post">
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <label class="layui-form-label">搜索：</label>
+                                <div class="layui-input-inline" style="width: 240px;">
+                                    <input type="text" name="name" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">日期：</label>
+                                <div class="layui-input-inline" style="width: 200px;">
+                                    <input id="timestart-kb" type="text" name="price_min" placeholder="开始时间"
+                                        autocomplete="off" class="layui-input">
+                                </div>
+                                <div class="layui-form-mid">-</div>
+                                <div class="layui-input-inline" style="width: 200px;">
+                                    <input id="timeend-kb" type="text" name="price_max" placeholder="结束时间"
+                                        autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <label class="layui-form-label">招聘人数：</label>
+                                <div class="layui-input-inline" style="width: 50px;">
+                                    <input type="text" name="price_min" placeholder="0" autocomplete="off"
+                                        class="layui-input">
+                                </div>
+                                <div class="layui-form-mid">-</div>
+                                <div class="layui-input-inline" style="width: 50px;">
+                                    <input type="text" name="price_max" placeholder="50" autocomplete="off"
+                                        class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <button class="layui-btn" lay-submit lay-filter="formDemo">搜索</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="pq">
+                    <div class="title">
+                        <p>状态 <a class="checktitle" href="">全部</a><a href="">已关联</a><a href="">未关联</a><a href="">已失效</a>
+                        </p>
+                    </div>
+                    <div class="list">
+                        <foreach name="list" item="vo">
+                            <div class="box">
+                                <div class="box-title"><a href="{:url('portal/scheduling/article',array('id'=>$vo.id))}">{$vo.title}</a></div>
+                                <div class="box-xx">
+                                    <p>备选日期：
+                                        <php>
+                                            $res=json_decode($vo['alt_time'],true);
+                                            $ftime=get_gltime($vo['id'])['time'];
+                                            $status=get_gltime($vo['id'])['status'];
+                                        </php>
+                                        <foreach name="res" item="v">
+                                            <span>{$v|date="m月d日 H:i",###}</span> 
+                                            
+                                        </foreach>
+                                       
+                                    </p>
+                                  
+                                    <if $status==2>
+                                        <p>截止日期：<span>{$vo.dea_time|date="m月d日 H:i",###}</span></p>
+                                        <elseif $status==1>
+                                        <p>关联日期：<span>{$ftime|date="m/d H:i",###}</span></p>
+                                        <else/>
+                                        <p>截止日期：<span>{$vo.dea_time|date="m月d日 H:i",###}</span></p>
+                                    </if>
+                                  
+                                    <p>招聘人数：<span>{$vo.num}人</span></p>
+                                    <p>招聘职位：
+                                        <span class="over"><foreach name="$vo['pos_ids']" item="v">
+                                        
+                                            <?php echo get_zhiwei_name($v['pos_id']);?>
+                                        </foreach></span>
+                                    </p>
+                                    <p>预约人数：<span>{$vo.app_num}人</span></p>
+                                    <p>投递简历：<span>5份</span></p>
+                                    <div>
+                                       
+                                        <if $status==2>
+                                            <button class="layui-btn btn-gl glzph" id="{$vo.id}">关联</button>
+                                         <elseif $status==1> 
+                                            <button class="layui-btn btn-ygl">已关联</button>
+                                        <else/>
+                                        <button class="layui-btn btn-gl glzph" id="{$vo.id}">关联</button>
+                                        <!-- <button class="layui-btn btn-ysx">已失效</button> -->
+                                         </if>      
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </foreach>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="glzph" class="tc">
+        <form action="">
+            <div class="layui-form-item">
+                <span class="layui-form-label">选择时间：</span>
+                <div class="layui-input-block alttime">
+                    <label for="time1" class="linput check">
+                        <input type="radio" name="time" value="2020年09月10日 13:00" id="time1" checked>2020年09月10日 13:00
+                    </label>
+                </div>
+            </div>
+            <p style="font-size:14px;color:#707070;font-weight: 100;">以上为企业备选时间，请关联后与企业相关负责人联系，确定最终时间</p>
+            <div class="layui-btn btn-qx qx">取消</div>
+            <div class="layui-btn next">下一步</div>
+        </form>
+    </div>
+    <div id="next" class="tc">
+        <form action="">
+            <table class="layui-table" lay-skin="line">
+                <thead>
+                    <tr>
+                        <th>地点</th>
+                        <th>容纳人数</th>
+                    </tr>
+                </thead>
+                <tbody class="hcxx">
+                    <tr>
+                        <td><label for="A101"  ><input type="radio" name="room" id="A101" value="A101">A101</label></td>
+                        <td>30人</td>
+                    </tr>
+                   
+                </tbody>
+            </table>
+            <div class="layui-btn btn-qx prev">上一步</div>
+            <button class="layui-btn qr" lay-submit>确定</button>
+        </form>
+    </div>
+</block>

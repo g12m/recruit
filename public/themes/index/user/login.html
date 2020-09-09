@@ -1,54 +1,72 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title></title>
-<meta name="keywords" content="" />
-<meta name="description" content="">
-<include file="public@head" />
+	<meta charset='utf-8'>
+	<taglib name="app\portal\taglib\Portal" />
+	<meta name='renderer' content='webkit'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+	<title>{$site_info.site_name}</title>
+	<meta name="keywords" content="{$category.seo_keywords|default=$site_info.site_seo_keywords}">
+	<meta name="description" content="{$category.seo_description|default=$site_info.site_seo_description}" />
+
+	<link rel="stylesheet" href="__TMPL__/public/assets/css/default/layui/css/layui.css">
+	<link rel='stylesheet' href='__TMPL__/public/assets/css/default/index.css'>
+	<script src="__TMPL__/public/assets/js/default/jquery-1.11.3.min.js"></script>
+	<script src='__TMPL__/public/assets/css/default/layui/layui.js'></script>
+	<script src='__TMPL__/public/assets/js/default/SuperSlide.js'></script>
+	<script src='__TMPL__/public/assets/js/default/index.js'></script>
+	<script type="text/javascript">
+		//全局变量
+		var GV = {
+			ROOT: "__ROOT__/",
+			WEB_ROOT: "__WEB_ROOT__/",
+			JS_ROOT: "static/js/"
+		};
+	</script>
+	<script src="__STATIC__/js/wind.js"></script>
 </head>
 
-<body class="body-white">
-	<include file="public@nav" />
 
-	<div class="container tc-main">
-		<div class="row">
-			<div class="col-md-4 col-md-offset-4">
-				<h2 class="text-center">用户登录</h2>
-				<form class="js-ajax-form" action="{:url('user/login/doLogin')}" method="post">
-					<div class="form-group">
-						<input type="text" id="input_username" name="username" placeholder="手机号/邮箱/用户名" class="form-control">
-					</div>
 
-					<div class="form-group">
-						<input type="password" id="input_password" name="password" placeholder="密码" class="form-control">
+<body style="background: url(__TMPL__/public/assets/images/default/bg.jpg)" class="login">
+	<style>
+		html {
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+	<div class="center">
+		<img class="logo" src="__TMPL__/public/assets/images/default/logo_h.png" alt="">
+		<div class="loginbox">
+			<div class="login-in">
+				<form class="layui-form js-ajax-form" action="{:url('user/login/doLogin')}" method="POST">
+					<div class="login-h">用户登录</div>
+					<div class="num">
+						<input type="text" name="username" required lay-verify="required" placeholder="请输入手机号或邮箱"
+							autocomplete="off" class="layui-input">
+						<img src="__TMPL__/public/assets/images/default/number.png" alt="">
 					</div>
-
-					<div class="form-group">
-						<div style="position: relative;">
-							<input type="text" name="captcha" placeholder="验证码" class="form-control captcha" style="width: 170px;float: left;margin-right: 30px">
-							<captcha height="38" width="160" font-size="20"/>
-						</div>
+					<div class="password">
+						<input type="password" name="password" required lay-verify="required" placeholder="请输入密码"
+							autocomplete="off" class="layui-input">
+						<img src="__TMPL__/public/assets/images/default/password.png" alt="">
 					</div>
-
-					<div class="form-group">
-						<input type="hidden" name="redirect" value="">
-						<button class="btn btn-primary btn-block js-ajax-submit" type="submit" style="margin-left: 0px">确定</button>
-					</div>
-
-					<div class="form-group" style="text-align: center;">
-						<ul class="list-inline">
-							<li><a href="{:cmf_url('user/Register/index')}">现在注册</a></li>
-							<li><a href="{:cmf_url('user/Login/findPassword')}">忘记密码</a></li>
-						</ul>
-					</div>
+					<button class="layui-btn js-ajax-submit" lay-submit>登 录</button>
+					<p>没有账号？<a href="{:cmf_url('register_check')}">请注册</a></p>
 				</form>
 			</div>
 		</div>
-
-
+		<div class="copy">Copyright © 星臣教育 All Rights Reserved</div>
+			<script src="__STATIC__/js/admin.js"></script>
 	</div>
-	<!-- /container -->
-
-	<include file="public@scripts" />
 </body>
+
+
+
+
+
+
+
+
 </html>

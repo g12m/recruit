@@ -11,6 +11,11 @@ namespace api\user\controller;
 use think\Db;
 use think\Validate;
 use cmf\controller\RestBaseController;
+<<<<<<< HEAD
+
+class PublicController extends RestBaseController
+{
+=======
 use api\user\model\UserModel;
 class PublicController extends RestBaseController
 {
@@ -29,6 +34,7 @@ class PublicController extends RestBaseController
         $userModel->insert($param);
     }
 
+>>>>>>> dev2
     // 用户注册
     public function register()
     {

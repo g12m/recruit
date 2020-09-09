@@ -41,9 +41,10 @@ class LoginController extends HomeBaseController
      */
     public function doLogin()
     {
+      
         if ($this->request->isPost()) {
             $validate = new Validate([
-                'captcha'  => 'require',
+                //'captcha'  => 'require',
                 'username' => 'require',
                 'password' => 'require|min:6|max:32',
             ]);
@@ -52,7 +53,7 @@ class LoginController extends HomeBaseController
                 'password.require' => '密码不能为空',
                 'password.max'     => '密码不能超过32个字符',
                 'password.min'     => '密码不能小于6个字符',
-                'captcha.require'  => '验证码不能为空',
+                //'captcha.require'  => '验证码不能为空',
             ]);
 
             $data = $this->request->post();
@@ -60,9 +61,9 @@ class LoginController extends HomeBaseController
                 $this->error($validate->getError());
             }
 
-            if (!cmf_captcha_check($data['captcha'])) {
-                $this->error(lang('CAPTCHA_NOT_RIGHT'));
-            }
+            // if (!cmf_captcha_check($data['captcha'])) {
+            //     $this->error(lang('CAPTCHA_NOT_RIGHT'));
+            // }
 
             $userModel         = new UserModel();
             $user['user_pass'] = $data['password'];
@@ -81,7 +82,7 @@ class LoginController extends HomeBaseController
             switch ($log) {
                 case 0:
                     cmf_user_action('login');
-                    $this->success(lang('LOGIN_SUCCESS'), $redirect);
+                    $this->success(lang('LOGIN_SUCCESS'), '/');
                     break;
                 case 1:
                     $this->error(lang('PASSWORD_NOT_RIGHT'));
@@ -99,7 +100,10 @@ class LoginController extends HomeBaseController
             $this->error("请求错误");
         }
     }
-
+      public function register_check()
+      {
+          return $this->fetch('/register_check');
+      }
     /**
      * 找回密码
      */
@@ -172,6 +176,6 @@ class LoginController extends HomeBaseController
             $this->error("请求错误");
         }
     }
-
+  
 
 }

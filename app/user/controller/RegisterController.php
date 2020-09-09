@@ -22,6 +22,8 @@ class RegisterController extends HomeBaseController
      */
     public function index()
     {
+        $type=$this->request->param('type');
+       
         $redirect = $this->request->post("redirect");
         if (empty($redirect)) {
             $redirect = $this->request->server('HTTP_REFERER');
@@ -33,10 +35,20 @@ class RegisterController extends HomeBaseController
         if (cmf_is_user_login()) {
             return redirect($this->request->root() . '/');
         } else {
-            return $this->fetch(":register");
+            if($type==3)
+            {
+                return $this->fetch(":register");
+            }
+            else{
+                return $this->fetch(":register_com");
+            }
+
         }
     }
-
+   public function reg_success()
+   {
+        return $this->fetch(":register_success");
+   }
     /**
      * 前台用户注册提交
      */
@@ -44,8 +56,8 @@ class RegisterController extends HomeBaseController
     {
         if ($this->request->isPost()) {
             $rules = [
-                'captcha'  => 'require',
-                'code'     => 'require',
+                //'captcha'  => 'require',
+               // 'code'     => 'require',
                 'password' => 'require|min:6|max:32',
 
             ];
@@ -58,38 +70,42 @@ class RegisterController extends HomeBaseController
 
             $validate = new Validate($rules);
             $validate->message([
-                'code.require'     => '验证码不能为空',
+                //'code.require'     => '验证码不能为空',
                 'password.require' => '密码不能为空',
                 'password.max'     => '密码不能超过32个字符',
                 'password.min'     => '密码不能小于6个字符',
-                'captcha.require'  => '验证码不能为空',
+                //'captcha.require'  => '验证码不能为空',
             ]);
 
             $data = $this->request->post();
             if (!$validate->check($data)) {
                 $this->error($validate->getError());
             }
+       
+            // $captchaId = empty($data['_captcha_id']) ? '' : $data['_captcha_id'];
+            // if (!cmf_captcha_check($data['captcha'], $captchaId)) {
+            //     $this->error('验证码错误');
+            // }
 
-            $captchaId = empty($data['_captcha_id']) ? '' : $data['_captcha_id'];
-            if (!cmf_captcha_check($data['captcha'], $captchaId)) {
-                $this->error('验证码错误');
-            }
-
-            if (!$isOpenRegistration) {
-                $errMsg = cmf_check_verification_code($data['username'], $data['code']);
-                if (!empty($errMsg)) {
-                    $this->error($errMsg);
-                }
-            }
+            // if (!$isOpenRegistration) {
+            //     $errMsg = cmf_check_verification_code($data['username'], $data['code']);
+            //     if (!empty($errMsg)) {
+            //         $this->error($errMsg);
+            //     }
+            // }
 
             $register          = new UserModel();
+           
             $user['user_pass'] = $data['password'];
             if (Validate::is($data['username'], 'email')) {
                 $user['user_email'] = $data['username'];
-                $log                = $register->register($user, 3);
+                 $user['user_type'] =$data['user_type'];
+                $log                = $register->register($user, 3,$user['user_type'],$data);
             } else if (cmf_check_mobile($data['username'])) {
                 $user['mobile'] = $data['username'];
-                $log            = $register->register($user, 2);
+                $user['user_type'] =$data['user_type'];
+
+                $log            = $register->register($user, 2, $user['user_type'],$data);
             } else {
                 $log = 2;
             }
@@ -97,7 +113,8 @@ class RegisterController extends HomeBaseController
             $redirect                = empty($sessionLoginHttpReferer) ? cmf_get_root() . '/' : $sessionLoginHttpReferer;
             switch ($log) {
                 case 0:
-                    $this->success('注册成功', $redirect);
+                     header("location:'/user/register/reg_success.html'");
+                    // $this->success('注册成功', $this->reg_success());
                     break;
                 case 1:
                     $this->error("您的账户已注册过");

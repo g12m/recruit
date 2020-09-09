@@ -1,0 +1,79 @@
+
+<extend name="public@base" />
+<!-- 主体部分 -->
+<block name="content">
+        <!-- 主体部分 -->
+        <div class="layui-body">
+            <div class="RightBody">
+                <div class="xq-title layui-clear">
+
+                    <div class="xq-h">北京XXX有限公司</div>
+                    <input type="hidden" name="q_id" value="4" class="q_id">
+                    <input type="hidden" name="sch_id" value="3" class="sch_id">
+                    <div class="riqi">
+                        <i>【招聘人数】<span>{$num}人</span></i>
+                        <i>【企业联系人】<span>王芳</span></i>
+                        <i>【联系电话】<span>13800001111</span></i>
+                    </div>
+                    <div class="btns">
+                        <empty name="value">
+                        <button class="layui-btn fb">发布</button>
+                            <else />
+                            <button class="layui-btn">已发布</button>
+                            </empty>
+                        <button class="layui-btn btn-qx ch">
+                           撤回
+                          
+                        </button>
+                       
+                    
+                       
+                    </div>
+                </div>
+                <div class="hcxq">
+                    <div class="xx">
+                        <div class="xx-title">
+                            <div class="a">招聘职位</div>
+                        </div>
+                        <div class="xx-list">
+                            <foreach name="info" item="v3">
+                            
+
+                                <div class="xx-box">
+                                    <div class="xx-box-h">{$v3.title}</div>
+                                    <div class="xx-box-m">
+                                        <i>【建议专业】<span>{$v3.major}</span></i>
+                                        <i>【招聘人数】<span>{$v3.num}人</span></i>
+                                        <i>【职位类型】<span><?php echo $v3['type']==1?'正式':"实习";?></span></i>
+                                        <i>【薪资范围】<span>{$v3.salary_min}~{$v3.salary_max}</span></i>
+                                        <i>【有效期】<span>{$v3.effective_time|date="Y年m月d日",###}</span></i>
+                                    </div>
+                                    <div class="xx-box-yq">
+                                        <b>职位描述</b>
+                                        <p>{$v3.desc}</p>
+                                       
+                                    </div>
+                                </div>
+                            </foreach>
+
+                          
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="fb" class="tc">
+        <img style="width:100px;" src="__TMPL__/public/assets/images/default/fb.png" alt="">
+        <p>发布后，本校学生可在微信小程序看到该企业的招聘职位</p>
+        <button class="layui-btn btn-qx qx">取消</button>
+        <button class="layui-btn qr">确认</button>
+    </div>
+    <div id="ch" class="tc">
+        <img src="__TMPL__/public/assets/images/default/ch.png" alt="">
+        <p>撤回后，本校学生在微信小程序看不到该企业的招聘职位</p>
+        <button class="layui-btn btn-qx qx">取消</button>
+        <button class="layui-btn qr">确认</button>
+    </div>
+</block>

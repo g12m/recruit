@@ -18,41 +18,13 @@ class MsgController extends HomeBaseController
 {
     public function index()
     {
-        // $id                  = $this->request->param('id', 0, 'intval');
-        // //获取顶级类id并传到模板
-        // $top_catid = get_top_parent('portal_category',$id);
-        // $this->assign('top_catid',$top_catid);
-        // //获取导航的parent_id
-        // $nav_cat_id = Db::name('nav_menu')->where('catid',$id)->find()['parent_id'];
-        // $this->assign('nav_cat_id',$nav_cat_id);
-        //
-        // $portalCategoryModel = new PortalCategoryModel();
-        //
-        // $category = $portalCategoryModel->where('id', $id)->where('status', 1)->find();
-        //
-        // $this->assign('category', $category);
-        //
-        // $list=Db::name('picture')->order('list_order DESC,creatime DESC')->select()->toArray();
-        // $msg=Db::name('msg')->order('list_order DESC,creatime DESC')->select()->toArray();
-        // $mark=Db::name('mark')->order('list_order DESC,creatime DESC')->select()->toArray();
-        //
-        //
-        //
-        //
-        //
-        // $this->assign('mark', $mark);
-        //
-        // $this->assign('list', $list);
-        // $this->assign('msg', $msg);
-        $mess=Db::name('message')->order('createtime DESC')->select()->toArray();
-      $this->assign('mess', $mess);
-        return $this->fetch(':list_liu');
+       $id                  = $this->request->param('id', 0, 'intval');
+       
+        return $this->fetch();
     }
-    public function indexen()
+    public function kanban()
     {
-      $mess=Db::name('message')->order('createtime DESC')->select()->toArray();
-    $this->assign('mess', $mess);
-      return $this->fetch(':eng/list_liu');
+      return $this->fetch();
      }
 
     public function dosubmit()

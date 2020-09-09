@@ -124,9 +124,7 @@ function get_zptime($catid)
   $data=Db::name('stu_pz')->where(['fair_id'=>$catid,'uid'=>4])->value('time');
   return $data;
 }
-
 //获取学校会场招聘排期
-
 function get_pqnum($catid)
 {
   $uid=cmf_get_current_user_id();
