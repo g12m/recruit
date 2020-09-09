@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="__TMPL__/public/assets/layui/css/layui.css">
 <link rel='stylesheet' href='__TMPL__/public/assets/css/index.css'>
 <script src='__TMPL__/public/assets/js/jquery-1.11.3.min.js'></script>
-<script src='__TMPL__/public/assets/layui/layui.all.js'></script>
+<script src='__TMPL__/public/assets/layui/layui.js'></script>
 <script src='__TMPL__/public/assets/js/SuperSlide.js'></script>
 <script src='__TMPL__/public/assets/js/index.js'></script>
 
@@ -28,7 +28,7 @@
                 <li class="layui-nav-item">
                     <a href="javascript:;">{$user_info.name}</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="{:cmf_url('user/adminuser/logout',['uid'=>$user_info.id,'type'=>$user_info.type])}">退出</a></dd>
+                        <dd><a href="{:cmf_url('user/adminuser/logout',['uid'=>$user_info.id,'type'=>$user_info.user_type])}">退出</a></dd>
                     </dl>
                 </li>
             </ul>
@@ -40,9 +40,9 @@
                 <ul class="layui-nav layui-nav-tree" lay-filter="test">
                     <li class="layui-nav-item"><a href="javascript:;"><img src="__TMPL__/public/assets/images/icon_jl.png" alt=""> 简历管理 <span
                                 class="jian">></span></a></li>
-                    <li class="layui-nav-item"><a href="javascript:;"><img src="__TMPL__/public/assets/images/icon_zw.png" alt=""> 职位管理 <span
+                    <li class="layui-nav-item layui-nav-itemed layui-this"><a href="{:cmf_url('entposition/index')}"><img src="__TMPL__/public/assets/images/icon_zw.png" alt=""> 职位管理 <span
                                 class="jian">></span></a></li>
-                    <li class="layui-nav-item layui-nav-itemed layui-this"><a href="javascript:;"><img
+                    <li class="layui-nav-item"><a href="{:cmf_url('entfair/index')}"><img
                                 src="__TMPL__/public/assets/images/icon_zph.png" alt=""> 招聘会管理 <span class="jian">></span></a></li>
                     <li class="layui-nav-item"><a href="javascript:;"><img src="__TMPL__/public/assets/images/icon_js.png" alt=""> 角色管理 <span
                                 class="jian">></span></a></li>
@@ -63,7 +63,7 @@
                             </foreach>
                             
                         <i>【截止日期】<span>{:date("m/d H:i",$res.dea_time)}</span></i>
-                        <i>【关联日期】<span>8/27 14:23</span></i>
+                        <i>【创建日期】<span>{:date("m/d H:i",$res.add_time)}</span></i>
                         <br>
                         <i>【招聘人数】<span>{$res.num}人</span> <span>预约人数：{$res.app_num}人</span></i>
                     </div>

@@ -3,7 +3,7 @@
 
 namespace app\user\controller;
 use cmf\controller\HomeBaseController;
-use app\user\model\EntstuUserModel;
+use app\user\model\UserModel;
 use app\portal\model\EntstuRoleModel;
 
 class AdminuserController extends HomeBaseController
@@ -15,16 +15,16 @@ class AdminuserController extends HomeBaseController
             //登录
             $param = $this->request->param();
             //查询用户
-            $user = new EntstuUserModel();
+            $user = new UserModel();
             $this->userinfo = $user->getuser($param['username']);
             if($this->userinfo){
-                if($this->userinfo['user_info']['password'] == md5($param['password'])){
+                if($this->userinfo['user_pass'] == cmf_password($param['password'])){
                     //登录成功
-                    if($this->userinfo['user_info']['type'] == '1'){
+                    if($this->userinfo['user_type'] == '4'){
                         session('Ent_user',$this->userinfo);
                         session('Stu_user','');
-                        $this->redirect(cmf_url('portal/enterprise/index'));
-                    }elseif($this->userinfo['user_info']['type'] == '2'){
+                        $this->redirect(cmf_url('portal/sturesume/index'));
+                    }elseif($this->userinfo['user_type'] == '3'){
                         session('Stu_user',$this->userinfo);
                         session('Ent_user','');
                         $this->redirect('school/index');
@@ -50,7 +50,7 @@ class AdminuserController extends HomeBaseController
     //企业注册
     public function register_ent(){
         $param = $this->request->param();
-        $user = new EntstuUserModel();
+        $user = new UserModel();
         if($user->get_one($param['username'])){
             //用户名已注册
         }else{
@@ -60,7 +60,7 @@ class AdminuserController extends HomeBaseController
     //学校注册
     public function register_stu(){
         $param = $this->request->param();
-        $user = new EntstuUserModel();
+        $user = new UserModel();
         if($user->get_one($param['username'])){
             //用户名已注册
         }else{
