@@ -1,14 +1,14 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:35:"themes/index/portal\msg\kanban.html";i:1599568380;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:35:"themes/index/portal\msg\kanban.html";i:1599651151;s:72:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\head.html";i:1599649383;}*/ ?>
 <!DOCTYPE html>
 <html>
 
 <head>
-    <meta charset='utf-8'>
-    <meta name='renderer' content='webkit'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
-    <title><?php echo $site_info['site_name']; ?></title>
-    <meta name="keywords" content="<?php echo (isset($category['seo_keywords']) && ($category['seo_keywords'] !== '')?$category['seo_keywords']:$site_info['site_seo_keywords']); ?>">
-    <meta name="description" content="<?php echo (isset($category['seo_description']) && ($category['seo_description'] !== '')?$category['seo_description']:$site_info['site_seo_description']); ?>" />
+  <meta charset='utf-8'>
+  <meta name='renderer' content='webkit'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+  <title><?php echo $site_info['site_name']; ?></title>
+  <meta name="keywords" content="<?php echo (isset($category['seo_keywords']) && ($category['seo_keywords'] !== '')?$category['seo_keywords']:$site_info['site_seo_keywords']); ?>">
+  <meta name="description" content="<?php echo (isset($category['seo_description']) && ($category['seo_description'] !== '')?$category['seo_description']:$site_info['site_seo_description']); ?>" />
 
 </head>
 <link rel="stylesheet" href="/themes/index/public/assets/css/default/layui/css/layui.css">

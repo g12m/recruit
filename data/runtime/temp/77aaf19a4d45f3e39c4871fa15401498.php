@@ -1,14 +1,14 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:37:"themes/index/portal\confer\index.html";i:1599561007;s:76:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\con_left.html";i:1599645493;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:37:"themes/index/portal\confer\index.html";i:1599650693;s:72:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\base.html";i:1599650656;s:72:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\head.html";i:1599649383;s:76:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\con_left.html";i:1599645493;s:74:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\footer.html";i:1599439177;}*/ ?>
 <!DOCTYPE html>
 <html>
 
-<head>
-    <meta charset='utf-8'>
-    <meta name='renderer' content='webkit'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
-    <title><?php echo $site_info['site_name']; ?></title>
-    <meta name="keywords" content="<?php echo (isset($category['seo_keywords']) && ($category['seo_keywords'] !== '')?$category['seo_keywords']:$site_info['site_seo_keywords']); ?>">
-    <meta name="description" content="<?php echo (isset($category['seo_description']) && ($category['seo_description'] !== '')?$category['seo_description']:$site_info['site_seo_description']); ?>" />
+  <head>
+  <meta charset='utf-8'>
+  <meta name='renderer' content='webkit'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+  <title><?php echo $site_info['site_name']; ?></title>
+  <meta name="keywords" content="<?php echo (isset($category['seo_keywords']) && ($category['seo_keywords'] !== '')?$category['seo_keywords']:$site_info['site_seo_keywords']); ?>">
+  <meta name="description" content="<?php echo (isset($category['seo_description']) && ($category['seo_description'] !== '')?$category['seo_description']:$site_info['site_seo_description']); ?>" />
 
 </head>
 <link rel="stylesheet" href="/themes/index/public/assets/css/default/layui/css/layui.css">
@@ -19,11 +19,11 @@
 <script src='/themes/index/public/assets/js/default/index.js'></script>
 
 <body class="layui-layout-body">
-    <div class="layui-layout layui-layout-admin">
-        <!-- 头部 -->
- 
-        <!-- 左侧导航 -->
-    
+  <div class="layui-layout layui-layout-admin">
+
+      <!-- 头部  导航 -->
+      
+        
 
 <div class="layui-header">
       <ul class="layui-nav layui-layout-right">
@@ -72,6 +72,10 @@
     </div>
   </div>
 
+      
+      <!-- banner 区域 -->
+      <!--content 内容区域  -->
+      
         <!-- 主体部分 -->
         <div class="layui-body">
             <div class="RightBody">
@@ -131,6 +135,72 @@
             <button class="layui-btn qr">确认</button>
         </form>
     </div>
-</body>
+    
+      <!--footer 底部  -->
+      <!-- 
+          
+    <footer>
+        <div class="footer-top">
+            <div class="container clearfix">
+                <div class="fl clearfix" data-scroll-reveal="enter top">
+                    <div class="fl">
+                        <i class="iconfont">&#xe60b;</i>
+                    </div>
+                    <div class="fl">
+                        <h3>ADDRESS</h3>
+                        <div class="lian">公司地址：</div>
+                        <p><?php echo cmf_get_option('server_settings')['q_email']; ?></p>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="fl clearfix" data-scroll-reveal="enter bottom">
+                    <div class="fl">
+                        <i class="iconfont">&#xe6f7;</i>
+                    </div>
+                    <div class="fl">
+                        <h3>CONTACT</h3>
+                        <div class="lian">联系方式</div>
+                        <p><a href="tel:010-87358007"><?php echo cmf_get_option('server_settings')['k_tel']; ?></a><a
+                                href="mailto:yongchuang@holy-sport.com">yongchuang@holy-sport.com</a></p>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="fr" data-scroll-reveal="enter right">
+                    <img src="<?php echo cmf_get_image_url(cmf_get_option('server_settings')['thumbnail']); ?>">
+                    <p>扫码关注我们</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p><span><?php echo cmf_get_option('server_settings')['q_banquan']; ?></span><?php echo cmf_get_option('site_info')['site_icp']; ?></p>
+        </div>
+    </footer>
+    <div class="go_top">
+        <img src="/themes/index/public/assets/images/default/go_top.png">
+    </div>
+    
+    
+    <script src="/themes/index/public/assets/js/default/jquery-3.3.1.js"></script>
+    <script src="/themes/index/public/assets/css/default/dist/js/swiper.min.js"></script>
+    <script src="/themes/index/public/assets/js/default/gundong.js"></script>
+    <script>
+        var config = {
+            after: '0.2s',
+            enter: 'bottom',
+            move: '30px',
+            over: '0.5s',
+            easing: 'ease-in-out',
+            viewportFactor: 0.33,
+            reset: false,
+            init: true
+        };
+        window.scrollReveal = new scrollReveal(config);
+    </script>
+    <script src="/themes/index/public/assets/js/default/index.js"></script>
+    </body>
+    
+    </html>
 
+       -->
+    </body>
 </html>
