@@ -75,7 +75,97 @@ function get_catfa_info($catid)
   $data=Db::name('portal_categoryfa')->where(['id'=>$catid])->find();
   return $data;
 }
+//获取职位id
+function get_zhiwei_info($catid)
+{
+  $data=Db::name('fair_pos')->where(['fair_id'=>$catid])->field('pos_id')->select()->toArray();
+  return $data;
+}
+//职位的信息
+function get_zhi_info($catid)
+{
+  $data=Db::name('ent_position')->where(['id'=>$catid])->select()->toArray();
+  return $data;
+}
+//获取职位名称
+function get_zhiwei_name($catid)
+{
+  $data=Db::name('ent_position')->where(['id'=>$catid])->value('title');
+  return $data;
+}
 
+//获取会场信息
+function get_hui($catid)
+{
+  $uid=cmf_get_current_user_id();
+  $data=Db::name('stu_conference')->where(['id'=>$catid,'uid'=>$uid])->find();
+  return $data;
+}
+
+//获取招聘会信息
+function get_job($catid)
+{
+   $uid=cmf_get_current_user_id();
+ $data= Db::name('jobfair')
+        ->where(['id'=>$catid])
+        ->select()
+         ->each(function($item,$key){
+           $item['pos_ids'] = get_zhiwei_info($item['id']);
+             return   $item;
+           });
+        ;
+  return $data;
+}
+
+//获取招聘会关联日期
+
+function get_zptime($catid)
+{
+  $data=Db::name('stu_pz')->where(['fair_id'=>$catid,'uid'=>4])->value('time');
+  return $data;
+}
+
+//获取学校会场招聘排期
+
+function get_pqnum($catid)
+{
+  $uid=cmf_get_current_user_id();
+  $data=Db::name('stu_pz')->where(['h_id'=>$catid,'uid'=>$uid,'status'=>1])->count('h_id');
+  return $data;
+}
+
+//获取学校职位管理
+
+function get_schnum($uid)
+{
+  $data=Db::name('ent_position')->where(['uid'=>$uid])->field('title')->select()->toArray();
+  return $data;
+}
+function get_countsch($uid)
+{
+  $data=Db::name('ent_position')->where(['uid'=>$uid])->sum('num');
+  return $data;
+}
+
+function get_user_info($uid)
+{
+   $data=Db::name('entstu')->where(['uid'=>$uid])->value('user_name');
+  return $data;
+}
+
+function get_userlist_info($uid)
+{
+   $data=Db::name('entstu')->where(['uid'=>$uid])->find();
+  return $data;
+}
+//学校排期关联日期
+function get_gltime($id)
+{
+  $uid=cmf_get_current_user_id();
+   $confer = Db::name('stu_pz')->where('fair_id',$id)->where('uid',$uid)->find(); 
+    return $confer;   
+      
+}
 // 获取某个分类下的第一个分类
 function get_cid($catid)
 {
@@ -328,7 +418,11 @@ $data=Db::name('portal_post')
   });
 return $data[0]['category_id'];
 }
-
+//获取招聘会关联职位
+function getfairpos($fairid){
+  $res = Db::name('fair_pos')->alias('fp')->join('ent_position ep','fp.pos_id=ep.id','LEFT')->where('fp.id',$fairid)->field('ep.title')->select()->toArray();
+  return $res;
+}
 
 
 ?>
