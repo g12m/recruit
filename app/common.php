@@ -124,9 +124,7 @@ function get_zptime($catid)
   $data=Db::name('stu_pz')->where(['fair_id'=>$catid,'uid'=>4])->value('time');
   return $data;
 }
-
 //获取学校会场招聘排期
-
 function get_pqnum($catid)
 {
   $uid=cmf_get_current_user_id();
@@ -418,7 +416,11 @@ $data=Db::name('portal_post')
   });
 return $data[0]['category_id'];
 }
-
+//获取招聘会关联职位
+function getfairpos($fairid){
+  $res = Db::name('fair_pos')->alias('fp')->join('ent_position ep','fp.pos_id=ep.id','LEFT')->where('fp.id',$fairid)->field('ep.title')->select()->toArray();
+  return $res;
+}
 
 
 ?>
