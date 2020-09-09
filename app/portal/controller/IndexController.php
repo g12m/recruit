@@ -24,8 +24,8 @@ class IndexController extends UserBaseController
           header("location:portal/scheduling/index.html");
         }
         else{
-          //header("location:portal/scheduling/index.html");
-          return $this->fetch(':index');
+          header("location:portal/sturesume/index.html");
+          //return $this->fetch(':index');
         }
       
     }

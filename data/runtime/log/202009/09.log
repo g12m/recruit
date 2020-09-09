@@ -20514,3 +20514,845 @@
 [ sql ] [ SQL ] SELECT * FROM `ld_portal_category` WHERE  `status` = 1  AND `delete_time` = 0  AND `parent_id` = 0  AND `id` <> 27 ORDER BY `list_order` DESC,`id` ASC [ RunTime:0.019369s ]
 [ sql ] [ SQL ] SELECT `parent_id`,`id` FROM `ld_portal_category` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.018639s ]
 [ sql ] [ SQL ] SELECT * FROM `ld_portal_category` WHERE  `status` = 1  AND `delete_time` = 0  AND `parent_id` = 0  AND `id` <> 27 ORDER BY `list_order` DESC,`id` ASC [ RunTime:0.019347s ]
+---------------------------------------------------------------
+[ 2020-09-09T18:41:16+08:00 ] 127.0.0.1 GET /
+[ info ] www.zhaopin.com:8080/ [运行时间：0.978456s][吞吐率：1.02req/s] [内存消耗：3,520.99kb] [文件加载：89]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.007326s ]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'admin_username=admin; PHPSESSID=som5dedac5u1c2sfku4heiao52; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.zhaopin.com:8080/user/login/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.zhaopin.com:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.009245s ]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/portal\lang\zh-cn.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/portal\lang\zh-cn\home.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\HomeLangBehavior @home_init [ RunTime:0.002957s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\portal\controller\IndexController->index[ E:\phpStudy\PHPTutorial\WWW\zhaopin\app\portal\controller\IndexController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] themes/index/portal\\index.html [ array (
+  0 => 'site_info',
+  1 => 'theme_vars',
+  2 => 'theme_widgets',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.049044s ] mysql:host=47.92.238.166;port=3306;dbname=zhaopin;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ld_theme_file` [ RunTime:0.019282s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_theme_file` WHERE  `theme` = 'index'  AND `file` = 'portal/article' LIMIT 1 [ RunTime:0.018599s ]
+[ sql ] [ SQL ] UPDATE `ld_theme_file`  SET `theme`='index',`action`='portal/Article/index',`file`='portal/article',`name`='新闻文章页',`more`='[]',`config_more`='[]',`description`='文章页模板文件',`is_public`=0,`list_order`=10  WHERE  `theme` = 'index'  AND `file` = 'portal/article' [ RunTime:0.024799s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_theme_file` WHERE  `theme` = 'index'  AND `file` = 'portal/article_sale' LIMIT 1 [ RunTime:0.018295s ]
+[ sql ] [ SQL ] UPDATE `ld_theme_file`  SET `theme`='index',`action`=NULL,`file`='portal/article_sale',`name`=NULL,`more`='[]',`config_more`='[]',`description`=NULL,`is_public`=0,`list_order`=0  WHERE  `theme` = 'index'  AND `file` = 'portal/article_sale' [ RunTime:0.023081s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_theme_file` WHERE  `theme` = 'index'  AND `file` = 'portal/list' LIMIT 1 [ RunTime:0.018312s ]
+[ sql ] [ SQL ] UPDATE `ld_theme_file`  SET `theme`='index',`action`='portal/List/index',`file`='portal/list',`name`='新闻列表页',`more`='{\"vars\":[],\"widgets\":[]}',`config_more`='{\"vars\":[],\"widgets\":[]}',`description`='新闻列表模板文件',`is_public`=0,`list_order`=10  WHERE  `theme` = 'index'  AND `file` = 'portal/list' [ RunTime:0.024276s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_theme_file` WHERE  `theme` = 'index'  AND `file` = 'portal/list_about' LIMIT 1 [ RunTime:0.018605s ]
+[ sql ] [ SQL ] UPDATE `ld_theme_file`  SET `theme`='index',`action`='portal/List/index',`file`='portal/list_about',`name`='关于我们页',`more`='{\"vars\":[],\"widgets\":[]}',`config_more`='{\"vars\":[],\"widgets\":[]}',`description`='关于我们模板文件',`is_public`=0,`list_order`=10  WHERE  `theme` = 'index'  AND `file` = 'portal/list_about' [ RunTime:0.023330s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_theme_file` WHERE  `theme` = 'index'  AND `file` = 'portal/list_contact' LIMIT 1 [ RunTime:0.018471s ]
+[ sql ] [ SQL ] UPDATE `ld_theme_file`  SET `theme`='index',`action`='portal/List/index',`file`='portal/list_contact',`name`='联系我们页',`more`='{\"vars\":[],\"widgets\":[]}',`config_more`='{\"vars\":[],\"widgets\":[]}',`description`='联系我们模板文件',`is_public`=0,`list_order`=10  WHERE  `theme` = 'index'  AND `file` = 'portal/list_contact' [ RunTime:0.023346s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_theme_file` WHERE  `theme` = 'index'  AND `file` = 'portal/list_hezuo' LIMIT 1 [ RunTime:0.018117s ]
+[ sql ] [ SQL ] UPDATE `ld_theme_file`  SET `theme`='index',`action`='portal/List/index',`file`='portal/list_hezuo',`name`='合作伙伴页',`more`='{\"vars\":[],\"widgets\":[]}',`config_more`='{\"vars\":[],\"widgets\":[]}',`description`='合作伙伴模板文件',`is_public`=0,`list_order`=10  WHERE  `theme` = 'index'  AND `file` = 'portal/list_hezuo' [ RunTime:0.023262s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_theme_file` WHERE  `theme` = 'index'  AND `file` = 'portal/list_join' LIMIT 1 [ RunTime:0.018325s ]
+[ sql ] [ SQL ] UPDATE `ld_theme_file`  SET `theme`='index',`action`='portal/List/index',`file`='portal/list_join',`name`='加入我们页',`more`='{\"vars\":[],\"widgets\":[]}',`config_more`='{\"vars\":[],\"widgets\":[]}',`description`='加入我们模板文件',`is_public`=0,`list_order`=10  WHERE  `theme` = 'index'  AND `file` = 'portal/list_join' [ RunTime:0.023413s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_theme_file` WHERE  `theme` = 'index'  AND `file` = 'portal/list_museum' LIMIT 1 [ RunTime:0.018123s ]
+[ sql ] [ SQL ] UPDATE `ld_theme_file`  SET `theme`='index',`action`='portal/List/index',`file`='portal/list_museum',`name`='服务与支持页',`more`='{\"vars\":[],\"widgets\":[]}',`config_more`='{\"vars\":[],\"widgets\":[]}',`description`='服务与支持模板文件',`is_public`=0,`list_order`=10  WHERE  `theme` = 'index'  AND `file` = 'portal/list_museum' [ RunTime:0.023308s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_theme_file` WHERE  `theme` = 'index'  AND `file` = 'portal/list_product' LIMIT 1 [ RunTime:0.018401s ]
+[ sql ] [ SQL ] UPDATE `ld_theme_file`  SET `theme`='index',`action`='portal/List/index',`file`='portal/list_product',`name`='产品展示页',`more`='{\"vars\":[],\"widgets\":[]}',`config_more`='{\"vars\":[],\"widgets\":[]}',`description`='产品展示模板文件',`is_public`=0,`list_order`=10  WHERE  `theme` = 'index'  AND `file` = 'portal/list_product' [ RunTime:0.023740s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_theme_file` WHERE  `theme` = 'index'  AND `file` = 'portal/page' LIMIT 1 [ RunTime:0.018654s ]
+[ sql ] [ SQL ] UPDATE `ld_theme_file`  SET `theme`='index',`action`='portal/Page/index',`file`='portal/page',`name`='单页',`more`='{\"vars\":[],\"widgets\":[]}',`config_more`='{\"vars\":[],\"widgets\":[]}',`description`='单页模板',`is_public`=0,`list_order`=10  WHERE  `theme` = 'index'  AND `file` = 'portal/page' [ RunTime:0.022617s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_theme_file` WHERE  `theme` = 'index' [ RunTime:0.018942s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ld_theme` [ RunTime:0.018866s ]
+[ sql ] [ SQL ] UPDATE `ld_theme`  SET `name`='ld',`version`='1.0.2',`demo_url`='http://mydear.vip',`author`='龙鼎',`lang`='zh-cn',`author_url`='http://mydear.vip',`keywords`='龙鼎模板',`description`='龙鼎模板'  WHERE  `theme` = 'index' [ RunTime:0.022949s ]
+[ sql ] [ SQL ] SELECT `more` FROM `ld_theme_file` WHERE  `theme` = 'index'  AND (  `is_public` = 1 OR `file` = 'portal/index' ) [ RunTime:0.018194s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ld_portal_category` [ RunTime:0.019047s ]
+[ sql ] [ SQL ] SELECT `parent_id`,`id` FROM `ld_portal_category` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.017934s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_portal_category` WHERE  `status` = 1  AND `delete_time` = 0  AND `parent_id` = 0  AND `id` <> 27 ORDER BY `list_order` DESC,`id` ASC [ RunTime:0.018687s ]
+[ sql ] [ SQL ] SELECT `parent_id`,`id` FROM `ld_portal_category` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.018178s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_portal_category` WHERE  `status` = 1  AND `delete_time` = 0  AND `parent_id` = 0  AND `id` <> 27 ORDER BY `list_order` DESC,`id` ASC [ RunTime:0.018737s ]
+---------------------------------------------------------------
+[ 2020-09-09T18:41:22+08:00 ] 127.0.0.1 GET /user/index/logout.html
+[ info ] www.zhaopin.com:8080/user/index/logout.html [运行时间：0.126779s][吞吐率：7.89req/s] [内存消耗：2,061.98kb] [文件加载：68]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.011842s ]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'index',
+    2 => 'logout',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'admin_username=admin; PHPSESSID=som5dedac5u1c2sfku4heiao52; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.zhaopin.com:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.008052s ]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/user\lang\zh-cn.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/portal\lang\zh-cn\home.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\HomeLangBehavior @home_init [ RunTime:0.003179s ]
+[ info ] [ RUN ] app\user\controller\IndexController->logout[ E:\phpStudy\PHPTutorial\WWW\zhaopin\app\user\controller\IndexController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-09-09T18:41:22+08:00 ] 127.0.0.1 GET /
+[ info ] www.zhaopin.com:8080/ [运行时间：0.144954s][吞吐率：6.90req/s] [内存消耗：2,922.95kb] [文件加载：81]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.006908s ]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'admin_username=admin; PHPSESSID=som5dedac5u1c2sfku4heiao52; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.zhaopin.com:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.007383s ]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/portal\lang\zh-cn.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/portal\lang\zh-cn\home.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\HomeLangBehavior @home_init [ RunTime:0.003555s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-09-09T18:41:23+08:00 ] 127.0.0.1 GET /user/login/index.html
+[ info ] www.zhaopin.com:8080/user/login/index.html [运行时间：0.945969s][吞吐率：1.06req/s] [内存消耗：3,345.70kb] [文件加载：85]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.008849s ]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; admin_username=admin; PHPSESSID=som5dedac5u1c2sfku4heiao52; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.zhaopin.com:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.008514s ]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/user\lang\zh-cn.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/portal\lang\zh-cn\home.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\HomeLangBehavior @home_init [ RunTime:0.005466s ]
+[ info ] [ RUN ] app\user\controller\LoginController->index[ E:\phpStudy\PHPTutorial\WWW\zhaopin\app\user\controller\LoginController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] themes/index/user\\login.html [ array (
+  0 => 'site_info',
+  1 => 'theme_vars',
+  2 => 'theme_widgets',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.031281s ] mysql:host=47.92.238.166;port=3306;dbname=zhaopin;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ld_theme_file` [ RunTime:0.021287s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_theme_file` WHERE  `theme` = 'index'  AND `file` = 'portal/article' LIMIT 1 [ RunTime:0.020067s ]
+[ sql ] [ SQL ] UPDATE `ld_theme_file`  SET `theme`='index',`action`='portal/Article/index',`file`='portal/article',`name`='新闻文章页',`more`='[]',`config_more`='[]',`description`='文章页模板文件',`is_public`=0,`list_order`=10  WHERE  `theme` = 'index'  AND `file` = 'portal/article' [ RunTime:0.027386s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_theme_file` WHERE  `theme` = 'index'  AND `file` = 'portal/article_sale' LIMIT 1 [ RunTime:0.019641s ]
+[ sql ] [ SQL ] UPDATE `ld_theme_file`  SET `theme`='index',`action`=NULL,`file`='portal/article_sale',`name`=NULL,`more`='[]',`config_more`='[]',`description`=NULL,`is_public`=0,`list_order`=0  WHERE  `theme` = 'index'  AND `file` = 'portal/article_sale' [ RunTime:0.025860s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_theme_file` WHERE  `theme` = 'index'  AND `file` = 'portal/list' LIMIT 1 [ RunTime:0.019666s ]
+[ sql ] [ SQL ] UPDATE `ld_theme_file`  SET `theme`='index',`action`='portal/List/index',`file`='portal/list',`name`='新闻列表页',`more`='{\"vars\":[],\"widgets\":[]}',`config_more`='{\"vars\":[],\"widgets\":[]}',`description`='新闻列表模板文件',`is_public`=0,`list_order`=10  WHERE  `theme` = 'index'  AND `file` = 'portal/list' [ RunTime:0.025091s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_theme_file` WHERE  `theme` = 'index'  AND `file` = 'portal/list_about' LIMIT 1 [ RunTime:0.019617s ]
+[ sql ] [ SQL ] UPDATE `ld_theme_file`  SET `theme`='index',`action`='portal/List/index',`file`='portal/list_about',`name`='关于我们页',`more`='{\"vars\":[],\"widgets\":[]}',`config_more`='{\"vars\":[],\"widgets\":[]}',`description`='关于我们模板文件',`is_public`=0,`list_order`=10  WHERE  `theme` = 'index'  AND `file` = 'portal/list_about' [ RunTime:0.032019s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_theme_file` WHERE  `theme` = 'index'  AND `file` = 'portal/list_contact' LIMIT 1 [ RunTime:0.020034s ]
+[ sql ] [ SQL ] UPDATE `ld_theme_file`  SET `theme`='index',`action`='portal/List/index',`file`='portal/list_contact',`name`='联系我们页',`more`='{\"vars\":[],\"widgets\":[]}',`config_more`='{\"vars\":[],\"widgets\":[]}',`description`='联系我们模板文件',`is_public`=0,`list_order`=10  WHERE  `theme` = 'index'  AND `file` = 'portal/list_contact' [ RunTime:0.028198s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_theme_file` WHERE  `theme` = 'index'  AND `file` = 'portal/list_hezuo' LIMIT 1 [ RunTime:0.022447s ]
+[ sql ] [ SQL ] UPDATE `ld_theme_file`  SET `theme`='index',`action`='portal/List/index',`file`='portal/list_hezuo',`name`='合作伙伴页',`more`='{\"vars\":[],\"widgets\":[]}',`config_more`='{\"vars\":[],\"widgets\":[]}',`description`='合作伙伴模板文件',`is_public`=0,`list_order`=10  WHERE  `theme` = 'index'  AND `file` = 'portal/list_hezuo' [ RunTime:0.025056s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_theme_file` WHERE  `theme` = 'index'  AND `file` = 'portal/list_join' LIMIT 1 [ RunTime:0.020079s ]
+[ sql ] [ SQL ] UPDATE `ld_theme_file`  SET `theme`='index',`action`='portal/List/index',`file`='portal/list_join',`name`='加入我们页',`more`='{\"vars\":[],\"widgets\":[]}',`config_more`='{\"vars\":[],\"widgets\":[]}',`description`='加入我们模板文件',`is_public`=0,`list_order`=10  WHERE  `theme` = 'index'  AND `file` = 'portal/list_join' [ RunTime:0.024970s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_theme_file` WHERE  `theme` = 'index'  AND `file` = 'portal/list_museum' LIMIT 1 [ RunTime:0.020615s ]
+[ sql ] [ SQL ] UPDATE `ld_theme_file`  SET `theme`='index',`action`='portal/List/index',`file`='portal/list_museum',`name`='服务与支持页',`more`='{\"vars\":[],\"widgets\":[]}',`config_more`='{\"vars\":[],\"widgets\":[]}',`description`='服务与支持模板文件',`is_public`=0,`list_order`=10  WHERE  `theme` = 'index'  AND `file` = 'portal/list_museum' [ RunTime:0.024452s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_theme_file` WHERE  `theme` = 'index'  AND `file` = 'portal/list_product' LIMIT 1 [ RunTime:0.019891s ]
+[ sql ] [ SQL ] UPDATE `ld_theme_file`  SET `theme`='index',`action`='portal/List/index',`file`='portal/list_product',`name`='产品展示页',`more`='{\"vars\":[],\"widgets\":[]}',`config_more`='{\"vars\":[],\"widgets\":[]}',`description`='产品展示模板文件',`is_public`=0,`list_order`=10  WHERE  `theme` = 'index'  AND `file` = 'portal/list_product' [ RunTime:0.023890s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_theme_file` WHERE  `theme` = 'index'  AND `file` = 'portal/page' LIMIT 1 [ RunTime:0.020071s ]
+[ sql ] [ SQL ] UPDATE `ld_theme_file`  SET `theme`='index',`action`='portal/Page/index',`file`='portal/page',`name`='单页',`more`='{\"vars\":[],\"widgets\":[]}',`config_more`='{\"vars\":[],\"widgets\":[]}',`description`='单页模板',`is_public`=0,`list_order`=10  WHERE  `theme` = 'index'  AND `file` = 'portal/page' [ RunTime:0.025433s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_theme_file` WHERE  `theme` = 'index' [ RunTime:0.020731s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ld_theme` [ RunTime:0.020668s ]
+[ sql ] [ SQL ] UPDATE `ld_theme`  SET `name`='ld',`version`='1.0.2',`demo_url`='http://mydear.vip',`author`='龙鼎',`lang`='zh-cn',`author_url`='http://mydear.vip',`keywords`='龙鼎模板',`description`='龙鼎模板'  WHERE  `theme` = 'index' [ RunTime:0.025415s ]
+[ sql ] [ SQL ] SELECT `more` FROM `ld_theme_file` WHERE  `theme` = 'index'  AND (  `is_public` = 1 OR `file` = 'user/login' ) [ RunTime:0.019857s ]
+---------------------------------------------------------------
+[ 2020-09-09T18:41:39+08:00 ] 127.0.0.1 POST /user/login/dologin.html
+[ info ] www.zhaopin.com:8080/user/login/dologin.html [运行时间：0.316825s][吞吐率：3.16req/s] [内存消耗：2,979.98kb] [文件加载：77]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.004466s ]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'user',
+    1 => 'login',
+    2 => 'dologin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; admin_username=admin; PHPSESSID=som5dedac5u1c2sfku4heiao52; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.zhaopin.com:8080/user/login/index.html',
+  'origin' => 'http://www.zhaopin.com:8080',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '36',
+  'connection' => 'close',
+  'host' => 'www.zhaopin.com:8080',
+)
+[ info ] [ PARAM ] array (
+  'username' => '18311111111',
+  'password' => '123123',
+)
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.005847s ]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/user\lang\zh-cn.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/portal\lang\zh-cn\home.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\HomeLangBehavior @home_init [ RunTime:0.004133s ]
+[ info ] [ RUN ] app\user\controller\LoginController->doLogin[ E:\phpStudy\PHPTutorial\WWW\zhaopin\app\user\controller\LoginController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.031330s ] mysql:host=47.92.238.166;port=3306;dbname=zhaopin;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ld_user` [ RunTime:0.021502s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_user` WHERE  `mobile` = '18311111111' LIMIT 1 [ RunTime:0.021225s ]
+[ sql ] [ SQL ] UPDATE `ld_user`  SET `last_login_time`=1599648098,`last_login_ip`='127.0.0.1'  WHERE  `id` = 6 [ RunTime:0.027587s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ld_user_token` [ RunTime:0.020097s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_user_token` WHERE  `user_id` = 6  AND `device_type` = 'web' LIMIT 1 [ RunTime:0.019521s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ld_user_action` [ RunTime:0.020360s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_user_action` WHERE  `action` = 'login' LIMIT 1 [ RunTime:0.019312s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ld_user_score_log` [ RunTime:0.020193s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_user_score_log` ORDER BY `create_time` DESC LIMIT 1 [ RunTime:0.019236s ]
+---------------------------------------------------------------
+[ 2020-09-09T18:41:42+08:00 ] 127.0.0.1 GET /
+[ info ] www.zhaopin.com:8080/ [运行时间：1.527089s][吞吐率：0.65req/s] [内存消耗：3,520.69kb] [文件加载：89]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.010792s ]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'admin_username=admin; PHPSESSID=som5dedac5u1c2sfku4heiao52; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.zhaopin.com:8080/user/login/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.zhaopin.com:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.009824s ]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/portal\lang\zh-cn.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/portal\lang\zh-cn\home.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\HomeLangBehavior @home_init [ RunTime:0.002755s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\portal\controller\IndexController->index[ E:\phpStudy\PHPTutorial\WWW\zhaopin\app\portal\controller\IndexController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] themes/index/portal\\index.html [ array (
+  0 => 'site_info',
+  1 => 'theme_vars',
+  2 => 'theme_widgets',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.033341s ] mysql:host=47.92.238.166;port=3306;dbname=zhaopin;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ld_theme_file` [ RunTime:0.021779s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_theme_file` WHERE  `theme` = 'index'  AND `file` = 'portal/article' LIMIT 1 [ RunTime:0.231735s ]
+[ sql ] [ SQL ] UPDATE `ld_theme_file`  SET `theme`='index',`action`='portal/Article/index',`file`='portal/article',`name`='新闻文章页',`more`='[]',`config_more`='[]',`description`='文章页模板文件',`is_public`=0,`list_order`=10  WHERE  `theme` = 'index'  AND `file` = 'portal/article' [ RunTime:0.028129s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_theme_file` WHERE  `theme` = 'index'  AND `file` = 'portal/article_sale' LIMIT 1 [ RunTime:0.020927s ]
+[ sql ] [ SQL ] UPDATE `ld_theme_file`  SET `theme`='index',`action`=NULL,`file`='portal/article_sale',`name`=NULL,`more`='[]',`config_more`='[]',`description`=NULL,`is_public`=0,`list_order`=0  WHERE  `theme` = 'index'  AND `file` = 'portal/article_sale' [ RunTime:0.030202s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_theme_file` WHERE  `theme` = 'index'  AND `file` = 'portal/list' LIMIT 1 [ RunTime:0.020598s ]
+[ sql ] [ SQL ] UPDATE `ld_theme_file`  SET `theme`='index',`action`='portal/List/index',`file`='portal/list',`name`='新闻列表页',`more`='{\"vars\":[],\"widgets\":[]}',`config_more`='{\"vars\":[],\"widgets\":[]}',`description`='新闻列表模板文件',`is_public`=0,`list_order`=10  WHERE  `theme` = 'index'  AND `file` = 'portal/list' [ RunTime:0.026104s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_theme_file` WHERE  `theme` = 'index'  AND `file` = 'portal/list_about' LIMIT 1 [ RunTime:0.020952s ]
+[ sql ] [ SQL ] UPDATE `ld_theme_file`  SET `theme`='index',`action`='portal/List/index',`file`='portal/list_about',`name`='关于我们页',`more`='{\"vars\":[],\"widgets\":[]}',`config_more`='{\"vars\":[],\"widgets\":[]}',`description`='关于我们模板文件',`is_public`=0,`list_order`=10  WHERE  `theme` = 'index'  AND `file` = 'portal/list_about' [ RunTime:0.050569s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_theme_file` WHERE  `theme` = 'index'  AND `file` = 'portal/list_contact' LIMIT 1 [ RunTime:0.020614s ]
+[ sql ] [ SQL ] UPDATE `ld_theme_file`  SET `theme`='index',`action`='portal/List/index',`file`='portal/list_contact',`name`='联系我们页',`more`='{\"vars\":[],\"widgets\":[]}',`config_more`='{\"vars\":[],\"widgets\":[]}',`description`='联系我们模板文件',`is_public`=0,`list_order`=10  WHERE  `theme` = 'index'  AND `file` = 'portal/list_contact' [ RunTime:0.025464s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_theme_file` WHERE  `theme` = 'index'  AND `file` = 'portal/list_hezuo' LIMIT 1 [ RunTime:0.021061s ]
+[ sql ] [ SQL ] UPDATE `ld_theme_file`  SET `theme`='index',`action`='portal/List/index',`file`='portal/list_hezuo',`name`='合作伙伴页',`more`='{\"vars\":[],\"widgets\":[]}',`config_more`='{\"vars\":[],\"widgets\":[]}',`description`='合作伙伴模板文件',`is_public`=0,`list_order`=10  WHERE  `theme` = 'index'  AND `file` = 'portal/list_hezuo' [ RunTime:0.024688s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_theme_file` WHERE  `theme` = 'index'  AND `file` = 'portal/list_join' LIMIT 1 [ RunTime:0.020936s ]
+[ sql ] [ SQL ] UPDATE `ld_theme_file`  SET `theme`='index',`action`='portal/List/index',`file`='portal/list_join',`name`='加入我们页',`more`='{\"vars\":[],\"widgets\":[]}',`config_more`='{\"vars\":[],\"widgets\":[]}',`description`='加入我们模板文件',`is_public`=0,`list_order`=10  WHERE  `theme` = 'index'  AND `file` = 'portal/list_join' [ RunTime:0.026305s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_theme_file` WHERE  `theme` = 'index'  AND `file` = 'portal/list_museum' LIMIT 1 [ RunTime:0.020462s ]
+[ sql ] [ SQL ] UPDATE `ld_theme_file`  SET `theme`='index',`action`='portal/List/index',`file`='portal/list_museum',`name`='服务与支持页',`more`='{\"vars\":[],\"widgets\":[]}',`config_more`='{\"vars\":[],\"widgets\":[]}',`description`='服务与支持模板文件',`is_public`=0,`list_order`=10  WHERE  `theme` = 'index'  AND `file` = 'portal/list_museum' [ RunTime:0.025392s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_theme_file` WHERE  `theme` = 'index'  AND `file` = 'portal/list_product' LIMIT 1 [ RunTime:0.020823s ]
+[ sql ] [ SQL ] UPDATE `ld_theme_file`  SET `theme`='index',`action`='portal/List/index',`file`='portal/list_product',`name`='产品展示页',`more`='{\"vars\":[],\"widgets\":[]}',`config_more`='{\"vars\":[],\"widgets\":[]}',`description`='产品展示模板文件',`is_public`=0,`list_order`=10  WHERE  `theme` = 'index'  AND `file` = 'portal/list_product' [ RunTime:0.025214s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_theme_file` WHERE  `theme` = 'index'  AND `file` = 'portal/page' LIMIT 1 [ RunTime:0.020712s ]
+[ sql ] [ SQL ] UPDATE `ld_theme_file`  SET `theme`='index',`action`='portal/Page/index',`file`='portal/page',`name`='单页',`more`='{\"vars\":[],\"widgets\":[]}',`config_more`='{\"vars\":[],\"widgets\":[]}',`description`='单页模板',`is_public`=0,`list_order`=10  WHERE  `theme` = 'index'  AND `file` = 'portal/page' [ RunTime:0.235632s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_theme_file` WHERE  `theme` = 'index' [ RunTime:0.021355s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ld_theme` [ RunTime:0.021171s ]
+[ sql ] [ SQL ] UPDATE `ld_theme`  SET `name`='ld',`version`='1.0.2',`demo_url`='http://mydear.vip',`author`='龙鼎',`lang`='zh-cn',`author_url`='http://mydear.vip',`keywords`='龙鼎模板',`description`='龙鼎模板'  WHERE  `theme` = 'index' [ RunTime:0.025552s ]
+[ sql ] [ SQL ] SELECT `more` FROM `ld_theme_file` WHERE  `theme` = 'index'  AND (  `is_public` = 1 OR `file` = 'portal/index' ) [ RunTime:0.020155s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ld_portal_category` [ RunTime:0.021281s ]
+[ sql ] [ SQL ] SELECT `parent_id`,`id` FROM `ld_portal_category` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.020344s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_portal_category` WHERE  `status` = 1  AND `delete_time` = 0  AND `parent_id` = 0  AND `id` <> 27 ORDER BY `list_order` DESC,`id` ASC [ RunTime:0.020981s ]
+[ sql ] [ SQL ] SELECT `parent_id`,`id` FROM `ld_portal_category` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.020347s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_portal_category` WHERE  `status` = 1  AND `delete_time` = 0  AND `parent_id` = 0  AND `id` <> 27 ORDER BY `list_order` DESC,`id` ASC [ RunTime:0.020895s ]
+---------------------------------------------------------------
+[ 2020-09-09T18:42:13+08:00 ] 127.0.0.1 GET /
+[ info ] www.zhaopin.com:8080/ [运行时间：0.120127s][吞吐率：8.32req/s] [内存消耗：2,100.95kb] [文件加载：70]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.006539s ]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'admin_username=admin; PHPSESSID=som5dedac5u1c2sfku4heiao52; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.zhaopin.com:8080/user/login/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.zhaopin.com:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.015714s ]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/portal\lang\zh-cn.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/portal\lang\zh-cn\home.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\HomeLangBehavior @home_init [ RunTime:0.003425s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\portal\controller\IndexController->index[ E:\phpStudy\PHPTutorial\WWW\zhaopin\app\portal\controller\IndexController.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-09-09T18:42:14+08:00 ] 127.0.0.1 GET /portal/sturesume/index.html
+[ info ] www.zhaopin.com:8080/portal/sturesume/index.html [运行时间：0.959080s][吞吐率：1.04req/s] [内存消耗：3,342.91kb] [文件加载：89]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.006442s ]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'portal',
+    1 => 'sturesume',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'admin_username=admin; PHPSESSID=som5dedac5u1c2sfku4heiao52; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.zhaopin.com:8080/user/login/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.zhaopin.com:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.006510s ]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/portal\lang\zh-cn.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/portal\lang\zh-cn\home.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\HomeLangBehavior @home_init [ RunTime:0.005387s ]
+[ info ] [ RUN ] app\portal\controller\SturesumeController->index[ E:\phpStudy\PHPTutorial\WWW\zhaopin\app\portal\controller\SturesumeController.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] themes/index/portal\sturesume\index.html [ array (
+  0 => 'site_info',
+  1 => 'list',
+  2 => 'page',
+  3 => 'user_info',
+  4 => 'theme_vars',
+  5 => 'theme_widgets',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.029793s ] mysql:host=47.92.238.166;port=3306;dbname=zhaopin;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ld_stu_resume` [ RunTime:0.018745s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `ld_stu_resume` `sr` LEFT JOIN `ld_user` `u` ON `sr`.`uid`=`u`.`id` LEFT JOIN `ld_ent_resume` `er` ON `sr`.`id`=`er`.`res_id` LEFT JOIN `ld_ent_position` `ep` ON `er`.`ent_id`=`ep`.`id` LEFT JOIN `ld_entstu` `e` ON `er`.`ent_id`=`e`.`id` LIMIT 1 [ RunTime:0.018519s ]
+[ sql ] [ SQL ] SELECT `sr`.`id`,`u`.`name`,`u`.`major`,`u`.`school`,`ep`.`title`,ep.type as ep_type,`er`.`time`,`e`.`ent_name` FROM `ld_stu_resume` `sr` LEFT JOIN `ld_user` `u` ON `sr`.`uid`=`u`.`id` LEFT JOIN `ld_ent_resume` `er` ON `sr`.`id`=`er`.`res_id` LEFT JOIN `ld_ent_position` `ep` ON `er`.`ent_id`=`ep`.`id` LEFT JOIN `ld_entstu` `e` ON `er`.`ent_id`=`e`.`id` LIMIT 0,12 [ RunTime:0.018379s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ld_theme_file` [ RunTime:0.019088s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_theme_file` WHERE  `theme` = 'index'  AND `file` = 'portal/article' LIMIT 1 [ RunTime:0.018388s ]
+[ sql ] [ SQL ] UPDATE `ld_theme_file`  SET `theme`='index',`action`='portal/Article/index',`file`='portal/article',`name`='新闻文章页',`more`='[]',`config_more`='[]',`description`='文章页模板文件',`is_public`=0,`list_order`=10  WHERE  `theme` = 'index'  AND `file` = 'portal/article' [ RunTime:0.023861s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_theme_file` WHERE  `theme` = 'index'  AND `file` = 'portal/article_sale' LIMIT 1 [ RunTime:0.018321s ]
+[ sql ] [ SQL ] UPDATE `ld_theme_file`  SET `theme`='index',`action`=NULL,`file`='portal/article_sale',`name`=NULL,`more`='[]',`config_more`='[]',`description`=NULL,`is_public`=0,`list_order`=0  WHERE  `theme` = 'index'  AND `file` = 'portal/article_sale' [ RunTime:0.022990s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_theme_file` WHERE  `theme` = 'index'  AND `file` = 'portal/list' LIMIT 1 [ RunTime:0.018514s ]
+[ sql ] [ SQL ] UPDATE `ld_theme_file`  SET `theme`='index',`action`='portal/List/index',`file`='portal/list',`name`='新闻列表页',`more`='{\"vars\":[],\"widgets\":[]}',`config_more`='{\"vars\":[],\"widgets\":[]}',`description`='新闻列表模板文件',`is_public`=0,`list_order`=10  WHERE  `theme` = 'index'  AND `file` = 'portal/list' [ RunTime:0.022916s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_theme_file` WHERE  `theme` = 'index'  AND `file` = 'portal/list_about' LIMIT 1 [ RunTime:0.018430s ]
+[ sql ] [ SQL ] UPDATE `ld_theme_file`  SET `theme`='index',`action`='portal/List/index',`file`='portal/list_about',`name`='关于我们页',`more`='{\"vars\":[],\"widgets\":[]}',`config_more`='{\"vars\":[],\"widgets\":[]}',`description`='关于我们模板文件',`is_public`=0,`list_order`=10  WHERE  `theme` = 'index'  AND `file` = 'portal/list_about' [ RunTime:0.023653s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_theme_file` WHERE  `theme` = 'index'  AND `file` = 'portal/list_contact' LIMIT 1 [ RunTime:0.018777s ]
+[ sql ] [ SQL ] UPDATE `ld_theme_file`  SET `theme`='index',`action`='portal/List/index',`file`='portal/list_contact',`name`='联系我们页',`more`='{\"vars\":[],\"widgets\":[]}',`config_more`='{\"vars\":[],\"widgets\":[]}',`description`='联系我们模板文件',`is_public`=0,`list_order`=10  WHERE  `theme` = 'index'  AND `file` = 'portal/list_contact' [ RunTime:0.023381s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_theme_file` WHERE  `theme` = 'index'  AND `file` = 'portal/list_hezuo' LIMIT 1 [ RunTime:0.018231s ]
+[ sql ] [ SQL ] UPDATE `ld_theme_file`  SET `theme`='index',`action`='portal/List/index',`file`='portal/list_hezuo',`name`='合作伙伴页',`more`='{\"vars\":[],\"widgets\":[]}',`config_more`='{\"vars\":[],\"widgets\":[]}',`description`='合作伙伴模板文件',`is_public`=0,`list_order`=10  WHERE  `theme` = 'index'  AND `file` = 'portal/list_hezuo' [ RunTime:0.023195s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_theme_file` WHERE  `theme` = 'index'  AND `file` = 'portal/list_join' LIMIT 1 [ RunTime:0.018416s ]
+[ sql ] [ SQL ] UPDATE `ld_theme_file`  SET `theme`='index',`action`='portal/List/index',`file`='portal/list_join',`name`='加入我们页',`more`='{\"vars\":[],\"widgets\":[]}',`config_more`='{\"vars\":[],\"widgets\":[]}',`description`='加入我们模板文件',`is_public`=0,`list_order`=10  WHERE  `theme` = 'index'  AND `file` = 'portal/list_join' [ RunTime:0.023199s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_theme_file` WHERE  `theme` = 'index'  AND `file` = 'portal/list_museum' LIMIT 1 [ RunTime:0.018729s ]
+[ sql ] [ SQL ] UPDATE `ld_theme_file`  SET `theme`='index',`action`='portal/List/index',`file`='portal/list_museum',`name`='服务与支持页',`more`='{\"vars\":[],\"widgets\":[]}',`config_more`='{\"vars\":[],\"widgets\":[]}',`description`='服务与支持模板文件',`is_public`=0,`list_order`=10  WHERE  `theme` = 'index'  AND `file` = 'portal/list_museum' [ RunTime:0.028551s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_theme_file` WHERE  `theme` = 'index'  AND `file` = 'portal/list_product' LIMIT 1 [ RunTime:0.018336s ]
+[ sql ] [ SQL ] UPDATE `ld_theme_file`  SET `theme`='index',`action`='portal/List/index',`file`='portal/list_product',`name`='产品展示页',`more`='{\"vars\":[],\"widgets\":[]}',`config_more`='{\"vars\":[],\"widgets\":[]}',`description`='产品展示模板文件',`is_public`=0,`list_order`=10  WHERE  `theme` = 'index'  AND `file` = 'portal/list_product' [ RunTime:0.023159s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_theme_file` WHERE  `theme` = 'index'  AND `file` = 'portal/page' LIMIT 1 [ RunTime:0.018316s ]
+[ sql ] [ SQL ] UPDATE `ld_theme_file`  SET `theme`='index',`action`='portal/Page/index',`file`='portal/page',`name`='单页',`more`='{\"vars\":[],\"widgets\":[]}',`config_more`='{\"vars\":[],\"widgets\":[]}',`description`='单页模板',`is_public`=0,`list_order`=10  WHERE  `theme` = 'index'  AND `file` = 'portal/page' [ RunTime:0.022955s ]
+[ sql ] [ SQL ] SELECT * FROM `ld_theme_file` WHERE  `theme` = 'index' [ RunTime:0.019028s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ld_theme` [ RunTime:0.018657s ]
+[ sql ] [ SQL ] UPDATE `ld_theme`  SET `name`='ld',`version`='1.0.2',`demo_url`='http://mydear.vip',`author`='龙鼎',`lang`='zh-cn',`author_url`='http://mydear.vip',`keywords`='龙鼎模板',`description`='龙鼎模板'  WHERE  `theme` = 'index' [ RunTime:0.024274s ]
+[ sql ] [ SQL ] SELECT `more` FROM `ld_theme_file` WHERE  `theme` = 'index'  AND (  `is_public` = 1 OR `file` = 'portal/sturesume/index' ) [ RunTime:0.018193s ]
+---------------------------------------------------------------
+[ 2020-09-09T18:42:14+08:00 ] 127.0.0.1 GET /themes/index/public/assets/js/jquery-1.11.3.min.js
+[ info ] www.zhaopin.com:8080/themes/index/public/assets/js/jquery-1.11.3.min.js [运行时间：0.130540s][吞吐率：7.66req/s] [内存消耗：1,861.73kb] [文件加载：60]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.008327s ]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'themes',
+    1 => 'index',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'admin_username=admin; PHPSESSID=som5dedac5u1c2sfku4heiao52; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.zhaopin.com:8080/portal/sturesume/index.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.zhaopin.com:8080',
+)
+[ info ] [ PARAM ] array (
+  'assets' => 'js',
+)
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.013140s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-09-09T18:42:15+08:00 ] 127.0.0.1 GET /themes/index/public/assets/js/SuperSlide.js
+[ info ] www.zhaopin.com:8080/themes/index/public/assets/js/SuperSlide.js [运行时间：0.070774s][吞吐率：14.13req/s] [内存消耗：1,861.73kb] [文件加载：60]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.005168s ]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'themes',
+    1 => 'index',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'admin_username=admin; PHPSESSID=som5dedac5u1c2sfku4heiao52; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.zhaopin.com:8080/portal/sturesume/index.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.zhaopin.com:8080',
+)
+[ info ] [ PARAM ] array (
+  'assets' => 'js',
+)
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.006999s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-09-09T18:42:15+08:00 ] 127.0.0.1 GET /themes/index/public/assets/images/icon_jl.png
+[ info ] www.zhaopin.com:8080/themes/index/public/assets/images/icon_jl.png [运行时间：0.130711s][吞吐率：7.65req/s] [内存消耗：1,861.77kb] [文件加载：60]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.009390s ]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'themes',
+    1 => 'index',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'admin_username=admin; PHPSESSID=som5dedac5u1c2sfku4heiao52; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.zhaopin.com:8080/portal/sturesume/index.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.zhaopin.com:8080',
+)
+[ info ] [ PARAM ] array (
+  'assets' => 'images',
+)
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.006129s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-09-09T18:42:16+08:00 ] 127.0.0.1 GET /themes/index/public/assets/images/logo.png
+[ info ] www.zhaopin.com:8080/themes/index/public/assets/images/logo.png [运行时间：0.120777s][吞吐率：8.28req/s] [内存消耗：1,861.76kb] [文件加载：60]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.012075s ]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'themes',
+    1 => 'index',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'admin_username=admin; PHPSESSID=som5dedac5u1c2sfku4heiao52; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.zhaopin.com:8080/portal/sturesume/index.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.zhaopin.com:8080',
+)
+[ info ] [ PARAM ] array (
+  'assets' => 'images',
+)
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.006891s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-09-09T18:42:16+08:00 ] 127.0.0.1 GET /themes/index/public/assets/images/icon_zw.png
+[ info ] www.zhaopin.com:8080/themes/index/public/assets/images/icon_zw.png [运行时间：0.108426s][吞吐率：9.22req/s] [内存消耗：1,861.77kb] [文件加载：60]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.010196s ]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'themes',
+    1 => 'index',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'admin_username=admin; PHPSESSID=som5dedac5u1c2sfku4heiao52; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.zhaopin.com:8080/portal/sturesume/index.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.zhaopin.com:8080',
+)
+[ info ] [ PARAM ] array (
+  'assets' => 'images',
+)
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.011267s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-09-09T18:42:16+08:00 ] 127.0.0.1 GET /themes/index/public/assets/images/icon_zph.png
+[ info ] www.zhaopin.com:8080/themes/index/public/assets/images/icon_zph.png [运行时间：0.103144s][吞吐率：9.70req/s] [内存消耗：1,861.77kb] [文件加载：60]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.011758s ]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'themes',
+    1 => 'index',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'admin_username=admin; PHPSESSID=som5dedac5u1c2sfku4heiao52; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.zhaopin.com:8080/portal/sturesume/index.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.zhaopin.com:8080',
+)
+[ info ] [ PARAM ] array (
+  'assets' => 'images',
+)
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.005124s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-09-09T18:42:16+08:00 ] 127.0.0.1 GET /themes/index/public/assets/images/icon_js.png
+[ info ] www.zhaopin.com:8080/themes/index/public/assets/images/icon_js.png [运行时间：0.084724s][吞吐率：11.80req/s] [内存消耗：1,861.77kb] [文件加载：60]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.006962s ]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'themes',
+    1 => 'index',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'admin_username=admin; PHPSESSID=som5dedac5u1c2sfku4heiao52; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.zhaopin.com:8080/portal/sturesume/index.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.zhaopin.com:8080',
+)
+[ info ] [ PARAM ] array (
+  'assets' => 'images',
+)
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.007616s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-09-09T18:42:16+08:00 ] 127.0.0.1 GET /themes/index/public/assets/js/index.js
+[ info ] www.zhaopin.com:8080/themes/index/public/assets/js/index.js [运行时间：0.120039s][吞吐率：8.33req/s] [内存消耗：1,861.72kb] [文件加载：60]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.008219s ]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'themes',
+    1 => 'index',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'admin_username=admin; PHPSESSID=som5dedac5u1c2sfku4heiao52; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.zhaopin.com:8080/portal/sturesume/index.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.zhaopin.com:8080',
+)
+[ info ] [ PARAM ] array (
+  'assets' => 'js',
+)
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.005464s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-09-09T18:42:16+08:00 ] 127.0.0.1 GET /themes/index/public/assets/images/icon_ry.png
+[ info ] www.zhaopin.com:8080/themes/index/public/assets/images/icon_ry.png [运行时间：0.120807s][吞吐率：8.28req/s] [内存消耗：1,861.77kb] [文件加载：60]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.009900s ]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'themes',
+    1 => 'index',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'admin_username=admin; PHPSESSID=som5dedac5u1c2sfku4heiao52; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.zhaopin.com:8080/portal/sturesume/index.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.zhaopin.com:8080',
+)
+[ info ] [ PARAM ] array (
+  'assets' => 'images',
+)
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.010733s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-09-09T18:42:16+08:00 ] 127.0.0.1 GET /themes/index/public/assets/images/navbg.png
+[ info ] www.zhaopin.com:8080/themes/index/public/assets/images/navbg.png [运行时间：0.140131s][吞吐率：7.14req/s] [内存消耗：1,861.77kb] [文件加载：60]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.029635s ]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'themes',
+    1 => 'index',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'admin_username=admin; PHPSESSID=som5dedac5u1c2sfku4heiao52; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.zhaopin.com:8080/portal/sturesume/index.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.zhaopin.com:8080',
+)
+[ info ] [ PARAM ] array (
+  'assets' => 'images',
+)
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.008914s ]
+[ info ] [ LOG ] INIT File
