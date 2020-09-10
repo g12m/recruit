@@ -22,14 +22,11 @@
       </ul>
 </div>
 
-
-
-<?php dump($_SERVER['PHP_SELF']);?>
 <div class="layui-side layui-bg-black" style="background: url(__TMPL__/public/assets/images/default/navbg.png);">
       <div class="layui-logo"><img src="__TMPL__/public/assets/images/default/logo.png" alt=""></div>
       <div class="layui-side-scroll">
           <ul class="layui-nav layui-nav-tree" lay-filter="test">
-              <li class="layui-nav-item"><a href="javascript:;"><img src="__TMPL__/public/assets/images/default/icon_jl.png" alt=""> 简历管理 <span
+              <li class="layui-nav-item"><a href="{:cmf_url('sturesume/index')}"><img src="__TMPL__/public/assets/images/default/icon_jl.png" alt=""> 简历管理 <span
                           class="jian">></span></a></li>
               <li class="layui-nav-item layui-nav-itemed layui-this"><a href="{:cmf_url('entposition/index')}"><img src="__TMPL__/public/assets/images/default/icon_zw.png" alt=""> 职位管理 <span
                           class="jian">></span></a></li>

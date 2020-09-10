@@ -8,7 +8,7 @@ class EntPositionController extends HomeBaseController
 {
     public function index()
     {
-        $where['uid'] = session('Ent_user')['entstu_id'];
+        $where['uid'] = cmf_get_current_user_id();
         $request = '';
         $request = input('request.');
         if(!empty($request['title']))
