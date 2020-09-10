@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:42:"themes/index/portal\entposition\index.html";i:1599652403;s:68:"D:\phpstudy_pro\WWW\zhaopin\public\themes\index\public\base_ent.html";i:1599651969;s:68:"D:\phpstudy_pro\WWW\zhaopin\public\themes\index\public\head_ent.html";i:1599651573;s:72:"D:\phpstudy_pro\WWW\zhaopin\public\themes\index\public\con_left_ent.html";i:1599652315;s:66:"D:\phpstudy_pro\WWW\zhaopin\public\themes\index\public\footer.html";i:1599285135;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:42:"themes/index/portal\entposition\index.html";i:1599701851;s:68:"D:\phpstudy_pro\WWW\zhaopin\public\themes\index\public\base_ent.html";i:1599701852;s:68:"D:\phpstudy_pro\WWW\zhaopin\public\themes\index\public\head_ent.html";i:1599701852;s:72:"D:\phpstudy_pro\WWW\zhaopin\public\themes\index\public\con_left_ent.html";i:1599701852;s:66:"D:\phpstudy_pro\WWW\zhaopin\public\themes\index\public\footer.html";i:1599701852;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -80,29 +80,30 @@
                             <div class="layui-inline">
                                 <label class="layui-form-label">搜索：</label>
                                 <div class="layui-input-inline" style="width: 240px;">
-                                    <input type="text" name="title" autocomplete="off" class="layui-input">
+                                    <input type="text" name="title" autocomplete="off" class="layui-input" value="<?php echo input('request.title'); ?>">
                                 </div>
                             </div>
                             <div class="layui-inline">
                                 <label class="layui-form-label">日期：</label>
                                 <div class="layui-input-inline" style="width: 200px;">
                                     <input id="timestart-zw" type="text" name="datetime" placeholder="开始时间"
-                                        autocomplete="off" class="layui-input">
+                                        autocomplete="off" class="layui-input" value="<?php echo input('request.datetime'); ?>">
                                 </div>
                                 <div class="layui-form-mid">-</div>
                                 <div class="layui-input-inline" style="width: 200px;">
                                     <input id="timeend-zw" type="text" name="datetime2" placeholder="结束时间"
-                                        autocomplete="off" class="layui-input">
+                                        autocomplete="off" class="layui-input" value="<?php echo input('request.datetime2'); ?>">
                                 </div>
                             </div>
                             <div class="layui-inline">
                                 <label class="layui-form-label">类型：</label>
                                 <div class="layui-input-block" style="width: 100px;">
-                                    <select name="type" lay-verify="">
+                                    <select name="type" lay-verify="" id="sele_type">
                                         <option value="0">全部</option>
                                         <option value="1">正式</option>
                                         <option value="2">实习</option>
                                     </select>
+                                    <input type="hidden" id="type" value="<?php echo input('request.type'); ?>">
                                 </div>
                             </div>
                             <div class="layui-inline">
@@ -134,7 +135,7 @@
                                 </p></td>
                                 <td><p><?php echo $vo['desc']; ?></p></td>
                                 <td><p><?php echo $vo['salary_min']; ?>~<?php echo $vo['salary_max']; ?></p></td>
-                                <td><button class="layui-btn btn-xq">详情</button><a class="layui-btn btn-shanchu" href="<?php echo cmf_url('delpos',array('id'=>$vo['id'])); ?>">删除</a></td>
+                                <td><a class="layui-btn btn-xq" href="<?php echo cmf_url('editpos',array('id'=>$vo['id'])); ?>">编辑</a><a class="layui-btn btn-shanchu" href="<?php echo cmf_url('delpos',array('id'=>$vo['id'])); ?>">删除</a></td>
                             </tr>
                             <?php endforeach; endif; else: echo "" ;endif; ?>
                         </tbody>
@@ -143,6 +144,14 @@
             </div>
         </div>
     </div>
+    <script>
+        $(function(){
+           var typeval = $("#type").val();
+           if(typeval > 0){
+            $("#sele_type").find('option').eq(typeval).attr('selected','selected')
+           }
+        })
+    </script>
 
       <!--footer 底部  -->
       <!-- 

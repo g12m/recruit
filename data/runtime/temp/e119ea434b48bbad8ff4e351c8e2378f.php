@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:38:"themes/index/portal\entfair\index.html";i:1599652244;s:68:"D:\phpstudy_pro\WWW\zhaopin\public\themes\index\public\base_ent.html";i:1599651969;s:68:"D:\phpstudy_pro\WWW\zhaopin\public\themes\index\public\head_ent.html";i:1599651573;s:72:"D:\phpstudy_pro\WWW\zhaopin\public\themes\index\public\con_left_ent.html";i:1599652315;s:66:"D:\phpstudy_pro\WWW\zhaopin\public\themes\index\public\footer.html";i:1599285135;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:38:"themes/index/portal\entfair\index.html";i:1599701851;s:68:"D:\phpstudy_pro\WWW\zhaopin\public\themes\index\public\base_ent.html";i:1599701852;s:68:"D:\phpstudy_pro\WWW\zhaopin\public\themes\index\public\head_ent.html";i:1599701852;s:72:"D:\phpstudy_pro\WWW\zhaopin\public\themes\index\public\con_left_ent.html";i:1599701852;s:66:"D:\phpstudy_pro\WWW\zhaopin\public\themes\index\public\footer.html";i:1599701852;}*/ ?>
 <!DOCTYPE html>
 <html>
 
