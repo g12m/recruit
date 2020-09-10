@@ -452,8 +452,17 @@ window.onload = function () {
         });
 
         $('.sczph').click(function(){
+            var id = $(this).attr('data');
             layer.confirm('删除后不可恢复，是否仍然删除？',{title:'确认删除'}, function(index){
-                console.log('删除成功')
+                $.ajax({
+                    url: "/portal/Entfair/delfair",
+                    data: {"id":id},
+                    type: "post",
+                    async: true,
+                    success: function (data) {
+                        history.go(-1)
+                    }
+                });
                 layer.close(index);
               }); 
         })
