@@ -1,0 +1,78 @@
+---------------------------------------------------------------
+[ 2020-09-10T15:52:31+08:00 ] 127.0.0.1 POST /sch_position?price_min=&price_max=&city=0
+[ info ] www.zhaopin.com:8080/sch_position?price_min=&price_max=&city=0 [运行时间：0.291239s][吞吐率：3.43req/s] [内存消耗：2,436.71kb] [文件加载：65]
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.139958s ]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'sch_position',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'admin_username=admin; PHPSESSID=of39bu8f14i3qqki1d2oheu2s4; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.zhaopin.com:8080/sch_position?price_min=&price_max=&city=0',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'content-type' => 'application/x-www-form-urlencoded',
+  'origin' => 'http://www.zhaopin.com:8080',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'content-length' => '36',
+  'connection' => 'close',
+  'host' => 'www.zhaopin.com:8080',
+)
+[ info ] [ PARAM ] array (
+  'price_min' => '',
+  'price_max' => '',
+  'city' => '0',
+  'name' => '',
+  'status' => '0',
+)
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.004574s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.072025s ] mysql:host=47.92.238.166;port=3306;dbname=zhaopin;charset=utf8mb4
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ld_hook_plugin` [ RunTime:0.018897s ]
+[ sql ] [ SQL ] SELECT `hook`,`plugin` FROM `ld_hook_plugin` WHERE  `status` = 1 ORDER BY `list_order` ASC [ RunTime:0.018675s ]
+---------------------------------------------------------------
+[ 2020-09-10T15:52:36+08:00 ] 127.0.0.1 GET /sch_position
+[ info ] www.zhaopin.com:8080/sch_position [运行时间：0.103893s][吞吐率：9.63req/s] [内存消耗：1,859.94kb] [文件加载：60]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run cmf\behavior\InitHookBehavior @app_init [ RunTime:0.007841s ]
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\simplewind\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'sch_position',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'admin_username=admin; PHPSESSID=of39bu8f14i3qqki1d2oheu2s4; thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.zhaopin.com:8080',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../simplewind/cmf/lang\zh-cn.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/admin\lang\zh-cn\common.php
+[ info ] [ LANG ] E:\phpStudy\PHPTutorial\WWW\zhaopin\public/../app/portal\lang\zh-cn\common.php
+[ info ] [ BEHAVIOR ] Run cmf\behavior\LangBehavior @app_begin [ RunTime:0.005797s ]
+[ info ] [ LOG ] INIT File
