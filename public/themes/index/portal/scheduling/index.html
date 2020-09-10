@@ -45,7 +45,7 @@
                 </div>
                 <div class="pq">
                     <div class="title">
-                        <p>状态 <a class="checktitle" href="">全部</a><a href="">已关联</a><a href="">未关联</a><a href="">已失效</a>
+                        <p>状态 <a <if $status==0>class="checktitle"</if> href="{:url('portal/scheduling/index')}">全部</a><a <if $status==2>class="checktitle"</if>href="{:url('portal/scheduling/index',array('status'=>2))}">已关联</a><a <if $status==1>class="checktitle"</if> href="{:url('portal/scheduling/index',array('status'=>1))}">未关联</a><a <if $status==3>class="checktitle"</if> href="{:url('portal/scheduling/index',array('status'=>3))}">已失效</a>
                         </p>
                     </div>
                     <div class="list">

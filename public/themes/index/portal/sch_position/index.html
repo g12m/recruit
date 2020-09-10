@@ -1,41 +1,36 @@
 <extend name="public@base" />
 <!-- 主体部分 -->
 <block name="content">
-        <!-- 头部 -->
-   
-        <!-- 左侧导航 -->
-      
-        <!-- 主体部分 -->
         <div class="layui-body">
             <div class="RightBody">
                 <div class="sousuo">
-                    <form class="layui-form" action="" method="">
+                    <form class="layui-form" action="" method="post">
                         <div class="layui-form-item">
                             <div class="layui-inline">
                                 <label class="layui-form-label">搜索：</label>
                                 <div class="layui-input-inline" style="width: 240px;">
-                                    <input type="text" name="" autocomplete="off" class="layui-input">
+                                    <input type="text" name="name" autocomplete="off" class="layui-input" value="{$title}">
                                 </div>
                             </div>
                             <div class="layui-inline">
                                 <label class="layui-form-label">日期：</label>
                                 <div class="layui-input-inline" style="width: 200px;">
                                     <input id="timestart-zw" type="text" name="price_min" placeholder="开始时间" autocomplete="off"
-                                        class="layui-input">
+                                        class="layui-input"  value="{$price_min}">
                                 </div>
                                 <div class="layui-form-mid">-</div>
                                 <div class="layui-input-inline" style="width: 200px;">
                                     <input id="timeend-zw" type="text" name="price_max" placeholder="结束时间" autocomplete="off"
-                                        class="layui-input">
+                                        class="layui-input"  value="{$price_max}">
                                 </div>
                             </div>
                             <div class="layui-inline">
                                 <label class="layui-form-label">状态：</label>
                                 <div class="layui-input-block" style="width: 100px;">
-                                    <select name="city" lay-verify="">
+                                    <select name="status" lay-verify="">
                                         <option value="0">全部</option>
-                                        <option value="1">开始</option>
-                                        <option value="2">结束</option>
+                                        <option value="1">发布</option>
+                                        <option value="2">未发布</option>
                                     </select>
                                 </div>
                             </div>
@@ -56,9 +51,11 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <foreach name="list" item="vo">
                             <php>
-                                $ress=get_schnum(4);
-                                $num=get_countsch(4);
+                                $arr = array();
+                                $ress=get_schnum($vo['uid']);
+                                $num=get_countsch($vo['uid']);
                                 foreach($ress as $k=>$v)
                                 {
                                 $arr[] = $v['title'];
@@ -67,7 +64,7 @@
                             </php>
                             <tr>
                                 <td>
-                                    <p>北京XXX软件开发公司</p>
+                                    <p>{$vo.ent_name}</p>
                                 </td>
                                 <td>
                                     <p>{$num}人</p>
@@ -75,9 +72,9 @@
                                 <td>
                                     <p>{$str}</p>
                                 </td>
-                                <td><button class="layui-btn btn-xq"><a href="{:url('portal/sch_position/article',array('id'=>4))}">详情</a></button></td>
+                                <td><button class="layui-btn btn-xq"><a href="{:url('portal/sch_position/article',array('id'=>$vo.uid))}">详情</a></button></td>
                             </tr>
-                     
+                            </foreach>
                          
                         </tbody>
                     </table>
