@@ -8,7 +8,7 @@ class EntPositionController extends HomeBaseController
 {
     public function index()
     {
-        $where['uid'] = session('Ent_user')['entstu_id'];
+        $where['uid'] = cmf_get_current_user_id();
         $request = '';
         $request = input('request.');
         if(!empty($request['title']))
@@ -41,7 +41,7 @@ class EntPositionController extends HomeBaseController
             $param = $this->request->param();
             $param['time'] = time();
             $param['effective_time'] = strtotime($param['effective_time']);
-            $param['uid'] = session('Ent_user')['entstu_id'];
+            $param['uid'] = cmf_get_current_user_id();
             $pos = new EntPositionModel();
             $pos->pos_add($param);
             $this->redirect('index');

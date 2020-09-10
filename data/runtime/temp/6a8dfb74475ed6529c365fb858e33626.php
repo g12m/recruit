@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:37:"themes/index/portal\confer\index.html";i:1599651498;s:72:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\base.html";i:1599651498;s:72:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\head.html";i:1599698875;s:76:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\con_left.html";i:1599701773;s:74:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\footer.html";i:1599439177;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:45:"themes/index/portal\sch_position\article.html";i:1599706910;s:72:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\base.html";i:1599651498;s:72:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\head.html";i:1599698875;s:76:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\con_left.html";i:1599701773;s:74:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\footer.html";i:1599439177;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -80,63 +80,72 @@
         <!-- 主体部分 -->
         <div class="layui-body">
             <div class="RightBody">
-                <div class="sousuo">
-                    <form class="layui-form" action="" method="post">
-                        <div class="layui-form-item">
-                            <div class="layui-inline">
-                                <label class="layui-form-label">搜索：</label>
-                                <div class="layui-input-inline" style="width: 240px;">
-                                    <input type="text" name="title" autocomplete="off" class="layui-input" value="<?php echo $title; ?>">
-                                </div>
-                            </div>
-                            <div class="layui-inline">
-                                <button class="layui-btn" lay-submit lay-filter="formDemo">搜索</button>
-                                <div class="layui-btn btn-shanchu xjhc">新建会场</div>
-                            </div>
-                        </div>
-                    </form>
+                <div class="xq-title layui-clear">
+                   
+                    <div class="xq-h"><?php echo get_userlist_info($id)['ent_name'];?></div>
+                    <div class="riqi">
+                        <i>【招聘人数】<span><?php echo $num; ?>人</span></i>
+                        <i>【企业联系人】<span><?php echo get_userlist_info($id)['user_name'];?></span></i>
+                        <i>【联系电话】<span><?php echo get_userlist_info($id)['phone'];?></span></i>
+                    </div>
+                    <div class="btns">
+                        <?php if(empty($value) || (($value instanceof \think\Collection || $value instanceof \think\Paginator ) && $value->isEmpty())): ?>
+                        <button class="layui-btn fb">发布</button>
+                            <?php else: ?>
+                            <button class="layui-btn">已发布</button>
+                            <?php endif; ?>
+                        <button class="layui-btn btn-qx ch">
+                           撤回
+                        </button>
+                    </div>
                 </div>
-                <div class="hc">
-                    <div class="list">
-                        <?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): if( count($list)==0 ) : echo "" ;else: foreach($list as $key=>$vo): ?>
-                            <a href="<?php echo url('portal/confer/article',array('id'=>$vo['id'])); ?>" class="box">
-                                <div class="box-title"><?php echo $vo['address']; ?></div>
-                                <div class="box-xx">
-                                    <p>容纳人数：<span><?php echo $vo['num']; ?>人</span></p>
-                                    <p>招聘排期：<span><?php $num=get_pqnum($vo['id']);if(empty($num) || (($num instanceof \think\Collection || $num instanceof \think\Paginator ) && $num->isEmpty())): ?>
-                                                无
-                                                <?php else: ?>
-                                                <?php echo $num; ?>场
-                                            <?php endif; ?></span></p>
+                <div class="hcxq">
+                    <div class="xx">
+                        <div class="xx-title">
+                            <div class="a">招聘职位</div>
+                        </div>
+                        <div class="xx-list">
+                            <?php if(is_array($info) || $info instanceof \think\Collection || $info instanceof \think\Paginator): if( count($info)==0 ) : echo "" ;else: foreach($info as $key=>$v3): ?>
+                                <div class="xx-box">
+                                    <div class="xx-box-h"><?php echo $v3['title']; ?></div>
+                                    <div class="xx-box-m">
+                                        <input type="hidden" name="q_id" value="<?php echo $v3['uid']; ?>" class="q_id">
+                                        <input type="hidden" name="sch_id" value="<?php echo $sch_id; ?>" class="sch_id">
+                                        <i>【建议专业】<span><?php echo $v3['major']; ?></span></i>
+                                        <i>【招聘人数】<span><?php echo $v3['num']; ?>人</span></i>
+                                        <i>【职位类型】<span><?php echo $v3['type']==1?'正式':"实习";?></span></i>
+                                        <i>【薪资范围】<span><?php echo $v3['salary_min']; ?>~<?php echo $v3['salary_max']; ?></span></i>
+                                        <i>【有效期】<span><?php echo date("Y年m月d日",$v3['effective_time']); ?></span></i>
+                                    </div>
+                                    <div class="xx-box-yq">
+                                        <b>职位描述</b>
+                                        <p><?php echo $v3['desc']; ?></p>
+                                       
+                                    </div>
                                 </div>
-                            </a>
-                        <?php endforeach; endif; else: echo "" ;endif; ?>
+                            <?php endforeach; endif; else: echo "" ;endif; ?>
+
+                          
+                           
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div id="xjhc" class="tc">
-        <form class="layui-form" action="" >
-            <div class="layui-form-item">
-                <label class="layui-form-label">地点：</label>
-                <div class="layui-input-block">
-                    <input type="text" name="address" required lay-verify="required" autocomplete="off"
-                        class="layui-input address">
-                </div>
-            </div>
-            <div class="layui-form-item">
-                <label class="layui-form-label">容纳人数：</label>
-                <div class="layui-input-block">
-                    <input type="text" name="num" required lay-verify="required" autocomplete="off"
-                        class="layui-input num">
-                </div>
-            </div>
-            <div class="layui-btn btn-qx qx">取消</div>
-            <button class="layui-btn qr">确认</button>
-        </form>
+    <div id="fb" class="tc">
+        <img style="width:100px;" src="/themes/index/public/assets/images/default/fb.png" alt="">
+        <p>发布后，本校学生可在微信小程序看到该企业的招聘职位</p>
+        <button class="layui-btn btn-qx qx">取消</button>
+        <button class="layui-btn qr">确认</button>
     </div>
-    
+    <div id="ch" class="tc">
+        <img src="/themes/index/public/assets/images/default/ch.png" alt="">
+        <p>撤回后，本校学生在微信小程序看不到该企业的招聘职位</p>
+        <button class="layui-btn btn-qx qx">取消</button>
+        <button class="layui-btn qr">确认</button>
+    </div>
+
       <!--footer 底部  -->
       <!-- 
           

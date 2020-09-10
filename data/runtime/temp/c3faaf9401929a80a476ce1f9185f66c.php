@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:38:"themes/index/portal\sturole\index.html";i:1599645493;s:76:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\con_left.html";i:1599645493;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:38:"themes/index/portal\sturole\index.html";i:1599645493;s:76:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\con_left.html";i:1599698875;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -49,7 +49,7 @@
 
 
 
-<?php dump($_SERVER['PHP_SELF']);?>
+<?php $munu=nav(1);?>
   <div class="layui-side layui-bg-black" style="background: url(/themes/index/public/assets/images/default/navbg.png);">
     <div class="layui-logo"><img src="/themes/index/public/assets/images/default/logo.png" alt=""></div>
     <div class="layui-side-scroll">

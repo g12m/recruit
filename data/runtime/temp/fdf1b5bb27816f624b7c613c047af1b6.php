@@ -1,16 +1,9 @@
-<<<<<<< HEAD
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:41:"themes/index/portal\scheduling\index.html";i:1599698087;s:72:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\base.html";i:1599651498;s:72:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\head.html";i:1599698087;s:76:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\con_left.html";i:1599698087;s:74:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\footer.html";i:1599439177;}*/ ?>
-=======
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:41:"themes/index/portal\scheduling\index.html";i:1599657314;s:72:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\base.html";i:1599651498;s:72:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\head.html";i:1599655165;s:76:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\con_left.html";i:1599655429;s:74:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\footer.html";i:1599439177;}*/ ?>
->>>>>>> dev
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:41:"themes/index/portal\scheduling\index.html";i:1599700507;s:72:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\base.html";i:1599651498;s:72:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\head.html";i:1599698875;s:76:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\con_left.html";i:1599701773;s:74:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\footer.html";i:1599439177;}*/ ?>
 <!DOCTYPE html>
 <html>
 
   <head>
-<<<<<<< HEAD
-=======
   
->>>>>>> dev
   <meta charset='utf-8'>
   <meta name='renderer' content='webkit'>
   <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -57,24 +50,24 @@
 
 
 
-<?php $munu=nav(1);?>
+<?php echo $url=$_SERVER['REQUEST_URI'];?>
   <div class="layui-side layui-bg-black" style="background: url(/themes/index/public/assets/images/default/navbg.png);">
     <div class="layui-logo"><img src="/themes/index/public/assets/images/default/logo.png" alt=""></div>
     <div class="layui-side-scroll">
       <ul class="layui-nav layui-nav-tree" lay-filter="test">
         <li class="layui-nav-item"><a href="<?php echo url('portal/msg/kanban'); ?>"><img src="/themes/index/public/assets/images/default/icon_kb.png"
               alt="">招聘大看板 <span class="jian">></span></a></li>
-        <li class="layui-nav-item layui-nav-itemed layui-this"><a href="<?php echo url('portal/Scheduling/index'); ?>"><img src="/themes/index/public/assets/images/default/icon_pq.png"
+        <li <?php if($url=="/scheduling"): ?>class="layui-nav-item layui-nav-itemed layui-this"<?php else: ?>class="layui-nav-item"<?php endif; ?>><a href="/scheduling"><img src="/themes/index/public/assets/images/default/icon_pq.png"
               alt=""> 排期管理 <span class="jian">></span></a></li>
-        <li class="layui-nav-item  "><a href="<?php echo url('portal/confer/index'); ?>"><img
+        <li <?php if($url=="/confer"): ?>class="layui-nav-item layui-nav-itemed layui-this"<?php else: ?>class="layui-nav-item"<?php endif; ?>><a href="/confer"><img
               src="/themes/index/public/assets/images/default/icon_hc.png" alt=""> 会场管理 <span class="jian">></span></a></li>
-        <li class="layui-nav-item"><a href="/sch_position"><img src="/themes/index/public/assets/images/default/icon_zw.png"
+        <li <?php if($url=="/sch_position"): ?>class="layui-nav-item layui-nav-itemed layui-this"<?php else: ?>class="layui-nav-item"<?php endif; ?>><a href="/sch_position"><img src="/themes/index/public/assets/images/default/icon_zw.png"
               alt=""> 职位管理 <span class="jian">></span></a></li>
-        <li class="layui-nav-item"><a href="<?php echo url('portal/resume/index'); ?>"><img src="/themes/index/public/assets/images/default/icon_jl.png"
+        <li <?php if($url=="/resume"): ?>class="layui-nav-item layui-nav-itemed layui-this"<?php else: ?>class="layui-nav-item"<?php endif; ?>><a href="/resume"><img src="/themes/index/public/assets/images/default/icon_jl.png"
               alt=""> 简历管理 <span class="jian">></span></a></li>
-        <li class="layui-nav-item"><a href="<?php echo url('portal/Sturole/index'); ?>"><img src="/themes/index/public/assets/images/default/icon_js.png"
+        <li <?php if($url=="/sturole"): ?>class="layui-nav-item layui-nav-itemed layui-this"<?php else: ?>class="layui-nav-item"<?php endif; ?>><a href="/sturole"><img src="/themes/index/public/assets/images/default/icon_js.png"
               alt=""> 角色管理 <span class="jian">></span></a></li>
-        <li class="layui-nav-item"><a href="<?php echo url('portal/Sturole/pindex'); ?>"><img src="/themes/index/public/assets/images/default/icon_ry.png"
+        <li <?php if($url=="/stu_role"): ?>class="layui-nav-item layui-nav-itemed layui-this"<?php else: ?>class="layui-nav-item"<?php endif; ?>><a href="/stu_role"><img src="/themes/index/public/assets/images/default/icon_ry.png"
               alt=""> 人员管理 <span class="jian">></span></a></li>
       </ul>
     </div>
@@ -128,7 +121,7 @@
                 </div>
                 <div class="pq">
                     <div class="title">
-                        <p>状态 <a class="checktitle" href="">全部</a><a href="">已关联</a><a href="">未关联</a><a href="">已失效</a>
+                        <p>状态 <a <?php if($status==0): ?>class="checktitle"<?php endif; ?> href="<?php echo url('portal/scheduling/index'); ?>">全部</a><a <?php if($status==2): ?>class="checktitle"<?php endif; ?>href="<?php echo url('portal/scheduling/index',array('status'=>2)); ?>">已关联</a><a <?php if($status==1): ?>class="checktitle"<?php endif; ?> href="<?php echo url('portal/scheduling/index',array('status'=>1)); ?>">未关联</a><a <?php if($status==3): ?>class="checktitle"<?php endif; ?> href="<?php echo url('portal/scheduling/index',array('status'=>3)); ?>">已失效</a>
                         </p>
                     </div>
                     <div class="list">

@@ -20,9 +20,9 @@ class   SchedulingController extends UserBaseController
     {
         
         $param                 = $this->request->param();
-          $name                  = empty($param['name'])?'':$param['name'];
+        $name                = empty($param['name'])?'':$param['name'];
         $price_min             = empty($param['price_min'])?'':$param['price_min'];
-        
+        $status                = empty($param['status'])?'':$param['status'];
         $price_max             = empty($param['price_max'])?'':$param['price_max'];
         $num_min               = empty($param['num_min'])?'':$param['num_min'];
         $num_max               = empty($param['num_max'])?'':$param['num_max']; 
@@ -76,6 +76,7 @@ class   SchedulingController extends UserBaseController
         $this->assign('price_min', $price_min);
         $this->assign('price_max', $price_max);
         $this->assign('num_min', $num_min);
+        $this->assign('status', $status);
         $this->assign('num_max', $num_max);
         return $this->fetch();
     }

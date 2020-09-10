@@ -1,8 +1,9 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:35:"themes/index/portal\msg\kanban.html";i:1599651498;s:72:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\head.html";i:1599651498;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:35:"themes/index/portal\msg\kanban.html";i:1599651498;s:72:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\head.html";i:1599698875;}*/ ?>
 <!DOCTYPE html>
 <html>
 
 <head>
+  
   <meta charset='utf-8'>
   <meta name='renderer' content='webkit'>
   <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>

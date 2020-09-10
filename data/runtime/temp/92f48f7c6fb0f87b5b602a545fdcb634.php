@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:37:"themes/index/portal\confer\index.html";i:1599651498;s:72:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\base.html";i:1599651498;s:72:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\head.html";i:1599698875;s:76:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\con_left.html";i:1599701773;s:74:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\footer.html";i:1599439177;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:34:"themes/index/portal\msg\index.html";i:1599651498;s:72:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\base.html";i:1599651498;s:72:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\head.html";i:1599698875;s:76:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\con_left.html";i:1599701773;s:74:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\footer.html";i:1599439177;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -80,63 +80,25 @@
         <!-- 主体部分 -->
         <div class="layui-body">
             <div class="RightBody">
-                <div class="sousuo">
-                    <form class="layui-form" action="" method="post">
-                        <div class="layui-form-item">
-                            <div class="layui-inline">
-                                <label class="layui-form-label">搜索：</label>
-                                <div class="layui-input-inline" style="width: 240px;">
-                                    <input type="text" name="title" autocomplete="off" class="layui-input" value="<?php echo $title; ?>">
-                                </div>
-                            </div>
-                            <div class="layui-inline">
-                                <button class="layui-btn" lay-submit lay-filter="formDemo">搜索</button>
-                                <div class="layui-btn btn-shanchu xjhc">新建会场</div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="hc">
-                    <div class="list">
-                        <?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): if( count($list)==0 ) : echo "" ;else: foreach($list as $key=>$vo): ?>
-                            <a href="<?php echo url('portal/confer/article',array('id'=>$vo['id'])); ?>" class="box">
-                                <div class="box-title"><?php echo $vo['address']; ?></div>
-                                <div class="box-xx">
-                                    <p>容纳人数：<span><?php echo $vo['num']; ?>人</span></p>
-                                    <p>招聘排期：<span><?php $num=get_pqnum($vo['id']);if(empty($num) || (($num instanceof \think\Collection || $num instanceof \think\Paginator ) && $num->isEmpty())): ?>
-                                                无
-                                                <?php else: ?>
-                                                <?php echo $num; ?>场
-                                            <?php endif; ?></span></p>
-                                </div>
-                            </a>
-                        <?php endforeach; endif; else: echo "" ;endif; ?>
+                <div class="tz">
+                    <div class="tz-h">消息通知</div>
+                    <div class="tz-list">
+                        <a href=""><i class="layui-badge-dot"></i><span class="tz-xx">北京XXX公司8月招聘专场确定开始日期 8月29日
+                                13:00</span><span class="tz-t">09/25 10:54</span></a>
+                        <a href=""><i class="layui-badge-dot"></i><span class="tz-xx">北京XXX公司8月招聘专场确定开始日期 8月29日
+                                13:00</span><span class="tz-t">09/25 10:54</span></a>
+                        <a href=""><i class="layui-badge-dot"></i><span class="tz-xx">北京XXX公司8月招聘专场确定开始日期 8月29日
+                                13:00</span><span class="tz-t">09/25 10:54</span></a>
+                        <a href=""><i class="layui-badge-dot"></i><span class="tz-xx">北京XXX公司8月招聘专场确定开始日期 8月29日
+                                13:00</span><span class="tz-t">09/25 10:54</span></a>
+                        <a href=""><i class="layui-badge-dot"></i><span class="tz-xx">北京XXX公司8月招聘专场确定开始日期 8月29日
+                                13:00</span><span class="tz-t">09/25 10:54</span></a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div id="xjhc" class="tc">
-        <form class="layui-form" action="" >
-            <div class="layui-form-item">
-                <label class="layui-form-label">地点：</label>
-                <div class="layui-input-block">
-                    <input type="text" name="address" required lay-verify="required" autocomplete="off"
-                        class="layui-input address">
-                </div>
-            </div>
-            <div class="layui-form-item">
-                <label class="layui-form-label">容纳人数：</label>
-                <div class="layui-input-block">
-                    <input type="text" name="num" required lay-verify="required" autocomplete="off"
-                        class="layui-input num">
-                </div>
-            </div>
-            <div class="layui-btn btn-qx qx">取消</div>
-            <button class="layui-btn qr">确认</button>
-        </form>
-    </div>
-    
+
       <!--footer 底部  -->
       <!-- 
           

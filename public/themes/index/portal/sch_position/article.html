@@ -6,14 +6,12 @@
         <div class="layui-body">
             <div class="RightBody">
                 <div class="xq-title layui-clear">
-
-                    <div class="xq-h">北京XXX有限公司</div>
-                    <input type="hidden" name="q_id" value="4" class="q_id">
-                    <input type="hidden" name="sch_id" value="3" class="sch_id">
+                   
+                    <div class="xq-h"><?php echo get_userlist_info($id)['ent_name'];?></div>
                     <div class="riqi">
                         <i>【招聘人数】<span>{$num}人</span></i>
-                        <i>【企业联系人】<span>王芳</span></i>
-                        <i>【联系电话】<span>13800001111</span></i>
+                        <i>【企业联系人】<span><?php echo get_userlist_info($id)['user_name'];?></span></i>
+                        <i>【联系电话】<span><?php echo get_userlist_info($id)['phone'];?></span></i>
                     </div>
                     <div class="btns">
                         <empty name="value">
@@ -23,11 +21,7 @@
                             </empty>
                         <button class="layui-btn btn-qx ch">
                            撤回
-                          
                         </button>
-                       
-                    
-                       
                     </div>
                 </div>
                 <div class="hcxq">
@@ -37,11 +31,11 @@
                         </div>
                         <div class="xx-list">
                             <foreach name="info" item="v3">
-                            
-
                                 <div class="xx-box">
                                     <div class="xx-box-h">{$v3.title}</div>
                                     <div class="xx-box-m">
+                                        <input type="hidden" name="q_id" value="{$v3.uid}" class="q_id">
+                                        <input type="hidden" name="sch_id" value="{$sch_id}" class="sch_id">
                                         <i>【建议专业】<span>{$v3.major}</span></i>
                                         <i>【招聘人数】<span>{$v3.num}人</span></i>
                                         <i>【职位类型】<span><?php echo $v3['type']==1?'正式':"实习";?></span></i>
