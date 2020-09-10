@@ -1,0 +1,9 @@
+diff a/public/themes/index/portal/entposition/addpos.html b/public/themes/index/portal/entposition/addpos.html	(rejected hunks)
+@@ -46,7 +46,6 @@
+                                 </div>
+                                 <label class="layui-form-label">有效期：</label>
+                                 <div class="layui-input-inline">
+-                                    <input type="text" name="effective_time" required lay-verify="required" autocomplete="off"
+                                     <input type="text" id="timestart-zw" name="effective_time" required lay-verify="required" autocomplete="off"
+                                         class="layui-input zwyxq">
+                                 </div>
