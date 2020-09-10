@@ -62,14 +62,17 @@ class EntPositionController extends HomeBaseController
         $pos = new EntPositionModel();
         $param = $this->request->param();
         if($this->request->ispost()){
+            $id = $param['id'];
+            unset($param['id']);
+            $param['effective_time'] = strtotime($param['effective_time']);
             //添加
-            $pos->pos_edit($param);
+            $pos->pos_edit($param,$id);
             $this->redirect('index');
         }else{
             //页面
             $res = $pos->getpos($param['id']);
             $this->assign('res',$res);
-            // return $this->fetch();
+            return $this->fetch();
         }
     }
     

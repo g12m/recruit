@@ -25,7 +25,7 @@ window.onload = function () {
         laydate.render({
             elem: '#timestart-zw',
             type: 'datetime',
-            format: 'MM-dd HH:mm',
+            format: 'MM/dd HH:mm',
             min: ""
         });
         laydate.render({
@@ -451,6 +451,12 @@ window.onload = function () {
             trigger: "click"
         });
 
+        $('.sczph').click(function(){
+            layer.confirm('删除后不可恢复，是否仍然删除？',{title:'确认删除'}, function(index){
+                console.log('删除成功')
+                layer.close(index);
+              }); 
+        })
         function qiehuan(){
             $('.tc .linput').click(function () {
             $('.tc .linput').eq($(this).index()).addClass("check").siblings().removeClass('check');

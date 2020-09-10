@@ -150,6 +150,7 @@ class EntfairController extends HomeBaseController
     //删除招聘会
     public function delfair(){
         $param = $this->request->param();
+        var_dump($param);die();
         $id = $param['id'];
         Db::name('jobfair')->where('id',$id)->delete();
     }
