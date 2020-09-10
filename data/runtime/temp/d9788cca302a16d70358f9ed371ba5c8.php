@@ -1,8 +1,13 @@
+<<<<<<< HEAD:data/runtime/temp/d9788cca302a16d70358f9ed371ba5c8.php
 <?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:43:"themes/index/portal\entposition\addpos.html";i:1599698101;s:76:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\base_ent.html";i:1599698101;s:76:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\head_ent.html";i:1599698101;s:80:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\con_left_ent.html";i:1599698101;s:74:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\footer.html";i:1599439177;}*/ ?>
+=======
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:43:"themes/index/portal\sch_position\index.html";i:1599651498;s:72:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\base.html";i:1599651498;s:72:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\head.html";i:1599655165;s:76:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\con_left.html";i:1599655429;s:74:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\footer.html";i:1599439177;}*/ ?>
+>>>>>>> dev:data/runtime/temp/e81406d16efc7c29952069ab20b9e059.php
 <!DOCTYPE html>
 <html>
 
   <head>
+  
   <meta charset='utf-8'>
   <meta name='renderer' content='webkit'>
   <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -49,6 +54,7 @@
 
 
 
+<<<<<<< HEAD:data/runtime/temp/d9788cca302a16d70358f9ed371ba5c8.php
 <?php dump($_SERVER['PHP_SELF']);?>
 <div class="layui-side layui-bg-black" style="background: url(/themes/index/public/assets/images/default/navbg.png);">
       <div class="layui-logo"><img src="/themes/index/public/assets/images/default/logo.png" alt=""></div>
@@ -66,6 +72,29 @@
                           class="jian">></span></a></li>
           </ul>
       </div>
+=======
+<?php $munu=nav(1);?>
+  <div class="layui-side layui-bg-black" style="background: url(/themes/index/public/assets/images/default/navbg.png);">
+    <div class="layui-logo"><img src="/themes/index/public/assets/images/default/logo.png" alt=""></div>
+    <div class="layui-side-scroll">
+      <ul class="layui-nav layui-nav-tree" lay-filter="test">
+        <li class="layui-nav-item"><a href="<?php echo url('portal/msg/kanban'); ?>"><img src="/themes/index/public/assets/images/default/icon_kb.png"
+              alt="">招聘大看板 <span class="jian">></span></a></li>
+        <li class="layui-nav-item layui-nav-itemed layui-this"><a href="<?php echo url('portal/Scheduling/index'); ?>"><img src="/themes/index/public/assets/images/default/icon_pq.png"
+              alt=""> 排期管理 <span class="jian">></span></a></li>
+        <li class="layui-nav-item  "><a href="<?php echo url('portal/confer/index'); ?>"><img
+              src="/themes/index/public/assets/images/default/icon_hc.png" alt=""> 会场管理 <span class="jian">></span></a></li>
+        <li class="layui-nav-item"><a href="/sch_position"><img src="/themes/index/public/assets/images/default/icon_zw.png"
+              alt=""> 职位管理 <span class="jian">></span></a></li>
+        <li class="layui-nav-item"><a href="<?php echo url('portal/resume/index'); ?>"><img src="/themes/index/public/assets/images/default/icon_jl.png"
+              alt=""> 简历管理 <span class="jian">></span></a></li>
+        <li class="layui-nav-item"><a href="<?php echo url('portal/Sturole/index'); ?>"><img src="/themes/index/public/assets/images/default/icon_js.png"
+              alt=""> 角色管理 <span class="jian">></span></a></li>
+        <li class="layui-nav-item"><a href="<?php echo url('portal/Sturole/pindex'); ?>"><img src="/themes/index/public/assets/images/default/icon_ry.png"
+              alt=""> 人员管理 <span class="jian">></span></a></li>
+      </ul>
+    </div>
+>>>>>>> dev:data/runtime/temp/e81406d16efc7c29952069ab20b9e059.php
   </div>
 
       

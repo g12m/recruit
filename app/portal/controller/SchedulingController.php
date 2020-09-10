@@ -18,24 +18,65 @@ class   SchedulingController extends UserBaseController
     //学校排期管理
     public function index()
     {
+        
         $param                 = $this->request->param();
+          $name                  = empty($param['name'])?'':$param['name'];
+        $price_min             = empty($param['price_min'])?'':$param['price_min'];
+        
+        $price_max             = empty($param['price_max'])?'':$param['price_max'];
+        $num_min               = empty($param['num_min'])?'':$param['num_min'];
+        $num_max               = empty($param['num_max'])?'':$param['num_max']; 
         $where                 =[];
         if(!empty($param['status']))
         {
-            $where['a.status']=$param['status'];
+            $where['a.status'] =$param['status'];
         }
-        $list                  = Db::name('jobfair a')
+          if(!empty($name))
+        {
+            $where['a.title']  =['like',"%$name%"];
+        }
+         if(!empty($price_min) && !empty($price_max))
+        {
+            $where['a.dea_time'] =['between',[strtotime($price_min),strtotime($price_max)]];
+        }
+         if(!empty($price_min))
+         {
+            $where['a.dea_time']=['egt',strtotime($price_min)];
+         }
+         if(!empty($price_max))
+         {
+            $where['a.dea_time']=['elt',strtotime($price_max)];
+         }
+
+         if(!empty($num_min) && !empty($num_max))
+        {
+            $where['a.num']      =['between',[$num_min,$num_max]];
+        }
+        if(!empty($num_min))
+        {
+            $where['a.num']     =['egt',$num_min];
+        }
+         if(!empty($num_max))
+        {
+            $where['a.num']     =['elt',$num_max];
+        }
+
+        $list                   = Db::name('jobfair a')
         ->where($where)
         ->paginate(6)
          ->each(function($item,$key){
-           $item['pos_ids'] = get_zhiwei_info($item['id']);
+           $item['pos_ids']    = get_zhiwei_info($item['id']);
              return   $item;
            });
         ;
         $list->appends($param);
         $this->assign('page', $list->render());
         $this->assign('list', $list);
-        
+        $this->assign('title', $name);
+        $this->assign('price_min', $price_min);
+        $this->assign('price_max', $price_max);
+        $this->assign('num_min', $num_min);
+        $this->assign('num_max', $num_max);
         return $this->fetch();
     }
     //招聘会与会场关联

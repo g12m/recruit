@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 <?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:41:"themes/index/portal\scheduling\index.html";i:1599698087;s:72:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\base.html";i:1599651498;s:72:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\head.html";i:1599698087;s:76:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\con_left.html";i:1599698087;s:74:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\footer.html";i:1599439177;}*/ ?>
+=======
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:41:"themes/index/portal\scheduling\index.html";i:1599657314;s:72:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\base.html";i:1599651498;s:72:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\head.html";i:1599655165;s:76:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\con_left.html";i:1599655429;s:74:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\footer.html";i:1599439177;}*/ ?>
+>>>>>>> dev
 <!DOCTYPE html>
 <html>
 
   <head>
+<<<<<<< HEAD
+=======
+  
+>>>>>>> dev
   <meta charset='utf-8'>
   <meta name='renderer' content='webkit'>
   <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -49,7 +57,7 @@
 
 
 
-<?php dump($_SERVER['PHP_SELF']);?>
+<?php $munu=nav(1);?>
   <div class="layui-side layui-bg-black" style="background: url(/themes/index/public/assets/images/default/navbg.png);">
     <div class="layui-logo"><img src="/themes/index/public/assets/images/default/logo.png" alt=""></div>
     <div class="layui-side-scroll">
@@ -85,31 +93,31 @@
                             <div class="layui-inline">
                                 <label class="layui-form-label">搜索：</label>
                                 <div class="layui-input-inline" style="width: 240px;">
-                                    <input type="text" name="name" autocomplete="off" class="layui-input">
+                                    <input type="text" name="name" autocomplete="off" class="layui-input" value="<?php echo $title; ?>">
                                 </div>
                             </div>
                             <div class="layui-inline">
                                 <label class="layui-form-label">日期：</label>
                                 <div class="layui-input-inline" style="width: 200px;">
                                     <input id="timestart-kb" type="text" name="price_min" placeholder="开始时间"
-                                        autocomplete="off" class="layui-input">
+                                        autocomplete="off" class="layui-input" value="<?php echo $price_min; ?>">
                                 </div>
                                 <div class="layui-form-mid">-</div>
                                 <div class="layui-input-inline" style="width: 200px;">
                                     <input id="timeend-kb" type="text" name="price_max" placeholder="结束时间"
-                                        autocomplete="off" class="layui-input">
+                                        autocomplete="off" class="layui-input" value="<?php echo $price_max; ?>">
                                 </div>
                             </div>
                             <div class="layui-inline">
                                 <label class="layui-form-label">招聘人数：</label>
                                 <div class="layui-input-inline" style="width: 50px;">
-                                    <input type="text" name="price_min" placeholder="0" autocomplete="off"
-                                        class="layui-input">
+                                    <input type="text" name="num_min" placeholder="0" autocomplete="off"
+                                        class="layui-input" value="<?php echo $num_min; ?>">
                                 </div>
                                 <div class="layui-form-mid">-</div>
                                 <div class="layui-input-inline" style="width: 50px;">
-                                    <input type="text" name="price_max" placeholder="50" autocomplete="off"
-                                        class="layui-input">
+                                    <input type="text" name="num_max" placeholder="50" autocomplete="off"
+                                        class="layui-input" value="<?php echo $num_max; ?>">
                                 </div>
                             </div>
                             <div class="layui-inline">

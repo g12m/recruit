@@ -331,7 +331,11 @@ function getCity($ip)
     }
     return $cats;
   }
+  function nav($id)
+  {
+  return   Db::name('nav_menu')->where('nav_id',$id)->where('status',1)->select()->toArray();
 
+  }
 
   function getChildPosten($id)
   {

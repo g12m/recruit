@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:42:"themes/index/portal\entposition\index.html";i:1599698101;s:76:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\base_ent.html";i:1599698101;s:76:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\head_ent.html";i:1599698101;s:80:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\con_left_ent.html";i:1599698101;s:74:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\footer.html";i:1599439177;}*/ ?>
+=======
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:42:"themes/index/portal\entposition\index.html";i:1599698674;}*/ ?>
+>>>>>>> dev
 <!DOCTYPE html>
 <html>
 
