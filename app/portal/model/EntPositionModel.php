@@ -20,8 +20,8 @@ class EntPositionModel extends Model
         $this->where('id',$id)->delete();
     }
     // 编辑职位
-    public function pos_edit($arr){
-        $this->save($arr);
+    public function pos_edit($arr,$id){
+        $this->where('id',$id)->update($arr);
     }
     // 查询一个职位
     public function getpos($id){

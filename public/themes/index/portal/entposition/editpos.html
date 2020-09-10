@@ -4,7 +4,7 @@
         <div class="layui-body">
             <div class="RightBody">
                 <div class="zw-xinjian">
-                    <div class="xj-h">新建职位</div>
+                    <div class="xj-h">编辑职位</div>
                     <div class="zj-form">
                         <form class="layui-form" action="" method="POST">
                             <input type="hidden" name="id" value="{$res.id}">
@@ -55,7 +55,7 @@
                                 </div>
                                 <label class="layui-form-label">有效期：</label>
                                 <div class="layui-input-inline">
-                                    <input type="text" name="effective_time" required lay-verify="required" autocomplete="off" value="{$res.effective_time}"
+                                    <input type="text" name="effective_time" required lay-verify="required" autocomplete="off" id="timestart-zw" value="{:date('m/d H:i',$res.effective_time)}"
                                         class="layui-input zwyxq">
                                 </div>
                             </div>
