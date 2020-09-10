@@ -25,6 +25,30 @@ window.onload = function () {
             min: ""
         });
         laydate.render({
+            elem: '#timestart-zw1',
+            type: 'datetime',
+            format: 'MM/dd HH:mm',
+            min: ""
+        });
+        laydate.render({
+            elem: '#timestart-zw2',
+            type: 'datetime',
+            format: 'MM/dd HH:mm',
+            min: ""
+        });
+        laydate.render({
+            elem: '#timestart-zw3',
+            type: 'datetime',
+            format: 'MM/dd HH:mm',
+            min: ""
+        });
+        laydate.render({
+            elem: '#timestart-zw4',
+            type: 'datetime',
+            format: 'MM/dd HH:mm',
+            min: ""
+        });
+        laydate.render({
             elem: '#timeend-zw',
             type: 'datetime',
             format: 'MM-dd HH:mm',

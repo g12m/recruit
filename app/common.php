@@ -425,6 +425,11 @@ function getfairpos($fairid){
   $res = Db::name('fair_pos')->alias('fp')->join('ent_position ep','fp.pos_id=ep.id','LEFT')->where('fp.id',$fairid)->field('ep.title')->select()->toArray();
   return $res;
 }
+//获取用户的学校/企业id
+function getentstuid($uid){
+  $res = Db::name('user')->where('id',$uid)->field('entstu_id')->find();
+  return $res['entstu_id'];
+}
 
 
 ?>

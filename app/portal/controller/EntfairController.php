@@ -8,9 +8,9 @@ use app\portal\model\JobfairModel;
 class EntfairController extends HomeBaseController
 {
     public function index()
-    {
-        $user_info = session('Ent_user');
-        $where['ent_id'] = $user_info['entstu_id'];
+    {   
+        $uid = cmf_get_current_user_id();
+        $where['ent_id'] = getentstuid($uid);
         $request = '';
         $request = input('request.');
         if(!empty($request['title']))
@@ -42,13 +42,13 @@ class EntfairController extends HomeBaseController
     }
     // 添加招聘会
     public function addfair(){
-        $user_info = session('Ent_user');
+        $uid = cmf_get_current_user_id();
         if($this->request->ispost()){
             //添加
             $param = $this->request->param();
             $param['status'] = 1;
-            $param['uid'] = $user_info['id'];
-            $param['ent_id'] = $user_info['entstu_id'];
+            $param['uid'] = $uid;
+            $param['ent_id'] = getentstuid($uid);
             $param['add_time'] = time();
             $param['dea_time'] = strtotime($param['dea_time']);
             $zws = $param['zws'];
@@ -75,7 +75,7 @@ class EntfairController extends HomeBaseController
             $this->redirect('index');
         }else{
             //页面
-            $pos = Db::name('ent_position')->where('uid',$user_info['entstu_id'])->select()->toArray();
+            $pos = Db::name('ent_position')->where('uid',$uid)->select()->toArray();
             $this->assign('pos',$pos);
             return $this->fetch();
         }
@@ -93,7 +93,6 @@ class EntfairController extends HomeBaseController
         //获取职位
         $pos = Db::name('fair_pos')->alias('fp')->join('ent_position ep','fp.pos_id=ep.id','LEFT')->where('fp.fair_id',$id)->field('ep.title,ep.major,ep.num,ep.salary_min,ep.salary_max,ep.effective_time,ep.desc')->select()->toArray();
 
-        $this->assign('user_info',session('Ent_user'));
         $this->assign('stunum',$stunum);
         $this->assign('stu',$stu);
         $this->assign('pos',$pos);
