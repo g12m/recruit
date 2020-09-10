@@ -1,7 +1,3 @@
-
-
-
-
 window.onload = function () {
     // layUI加载模块
     layui.use('element', function () {
@@ -13,13 +9,13 @@ window.onload = function () {
         laydate.render({
             elem: '#timestart-kb',
             type: 'datetime',
-            format: 'MM/dd HH:mm',
+            format: 'MM-dd HH:mm',
             min: ""
         });
         laydate.render({
             elem: '#timeend-kb',
             type: 'datetime',
-            format: 'MM/dd HH:mm',
+            format: 'MM-dd HH:mm',
             min: ""
         });
         laydate.render({
@@ -31,7 +27,7 @@ window.onload = function () {
         laydate.render({
             elem: '#timeend-zw',
             type: 'datetime',
-            format: 'MM/dd HH:mm',
+            format: 'MM-dd HH:mm',
             min: ""
         });
     });
@@ -451,6 +447,21 @@ window.onload = function () {
             trigger: "click"
         });
 
+        $('.sczph').click(function(){
+            var id = $(this).attr('data');
+            layer.confirm('删除后不可恢复，是否仍然删除？',{title:'确认删除'}, function(index){
+                $.ajax({
+                    url: "/portal/Entfair/delfair",
+                    data: {"id":id},
+                    type: "post",
+                    async: true,
+                    success: function (data) {
+                        history.go(-1)
+                    }
+                });
+                layer.close(index);
+              }); 
+        })
         function qiehuan(){
             $('.tc .linput').click(function () {
             $('.tc .linput').eq($(this).index()).addClass("check").siblings().removeClass('check');
