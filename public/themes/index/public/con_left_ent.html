@@ -1,0 +1,44 @@
+
+
+<div class="layui-header">
+      <ul class="layui-nav layui-layout-right">
+            <li class="layui-nav-item">
+                  <a href="{:url('portal/msg/index')}">
+                        <i class="layui-icon layui-icon-notice"></i>
+                        <span class="layui-badge-dot"></span>
+                  </a>
+            </li>
+            <li class="layui-nav-item">
+                  <a href="javascript:;">
+                        <?php $user=cmf_get_current_user_id();
+                              $name=get_user_info($user);
+                        ?>
+                        {$name}
+                  </a>
+                  <dl class="layui-nav-child">
+                        <dd><a href="{:url('user/index/logout')}">退出</a></dd>
+                  </dl>
+            </li>
+      </ul>
+</div>
+
+
+
+<?php dump($_SERVER['PHP_SELF']);?>
+<div class="layui-side layui-bg-black" style="background: url(__TMPL__/public/assets/images/default/navbg.png);">
+      <div class="layui-logo"><img src="__TMPL__/public/assets/images/default/logo.png" alt=""></div>
+      <div class="layui-side-scroll">
+          <ul class="layui-nav layui-nav-tree" lay-filter="test">
+              <li class="layui-nav-item"><a href="javascript:;"><img src="__TMPL__/public/assets/images/default/icon_jl.png" alt=""> 简历管理 <span
+                          class="jian">></span></a></li>
+              <li class="layui-nav-item layui-nav-itemed layui-this"><a href="{:cmf_url('entposition/index')}"><img src="__TMPL__/public/assets/images/default/icon_zw.png" alt=""> 职位管理 <span
+                          class="jian">></span></a></li>
+              <li class="layui-nav-item"><a href="{:cmf_url('entfair/index')}"><img
+                          src="__TMPL__/public/assets/images/default/icon_zph.png" alt=""> 招聘会管理 <span class="jian">></span></a></li>
+              <li class="layui-nav-item"><a href="javascript:;"><img src="__TMPL__/public/assets/images/default/icon_js.png" alt=""> 角色管理 <span
+                          class="jian">></span></a></li>
+              <li class="layui-nav-item"><a href="javascript:;"><img src="__TMPL__/public/assets/images/default/icon_ry.png" alt=""> 人员管理 <span
+                          class="jian">></span></a></li>
+          </ul>
+      </div>
+  </div>

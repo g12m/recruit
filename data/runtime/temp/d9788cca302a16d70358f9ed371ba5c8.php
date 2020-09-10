@@ -1,4 +1,8 @@
+<<<<<<< HEAD:data/runtime/temp/d9788cca302a16d70358f9ed371ba5c8.php
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:43:"themes/index/portal\entposition\addpos.html";i:1599698101;s:76:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\base_ent.html";i:1599698101;s:76:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\head_ent.html";i:1599698101;s:80:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\con_left_ent.html";i:1599698101;s:74:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\footer.html";i:1599439177;}*/ ?>
+=======
 <?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:43:"themes/index/portal\sch_position\index.html";i:1599651498;s:72:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\base.html";i:1599651498;s:72:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\head.html";i:1599655165;s:76:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\con_left.html";i:1599655429;s:74:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\footer.html";i:1599439177;}*/ ?>
+>>>>>>> dev:data/runtime/temp/e81406d16efc7c29952069ab20b9e059.php
 <!DOCTYPE html>
 <html>
 
@@ -50,6 +54,25 @@
 
 
 
+<<<<<<< HEAD:data/runtime/temp/d9788cca302a16d70358f9ed371ba5c8.php
+<?php dump($_SERVER['PHP_SELF']);?>
+<div class="layui-side layui-bg-black" style="background: url(/themes/index/public/assets/images/default/navbg.png);">
+      <div class="layui-logo"><img src="/themes/index/public/assets/images/default/logo.png" alt=""></div>
+      <div class="layui-side-scroll">
+          <ul class="layui-nav layui-nav-tree" lay-filter="test">
+              <li class="layui-nav-item"><a href="javascript:;"><img src="/themes/index/public/assets/images/default/icon_jl.png" alt=""> 简历管理 <span
+                          class="jian">></span></a></li>
+              <li class="layui-nav-item layui-nav-itemed layui-this"><a href="<?php echo cmf_url('entposition/index'); ?>"><img src="/themes/index/public/assets/images/default/icon_zw.png" alt=""> 职位管理 <span
+                          class="jian">></span></a></li>
+              <li class="layui-nav-item"><a href="<?php echo cmf_url('entfair/index'); ?>"><img
+                          src="/themes/index/public/assets/images/default/icon_zph.png" alt=""> 招聘会管理 <span class="jian">></span></a></li>
+              <li class="layui-nav-item"><a href="javascript:;"><img src="/themes/index/public/assets/images/default/icon_js.png" alt=""> 角色管理 <span
+                          class="jian">></span></a></li>
+              <li class="layui-nav-item"><a href="javascript:;"><img src="/themes/index/public/assets/images/default/icon_ry.png" alt=""> 人员管理 <span
+                          class="jian">></span></a></li>
+          </ul>
+      </div>
+=======
 <?php $munu=nav(1);?>
   <div class="layui-side layui-bg-black" style="background: url(/themes/index/public/assets/images/default/navbg.png);">
     <div class="layui-logo"><img src="/themes/index/public/assets/images/default/logo.png" alt=""></div>
@@ -71,92 +94,75 @@
               alt=""> 人员管理 <span class="jian">></span></a></li>
       </ul>
     </div>
+>>>>>>> dev:data/runtime/temp/e81406d16efc7c29952069ab20b9e059.php
   </div>
 
       
       <!-- banner 区域 -->
       <!--content 内容区域  -->
       
-        <!-- 头部 -->
-   
-        <!-- 左侧导航 -->
-      
-        <!-- 主体部分 -->
         <div class="layui-body">
             <div class="RightBody">
-                <div class="sousuo">
-                    <form class="layui-form" action="" method="">
-                        <div class="layui-form-item">
-                            <div class="layui-inline">
-                                <label class="layui-form-label">搜索：</label>
-                                <div class="layui-input-inline" style="width: 240px;">
-                                    <input type="text" name="" autocomplete="off" class="layui-input">
+                <div class="zw-xinjian">
+                    <div class="xj-h">新建职位</div>
+                    <div class="zj-form">
+                        <form class="layui-form" action="" method="POST">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">职位名称：</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="title" required lay-verify="required" placeholder="请输入职位名称"
+                                        autocomplete="off" class="layui-input">
+                                </div>
+                                <label class="layui-form-label">建议专业：</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="major" required lay-verify="required" placeholder="请输入建议专业"
+                                        autocomplete="off" class="layui-input">
                                 </div>
                             </div>
-                            <div class="layui-inline">
-                                <label class="layui-form-label">日期：</label>
-                                <div class="layui-input-inline" style="width: 200px;">
-                                    <input id="timestart-zw" type="text" name="price_min" placeholder="开始时间" autocomplete="off"
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">招聘人数：</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="num" required lay-verify="required" placeholder="请输入招聘人数"
+                                        autocomplete="off" class="layui-input">
+                                </div>
+                                <label class="layui-form-label">薪资范围：</label>
+                                <div class="layui-input-inline" style="width: 100px;">
+                                    <input type="text" name="salary_min" autocomplete="off" placeholder="最低"
                                         class="layui-input">
                                 </div>
                                 <div class="layui-form-mid">-</div>
-                                <div class="layui-input-inline" style="width: 200px;">
-                                    <input id="timeend-zw" type="text" name="price_max" placeholder="结束时间" autocomplete="off"
+                                <div class="layui-input-inline" style="width: 100px;">
+                                    <input type="text" name="salary_max" autocomplete="off" placeholder="最高"
                                         class="layui-input">
                                 </div>
                             </div>
-                            <div class="layui-inline">
-                                <label class="layui-form-label">状态：</label>
-                                <div class="layui-input-block" style="width: 100px;">
-                                    <select name="city" lay-verify="">
-                                        <option value="0">全部</option>
-                                        <option value="1">开始</option>
-                                        <option value="2">结束</option>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">职位类型：</label>
+                                <div class="layui-input-inline">
+                                    <select name="type" lay-verify="required">
+                                        <option value="1">正式</option>
+                                        <option value="2">实习</option>
                                     </select>
                                 </div>
+                                <label class="layui-form-label">有效期：</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="effective_time" required lay-verify="required" autocomplete="off"
+                                        class="layui-input zwyxq">
+                                </div>
                             </div>
-                            <div class="layui-inline">
-                                <button class="layui-btn" lay-submit lay-filter="formDemo">搜索</button>
+                            <div class="layui-form-item layui-form-text">
+                                <label class="layui-form-label">职位描述：</label>
+                                <div class="layui-input-block">
+                                    <textarea name="desc" placeholder="请输入职位描述" class="layui-textarea"></textarea>
+                                </div>
                             </div>
-                        </div>
-                    </form>
-                </div>
-                <div id="table" lay-filter="table">
-                    <table class="layui-table" lay-skin="line">
-                        <thead>
-                            <tr>
-                                <th>公司名称</th>
-                                <th>招聘人数</th>
-                                <th>职位</th>
-                                <th>操作</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php 
-                                $ress=get_schnum(4);
-                                $num=get_countsch(4);
-                                foreach($ress as $k=>$v)
-                                {
-                                $arr[] = $v['title'];
-                                }
-                                $str = implode('、',$arr);
-                             ?>
-                            <tr>
-                                <td>
-                                    <p>北京XXX软件开发公司</p>
-                                </td>
-                                <td>
-                                    <p><?php echo $num; ?>人</p>
-                                </td>
-                                <td>
-                                    <p><?php echo $str; ?></p>
-                                </td>
-                                <td><button class="layui-btn btn-xq"><a href="<?php echo url('portal/sch_position/article',array('id'=>4)); ?>">详情</a></button></td>
-                            </tr>
-                     
-                         
-                        </tbody>
-                    </table>
+                            <div class="layui-form-item">
+                                <div class="layui-input-block">
+                                    <button class="layui-btn" lay-submit>保 存</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
