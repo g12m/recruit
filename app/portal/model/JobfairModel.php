@@ -19,4 +19,6 @@ class JobfairModel extends Model
         return $this->where('id',$id)->find();
     }
 
+    
+
 }

@@ -1,15 +1,15 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:41:"themes/index/portal\scheduling\index.html";i:1599645493;s:76:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\con_left.html";i:1599645493;}*/ ?>
-
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:41:"themes/index/portal\scheduling\index.html";i:1599657314;s:72:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\base.html";i:1599651498;s:72:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\head.html";i:1599655165;s:76:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\con_left.html";i:1599655429;s:74:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\footer.html";i:1599439177;}*/ ?>
 <!DOCTYPE html>
 <html>
 
-<head>
-    <meta charset='utf-8'>
-    <meta name='renderer' content='webkit'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
-    <title><?php echo $site_info['site_name']; ?></title>
-    <meta name="keywords" content="<?php echo (isset($category['seo_keywords']) && ($category['seo_keywords'] !== '')?$category['seo_keywords']:$site_info['site_seo_keywords']); ?>">
-    <meta name="description" content="<?php echo (isset($category['seo_description']) && ($category['seo_description'] !== '')?$category['seo_description']:$site_info['site_seo_description']); ?>" />
+  <head>
+  
+  <meta charset='utf-8'>
+  <meta name='renderer' content='webkit'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+  <title><?php echo $site_info['site_name']; ?></title>
+  <meta name="keywords" content="<?php echo (isset($category['seo_keywords']) && ($category['seo_keywords'] !== '')?$category['seo_keywords']:$site_info['site_seo_keywords']); ?>">
+  <meta name="description" content="<?php echo (isset($category['seo_description']) && ($category['seo_description'] !== '')?$category['seo_description']:$site_info['site_seo_description']); ?>" />
 
 </head>
 <link rel="stylesheet" href="/themes/index/public/assets/css/default/layui/css/layui.css">
@@ -20,11 +20,11 @@
 <script src='/themes/index/public/assets/js/default/index.js'></script>
 
 <body class="layui-layout-body">
-    <div class="layui-layout layui-layout-admin">
-        <!-- 头部 -->
-    
-        <!-- 左侧导航 -->
-    
+  <div class="layui-layout layui-layout-admin">
+
+      <!-- 头部  导航 -->
+      
+        
 
 <div class="layui-header">
       <ul class="layui-nav layui-layout-right">
@@ -50,7 +50,7 @@
 
 
 
-<?php dump($_SERVER['PHP_SELF']);?>
+<?php $munu=nav(1);?>
   <div class="layui-side layui-bg-black" style="background: url(/themes/index/public/assets/images/default/navbg.png);">
     <div class="layui-logo"><img src="/themes/index/public/assets/images/default/logo.png" alt=""></div>
     <div class="layui-side-scroll">
@@ -73,6 +73,10 @@
     </div>
   </div>
 
+      
+      <!-- banner 区域 -->
+      <!--content 内容区域  -->
+      
         <!-- 主体部分 -->
         <div class="layui-body">
             <div class="RightBody">
@@ -82,31 +86,31 @@
                             <div class="layui-inline">
                                 <label class="layui-form-label">搜索：</label>
                                 <div class="layui-input-inline" style="width: 240px;">
-                                    <input type="text" name="name" autocomplete="off" class="layui-input">
+                                    <input type="text" name="name" autocomplete="off" class="layui-input" value="<?php echo $title; ?>">
                                 </div>
                             </div>
                             <div class="layui-inline">
                                 <label class="layui-form-label">日期：</label>
                                 <div class="layui-input-inline" style="width: 200px;">
                                     <input id="timestart-kb" type="text" name="price_min" placeholder="开始时间"
-                                        autocomplete="off" class="layui-input">
+                                        autocomplete="off" class="layui-input" value="<?php echo $price_min; ?>">
                                 </div>
                                 <div class="layui-form-mid">-</div>
                                 <div class="layui-input-inline" style="width: 200px;">
                                     <input id="timeend-kb" type="text" name="price_max" placeholder="结束时间"
-                                        autocomplete="off" class="layui-input">
+                                        autocomplete="off" class="layui-input" value="<?php echo $price_max; ?>">
                                 </div>
                             </div>
                             <div class="layui-inline">
                                 <label class="layui-form-label">招聘人数：</label>
                                 <div class="layui-input-inline" style="width: 50px;">
-                                    <input type="text" name="price_min" placeholder="0" autocomplete="off"
-                                        class="layui-input">
+                                    <input type="text" name="num_min" placeholder="0" autocomplete="off"
+                                        class="layui-input" value="<?php echo $num_min; ?>">
                                 </div>
                                 <div class="layui-form-mid">-</div>
                                 <div class="layui-input-inline" style="width: 50px;">
-                                    <input type="text" name="price_max" placeholder="50" autocomplete="off"
-                                        class="layui-input">
+                                    <input type="text" name="num_max" placeholder="50" autocomplete="off"
+                                        class="layui-input" value="<?php echo $num_max; ?>">
                                 </div>
                             </div>
                             <div class="layui-inline">
@@ -209,6 +213,72 @@
             <button class="layui-btn qr" lay-submit>确定</button>
         </form>
     </div>
-</body>
 
+      <!--footer 底部  -->
+      <!-- 
+          
+    <footer>
+        <div class="footer-top">
+            <div class="container clearfix">
+                <div class="fl clearfix" data-scroll-reveal="enter top">
+                    <div class="fl">
+                        <i class="iconfont">&#xe60b;</i>
+                    </div>
+                    <div class="fl">
+                        <h3>ADDRESS</h3>
+                        <div class="lian">公司地址：</div>
+                        <p><?php echo cmf_get_option('server_settings')['q_email']; ?></p>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="fl clearfix" data-scroll-reveal="enter bottom">
+                    <div class="fl">
+                        <i class="iconfont">&#xe6f7;</i>
+                    </div>
+                    <div class="fl">
+                        <h3>CONTACT</h3>
+                        <div class="lian">联系方式</div>
+                        <p><a href="tel:010-87358007"><?php echo cmf_get_option('server_settings')['k_tel']; ?></a><a
+                                href="mailto:yongchuang@holy-sport.com">yongchuang@holy-sport.com</a></p>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="fr" data-scroll-reveal="enter right">
+                    <img src="<?php echo cmf_get_image_url(cmf_get_option('server_settings')['thumbnail']); ?>">
+                    <p>扫码关注我们</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p><span><?php echo cmf_get_option('server_settings')['q_banquan']; ?></span><?php echo cmf_get_option('site_info')['site_icp']; ?></p>
+        </div>
+    </footer>
+    <div class="go_top">
+        <img src="/themes/index/public/assets/images/default/go_top.png">
+    </div>
+    
+    
+    <script src="/themes/index/public/assets/js/default/jquery-3.3.1.js"></script>
+    <script src="/themes/index/public/assets/css/default/dist/js/swiper.min.js"></script>
+    <script src="/themes/index/public/assets/js/default/gundong.js"></script>
+    <script>
+        var config = {
+            after: '0.2s',
+            enter: 'bottom',
+            move: '30px',
+            over: '0.5s',
+            easing: 'ease-in-out',
+            viewportFactor: 0.33,
+            reset: false,
+            init: true
+        };
+        window.scrollReveal = new scrollReveal(config);
+    </script>
+    <script src="/themes/index/public/assets/js/default/index.js"></script>
+    </body>
+    
+    </html>
+
+       -->
+    </body>
 </html>

@@ -31,7 +31,7 @@ return array (
   'ADMIN_NAV_DELETE' => '删除导航',
   'ADMIN_NAV_EDIT' => '编辑导航',
   'ADMIN_NAV_EDITPOST' => '编辑导航提交保存',
-  'ADMIN_NAV_INDEX' => '中文导航',
+  'ADMIN_NAV_INDEX' => '导航',
   'ADMIN_NAVMENU_ADD' => '添加导航菜单',
   'ADMIN_NAVMENU_ADDPOST' => '添加导航菜单提交保存',
   'ADMIN_NAVMENU_DELETE' => '删除导航菜单',

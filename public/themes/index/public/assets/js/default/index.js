@@ -13,25 +13,25 @@ window.onload = function () {
         laydate.render({
             elem: '#timestart-kb',
             type: 'datetime',
-            format: 'MM-dd HH:mm',
+            format: 'MM/dd HH:mm',
             min: ""
         });
         laydate.render({
             elem: '#timeend-kb',
             type: 'datetime',
-            format: 'MM-dd HH:mm',
+            format: 'MM/dd HH:mm',
             min: ""
         });
         laydate.render({
             elem: '#timestart-zw',
             type: 'datetime',
-            format: 'MM-dd HH:mm',
+            format: 'MM/dd HH:mm',
             min: ""
         });
         laydate.render({
             elem: '#timeend-zw',
             type: 'datetime',
-            format: 'MM-dd HH:mm',
+            format: 'MM/dd HH:mm',
             min: ""
         });
     });

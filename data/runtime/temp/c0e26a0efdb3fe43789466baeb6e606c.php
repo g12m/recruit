@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:35:"themes/index/portal\msg\kanban.html";i:1599651151;s:72:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\head.html";i:1599649383;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:35:"themes/index/portal\msg\kanban.html";i:1599651498;s:72:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\head.html";i:1599651498;}*/ ?>
 <!DOCTYPE html>
 <html>
 

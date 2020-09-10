@@ -1,8 +1,9 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:43:"themes/index/portal\sch_position\index.html";i:1599650850;s:72:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\base.html";i:1599650656;s:72:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\head.html";i:1599649383;s:76:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\con_left.html";i:1599645493;s:74:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\footer.html";i:1599439177;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:43:"themes/index/portal\sch_position\index.html";i:1599651498;s:72:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\base.html";i:1599651498;s:72:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\head.html";i:1599655165;s:76:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\con_left.html";i:1599655429;s:74:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\footer.html";i:1599439177;}*/ ?>
 <!DOCTYPE html>
 <html>
 
   <head>
+  
   <meta charset='utf-8'>
   <meta name='renderer' content='webkit'>
   <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -49,7 +50,7 @@
 
 
 
-<?php dump($_SERVER['PHP_SELF']);?>
+<?php $munu=nav(1);?>
   <div class="layui-side layui-bg-black" style="background: url(/themes/index/public/assets/images/default/navbg.png);">
     <div class="layui-logo"><img src="/themes/index/public/assets/images/default/logo.png" alt=""></div>
     <div class="layui-side-scroll">

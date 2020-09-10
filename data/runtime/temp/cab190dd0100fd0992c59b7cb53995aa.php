@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:39:"themes/index/portal\sturole\pindex.html";i:1599563868;s:76:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\con_left.html";i:1599564065;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:39:"themes/index/portal\sturole\pindex.html";i:1599645493;s:76:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\con_left.html";i:1599655020;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -49,12 +49,12 @@
 
 
 
-<?php dump($_SERVER['PHP_SELF']);?>
+<?php $munu=nav(1);dump($munu);?>
   <div class="layui-side layui-bg-black" style="background: url(/themes/index/public/assets/images/default/navbg.png);">
     <div class="layui-logo"><img src="/themes/index/public/assets/images/default/logo.png" alt=""></div>
     <div class="layui-side-scroll">
       <ul class="layui-nav layui-nav-tree" lay-filter="test">
-        <li class="layui-nav-item"><a href="javascript:;"><img src="/themes/index/public/assets/images/default/icon_kb.png"
+        <li class="layui-nav-item"><a href="<?php echo url('portal/msg/kanban'); ?>"><img src="/themes/index/public/assets/images/default/icon_kb.png"
               alt="">招聘大看板 <span class="jian">></span></a></li>
         <li class="layui-nav-item layui-nav-itemed layui-this"><a href="<?php echo url('portal/Scheduling/index'); ?>"><img src="/themes/index/public/assets/images/default/icon_pq.png"
               alt=""> 排期管理 <span class="jian">></span></a></li>

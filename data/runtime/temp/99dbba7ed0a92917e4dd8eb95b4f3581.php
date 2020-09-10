@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:36:"themes/admin/admin\setting\site.html";i:1599441244;s:74:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\admin\public\header.html";i:1599439176;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:36:"themes/admin/admin\setting\site.html";i:1599561007;s:74:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\admin\public\header.html";i:1599439176;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
