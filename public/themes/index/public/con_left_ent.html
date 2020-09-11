@@ -28,7 +28,7 @@
           <ul class="layui-nav layui-nav-tree" lay-filter="test">
               <li class="layui-nav-item"><a href="{:cmf_url('sturesume/index')}"><img src="__TMPL__/public/assets/images/default/icon_jl.png" alt=""> 简历管理 <span
                           class="jian">></span></a></li>
-              <li class="layui-nav-item layui-nav-itemed layui-this"><a href="{:cmf_url('entposition/index')}"><img src="__TMPL__/public/assets/images/default/icon_zw.png" alt=""> 职位管理 <span
+              <li class="layui-nav-item layui-nav-itemed"><a href="{:cmf_url('entposition/index')}"><img src="__TMPL__/public/assets/images/default/icon_zw.png" alt=""> 职位管理 <span
                           class="jian">></span></a></li>
               <li class="layui-nav-item"><a href="{:cmf_url('entfair/index')}"><img
                           src="__TMPL__/public/assets/images/default/icon_zph.png" alt=""> 招聘会管理 <span class="jian">></span></a></li>
@@ -39,3 +39,9 @@
           </ul>
       </div>
   </div>
+  <input type="hidden" id="daohang" value="{$daohang}">
+  <script>
+        $(function(){
+            $(".layui-side-scroll ul li").eq($("#daohang").val()).addClass('layui-this')
+        })
+  </script>
