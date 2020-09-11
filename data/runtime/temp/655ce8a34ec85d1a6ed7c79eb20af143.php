@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:41:"themes/index/portal\scheduling\index.html";i:1599724443;s:72:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\base.html";i:1599651498;s:72:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\head.html";i:1599698875;s:76:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\con_left.html";i:1599724443;s:74:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\footer.html";i:1599439177;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:43:"themes/index/portal\scheduling\article.html";i:1599651498;s:72:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\base.html";i:1599651498;s:72:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\head.html";i:1599698875;s:76:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\con_left.html";i:1599724443;s:74:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\footer.html";i:1599439177;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -80,98 +80,100 @@
         <!-- 主体部分 -->
         <div class="layui-body">
             <div class="RightBody">
-                <div class="sousuo">
-                    <form class="layui-form" action="" method="post">
-                        <div class="layui-form-item">
-                            <div class="layui-inline">
-                                <label class="layui-form-label">搜索：</label>
-                                <div class="layui-input-inline" style="width: 240px;">
-                                    <input type="text" name="name" autocomplete="off" class="layui-input" value="<?php echo $title; ?>">
-                                </div>
-                            </div>
-                            <div class="layui-inline">
-                                <label class="layui-form-label">日期：</label>
-                                <div class="layui-input-inline" style="width: 200px;">
-                                    <input id="timestart-kb" type="text" name="price_min" placeholder="开始时间"
-                                        autocomplete="off" class="layui-input" value="<?php echo $price_min; ?>">
-                                </div>
-                                <div class="layui-form-mid">-</div>
-                                <div class="layui-input-inline" style="width: 200px;">
-                                    <input id="timeend-kb" type="text" name="price_max" placeholder="结束时间"
-                                        autocomplete="off" class="layui-input" value="<?php echo $price_max; ?>">
-                                </div>
-                            </div>
-                            <div class="layui-inline">
-                                <label class="layui-form-label">招聘人数：</label>
-                                <div class="layui-input-inline" style="width: 50px;">
-                                    <input type="text" name="num_min" placeholder="0" autocomplete="off"
-                                        class="layui-input" value="<?php echo $num_min; ?>">
-                                </div>
-                                <div class="layui-form-mid">-</div>
-                                <div class="layui-input-inline" style="width: 50px;">
-                                    <input type="text" name="num_max" placeholder="50" autocomplete="off"
-                                        class="layui-input" value="<?php echo $num_max; ?>">
-                                </div>
-                            </div>
-                            <div class="layui-inline">
-                                <button class="layui-btn" lay-submit lay-filter="formDemo">搜索</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="pq">
-                    <div class="title">
-                        <p>状态 <a <?php if($status==0): ?>class="checktitle"<?php endif; ?> href="<?php echo url('portal/scheduling/index'); ?>">全部</a><a <?php if($status==2): ?>class="checktitle"<?php endif; ?>href="<?php echo url('portal/scheduling/index',array('status'=>2)); ?>">已关联</a><a <?php if($status==1): ?>class="checktitle"<?php endif; ?> href="<?php echo url('portal/scheduling/index',array('status'=>1)); ?>">未关联</a><a <?php if($status==3): ?>class="checktitle"<?php endif; ?> href="<?php echo url('portal/scheduling/index',array('status'=>3)); ?>">已失效</a>
-                        </p>
+                <div class="xq-title layui-clear m">
+                    <?php if(is_array($article) || $article instanceof \think\Collection || $article instanceof \think\Paginator): if( count($article)==0 ) : echo "" ;else: foreach($article as $key=>$vo): ?>
+                    
+                    <div class="xq-h"><?php echo $vo['title']; ?></div>
+                    <div class="riqi">
+                       
+                        <?php 
+                            $res=json_decode($vo['alt_time'],true);
+                            $status=get_gltime($vo['id'])['status'];
+                         if($status==1): if(empty($confer['fair_time']) || (($confer['fair_time'] instanceof \think\Collection || $confer['fair_time'] instanceof \think\Paginator ) && $confer['fair_time']->isEmpty())): ?>
+                        <i>【备选日期】
+                            <?php if(is_array($res) || $res instanceof \think\Collection || $res instanceof \think\Paginator): if( count($res)==0 ) : echo "" ;else: foreach($res as $key=>$v): ?>
+                                <span><?php echo date("m/d H:i",$v); ?></span>
+                            <?php endforeach; endif; else: echo "" ;endif; ?>
+                        </i>
+                            <?php else: ?>
+                        <i>【开始日期】
+                             
+                                <span><?php echo date("m/d H:i",$confer['fair_time']); ?></span>
+                              
+                        </i>
+                        <?php endif; else: ?>
+                        <i>【备选日期】
+                            <?php if(is_array($res) || $res instanceof \think\Collection || $res instanceof \think\Paginator): if( count($res)==0 ) : echo "" ;else: foreach($res as $key=>$v): ?>
+                                <span><?php echo date("m/d H:i",$v); ?></span>
+                            <?php endforeach; endif; else: echo "" ;endif; ?>
+                        </i>
+                        <?php endif; ?>
+                        <i>【截止日期】<span><?php echo date("m/d H:i",$vo['dea_time']); ?></span></i>
+                        <?php if($status==1): ?>
+                        <i>【关联日期】<span><?php echo date("m/d H:i",$confer['time']); ?></span></i>
+                        <?php endif; ?>
+                        <i>【招聘人数】<span><?php echo $vo['num']; ?>人</span></i>
+                        <i>【预约人数】<span><?php echo $vo['app_num']; ?>人</span></i>
+                        <i>【投递简历】<span>5份 <?php echo get_userlist_info($vo['uid'])['ent_name'];?></span></i>
                     </div>
-                    <div class="list">
-                        <?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): if( count($list)==0 ) : echo "" ;else: foreach($list as $key=>$vo): ?>
-                            <div class="box">
-                                <div class="box-title"><a href="<?php echo url('portal/scheduling/article',array('id'=>$vo['id'])); ?>"><?php echo $vo['title']; ?></a></div>
-                                <div class="box-xx">
-                                    <p>备选日期：
-                                        <?php 
-                                            $res=json_decode($vo['alt_time'],true);
-                                            $ftime=get_gltime($vo['id'])['time'];
-                                            $status=get_gltime($vo['id'])['status'];
-                                         if(is_array($res) || $res instanceof \think\Collection || $res instanceof \think\Paginator): if( count($res)==0 ) : echo "" ;else: foreach($res as $key=>$v): ?>
-                                            <span><?php echo date("m月d日 H:i",$v); ?></span> 
-                                            
-                                        <?php endforeach; endif; else: echo "" ;endif; ?>
-                                       
-                                    </p>
+                    <?php endforeach; endif; else: echo "" ;endif; ?>
+                    <div class="btns">
+                       
+                        <?php if($status==2): ?>
+                            <button class="layui-btn btn-gl glzph" id="<?php echo $vo['id']; ?>">关联</button>
+                            <?php elseif($status==1): ?>
+                                <button class="layui-btn qxgl">取消关联</button>
+                                <input type="hidden" value="<?php echo $vo['id']; ?>" class="qxyy">
+                                <?php else: ?>
+                                <button class="layui-btn btn-gl glzph" id="<?php echo $vo['id']; ?>">关联</button>
+                                <!-- <button class="layui-btn btn-ysx">已失效</button> -->
+                        <?php endif; ?>
+                    
+                    </div>
+                    <div class="rightlogo">
+                        <img src="/themes/index/public/assets/images/default/phone.png" alt="">
+                        <div class="right">
+                            <p class="rname">企业联系人：<?php echo get_userlist_info($vo['uid'])['user_name'];?></p>
+                            <a class="rphone" href="tel:<?php echo get_userlist_info($vo['uid'])['phone'];?>"><?php echo get_userlist_info($vo['uid'])['phone'];?></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="pqxq">
+                    <div class="xx">
+                        <div class="xx-title">
+                            <div class="a">招聘职位</div>
+                        </div>
+                        <div class="xx-list">
+                            <?php if(is_array($article) || $article instanceof \think\Collection || $article instanceof \think\Paginator): if( count($article)==0 ) : echo "" ;else: foreach($article as $key=>$vo): if(is_array($vo['pos_ids']) || $vo['pos_ids'] instanceof \think\Collection || $vo['pos_ids'] instanceof \think\Paginator): if( count($vo['pos_ids'])==0 ) : echo "" ;else: foreach($vo['pos_ids'] as $key=>$v): $res=get_zhi_info($v['pos_id']);if(is_array($res) || $res instanceof \think\Collection || $res instanceof \think\Paginator): if( count($res)==0 ) : echo "" ;else: foreach($res as $key=>$v3): ?>
+                            <div class="xx-box">
+                                <div class="xx-box-h"><?php echo $v3['title']; ?></div>
+                                <div class="xx-box-m">
+                                    <i>【建议专业】<span><?php echo $v3['major']; ?></span></i>
+                                    <i>【招聘人数】<span><?php echo $v3['num']; ?>人</span></i>
+                                    <i>【薪资范围】<span><?php echo $v3['salary_min']; ?>~<?php echo $v3['salary_max']; ?></span></i>
+                                    <i>【有效期】<span><?php echo date("Y年m月d日",$v3['effective_time']); ?></span></i>
+                                </div>
+                                <div class="xx-box-yq">
+                                    <b>职位描述</b>
+                                    <p><?php echo $v3['desc']; ?></p>
                                   
-                                    <?php if($status==2): ?>
-                                        <p>截止日期：<span><?php echo date("m月d日 H:i",$vo['dea_time']); ?></span></p>
-                                        <?php elseif($status==1): ?>
-                                        <p>关联日期：<span><?php echo date("m/d H:i",$ftime); ?></span></p>
-                                        <?php else: ?>
-                                        <p>截止日期：<span><?php echo date("m月d日 H:i",$vo['dea_time']); ?></span></p>
-                                    <?php endif; ?>
-                                  
-                                    <p>招聘人数：<span><?php echo $vo['num']; ?>人</span></p>
-                                    <p>招聘职位：
-                                        <span class="over"><?php if(is_array($vo['pos_ids']) || $vo['pos_ids'] instanceof \think\Collection || $vo['pos_ids'] instanceof \think\Paginator): if( count($vo['pos_ids'])==0 ) : echo "" ;else: foreach($vo['pos_ids'] as $key=>$v): ?>
-                                        
-                                            <?php echo get_zhiwei_name($v['pos_id']);endforeach; endif; else: echo "" ;endif; ?></span>
-                                    </p>
-                                    <p>预约人数：<span><?php echo $vo['app_num']; ?>人</span></p>
-                                    <p>投递简历：<span>5份</span></p>
-                                    <div>
-                                       
-                                        <?php if($status==2): ?>
-                                            <button class="layui-btn btn-gl glzph" id="<?php echo $vo['id']; ?>">关联</button>
-                                         <?php elseif($status==1): ?> 
-                                            <button class="layui-btn btn-ygl">已关联</button>
-                                        <?php else: ?>
-                                        <button class="layui-btn btn-gl glzph" id="<?php echo $vo['id']; ?>">关联</button>
-                                        <!-- <button class="layui-btn btn-ysx">已失效</button> -->
-                                         <?php endif; ?>      
-                                       
-                                    </div>
                                 </div>
                             </div>
-                        <?php endforeach; endif; else: echo "" ;endif; ?>
+                            <?php endforeach; endif; else: echo "" ;endif; endforeach; endif; else: echo "" ;endif; endforeach; endif; else: echo "" ;endif; ?>
+                        </div>
+                    </div>
+                    <div class="right-xx">
+                        <div class="rxx-h">招聘会直播</div>
+                        <img class="ewm" src="/themes/index/public/assets/images/default/ewm.png" alt="">
+                        <div class="rxx-p">
+                            <?php 
+                             $list=get_hui($confer['h_id']);
+                            ?>
+                          
+                            <span class="pl">【地点】<?php echo $list['address']; ?></span>
+                            <span class="pr">【容纳人数】<?php echo $list['num']; ?>人</span>
+                        </div>
+                        <button class="layui-btn btn-qx">微信扫一扫</button>
                     </div>
                 </div>
             </div>
@@ -203,10 +205,10 @@
                 </thead>
                 <tbody class="hcxx">
                     <tr>
-                        <td><label for="A101"  ><input type="radio" name="room" id="A101" value="A101">A101</label></td>
+                        <td><label for="A101"><input type="radio" name="room" id="A101" value="A101">A101</label></td>
                         <td>30人</td>
                     </tr>
-                   
+    
                 </tbody>
             </table>
             <div class="layui-btn btn-qx prev">上一步</div>

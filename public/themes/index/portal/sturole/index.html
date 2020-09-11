@@ -32,12 +32,12 @@
                             <div class="layui-inline">
                                 <label class="layui-form-label">搜索：</label>
                                 <div class="layui-input-inline" style="width: 240px;">
-                                    <input type="text" name="" autocomplete="off" class="layui-input">
+                                    <input type="text" name="title" autocomplete="off" class="layui-input" value="{$title}">
                                 </div>
                             </div>
                             <div class="layui-inline">
                                 <button class="layui-btn" lay-submit>搜索</button>
-                                <div class="layui-btn">添加</div>
+                                <div class="layui-btn tjjs">添加</div>
                             </div>
                         </div>
                     </form>
@@ -52,26 +52,19 @@
                             </tr>
                         </thead>
                         <tbody>
+                           <foreach name="list" item="vo">
                             <tr>
                                 <td>
-                                    <p>1</p>
+                                    <p>{$vo.id}</p>
                                 </td>
                                 <td>
-                                    <p>超级管理员</p>
+                                    <p>{$vo.name}</p>
                                 </td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <p>2</p>
-                                </td>
-                                <td>
-                                    <p>普通管理员</p>
-                                </td>
-                                <td><button class="layui-btn btn-xq bjm">编辑</button><button
+                                <td><button class="layui-btn btn-xq bjm" id="{$vo.id}">编辑</button><button
                                         class="layui-btn btn-xq">删除</button><button class="layui-btn btn-xq bjsq">授权</button>
                                 </td>
                             </tr>
+                            </foreach>
                         </tbody>
                     </table>
                 </div>
@@ -79,12 +72,26 @@
         </div>
     </div>
     <div id="bjm" class="tc">
+        <form class="layui-form erole" action="">
+            <div class="layui-form-item">
+                <label class="layui-form-label">名称：</label>
+                <div class="layui-input-block">
+                    <input type="text" name="name" required lay-verify="required" autocomplete="off" class="layui-input"
+                        value="普通管理员">
+                </div>
+            </div>
+           
+            <div class="layui-btn btn-qx qx">取消</div>
+            <button class="layui-btn qr">确认</button>
+        </form>
+    </div>
+    <div id="tjjs" class="tc">
         <form class="layui-form" action="">
             <div class="layui-form-item">
                 <label class="layui-form-label">名称：</label>
                 <div class="layui-input-block">
-                    <input type="text" name="didian" required lay-verify="required" autocomplete="off" class="layui-input"
-                        value="普通管理员">
+                    <input type="text" name="name" required lay-verify="required" autocomplete="off" class="layui-input"
+                        placeholder="普通管理员" id="role">
                 </div>
             </div>
             <div class="layui-btn btn-qx qx">取消</div>
