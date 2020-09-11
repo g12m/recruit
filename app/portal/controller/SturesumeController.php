@@ -7,6 +7,10 @@ use cmf\controller\HomeBaseController;
 use app\portal\model\StuResumeModel;
 class SturesumeController extends HomeBaseController
 {
+    public function __construct(){
+        parent::__construct();
+        $this->assign('daohang','0');
+    }
     public function index()
     {
         $where = [];

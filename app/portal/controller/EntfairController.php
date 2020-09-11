@@ -7,6 +7,10 @@ use cmf\controller\HomeBaseController;
 use app\portal\model\JobfairModel;
 class EntfairController extends HomeBaseController
 {
+    public function __construct(){
+        parent::__construct();
+        $this->assign('daohang','2');
+    }
     public function index()
     {   
         $uid = cmf_get_current_user_id();
