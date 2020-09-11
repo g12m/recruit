@@ -6,6 +6,10 @@ use cmf\controller\HomeBaseController;
 use app\portal\model\EntPositionModel;
 class EntPositionController extends HomeBaseController
 {
+    public function __construct(){
+        parent::__construct();
+        $this->assign('daohang','1');
+    }
     public function index()
     {
         $where['uid'] = cmf_get_current_user_id();
