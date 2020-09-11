@@ -390,6 +390,22 @@ window.onload = function () {
             layer.close(layer.index)
         })
 
+        $('.kszb').click(function () {
+            layer.open({
+                type: 1,
+                title: '开始直播',
+                content: $('#kszb'),
+                area: '700px'
+            });
+        })
+        $('#kszb .qx').click(function () {
+            layer.close(layer.index)
+        })
+        $('#kszb .qr').click(function () {
+            console.log('直播成功')
+            layer.close(layer.index)
+        })
+
         $('.bjm').click(function () {
             layer.open({
                 type: 1,

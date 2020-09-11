@@ -4,6 +4,7 @@ namespace app\portal\controller;
 
 use cmf\controller\HomeBaseController;
 use app\portal\model\PortalTagModel;
+use think\Db;
 vendor('TencentCloud\vendor\autoload');
 use TencentCloud\Common\Credential;
 use TencentCloud\Common\Profile\ClientProfile;
@@ -15,6 +16,12 @@ class ZhiboController extends HomeBaseController
 {
     public function index(){
         $zphid = $this->request->param('id');
+        //获取招聘会信息
+        $zphres = Db::name('jobfair')->where('id',$zphid)->field('id,title')->find();
+        //招聘会职位
+        $posres = Db::name('fair_pos')->alias('fp')->join('ent_position ep','fp.pos_id=ep.id')->where('fp.fair_id',$zphid)->field('ep.id,ep.title,ep.type')->select()->toArray();
+        $this->assign('zphres',$zphres);
+        $this->assign('posres',$posres);
         $this->assign('id',$zphid);
         return $this->fetch();
     }

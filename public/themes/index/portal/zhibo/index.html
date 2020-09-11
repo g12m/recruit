@@ -34,27 +34,22 @@
             </div>
         </div>
         <div class="zb">
-            <div class="zb-h">北京XX公司8月招聘专场</div>
-            <p><i class="layui-icon layui-icon-user"></i> <span>1300人</span></p>
+            <div class="zb-h">{$zphres.title}</div>
+            <p><i class="layui-icon layui-icon-user"></i> <span>0人</span></p>
             <div id="video-container" class="pm"></div>
             <div class="pmbot">
-                <button class="layui-btn btn-shanchu" onclick="start()">开始直播</button>
+                <button class="layui-btn btn-shanchu kszb">开始直播</button>
             </div>
         </div>
-        <div id="urladd" style="position: absolute;left:600px;width:700px;background:#FFFFFF;"></div>
         <div class="zbxx">
             <div class="zbxx-h">招聘职位</div>
             <div class="zwlist">
-                <p><span class="zwname">软件工程师</span><span class="xs">正式</span><span class="doing">正在讲解</span></p>
-                <p><span class="zwname">软件工程师</span><span class="xs">正式</span></p>
-                <p><span class="zwname">软件工程师</span><span class="xs">正式</span></p>
-                <p><span class="zwname">软件工程师软件工程师</span><span class="xs">正式</span></p>
-                <p><span class="zwname">软件工程师</span><span class="xs">正式</span></p>
-                <p><span class="zwname">软件工程师</span><span class="xs">正式</span></p>
-                <p><span class="zwname">软件工程师</span><span class="xs">正式</span></p>
-                <p><span class="zwname">软件工程师</span><span class="xs">正式</span></p>
-                <p><span class="zwname">软件工程师</span><span class="xs">正式</span></p>
-                <p><span class="zwname">软件工程师</span><span class="xs">正式</span></p>
+                <foreach name="$posres" item="vo">
+                <p><span class="zwname">{$vo.title}</span><span class="xs">
+                    <eq name="$vo.type" value="1">正式</eq>
+                    <eq name="$vo.type" value="2">实习</eq>
+                </span><span class="doing">正在讲解</span></p>
+                </foreach>
             </div>
             <div class="dm">
                 <div class="dm-h">热点问题</div>
@@ -87,6 +82,24 @@
         <p>确认把主讲人身份交接给李飞吗？</p>
         <button class="layui-btn btn-qx qx">取消</button>
         <button class="layui-btn qr">确认</button>
+    </div>
+    <div id="kszb" class="tc">
+        <form class="layui-form" action="">
+            <div class="layui-form-item">
+                <label class="layui-form-label">服务器：</label>
+                <div class="layui-input-block">
+                  <input style="width: 90%;" type="text" name="title" autocomplete="off" class="layui-input">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">秘钥：</label>
+                <div class="layui-input-block">
+                  <input style="width: 90%;" type="text" name="title"autocomplete="off" class="layui-input">
+                </div>
+              </div>
+        <div class="layui-btn btn-qx qx">取消</div>
+        <button class="layui-btn qr">确认</button>
+        </form>
     </div>
     <input type="hidden" id="zphid" value="{$id}">
     <script>
@@ -172,7 +185,7 @@
                     if(msg.type == 'load') {
                         var _div = document.createElement('div');
                         _div.className = 'marker';
-                        _div.innerText = '测试';
+                        _div.innerText = '';
                         document.querySelector('.vcp-player').appendChild(_div)
                     }
                 }
