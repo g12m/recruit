@@ -19,30 +19,31 @@ class   SturoleController extends UserBaseController
     public function index()
     {
         $param                 = $this->request->param();
-        $address               =empty($param['title'])?'':$param['title'];
-        $uid                   = 4;
+        $title               =empty($param['title'])?'':$param['title'];
+        $uid                   = cmf_get_current_user_id();
         $where                 =[];
-        if(!empty($address))
+        if(!empty($title))
         {
-            $where['a.address']=['like',"%$address%"];
+            $where['a.name']=['like',"%$title%"];
         }
-        $list                  = Db::name('stu_conference a')->where('a.uid',$uid)->where($where)->order('cre_time DESC')->paginate(9);
+        $list                  = Db::name('entstu_role a')->where('a.uid',$uid)->where($where)->paginate(9);
         $list->appends($param);
+    
         $this->assign('page', $list->render());
         $this->assign('list', $list);
-        $this->assign('title', $address);
+        $this->assign('title', $title);
         return $this->fetch();
     }
     //人员管理
     public function pindex()
     {
         $param                 = $this->request->param();
-        $address               =empty($param['title'])?'':$param['title'];
+        $address               = empty($param['title'])?'':$param['title'];
         $uid                   = 4;
-        $where                 =[];
+        $where                 = [];
         if(!empty($address))
         {
-            $where['a.address']=['like',"%$address%"];
+         $where['a.address']   = ['like',"%$address%"];
         }
         $list                  = Db::name('stu_conference a')->where('a.uid',$uid)->where($where)->order('cre_time DESC')->paginate(9);
         $list->appends($param);
@@ -51,30 +52,33 @@ class   SturoleController extends UserBaseController
         $this->assign('title', $address);
         return $this->fetch();
     }
-    //添加会场
-    public function add()
-    {
-       return $this->fetch();       
-    }
+    //添加角色
      public function addpost()
     {
         $data     = $this->request->param();
-        if(empty($data['address']) && empty($data['num']))
+        if(empty($data['name']))
         {
             return  2;
         }
         $datas=[
-            'address'   =>$data['address'],
-            'num'       =>$data['num'],
-            'uid'       =>4,
-            'cre_time'  =>time()
+            'name'   =>$data['name'],
+            'type'   =>2,
+            'uid'    =>cmf_get_current_user_id()
         ];
 
-       $res= Db::name('stu_conference')->insert($datas); 
-       if($res)
+       $role_id= Db::name('entstu_role')->insert($datas); 
+     
+       if($role_id)
         {
             return  1;
         }        
+    }
+
+    public function  edit()
+    {
+        $rid     = $this->request->param('rid'); 
+        $name    = Db::name('entstu_role')->where('id',$rid)->value('name'); 
+        return  $name;
     }
 
     //会场详情

@@ -373,11 +373,107 @@ window.onload = function () {
                 content: $('#bjm'),
                 area: '500px'
             });
+            var rid = $(this).attr('id');
+             
+              
+            $.ajax({
+                url: "/portal/sturole/edit",
+                data: {"rid": rid },
+                type: "post",
+                async: true,
+                success: function (data) {
+                    var res = data
+                
+                    var html = ''
+
+
+                    // $.each(res, function (k, v) {
+                        html += '<div class="layui-form-item">'
+                            +' <label class="layui-form-label">名称：</label>'
+                            + ' <div class="layui-input-block">'
+                            + ' <input type="text" name="name" id="rname" required lay-verify="required" autocomplete="off" class="layui-input" value = "'+res+'">'
+                            +'</div>'
+                            +'</div>'
+                            + '<div class="layui-btn btn-qx qx">取消</div>'
+                            + '<button class="layui-btn qr"> 确认</button >'
+                      
+                    // })
+                    $(".erole").text('')
+                    $(".erole").append(html)
+                    $('#bjm .qx').click(function () {
+                        layer.close(layer.index)
+                    })
+                    $('#bjm .qr').click(function () {
+                        var r_name = $("#rname").val();
+                        
+                        console.log('编辑成功')
+                        layer.close(layer.index)
+                    })
+                    // qiehuan()
+                }
+            });
+            // return false;
         })
-        $('#bjm .qx').click(function () {
+        
+
+        $('.tjjs').click(function () {
+            layer.open({
+                type: 1,
+                title: '添加角色',
+                content: $('#tjjs'),
+                area: '500px'
+            });
+        })
+        $('#tjjs .qx').click(function () {
             layer.close(layer.index)
         })
-        $('#bjm .qr').click(function () {
+        $('#tjjs .qr').click(function () {
+            var id = $('#role').val();
+            console.log(id);
+            $.ajax({
+                url: "/portal/sturole/addpost",
+                data: {"name": id},
+                type: "post",
+                async: true,
+                success: function (data) {
+                    if (data == 1) {
+                        layer.msg('添加成功')
+                    }
+                    // qiehuan()
+                }
+            });
+       
+            layer.close(layer.index)
+        })
+
+        $('.tjry').click(function () {
+            layer.open({
+                type: 1,
+                title: '添加人员',
+                content: $('#tjry'),
+                area: '500px'
+            });
+        })
+        $('#tjry .qx').click(function () {
+            layer.close(layer.index)
+        })
+        $('#tjry .qr').click(function () {
+            console.log('编辑成功')
+            layer.close(layer.index)
+        })
+
+        $('.bjry').click(function () {
+            layer.open({
+                type: 1,
+                title: '编辑人员',
+                content: $('#bjry'),
+                area: '500px'
+            });
+        })
+        $('#bjry .qx').click(function () {
+            layer.close(layer.index)
+        })
+        $('#bjry .qr').click(function () {
             console.log('编辑成功')
             layer.close(layer.index)
         })

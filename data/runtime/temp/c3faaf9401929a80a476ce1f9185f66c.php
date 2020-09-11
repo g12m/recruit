@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:38:"themes/index/portal\sturole\index.html";i:1599645493;s:76:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\con_left.html";i:1599698875;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:38:"themes/index/portal\sturole\index.html";i:1599800835;s:76:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\con_left.html";i:1599724443;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -49,24 +49,24 @@
 
 
 
-<?php $munu=nav(1);?>
+<?php echo $url=$_SERVER['REQUEST_URI'];?>
   <div class="layui-side layui-bg-black" style="background: url(/themes/index/public/assets/images/default/navbg.png);">
     <div class="layui-logo"><img src="/themes/index/public/assets/images/default/logo.png" alt=""></div>
     <div class="layui-side-scroll">
       <ul class="layui-nav layui-nav-tree" lay-filter="test">
         <li class="layui-nav-item"><a href="<?php echo url('portal/msg/kanban'); ?>"><img src="/themes/index/public/assets/images/default/icon_kb.png"
               alt="">招聘大看板 <span class="jian">></span></a></li>
-        <li class="layui-nav-item layui-nav-itemed layui-this"><a href="<?php echo url('portal/Scheduling/index'); ?>"><img src="/themes/index/public/assets/images/default/icon_pq.png"
+        <li <?php if($url=="/scheduling"): ?>class="layui-nav-item layui-nav-itemed layui-this"<?php else: ?>class="layui-nav-item"<?php endif; ?>><a href="/scheduling"><img src="/themes/index/public/assets/images/default/icon_pq.png"
               alt=""> 排期管理 <span class="jian">></span></a></li>
-        <li class="layui-nav-item  "><a href="<?php echo url('portal/confer/index'); ?>"><img
+        <li <?php if($url=="/confer"): ?>class="layui-nav-item layui-nav-itemed layui-this"<?php else: ?>class="layui-nav-item"<?php endif; ?>><a href="/confer"><img
               src="/themes/index/public/assets/images/default/icon_hc.png" alt=""> 会场管理 <span class="jian">></span></a></li>
-        <li class="layui-nav-item"><a href="/sch_position"><img src="/themes/index/public/assets/images/default/icon_zw.png"
+        <li <?php if($url=="/sch_position"): ?>class="layui-nav-item layui-nav-itemed layui-this"<?php else: ?>class="layui-nav-item"<?php endif; ?>><a href="/sch_position"><img src="/themes/index/public/assets/images/default/icon_zw.png"
               alt=""> 职位管理 <span class="jian">></span></a></li>
-        <li class="layui-nav-item"><a href="<?php echo url('portal/resume/index'); ?>"><img src="/themes/index/public/assets/images/default/icon_jl.png"
+        <li <?php if($url=="/resume"): ?>class="layui-nav-item layui-nav-itemed layui-this"<?php else: ?>class="layui-nav-item"<?php endif; ?>><a href="/resume"><img src="/themes/index/public/assets/images/default/icon_jl.png"
               alt=""> 简历管理 <span class="jian">></span></a></li>
-        <li class="layui-nav-item"><a href="<?php echo url('portal/Sturole/index'); ?>"><img src="/themes/index/public/assets/images/default/icon_js.png"
+        <li <?php if($url=="/sturole"): ?>class="layui-nav-item layui-nav-itemed layui-this"<?php else: ?>class="layui-nav-item"<?php endif; ?>><a href="/sturole"><img src="/themes/index/public/assets/images/default/icon_js.png"
               alt=""> 角色管理 <span class="jian">></span></a></li>
-        <li class="layui-nav-item"><a href="<?php echo url('portal/Sturole/pindex'); ?>"><img src="/themes/index/public/assets/images/default/icon_ry.png"
+        <li <?php if($url=="/stu_role"): ?>class="layui-nav-item layui-nav-itemed layui-this"<?php else: ?>class="layui-nav-item"<?php endif; ?>><a href="/stu_role"><img src="/themes/index/public/assets/images/default/icon_ry.png"
               alt=""> 人员管理 <span class="jian">></span></a></li>
       </ul>
     </div>
@@ -81,12 +81,12 @@
                             <div class="layui-inline">
                                 <label class="layui-form-label">搜索：</label>
                                 <div class="layui-input-inline" style="width: 240px;">
-                                    <input type="text" name="" autocomplete="off" class="layui-input">
+                                    <input type="text" name="title" autocomplete="off" class="layui-input" value="<?php echo $title; ?>">
                                 </div>
                             </div>
                             <div class="layui-inline">
                                 <button class="layui-btn" lay-submit>搜索</button>
-                                <div class="layui-btn">添加</div>
+                                <div class="layui-btn tjjs">添加</div>
                             </div>
                         </div>
                     </form>
@@ -101,26 +101,19 @@
                             </tr>
                         </thead>
                         <tbody>
+                           <?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): if( count($list)==0 ) : echo "" ;else: foreach($list as $key=>$vo): ?>
                             <tr>
                                 <td>
-                                    <p>1</p>
+                                    <p><?php echo $vo['id']; ?></p>
                                 </td>
                                 <td>
-                                    <p>超级管理员</p>
+                                    <p><?php echo $vo['name']; ?></p>
                                 </td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <p>2</p>
-                                </td>
-                                <td>
-                                    <p>普通管理员</p>
-                                </td>
-                                <td><button class="layui-btn btn-xq bjm">编辑</button><button
+                                <td><button class="layui-btn btn-xq bjm" id="<?php echo $vo['id']; ?>">编辑</button><button
                                         class="layui-btn btn-xq">删除</button><button class="layui-btn btn-xq bjsq">授权</button>
                                 </td>
                             </tr>
+                            <?php endforeach; endif; else: echo "" ;endif; ?>
                         </tbody>
                     </table>
                 </div>
@@ -128,12 +121,26 @@
         </div>
     </div>
     <div id="bjm" class="tc">
+        <form class="layui-form erole" action="">
+            <div class="layui-form-item">
+                <label class="layui-form-label">名称：</label>
+                <div class="layui-input-block">
+                    <input type="text" name="name" required lay-verify="required" autocomplete="off" class="layui-input"
+                        value="普通管理员">
+                </div>
+            </div>
+           
+            <div class="layui-btn btn-qx qx">取消</div>
+            <button class="layui-btn qr">确认</button>
+        </form>
+    </div>
+    <div id="tjjs" class="tc">
         <form class="layui-form" action="">
             <div class="layui-form-item">
                 <label class="layui-form-label">名称：</label>
                 <div class="layui-input-block">
-                    <input type="text" name="didian" required lay-verify="required" autocomplete="off" class="layui-input"
-                        value="普通管理员">
+                    <input type="text" name="name" required lay-verify="required" autocomplete="off" class="layui-input"
+                        placeholder="普通管理员" id="role">
                 </div>
             </div>
             <div class="layui-btn btn-qx qx">取消</div>
