@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta name='renderer' content='webkit'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+    <title></title>
+</head>
+<link rel="stylesheet" href="__TMPL__/public/assets/css/default/layui/css/layui.css">
+<link rel='stylesheet' href='__TMPL__/public/assets/css/default/index.css'>
+<script src="__TMPL__/public/assets/js/default/jquery-1.11.3.min.js"></script>
+<script src='__TMPL__/public/assets/css/default/layui/layui.js'></script>
+<script src='__TMPL__/public/assets/js/default/SuperSlide.js'></script>
+<script src='__TMPL__/public/assets/js/default/index.js'></script>
+
+<body style="background: url(__TMPL__/public/assets/images/default/bg_clear.jpg)" class="zhibo">
+    <style>
+        html {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <div class="header">
+        <img src="__TMPL__/public/assets/images/default/logo_h.png" alt="">
+    </div>
+    <div class="mine gs">
+        <div class="jsxx">
+            <div class="js-h">直播间讲师</div>
+            <div class="jslist">
+                <p class="jsdoing"><span class="jsname">王琪琪</span><span class="sfjj">当前主讲人</span></p>
+                <p><span class="jsname">李飞</span><span class="sfjj sfjjw">交接</span></p>
+                <p><span class="jsname">李飞</span><span class="sfjj sfjjw">交接</span></p>
+            </div>
+        </div>
+        <div class="zb">
+            <div class="zb-h">北京XX公司8月招聘专场</div>
+            <p><i class="layui-icon layui-icon-user"></i> <span>1300人</span></p>
+            <div id="video-container" class="pm"></div>
+            <div class="pmbot">
+                <button class="layui-btn btn-shanchu" onclick="start()">开始直播</button>
+            </div>
+        </div>
+        <div id="urladd" style="position: absolute;left:600px;width:700px;background:#FFFFFF;"></div>
+        <div class="zbxx">
+            <div class="zbxx-h">招聘职位</div>
+            <div class="zwlist">
+                <p><span class="zwname">软件工程师</span><span class="xs">正式</span><span class="doing">正在讲解</span></p>
+                <p><span class="zwname">软件工程师</span><span class="xs">正式</span></p>
+                <p><span class="zwname">软件工程师</span><span class="xs">正式</span></p>
+                <p><span class="zwname">软件工程师软件工程师</span><span class="xs">正式</span></p>
+                <p><span class="zwname">软件工程师</span><span class="xs">正式</span></p>
+                <p><span class="zwname">软件工程师</span><span class="xs">正式</span></p>
+                <p><span class="zwname">软件工程师</span><span class="xs">正式</span></p>
+                <p><span class="zwname">软件工程师</span><span class="xs">正式</span></p>
+                <p><span class="zwname">软件工程师</span><span class="xs">正式</span></p>
+                <p><span class="zwname">软件工程师</span><span class="xs">正式</span></p>
+            </div>
+            <div class="dm">
+                <div class="dm-h">热点问题</div>
+                <div class="dm-hot">
+                    <p><span class="hott">公司在哪儿？公司在哪儿？公司在哪儿？公司在哪儿？</span><span class="dmcz">取消热点</span></p>
+                    <p><span class="hott">公司在哪儿？</span><span class="dmcz">取消热点</span></p>
+                    <p><span class="hott">公司在哪儿？</span><span class="dmcz">取消热点</span></p>
+                    <p><span class="hott">公司在哪儿？</span><span class="dmcz">取消热点</span></p>
+                </div>
+                <div class="dm-all">
+                    <p><span class="hott">公司在哪儿？公司在哪儿？公司在哪儿？公司在哪儿？</span><span class="dmcz">标记为热点</span></p>
+                    <p><span class="hott">公司在哪儿？</span><span class="dmcz">标记为热点</span></p>
+                    <p><span class="hott">公司在哪儿？</span><span class="dmcz">标记为热点</span></p>
+                    <p><span class="hott">公司在哪儿？</span><span class="dmcz">标记为热点</span></p>
+                    <p><span class="hott">公司在哪儿？</span><span class="dmcz">标记为热点</span></p>
+                    <p><span class="hott">公司在哪儿？</span><span class="dmcz">标记为热点</span></p>
+                    <p><span class="hott">公司在哪儿？</span><span class="dmcz">标记为热点</span></p>
+                    <p><span class="hott">公司在哪儿？</span><span class="dmcz">标记为热点</span></p>
+                    <p><span class="hott">公司在哪儿？</span><span class="dmcz">标记为热点</span></p>
+                    <p><span class="hott">公司在哪儿？</span><span class="dmcz">标记为热点</span></p>
+                    <p><span class="hott">公司在哪儿？</span><span class="dmcz">标记为热点</span></p>
+                    <p><span class="hott">公司在哪儿？</span><span class="dmcz">标记为热点</span></p>
+                    <p><span class="hott">公司在哪儿？</span><span class="dmcz">标记为热点</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="sfjjw" class="tc">
+        <img src="__TMPL__/public/assets/images/default/change.png" alt="">
+        <p>确认把主讲人身份交接给李飞吗？</p>
+        <button class="layui-btn btn-qx qx">取消</button>
+        <button class="layui-btn qr">确认</button>
+    </div>
+    <input type="hidden" id="zphid" value="{$id}">
+    <script>
+        function start(){
+            var name = 'entzph'+$("#zphid").val();
+            $.post("{:cmf_url('zhibo/getLiveStream')}",{'name':name},
+            function(data){
+                console.log(data)
+                var html = '<p>服务器：'+data.live1+'&nbsp;&nbsp;&nbsp;&nbsp;串流密钥：'+data.live2+'</p>&nbsp;&nbsp;&nbsp;&nbsp;播放地址：'+data.obsurl
+                $("#urladd").html(html)
+            })
+        }
+    </script>
+    <script src="https://imgcache.qq.com/open/qcloud/video/vcplayer/TcPlayer-2.3.2.js"></script>
+    <script>
+        (function () {
+            function getParams(name) {
+                var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+    
+                var r = window.location.search.substr(1).match(reg);
+                if (r != null) {
+                    return decodeURIComponent(r[2]);
+                }
+                return null;
+            }
+    
+            function getPathParams() {
+                var path = location.pathname.split('/');
+                if (path[1] == 'vod-player') {
+                    return {
+                        'path': location.origin + path.slice(0, 4).join('/'),
+                        'appid': path[2],
+                        'fileid': path[3]
+                    }
+                } else {
+                    return null;
+                }
+            }
+    
+            var rtmp = getParams('rtmp'),
+                flv = getParams('flv'),
+                m3u8 = getParams('m3u8'),
+                mp4 = getParams('mp4'),
+                live = (getParams('live') == 'true' ? true : false),
+                coverpic = getParams('coverpic'),
+                width = getParams('width'),
+                height = getParams('height'),
+                volume = getParams('volume'),
+                flash = (getParams('flash') == 'true' ? true : false),
+                x5_player = (getParams('x5_player') == 'false' ? false : true),
+                h5_flv = (getParams('h5_flv') == 'true' ? true : false),
+                autoplay = (getParams('autoplay') == 'true' ? true : false),
+                flashUrl = (function () {
+                    var params = getPathParams();
+                    if (params) {
+                        return params.path + '/player/release/QCPlayer.swf';
+                    }
+                    return '//imgcache.qq.com/open/qcloud/video/player/release/QCPlayer.swf'
+                })(),
+                log = getParams('log');
+            /**
+             * 视频类型播放优先级
+             * mobile ：m3u8>mp4
+             * PC ：RTMP>flv>m3u8>mp4
+             */
+    
+            var options = {
+                m3u8: 'http://live.cdsln.club/live/entzph7.m3u8' ,
+                autoplay: autoplay,
+                live: live,
+                width: width,
+                height: height,
+                volume: volume,
+                flash: flash,
+                flashUrl: flashUrl,
+                x5_player: x5_player,
+                h5_flv: h5_flv,
+                wording: {
+                    2032: '请求视频失败，请检查网络',
+                    2048: '请求m3u8文件失败，可能是网络错误或者跨域问题'
+                },
+                listener: function (msg) {
+                    if(msg.type == 'load') {
+                        var _div = document.createElement('div');
+                        _div.className = 'marker';
+                        _div.innerText = '测试';
+                        document.querySelector('.vcp-player').appendChild(_div)
+                    }
+                }
+            };
+            window.tcplayer = new TcPlayer('video-container', options);
+    
+        })();
+    </script>
+</body>
+
+</html>
