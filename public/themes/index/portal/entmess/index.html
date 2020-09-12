@@ -1,0 +1,24 @@
+<extend name="public@base_ent" />
+        <!-- 主体部分 -->
+        <block name="content">
+        <div class="layui-body">
+            <div class="RightBody">
+                <div class="tz">
+                    <div class="tz-h">消息通知</div>
+                    <div class="tz-list">
+                        <foreach name="$messres" item="vo">
+                        <a href="{:cmf_url('entmess/desc',array('id'=>$vo.id))}">
+                            <eq name="$vo.status" value="1">
+                            <i class="layui-badge-dot"></i>
+                            </eq>
+                            <span class="tz-xx">{$vo.title}</span>
+                            <span class="tz-t">{:date('m/d H:i',$vo.cre_time)}
+                            </span>
+                        </a>
+                        </foreach>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</block>

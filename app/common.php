@@ -426,6 +426,14 @@ function getentstuid($uid){
   $res = Db::name('user')->where('id',$uid)->field('entstu_id')->find();
   return $res['entstu_id'];
 }
+//获取未读
+function getweidu(){
+  $ent_id = getentstuid(cmf_get_current_user_id());
+  $where['to_id'] = $ent_id;
+  $where['status'] = 1;
+  $res = Db::name('stu_mess')->where($where)->select()->toArray();
+  return count($res);
+}
 
 
 ?>
