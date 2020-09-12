@@ -1,0 +1,26 @@
+<extend name="public@base_ent" />
+        <!-- 主体部分 -->
+        <block name="content">
+            <style>
+                .tz-list{margin:50px 0 0 100px;}
+                .tz-list p{font-size:20px;line-height:3;}
+                .tz-h a{font-size:30px;font-weight:bold;}
+            </style>
+        <div class="layui-body">
+            <div class="RightBody">
+                <div class="tz">
+                    <div class="tz-h">
+                        <a href="javascript:void(0)" onclick="window.history.go(-1);">
+                        <img src="__TMPL__/public/assets/images/default/back.jpg" alt="" width="16">
+                        </a>
+                        通知详情
+                    </div>
+                    <div class="tz-list">
+                        <p class="tz-xx">{$res.title}</p>
+                        <p class="tz-t">取消原因：{$res.content}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</block>

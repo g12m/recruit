@@ -17,7 +17,7 @@
                         <i>【招聘人数】<span>{$res.num}人</span> <span>预约人数：{$res.app_num}人</span></i>
                     </div>
                     <div class="btns">
-                        <button class="layui-btn">发布通知</button>
+                        <button class="layui-btn fbtz">发布通知</button>
                         <button class="layui-btn"><a href="{:cmf_url('zhibo/index',array('id'=>$res.id))}">进入直播</a></button>
                         <button class="layui-btn btn-shanchu sczph" data="{$res.id}">删除</button>
                     </div>
@@ -47,4 +47,44 @@
             </div>
         </div>
     </div>
+    <div id="fbtz" class="tc">
+        <form action="">
+            <div class="layui-form-item">
+                <span class="layui-form-label">选择开始时间：</span>
+                <div class="layui-input-block">
+                    <foreach name="$res.alt_time" item="vo" key="k">
+                        <php>
+                            $alt_times = date('Y/m/d H:i',$vo);
+                        </php>
+                    <label for="time{$k}" class="linput" onclick="settime(this)">
+                        <input type="radio" name="time" value="{$alt_times}" id="time{$k}">{$alt_times}
+                    </label>
+                    </foreach>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">设置时间：</label>
+                <div class="layui-input-block">
+                    <input type="text" name="t" id="settime" required lay-verify="required" autocomplete="off" class="layui-input sztime" value="">
+                </div>
+            </div>
+            <p style="font-size:14px;color:#707070;font-weight: 100;">发布后系统会通知预约当前招聘会的学生，请与学校核实后发布</p>
+            <div class="layui-btn btn-qx qx">取消</div>
+            <button class="layui-btn qr" lay-submit onclick="send()">确定</button>
+        </form>
+    </div>
+    <input type="hidden" id="fairid" value="{$res.id}">
+    <script>
+        function settime(e){
+            $("#settime").val($(e).find('input').val())
+        }
+        function send(){
+            var time = $("#settime").val();
+            var id = $("#fairid").val();
+            $.post("{:cmf_url('Entfair/addtz')}",{'time':time,'id':id},
+            function(data){
+
+            });
+        }
+    </script>
 </block>

@@ -38,7 +38,7 @@
             <p><i class="layui-icon layui-icon-user"></i> <span>0人</span></p>
             <div id="video-container" class="pm"></div>
             <div class="pmbot">
-                <button class="layui-btn btn-shanchu kszb">开始直播</button>
+                <button class="layui-btn btn-shanchu kszb" onclick="start()">开始直播</button>
             </div>
         </div>
         <div class="zbxx">
@@ -48,7 +48,7 @@
                 <p><span class="zwname">{$vo.title}</span><span class="xs">
                     <eq name="$vo.type" value="1">正式</eq>
                     <eq name="$vo.type" value="2">实习</eq>
-                </span><span class="doing">正在讲解</span></p>
+                </span><span class="doing">点击讲解</span></p>
                 </foreach>
             </div>
             <div class="dm">
@@ -85,20 +85,21 @@
     </div>
     <div id="kszb" class="tc">
         <form class="layui-form" action="">
+            <p style="font-size:16px;text-align:left;margin:0 0 50px 0;padding:0;">请将下列参数填写到OBS软件中，位置：设置>推流</p>
             <div class="layui-form-item">
                 <label class="layui-form-label">服务器：</label>
                 <div class="layui-input-block">
-                  <input style="width: 90%;" type="text" name="title" autocomplete="off" class="layui-input">
+                  <input style="width: 90%;" type="text" id="live_1" autocomplete="off" class="layui-input">
                 </div>
               </div>
               <div class="layui-form-item">
-                <label class="layui-form-label">秘钥：</label>
+                <label class="layui-form-label">串流密钥：</label>
                 <div class="layui-input-block">
-                  <input style="width: 90%;" type="text" name="title"autocomplete="off" class="layui-input">
+                  <input style="width: 90%;" type="text" id="live_2" name="title"autocomplete="off" class="layui-input">
                 </div>
               </div>
         <div class="layui-btn btn-qx qx">取消</div>
-        <button class="layui-btn qr">确认</button>
+        <button class="layui-btn qr" onclick="addlive()">确认</button>
         </form>
     </div>
     <input type="hidden" id="zphid" value="{$id}">
@@ -107,10 +108,16 @@
             var name = 'entzph'+$("#zphid").val();
             $.post("{:cmf_url('zhibo/getLiveStream')}",{'name':name},
             function(data){
-                console.log(data)
-                var html = '<p>服务器：'+data.live1+'&nbsp;&nbsp;&nbsp;&nbsp;串流密钥：'+data.live2+'</p>&nbsp;&nbsp;&nbsp;&nbsp;播放地址：'+data.obsurl
-                $("#urladd").html(html)
+                $("#kszb").find("#live_1").val(data.live1)
+                $("#kszb").find("#live_2").val(data.live2)
             })
+        }
+        function addlive(){
+            var fairid = $("#zphid").val();
+            var liveurl = $("#kszb").find("#live_1").val()+$("#kszb").find("#live_2").val()
+            $.post("{:cmf_url('zhibo/addlive')}",{'fairid':fairid,'liveurl':liveurl},function(data){
+
+            });
         }
     </script>
     <script src="https://imgcache.qq.com/open/qcloud/video/vcplayer/TcPlayer-2.3.2.js"></script>
@@ -165,10 +172,9 @@
              * mobile ：m3u8>mp4
              * PC ：RTMP>flv>m3u8>mp4
              */
-    
             var options = {
-                m3u8: 'http://live.cdsln.club/live/entzph7.m3u8' ,
-                autoplay: autoplay,
+                m3u8: '{$url}' ,
+                autoplay: true,
                 live: live,
                 width: width,
                 height: height,

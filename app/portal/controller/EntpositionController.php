@@ -8,6 +8,8 @@ class EntPositionController extends HomeBaseController
 {
     public function __construct(){
         parent::__construct();
+        $weidu = getweidu();
+        $this->assign('weidu',$weidu);
         $this->assign('daohang','1');
     }
     public function index()

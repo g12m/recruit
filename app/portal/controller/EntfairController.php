@@ -9,6 +9,8 @@ class EntfairController extends HomeBaseController
 {
     public function __construct(){
         parent::__construct();
+        $weidu = getweidu();
+        $this->assign('weidu',$weidu);
         $this->assign('daohang','2');
     }
     public function index()
@@ -107,8 +109,22 @@ class EntfairController extends HomeBaseController
     public function addtz(){
         $param = $this->request->param();
         $id = $param['id'];
+        $time = $param['time'];
         $pos = new JobfairModel();
         $res = $pos->getfair($id);
+        //添加到数据库
+        $data['title'] = $res['title'].'确定开始日期'.$time;
+        $data['cre_time'] = time();
+        $data['type'] = 1;
+        $data['form_id'] = $res['ent_id'];
+        $data['status'] = 1;
+        $data['fair_id'] = $id;
+        //获取关联学校
+        $stures = Db::name('fair_stu')->where('fair_id',$id)->select()->toArray();
+        foreach($stures as $k=>$v){
+            $data['to_id'] = $v['stu_id'];
+            Db::name('stu_mess')->insert($data);
+        }
     }
     //发布通知方法
     public function addtzact(){
