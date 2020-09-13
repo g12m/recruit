@@ -5,11 +5,14 @@
 //     或者有混流接口
 // appid:1300719817
 // 密钥：
+// SecretId: AKIDAn9FJMV4aqsCJAv7BylIZaJn2mFintHc
+// SecretKey: KSQ98qMhMltjJcdN7w1rNddU5GtGe0m0
 // 2.正在讲解
 // iFRAME刷新局部
 // WebSocket 服务器搭建
         // IM回调
         // appid:1400424102
+
 
 
 namespace app\portal\controller;
@@ -101,10 +104,14 @@ class ZhiboController extends HomeBaseController
     }
     //创建混流
     public function create_live(){
+        $secretid = 'AKIDAn9FJMV4aqsCJAv7BylIZaJn2mFintHc';
+        $secretkey = 'KSQ98qMhMltjJcdN7w1rNddU5GtGe0m0';
+        $endpoint = 'live.tencentcloudapi.com';
+        $mixStreamsessionid = 1;//混流会话id
         try {
-            $cred = new Credential("$appid", "$key");
+            $cred = new Credential($secretid,$secretkey);
             $httpProfile = new HttpProfile();
-            $httpProfile->setEndpoint("live.tencentcloudapi.com");
+            $httpProfile->setEndpoint($endpoint);
               
             $clientProfile = new ClientProfile();
             $clientProfile->setHttpProfile($httpProfile);
@@ -113,7 +120,39 @@ class ZhiboController extends HomeBaseController
             $req = new CreateCommonMixStreamRequest();
             
             $params = array(
-        
+                'MixStreamSessionId' => "1111",
+                'InputStreamList' => array(
+                    array(
+                        'InputStreamName' => "live1",
+                        'LayoutParams' => array(
+                            'ImageLayer' => 1,
+                            'InputType' => 2,
+                            'ImageWidth' => 10,
+                            'ImageHeight' => 10,
+                            'LocationX' => 0,
+                            'LocationY' => 0,
+                            'Color' => "1",
+                            'WatermarkId' => 2
+                        ),
+                        'CropParams' => array(
+                            'CropWidth' => 2,
+                            'CropHeight' => 1,
+                            'CropStartLocationX' => 1,
+                            'CropStartLocationY' => 2
+                        )
+                    )
+                ),
+                'OutputParams' => array(
+                    'OutputStreamName' => "live1",
+                    'OutputStreamType' => 2,
+                    'OutputStreamBitRate' => 1,
+                    'OutputStreamGop' => 1,
+                    'OutputStreamFrameRate' => 1,
+                    'OutputAudioBitRate' => 1,
+                    'OutputAudioSampleRate' => 1,
+                    'OutputAudioChannels' => 1,
+                    'MixSei' => "12"
+                )
             );
             $req->fromJsonString(json_encode($params));
         
