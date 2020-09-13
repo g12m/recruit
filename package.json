@@ -19,5 +19,9 @@
     "laravel-mix": "^1.0",
     "lodash": "^4.17.4",
     "vue": "^2.1.10"
+  },
+  "dependencies": {
+    "cos-js-sdk-v5": "^0.5.27",
+    "tim-js-sdk": "^2.7.7"
   }
 }
