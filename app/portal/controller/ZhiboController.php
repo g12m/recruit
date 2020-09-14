@@ -14,6 +14,9 @@
         // appid:1400424102
 
 
+// 开启直播创建群组，关闭直播解散群组
+// 创建群组，获取群组列表，关闭一天前的群组
+// 创建群组，加入用户，发送消息，管理员发送消息（或者监控聊天室）
 
 namespace app\portal\controller;
 
@@ -28,7 +31,9 @@ use TencentCloud\Common\Exception\TencentCloudSDKException;
 use TencentCloud\Live\V20180801\LiveClient;
 use TencentCloud\Live\V20180801\Models\DescribeLiveCertRequest;
 use TencentCloud\Live\V20180801\Models\CreateCommonMixStreamRequest;
-
+use app\portal\model\ImModel;
+vendor('Tencent\TLSSigAPIv2');
+use Tencent\TLSSigAPIv2;
 class ZhiboController extends HomeBaseController
 {
     public function index(){
@@ -48,7 +53,10 @@ class ZhiboController extends HomeBaseController
     // 获取推流地址
     public function getLiveStream()
     {
-        $streamName = $this->request->param('name');
+        $param = $this->request->param();
+        $streamName = $param['name'];
+        $fairid = $param['id'];
+        $fairname = $param['title'];
         // $time = time()+config('tencentcloud.invalid_time');
         // $key = config('tencentcloud.tx_push_api_key');
         $time = time()+600;
@@ -67,7 +75,8 @@ class ZhiboController extends HomeBaseController
         $url['obsurl'] = $this->getPlayStream($streamName,$time);
         $url['live1'] = "rtmp://".$domain."/live/";
         $url['live2'] = $streamName . (isset($extStr) ? $extStr : "");
-
+        //创建聊天室
+        $imres = $this->create($fairname,$fairid);
         return $url;
     }
     // 获取播放地址
@@ -180,5 +189,28 @@ class ZhiboController extends HomeBaseController
         $data['pos_id'] = $fairres['pos_id'];
         Db::name('live')->insert($data);
     }
+    //创建聊天室
+    public function create($fairname,$fairid){
+        $im = new ImModel();
+        $sdkappid = '1400421650';
+        $key = 'cfbae2c64faf3b131132dfbb63808e7d4544fafb4a2b967db0252da95eb4de59';
+        $identifier = 'wtz';
+        $name = $fairname;
+        $groupid = time().rand(100,999).$fairid;
+        $TLSSigAPIv2 = new TLSSigAPIv2($sdkappid,$key);
+ 
+        $usersig = $TLSSigAPIv2->genSig($identifier);
+        $random = mt_rand(100000,999999);
+        $url = 'https://console.tim.qq.com/v4/group_open_http_svc/create_group?sdkappid='.$sdkappid.'&identifier='.$identifier.'&usersig='.$usersig.'&random='.$random.'&contenttype=json';
 
+        $arr = [
+			'Owner_Account' => $identifier, // 群主的 UserId（选填）
+			'Type' => 'Public',  // 群组类型：Private/Public/ChatRoom/AVChatRoom/BChatRoom（必填）
+			'Name' => $name, // 群名称（必填）
+			'GroupId' => $groupid, // 用户自定义群组 ID（选填）
+		];
+        
+        $json = $im->send($url,json_encode($arr));
+        return $res = json_decode($json,true);
+    }
 }

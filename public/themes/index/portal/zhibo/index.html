@@ -103,10 +103,13 @@
         </form>
     </div>
     <input type="hidden" id="zphid" value="{$id}">
+    <input type="hidden" id="zphtitle" value="{$zphres.title}">
     <script>
         function start(){
-            var name = 'entzph'+$("#zphid").val();
-            $.post("{:cmf_url('zhibo/getLiveStream')}",{'name':name},
+            var id = $("#zphid").val();
+            var name = 'entzph'+id
+            var title = $("#zphtitle").val();
+            $.post("{:cmf_url('zhibo/getLiveStream')}",{'id':id,'name':name,'title':title},
             function(data){
                 $("#kszb").find("#live_1").val(data.live1)
                 $("#kszb").find("#live_2").val(data.live2)
