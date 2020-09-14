@@ -30,7 +30,8 @@ class LoginController extends HomeBaseController
         }
         session('login_http_referer', $redirect);
         if (cmf_is_user_login()) { //已经登录时直接跳到首页
-            return redirect($this->request->root() . '/');
+              header("location:user/register/reg_success");
+            //return redirect($this->request->root() . '/');
         } else {
             return $this->fetch(":login");
         }

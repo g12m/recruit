@@ -13,14 +13,23 @@
 <script src='__TMPL__/public/assets/css/default/layui/layui.all.js'></script>
 <script src='__TMPL__/public/assets/js/default/SuperSlide.js'></script>
 <script src='__TMPL__/public/assets/js/default/index.js'></script>
+<script type="text/javascript">
+    //全局变量
+    var GV = {
+        ROOT: "__ROOT__/",
+        WEB_ROOT: "__WEB_ROOT__/",
+        JS_ROOT: "static/js/"
+    };
+</script>
+<script src="__STATIC__/js/wind.js"></script>
 
 <body style="background: url(__TMPL__/public/assets/images/default/bg_clear.jpg)" class="register-form">
     <div class="center">
-        <img class="logo" src="__TMPL__/public/assets/images/default/logo_h.png" alt="">
+        <a href="/"><img class="logo" src="__TMPL__/public/assets/images/default/logo_h.png" alt=""></a>
         <div class="register">
             <p class="register-h">注册学校账号</p>
             <div class="form">
-                <form action="{:url('user/Register/doRegister')}" method="POST">
+                <form action="{:url('user/Register/doRegister')}" method="POST" class="js-ajax-form">
                     <div class="form-h">账号信息</div>
                     <div class="form-m">
                         <div class="layui-form-item">
@@ -117,13 +126,14 @@
                         </div>
                         <input name="user_type" value="3" type="hidden">
                         <div class="zc">
-                            <button class="layui-btn">注 册</button>
+                            <button class="layui-btn js-ajax-submit" type="submit">注 册</button>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
-        <div class="copy">Copyright © 星臣教育 All Rights Reserved</div>
+        <script src="__STATIC__/js/admin.js"></script>
+        <div class="copy">{:cmf_get_option('server_settings')['q_banquan']}</div>
     </div>
 </body>
 

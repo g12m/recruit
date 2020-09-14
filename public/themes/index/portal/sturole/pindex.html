@@ -53,24 +53,35 @@
                     </thead>
                     <tbody>
                         <tr>
+                            <?php $res=get_userinfo();?>
+                            <notempty name="res">
                             <td>
                                 <p>1</p>
                             </td>
+                           
                             <td>
-                                <p>admin</p>
+                                <p><?php echo get_user_info($res[0]['entstu_id']);?></p>
                             </td>
+                            
+                            </notempty>
                             <td></td>
                         </tr>
+                        <?php $num=2;?>
+                        <foreach name="$list" item="v">
+                           
                         <tr>
                             <td>
-                                <p>2</p>
+                                <p>{$num}</p>
                             </td>
                             <td>
-                                <p>王晓倩</p>
+                                <p>{$v.user_login}</p>
                             </td>
-                            <td><button class="layui-btn btn-xq bjry">编辑</button><button class="layui-btn btn-xq">删除</button>
+                            <td><button class="layui-btn btn-xq bjry" id="{$v.id}">编辑</button><button class="layui-btn btn-xq ryde" id="{$v.id}">删除</button>
                             </td>
                         </tr>
+                        <?php $num++;?>
+                        </foreach>
+
                     </tbody>
                 </table>
             </div>
@@ -82,22 +93,33 @@
         <div class="layui-form-item">
             <label class="layui-form-label">用户名：</label>
             <div class="layui-input-block">
-                <input type="text" name="name" required lay-verify="required" autocomplete="off" class="layui-input"
+                <input type="text" name="name" required lay-verify="required" autocomplete="off" class="layui-input uname"
                     placeholder="填写用户名">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">用户密码：</label>
             <div class="layui-input-block">
-                <input type="password" name="password" required lay-verify="required" autocomplete="off" class="layui-input"
+                <input type="password" name="password" required lay-verify="required" autocomplete="off" class="layui-input upaw"
                     placeholder="填写用户密码">
             </div>
         </div>
-        <div class="layui-form-item">
+        <!-- <div class="layui-form-item">
             <label class="layui-form-label">用户昵称：</label>
             <div class="layui-input-block">
-                <input type="text" name="nikename" required lay-verify="required" autocomplete="off" class="layui-input"
+                <input type="text" name="nikename" required lay-verify="required" autocomplete="off" class="layui-input unick"
                     placeholder="填写用户昵称">
+            </div>
+        </div> -->
+        <div class="layui-form-item">
+            <label class="layui-form-label">角色：</label>
+            <div class="layui-input-block">
+                <?php $role=get_role_stu();?>
+                <select name="role" class="urole">
+                    <foreach name="role" item="vo">
+                        <option value="{$vo.id}">{$vo.name}</option>
+                    </foreach>
+                </select>
             </div>
         </div>
         <div class="layui-btn btn-qx qx">取消</div>
@@ -109,24 +131,36 @@
         <div class="layui-form-item">
             <label class="layui-form-label">用户名：</label>
             <div class="layui-input-block">
-                <input type="text" name="name" required lay-verify="required" autocomplete="off" class="layui-input"
-                     value="" readonly>
+                <input type="text" name="name" required lay-verify="required" autocomplete="off" class="layui-input bname"
+                     value="" >
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">用户密码：</label>
             <div class="layui-input-block">
                 <input type="password" name="password" required lay-verify="required" autocomplete="off"
-                    class="layui-input" placeholder="编辑用户密码">
+                    class="layui-input bpaw" placeholder="编辑用户密码">
             </div>
         </div>
-        <div class="layui-form-item">
+            <div class="layui-form-item">
+                <label class="layui-form-label">角色：</label>
+                <div class="layui-input-block">
+                    <?php $role=get_role_stu();?>
+                    <select name="role" class="brole" id="ajax_sel" >
+                        <foreach name="role" item="vo">
+                           
+                            <option value="{$vo.id}">{$vo.name}</option>
+                        </foreach>
+                    </select>
+                </div>
+            </div>
+        <!-- <div class="layui-form-item">
             <label class="layui-form-label">用户昵称：</label>
             <div class="layui-input-block">
                 <input type="text" name="nikename" required lay-verify="required" autocomplete="off" class="layui-input"
                     placeholder="编辑用户昵称">
             </div>
-        </div>
+        </div> -->
         <div class="layui-btn btn-qx qx">取消</div>
         <button class="layui-btn qr">确认</button>
     </form>

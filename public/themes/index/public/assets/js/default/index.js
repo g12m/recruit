@@ -9,13 +9,13 @@ window.onload = function () {
         laydate.render({
             elem: '#timestart-kb',
             type: 'datetime',
-            format: 'MM-dd HH:mm',
+            format: 'MM/dd HH:mm',
             min: ""
         });
         laydate.render({
             elem: '#timeend-kb',
             type: 'datetime',
-            format: 'MM-dd HH:mm',
+            format: 'MM/dd HH:mm',
             min: ""
         });
         laydate.render({
@@ -51,7 +51,7 @@ window.onload = function () {
         laydate.render({
             elem: '#timeend-zw',
             type: 'datetime',
-            format: 'MM-dd HH:mm',
+            format: 'MM/dd HH:mm',
             min: ""
         });
     });
@@ -225,7 +225,7 @@ window.onload = function () {
                            if(data==1)
                            {
                                layer.msg('取消关联');
-                               var path = '/portal/scheduling/article/id' + fair_id;
+                               var path = '/portal/scheduling/article/id/'+fair_id;
                                location.href = path;
                            }
                         }
@@ -287,7 +287,7 @@ window.onload = function () {
                     var res = data
                     var html = ''
                     $.each(res, function (k, v) {
-                        console.log(v)
+                        
                         html += '<tr >'
                             + '<td><label for="' + v.address +'" class="h_id"><input type="radio"  name="room" id="'+v.address+'" value="'+v.id+'">'+v.address+'</label></td>'
                             +'<td>'+v.num+'</td>'
@@ -322,7 +322,6 @@ window.onload = function () {
                 {
                     nid=0;
                 }
-            
                 $.ajax({
                     url: "/portal/scheduling/relation",
                     data: {"nid": nid,"id":id,"h_id":h_id},
@@ -414,8 +413,6 @@ window.onload = function () {
                 area: '500px'
             });
             var rid = $(this).attr('id');
-             
-              
             $.ajax({
                 url: "/portal/sturole/edit",
                 data: {"rid": rid },
@@ -423,10 +420,7 @@ window.onload = function () {
                 async: true,
                 success: function (data) {
                     var res = data
-                
                     var html = ''
-
-
                     // $.each(res, function (k, v) {
                         html += '<div class="layui-form-item">'
                             +' <label class="layui-form-label">名称：</label>'
@@ -445,8 +439,18 @@ window.onload = function () {
                     })
                     $('#bjm .qr').click(function () {
                         var r_name = $("#rname").val();
-                        
-                        console.log('编辑成功')
+                        $.ajax({
+                            url: "/portal/sturole/editpost",
+                            data: {"rid": rid, "r_name": r_name},
+                            type: "post",
+                            async: true,
+                            success: function (data) {
+                                if (data == 1) {
+                                    layer.msg('编辑成功')
+                                }
+                                // qiehuan()
+                            }
+                        });
                         layer.close(layer.index)
                     })
                     // qiehuan()
@@ -454,7 +458,24 @@ window.onload = function () {
             });
             // return false;
         })
-        
+        $('.rdelete').click(function () {
+            var r_id = $(this).attr('id');   
+            $.ajax({
+                url: "/portal/sturole/delete",
+                data: {"r_id": r_id},
+                type: "post",
+                async: true,
+                success: function (data) {
+                    if (data == 1) {
+                        layer.msg('删除成功')
+                        var path = '/sturole';
+                        location.href = path;
+                    }
+                    // qiehuan()
+                }
+            });
+            layer.close(layer.index)
+        })
 
         $('.tjjs').click(function () {
             layer.open({
@@ -469,7 +490,7 @@ window.onload = function () {
         })
         $('#tjjs .qr').click(function () {
             var id = $('#role').val();
-            console.log(id);
+          
             $.ajax({
                 url: "/portal/sturole/addpost",
                 data: {"name": id},
@@ -478,6 +499,8 @@ window.onload = function () {
                 success: function (data) {
                     if (data == 1) {
                         layer.msg('添加成功')
+                        var path = '/sturole';
+                        location.href = path;
                     }
                     // qiehuan()
                 }
@@ -498,6 +521,23 @@ window.onload = function () {
             layer.close(layer.index)
         })
         $('#tjry .qr').click(function () {
+            var uname = $('.uname').val();
+            var upaw = $('.upaw').val();
+            var urole = $('.urole').val();
+            $.ajax({
+                url: "/portal/sturole/addry",
+                data: {"uname": uname, "upaw": upaw,"urole":urole},
+                type: "post",
+                async: true,
+                success: function (data) {
+                    if(data==1)
+                    {
+                        layer.msg('添加成功');
+                    }
+                  
+                }
+            });
+      
             console.log('编辑成功')
             layer.close(layer.index)
         })
@@ -509,12 +549,66 @@ window.onload = function () {
                 content: $('#bjry'),
                 area: '500px'
             });
+            var ry_id = $(this).attr('id');
+            $.ajax({
+                url: "/portal/sturole/editry",
+                data: {"ry_id": ry_id },
+                type: "post",
+                async: true,
+                success: function (data) {
+                    var res = data       
+                    $('.bname').attr('value',res.user_login);
+                    $('.bpaw').attr('value', res.user_pass);
+                    $("#ajax_sel option").each(function(){
+                        if($(this).val()==res.role_id){
+                            $(this).attr("selected",true)
+                        }
+                    })
+  
+                    $('#bjry .qx').click(function () {
+                        layer.close(layer.index)
+                    })
+                
+                    $('#bjry .qr').click(function () {
+                      
+                        var bname = $(".bname").val();
+                        var bpaw = $(".bpaw").val();
+                        var urole_id = $("#ajax_sel").val(); 
+                        $.ajax({
+                            url: "/portal/sturole/editrypost",
+                            data: { "ry_id": ry_id, "bname": bname, "bpaw": bpaw, "urole_id": urole_id },
+                            type: "post",
+                            async: true,
+                            success: function (data) {
+                                if (data == 1) {
+                                    layer.msg('编辑成功')
+                                }
+                                // qiehuan()
+                            }
+                        });
+                        layer.close(layer.index)
+                    })
+                    // qiehuan()
+                }
+            });
         })
-        $('#bjry .qx').click(function () {
-            layer.close(layer.index)
-        })
-        $('#bjry .qr').click(function () {
-            console.log('编辑成功')
+        // $('#bjry .qx').click(function () {
+        //     layer.close(layer.index)
+        // })
+        $('.ryde').click(function () {
+            var ryde_id = $(this).attr('id');   
+            $.ajax({
+                url: "/portal/sturole/rydelete",
+                data: {"ryde_id": ryde_id},
+                type: "post",
+                async: true,
+                success: function (data) {
+                    if (data == 1) {
+                        layer.msg('删除成功')
+                    }
+                    // qiehuan()
+                }
+            });
             layer.close(layer.index)
         })
 
@@ -525,14 +619,40 @@ window.onload = function () {
                 content: $('#bjsq'),
                 area: '300px'
             });
+            var role_id = $(this).attr('id');
+            $('#bjsq .qx').click(function () {
+
+                layer.close(layer.index)
+            })
+            $('#bjsq .qr').click(function () {
+              
+                var arry = new Array();
+                //循环所有选中的值
+                $('input[name="dkb"]:checked').each(function (index, element) {
+                    //追加到数组中
+                    arry.push($(this).val());
+                });
+                //将数组元素连接起来转化为字符串
+                var arrystr = arry.join(',');
+                //输出到控制台
+              
+                $.ajax({
+                    url: "/portal/sturole/szqx",
+                    data: { "role_id": role_id, "acc_id": arrystr},
+                    type: "post",
+                    async: true,
+                    success: function (data) {
+                        if (data == 1) {
+                            layer.msg('授权成功')
+                        }
+                        // qiehuan()
+                    }
+                });
+              
+                layer.close(layer.index)
+            })
         })
-        $('#bjsq .qx').click(function () {
-            layer.close(layer.index)
-        })
-        $('#bjsq .qr').click(function () {
-            console.log('编辑成功')
-            layer.close(layer.index)
-        })
+        
 
         $('.cbjm').click(function () {
             layer.open({
@@ -715,4 +835,3 @@ window.onload = function () {
     //     }
     // });
 }
-

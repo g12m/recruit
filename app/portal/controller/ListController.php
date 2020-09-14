@@ -45,6 +45,10 @@ class ListController extends HomeBaseController
 
         return $this->fetch('/' . $listTpl);
     }
+       public function reg_success()
+   {
+        return $this->fetch(":/register_success");
+   }
     //中文下载数量
     public function collection()
     {

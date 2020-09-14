@@ -57,7 +57,8 @@
                                         <php>
                                             $res=json_decode($vo['alt_time'],true);
                                             $ftime=get_gltime($vo['id'])['time'];
-                                            $status=get_gltime($vo['id'])['status'];
+                                            $status=get_zpstu($vo['id']);
+                                           
                                         </php>
                                         <foreach name="res" item="v">
                                             <span>{$v|date="m月d日 H:i",###}</span> 
@@ -66,9 +67,9 @@
                                        
                                     </p>
                                   
-                                    <if $status==2>
+                                    <if $status==1>
                                         <p>截止日期：<span>{$vo.dea_time|date="m月d日 H:i",###}</span></p>
-                                        <elseif $status==1>
+                                        <elseif $status==2>
                                         <p>关联日期：<span>{$ftime|date="m/d H:i",###}</span></p>
                                         <else/>
                                         <p>截止日期：<span>{$vo.dea_time|date="m月d日 H:i",###}</span></p>
@@ -84,14 +85,15 @@
                                     <p>预约人数：<span>{$vo.app_num}人</span></p>
                                     <p>投递简历：<span>5份</span></p>
                                     <div>
-                                       
-                                        <if $status==2>
+                                     
+                                        <if $status==1>
                                             <button class="layui-btn btn-gl glzph" id="{$vo.id}">关联</button>
-                                         <elseif $status==1> 
+                                         <elseif $status==2> 
                                             <button class="layui-btn btn-ygl">已关联</button>
                                         <else/>
-                                        <button class="layui-btn btn-gl glzph" id="{$vo.id}">关联</button>
-                                        <!-- <button class="layui-btn btn-ysx">已失效</button> -->
+                                       
+                                        <!-- <button class="layui-btn btn-gl glzph" id="{$vo.id}">关联</button> -->
+                                     <button class="layui-btn btn-ysx">已失效</button> 
                                          </if>      
                                        
                                     </div>

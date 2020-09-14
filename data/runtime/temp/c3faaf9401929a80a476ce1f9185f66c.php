@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:38:"themes/index/portal\sturole\index.html";i:1599800835;s:76:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\con_left.html";i:1599724443;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:38:"themes/index/portal\sturole\index.html";i:1599986292;s:76:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\con_left.html";i:1599989032;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -30,15 +30,23 @@
             <li class="layui-nav-item">
                   <a href="<?php echo url('portal/msg/index'); ?>">
                         <i class="layui-icon layui-icon-notice"></i>
+                        <?php $info=get_msg();if($info >= '1'): ?>
                         <span class="layui-badge-dot"></span>
+                        <?php endif; ?>
                   </a>
             </li>
             <li class="layui-nav-item">
                   <a href="javascript:;">
                         <?php $user=cmf_get_current_user_id();
+                     
+                        $uinfo=get_userinfolist();
+                     
                               $name=get_user_info($user);
-                        ?>
-                        <?php echo $name; ?>
+                              $zname=get_users($user);
+                        if(!(empty($uinfo) || (($uinfo instanceof \think\Collection || $uinfo instanceof \think\Paginator ) && $uinfo->isEmpty()))): ?>
+                        <?php echo $zname; else: ?>
+
+                        <?php echo $name; endif; ?>     
                   </a>
                   <dl class="layui-nav-child">
                         <dd><a href="<?php echo url('user/index/logout'); ?>">退出</a></dd>
@@ -49,26 +57,34 @@
 
 
 
-<?php echo $url=$_SERVER['REQUEST_URI'];?>
+<?php dump(get_show());?>
   <div class="layui-side layui-bg-black" style="background: url(/themes/index/public/assets/images/default/navbg.png);">
     <div class="layui-logo"><img src="/themes/index/public/assets/images/default/logo.png" alt=""></div>
     <div class="layui-side-scroll">
       <ul class="layui-nav layui-nav-tree" lay-filter="test">
         <li class="layui-nav-item"><a href="<?php echo url('portal/msg/kanban'); ?>"><img src="/themes/index/public/assets/images/default/icon_kb.png"
               alt="">招聘大看板 <span class="jian">></span></a></li>
-        <li <?php if($url=="/scheduling"): ?>class="layui-nav-item layui-nav-itemed layui-this"<?php else: ?>class="layui-nav-item"<?php endif; ?>><a href="/scheduling"><img src="/themes/index/public/assets/images/default/icon_pq.png"
+        <li class="layui-nav-item" ><a href="<?php echo url('portal/scheduling/index'); ?>"><img src="/themes/index/public/assets/images/default/icon_pq.png"
               alt=""> 排期管理 <span class="jian">></span></a></li>
-        <li <?php if($url=="/confer"): ?>class="layui-nav-item layui-nav-itemed layui-this"<?php else: ?>class="layui-nav-item"<?php endif; ?>><a href="/confer"><img
+        <li class="layui-nav-item"><a href="<?php echo url('portal/confer/index'); ?>"><img
               src="/themes/index/public/assets/images/default/icon_hc.png" alt=""> 会场管理 <span class="jian">></span></a></li>
-        <li <?php if($url=="/sch_position"): ?>class="layui-nav-item layui-nav-itemed layui-this"<?php else: ?>class="layui-nav-item"<?php endif; ?>><a href="/sch_position"><img src="/themes/index/public/assets/images/default/icon_zw.png"
+        <li class="layui-nav-item"><a href="<?php echo url('portal/sch_position/index'); ?>"><img src="/themes/index/public/assets/images/default/icon_zw.png"
               alt=""> 职位管理 <span class="jian">></span></a></li>
-        <li <?php if($url=="/resume"): ?>class="layui-nav-item layui-nav-itemed layui-this"<?php else: ?>class="layui-nav-item"<?php endif; ?>><a href="/resume"><img src="/themes/index/public/assets/images/default/icon_jl.png"
+        <li class="layui-nav-item"><a href="<?php echo url('portal/resume/index'); ?>"><img src="/themes/index/public/assets/images/default/icon_jl.png"
               alt=""> 简历管理 <span class="jian">></span></a></li>
-        <li <?php if($url=="/sturole"): ?>class="layui-nav-item layui-nav-itemed layui-this"<?php else: ?>class="layui-nav-item"<?php endif; ?>><a href="/sturole"><img src="/themes/index/public/assets/images/default/icon_js.png"
+        <?php if(empty($uinfo) || (($uinfo instanceof \think\Collection || $uinfo instanceof \think\Paginator ) && $uinfo->isEmpty())): ?>
+        <li class="layui-nav-item"><a href="<?php echo url('portal/sturole/index'); ?>"><img src="/themes/index/public/assets/images/default/icon_js.png"
               alt=""> 角色管理 <span class="jian">></span></a></li>
-        <li <?php if($url=="/stu_role"): ?>class="layui-nav-item layui-nav-itemed layui-this"<?php else: ?>class="layui-nav-item"<?php endif; ?>><a href="/stu_role"><img src="/themes/index/public/assets/images/default/icon_ry.png"
+        <li class="layui-nav-item"><a href="<?php echo url('portal/sturole/pindex'); ?>"><img src="/themes/index/public/assets/images/default/icon_ry.png"
               alt=""> 人员管理 <span class="jian">></span></a></li>
+        <?php endif; ?>
       </ul>
+      <input type="hidden" id="daohang" value="<?php echo $daohang; ?>">
+      <script>
+            $(function () {
+                  $(".layui-side-scroll ul li").eq($("#daohang").val()).addClass('layui-this')
+            })
+      </script>
     </div>
   </div>
 
@@ -101,19 +117,29 @@
                             </tr>
                         </thead>
                         <tbody>
-                           <?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): if( count($list)==0 ) : echo "" ;else: foreach($list as $key=>$vo): ?>
                             <tr>
                                 <td>
-                                    <p><?php echo $vo['id']; ?></p>
+                                    <p>1</p>
+                                </td>
+                                <td>
+                                    <p>超级管理员</p>
+                                </td>
+                              
+                            </tr>
+                            <?php $num=2;if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): if( count($list)==0 ) : echo "" ;else: foreach($list as $key=>$vo): ?>
+                            <tr>
+                                <td>
+                                    <p><?php echo $num; ?></p>
                                 </td>
                                 <td>
                                     <p><?php echo $vo['name']; ?></p>
                                 </td>
-                                <td><button class="layui-btn btn-xq bjm" id="<?php echo $vo['id']; ?>">编辑</button><button
-                                        class="layui-btn btn-xq">删除</button><button class="layui-btn btn-xq bjsq">授权</button>
+                                <td><button class="layui-btn btn-xq bjm" id="<?php echo $vo['id']; ?>">编辑</button>
+                                    <button class="layui-btn btn-xq rdelete" id="<?php echo $vo['id']; ?>">删除</button>
+                                    <button class="layui-btn btn-xq bjsq sq" id="<?php echo $vo['id']; ?>">授权</button>
                                 </td>
                             </tr>
-                            <?php endforeach; endif; else: echo "" ;endif; ?>
+                            <?php $num++;endforeach; endif; else: echo "" ;endif; ?>
                         </tbody>
                     </table>
                 </div>
@@ -147,23 +173,15 @@
             <button class="layui-btn qr">确认</button>
         </form>
     </div>
-    <div id="bjsq" class="tc">
-        <form action="">
+    <div id="bjsq" class="tc stu">
+        <form action="" method="POST">
+            <?php $list=get_sturole();if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): if( count($list)==0 ) : echo "" ;else: foreach($list as $key=>$vo): ?>
             <div class="layui-form-item">
                 <label>
-                    <input type="checkbox" name="dkb">招聘大看板
+                    <input type="checkbox" name="dkb" value="<?php echo $vo['id']; ?>"><?php echo $vo['name']; ?>
                 </label>
             </div>
-            <div class="layui-form-item">
-                <label>
-                    <input type="checkbox" name="pqgl">排期管理
-                </label>
-            </div>
-            <div class="layui-form-item">
-                <label>
-                    <input type="checkbox" name="rygl">人员管理
-                </label>
-            </div>
+             <?php endforeach; endif; else: echo "" ;endif; ?>
             <div class="layui-btn btn-qx qx">取消</div>
             <button class="layui-btn qr">确认</button>
         </form>

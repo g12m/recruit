@@ -15,6 +15,10 @@ use app\portal\model\PortalCategoryModel;
 use think\Db;
 class   ResumeController extends UserBaseController
 {    
+     public function __construct(){
+        parent::__construct();
+        $this->assign('daohang','4');
+    }
     //学校简历详情
     public function index()
     {

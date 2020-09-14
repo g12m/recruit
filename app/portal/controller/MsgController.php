@@ -16,16 +16,27 @@ use think\Db;
 use think\Validate;
 class MsgController extends HomeBaseController
 {
+   public function __construct(){
+        parent::__construct();
+        $this->assign('daohang','1');
+    }
+    //学校通知消息
     public function index()
     {
-       $id                  = $this->request->param('id', 0, 'intval');
-       
-        return $this->fetch();
+      $param                  = $this->request->param();
+      $id                     = $this->request->param('id', 0, 'intval');
+      $uid                    = cmf_get_current_user_id();
+      $list                   = Db::name('stu_mess')->where('form_id',$uid)->where('type',2)->order('cre_time desc')->paginate(8); 
+      $list->appends($param);
+      $this->assign('page', $list->render());
+      $this->assign('list', $list);
+      return $this->fetch();
     }
     public function kanban()
     {
       return $this->fetch();
-     }
+    }
+
 
     public function dosubmit()
     {

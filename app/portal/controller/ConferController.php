@@ -15,6 +15,10 @@ use app\portal\model\PortalCategoryModel;
 use think\Db;
 class   ConferController extends UserBaseController
 {    
+     public function __construct(){
+        parent::__construct();
+        $this->assign('daohang','2');
+    }
     //学校会场详情
     public function index()
     {

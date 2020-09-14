@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:29:"themes/index/user\\login.html";i:1599561007;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:29:"themes/index/user\\login.html";i:1599825239;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -58,16 +58,9 @@
 				</form>
 			</div>
 		</div>
-		<div class="copy">Copyright © 星臣教育 All Rights Reserved</div>
+		<div class="copy"><?php echo cmf_get_option('server_settings')['q_banquan']; ?></div>
 			<script src="/static/js/admin.js"></script>
 	</div>
 </body>
-
-
-
-
-
-
-
 
 </html>

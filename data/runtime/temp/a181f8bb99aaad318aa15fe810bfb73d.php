@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:42:"themes/index/portal\entposition\index.html";i:1599699062;s:76:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\base_ent.html";i:1599699062;s:76:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\head_ent.html";i:1599699062;s:80:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\con_left_ent.html";i:1599699062;s:74:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\footer.html";i:1599439177;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:42:"themes/index/portal\entposition\index.html";i:1599699062;s:76:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\base_ent.html";i:1599699062;s:76:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\head_ent.html";i:1599699062;s:80:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\con_left_ent.html";i:1599802051;s:74:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\footer.html";i:1599439177;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -47,16 +47,13 @@
       </ul>
 </div>
 
-
-
-<?php dump($_SERVER['PHP_SELF']);?>
 <div class="layui-side layui-bg-black" style="background: url(/themes/index/public/assets/images/default/navbg.png);">
       <div class="layui-logo"><img src="/themes/index/public/assets/images/default/logo.png" alt=""></div>
       <div class="layui-side-scroll">
           <ul class="layui-nav layui-nav-tree" lay-filter="test">
-              <li class="layui-nav-item"><a href="javascript:;"><img src="/themes/index/public/assets/images/default/icon_jl.png" alt=""> 简历管理 <span
+              <li class="layui-nav-item"><a href="<?php echo cmf_url('sturesume/index'); ?>"><img src="/themes/index/public/assets/images/default/icon_jl.png" alt=""> 简历管理 <span
                           class="jian">></span></a></li>
-              <li class="layui-nav-item layui-nav-itemed layui-this"><a href="<?php echo cmf_url('entposition/index'); ?>"><img src="/themes/index/public/assets/images/default/icon_zw.png" alt=""> 职位管理 <span
+              <li class="layui-nav-item layui-nav-itemed"><a href="<?php echo cmf_url('entposition/index'); ?>"><img src="/themes/index/public/assets/images/default/icon_zw.png" alt=""> 职位管理 <span
                           class="jian">></span></a></li>
               <li class="layui-nav-item"><a href="<?php echo cmf_url('entfair/index'); ?>"><img
                           src="/themes/index/public/assets/images/default/icon_zph.png" alt=""> 招聘会管理 <span class="jian">></span></a></li>
@@ -67,6 +64,12 @@
           </ul>
       </div>
   </div>
+  <input type="hidden" id="daohang" value="<?php echo $daohang; ?>">
+  <script>
+        $(function(){
+            $(".layui-side-scroll ul li").eq($("#daohang").val()).addClass('layui-this')
+        })
+  </script>
 
       
       <!-- banner 区域 -->

@@ -15,7 +15,8 @@
         <!-- <li><a href="#F" data-toggle="tab">用户注册设置</a></li> -->
         <!-- <li><a href="#G" data-toggle="tab">CDN设置</a></li> -->
         <li><a href="#H" data-toggle="tab">底部设置</a></li>
-        <!-- <li><a href="#I" data-toggle="tab">短信/微信设置</a></li> -->
+        <li><a href="#I" data-toggle="tab">短信/微信设置</a></li>
+        <li><a href="#D" data-toggle="tab">腾讯直播设置</a></li>
         <!-- <li><a href="#S" data-toggle="tab">水印设置</a></li> -->
     </ul>
     <form class="form-horizontal js-ajax-form margin-top-20" role="form" action="{:url('setting/sitePost')}"
@@ -383,7 +384,7 @@
                                      value="{$sms_setting.sms_sign|default=''}">
                           </div>
                       </div>
-                      <!-- <div class="form-group">
+                      <div class="form-group">
                           <label for="input-cdn_static_root" class="col-sm-2 control-label">微信APPID</label>
                           <div class="col-md-6 col-sm-10">
                               <input type="text" class="form-control"
@@ -398,7 +399,7 @@
                                      name="sms_settings[wx_secret]"
                                      value="{$sms_setting.wx_secret|default=''}">
                           </div>
-                      </div> -->
+                      </div>
                       <div class="form-group">
                           <div class="col-sm-offset-2 col-sm-10">
                               <button type="submit" class="btn btn-primary js-ajax-submit" data-refresh="0">
@@ -406,6 +407,50 @@
                               </button>
                           </div>
                       </div>
+                    </div>
+                    <div class="tab-pane" id="D">
+                        <div class="form-group">
+                            <label for="input-cdn_static_root" class="col-sm-2 control-label">直播appid</label>
+                            <div class="col-md-6 col-sm-10">
+                                <input type="text" class="form-control" name="zhi_setting[zhi_appid]"
+                                    value="{$zhi_setting.sms_appid|default=''}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="input-cdn_static_root" class="col-sm-2 control-label">直播APPSECRET</label>
+                            <div class="col-md-6 col-sm-10">
+                                <input type="text" class="form-control" name="zhi_setting[zhi_secret]"
+                                    value="{$zhi_setting.sms_secret|default=''}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="input-cdn_static_root" class="col-sm-2 control-label">直播密钥</label>
+                            <div class="col-md-6 col-sm-10">
+                                <input type="text" class="form-control" name="zhi_setting[zhi_sign]"
+                                    value="{$zhi_setting.sms_sign|default=''}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="input-cdn_static_root" class="col-sm-2 control-label">推流服务器</label>
+                            <div class="col-md-6 col-sm-10">
+                                <input type="text" class="form-control" name="zhi_setting[zhi_tl]"
+                                    value="{$zhi_setting.wx_appid|default=''}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="input-cdn_static_root" class="col-sm-2 control-label">播放服务器</label>
+                            <div class="col-md-6 col-sm-10">
+                                <input type="text" class="form-control" name="zhi_setting[zhi_bf]"
+                                    value="{$zhi_setting.wx_secret|default=''}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-primary js-ajax-submit" data-refresh="0">
+                                    {:lang('SAVE')}
+                                </button>
+                            </div>
+                        </div>
                     </div>
                     <div class="tab-pane" id="S">
                       <div class="form-group">

@@ -7,16 +7,14 @@
                 <div class="tz">
                     <div class="tz-h">消息通知</div>
                     <div class="tz-list">
-                        <a href=""><i class="layui-badge-dot"></i><span class="tz-xx">北京XXX公司8月招聘专场确定开始日期 8月29日
-                                13:00</span><span class="tz-t">09/25 10:54</span></a>
-                        <a href=""><i class="layui-badge-dot"></i><span class="tz-xx">北京XXX公司8月招聘专场确定开始日期 8月29日
-                                13:00</span><span class="tz-t">09/25 10:54</span></a>
-                        <a href=""><i class="layui-badge-dot"></i><span class="tz-xx">北京XXX公司8月招聘专场确定开始日期 8月29日
-                                13:00</span><span class="tz-t">09/25 10:54</span></a>
-                        <a href=""><i class="layui-badge-dot"></i><span class="tz-xx">北京XXX公司8月招聘专场确定开始日期 8月29日
-                                13:00</span><span class="tz-t">09/25 10:54</span></a>
-                        <a href=""><i class="layui-badge-dot"></i><span class="tz-xx">北京XXX公司8月招聘专场确定开始日期 8月29日
-                                13:00</span><span class="tz-t">09/25 10:54</span></a>
+                            <foreach name="list" item="vo">
+                        <a href="{:url('portal/scheduling/article',array('id'=>$vo.to_id))}">
+                                <if $vo['status']==1>
+                                <i class="layui-badge-dot"></i>
+                                </if>
+                                <span class="tz-xx">{$vo.title}
+                             </span><span class="tz-t">{$vo.cre_time|date="m/d H:i",###}</span></a>
+                            </foreach>
                     </div>
                 </div>
             </div>
