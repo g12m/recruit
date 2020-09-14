@@ -21,7 +21,7 @@ class IndexController extends UserBaseController
         $uid=cmf_get_current_user();
         if($uid['user_type']==3)
         { 
-          header("location:scheduling");
+          header("location:portal/scheduling/index");
         }
         else{
           header("location:portal/sturesume/index.html");

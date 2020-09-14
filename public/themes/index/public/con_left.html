@@ -5,15 +5,27 @@
             <li class="layui-nav-item">
                   <a href="{:url('portal/msg/index')}">
                         <i class="layui-icon layui-icon-notice"></i>
+                        <?php $info=get_msg();?>
+                        <egt name="info" value="1">
                         <span class="layui-badge-dot"></span>
+                        </egt>
                   </a>
             </li>
             <li class="layui-nav-item">
                   <a href="javascript:;">
                         <?php $user=cmf_get_current_user_id();
+                     
+                        $uinfo=get_userinfolist();
+                     
                               $name=get_user_info($user);
+                              $zname=get_users($user);
                         ?>
+                        <notempty name="uinfo">
+                        {$zname}
+                         <else/>
+
                         {$name}
+                         </notempty>     
                   </a>
                   <dl class="layui-nav-child">
                         <dd><a href="{:url('user/index/logout')}">退出</a></dd>
@@ -24,25 +36,37 @@
 
 
 
-<?php echo $url=$_SERVER['REQUEST_URI'];?>
+<?php $c_id=get_show();
+ $rid=explode(',',$c_id);
+
+ dump($rid);
+?>
   <div class="layui-side layui-bg-black" style="background: url(__TMPL__/public/assets/images/default/navbg.png);">
     <div class="layui-logo"><img src="__TMPL__/public/assets/images/default/logo.png" alt=""></div>
     <div class="layui-side-scroll">
       <ul class="layui-nav layui-nav-tree" lay-filter="test">
         <li class="layui-nav-item"><a href="{:url('portal/msg/kanban')}"><img src="__TMPL__/public/assets/images/default/icon_kb.png"
               alt="">招聘大看板 <span class="jian">></span></a></li>
-        <li <if $url=="/scheduling">class="layui-nav-item layui-nav-itemed layui-this"<else/>class="layui-nav-item"</if>><a href="/scheduling"><img src="__TMPL__/public/assets/images/default/icon_pq.png"
+        <li class="layui-nav-item" ><a href="{:url('portal/scheduling/index')}"><img src="__TMPL__/public/assets/images/default/icon_pq.png"
               alt=""> 排期管理 <span class="jian">></span></a></li>
-        <li <if $url=="/confer">class="layui-nav-item layui-nav-itemed layui-this"<else/>class="layui-nav-item"</if>><a href="/confer"><img
+        <li class="layui-nav-item"><a href="{:url('portal/confer/index')}"><img
               src="__TMPL__/public/assets/images/default/icon_hc.png" alt=""> 会场管理 <span class="jian">></span></a></li>
-        <li <if $url=="/sch_position">class="layui-nav-item layui-nav-itemed layui-this"<else/>class="layui-nav-item"</if>><a href="/sch_position"><img src="__TMPL__/public/assets/images/default/icon_zw.png"
+        <li class="layui-nav-item"><a href="{:url('portal/sch_position/index')}"><img src="__TMPL__/public/assets/images/default/icon_zw.png"
               alt=""> 职位管理 <span class="jian">></span></a></li>
-        <li <if $url=="/resume">class="layui-nav-item layui-nav-itemed layui-this"<else/>class="layui-nav-item"</if>><a href="/resume"><img src="__TMPL__/public/assets/images/default/icon_jl.png"
+        <li class="layui-nav-item"><a href="{:url('portal/resume/index')}"><img src="__TMPL__/public/assets/images/default/icon_jl.png"
               alt=""> 简历管理 <span class="jian">></span></a></li>
-        <li <if $url=="/sturole">class="layui-nav-item layui-nav-itemed layui-this"<else/>class="layui-nav-item"</if>><a href="/sturole"><img src="__TMPL__/public/assets/images/default/icon_js.png"
+        <empty name="uinfo">
+        <li class="layui-nav-item"><a href="{:url('portal/sturole/index')}"><img src="__TMPL__/public/assets/images/default/icon_js.png"
               alt=""> 角色管理 <span class="jian">></span></a></li>
-        <li <if $url=="/stu_role">class="layui-nav-item layui-nav-itemed layui-this"<else/>class="layui-nav-item"</if>><a href="/stu_role"><img src="__TMPL__/public/assets/images/default/icon_ry.png"
+        <li class="layui-nav-item"><a href="{:url('portal/sturole/pindex')}"><img src="__TMPL__/public/assets/images/default/icon_ry.png"
               alt=""> 人员管理 <span class="jian">></span></a></li>
+        </empty>
       </ul>
+      <input type="hidden" id="daohang" value="{$daohang}">
+      <script>
+            $(function () {
+                  $(".layui-side-scroll ul li").eq($("#daohang").val()).addClass('layui-this')
+            })
+      </script>
     </div>
   </div>

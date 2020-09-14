@@ -15,6 +15,13 @@ use app\portal\model\PortalCategoryModel;
 use think\Db;
 class   SchedulingController extends UserBaseController
 {    
+
+     public function __construct(){
+        parent::__construct();
+        Db::name('jobfair')->where('dea_time','< time',time())->where('status','neq',2)->update(['status'=>3]);
+       
+        $this->assign('daohang','1');
+    }
     //学校排期管理
     public function index()
     {
@@ -94,7 +101,15 @@ class   SchedulingController extends UserBaseController
              'fair_time'=>$data['nid']
         ];
        $res= Db::name('stu_pz')->insert($datas); 
-     
+       $msg=[
+           'title'=>get_zpname($data['id'])."确定开始日期  ".date('m月d日 H:i'),
+           'cre_time'=>time(),
+           'type'   =>2,
+           'form_id' =>$uid,
+           'to_id'    =>$data['id'],
+           'status'  =>1
+       ];
+       Db::name('stu_mess')->insert($msg);
        Db::name('jobfair')->where('id',$data['id'])->update(['status'=>2]);
        if($res)
         {
@@ -117,7 +132,7 @@ class   SchedulingController extends UserBaseController
            });
         ;
         $article=json_decode(json_encode($article),true);
-      
+         Db::name('stu_mess')->where('to_id',$id)->where('form_id',$uid)->update(['status'=>2]);
         $this->assign('article', $article);
         //获取绑定的会场
           $confer = Db::name('stu_pz')->where(['fair_id'=>$id,'uid'=>$uid,'status'=>1])->find(); 
@@ -134,6 +149,15 @@ class   SchedulingController extends UserBaseController
           $uid=cmf_get_current_user_id();
         $confer  = Db::name('stu_pz')->where('fair_id',$id)->where('uid',$uid)->update(['status'=>2,'de_mes'=>$des,'q_time'=>time()]);
         Db::name('jobfair')->where('id',$id)->update(['status'=>1]);
+        $msg=[
+           'title'=>get_zpname($id)."取消关联日期  ".date('m月d日 H:i'),
+           'cre_time'=>time(),
+           'type'   =>2,
+           'form_id' =>$uid,
+           'to_id'    =>$id,
+           'status'  =>1
+       ];
+       Db::name('stu_mess')->insert($msg);
         if($confer)
         {
             return  1;

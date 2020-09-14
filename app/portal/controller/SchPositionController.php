@@ -15,6 +15,10 @@ use app\portal\model\PortalCategoryModel;
 use think\Db;
 class   SchPositionController extends UserBaseController
 {    
+     public function __construct(){
+        parent::__construct();
+        $this->assign('daohang','3');
+    }
     //学校职位管理
     public function index()
     {

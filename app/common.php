@@ -70,9 +70,11 @@ function get_caten_info($catid)
   $data=Db::name('portal_categoryen')->where(['id'=>$catid])->find();
   return $data;
 }
-function get_catfa_info($catid)
+//学校角色信息
+function get_role_stu()
 {
-  $data=Db::name('portal_categoryfa')->where(['id'=>$catid])->find();
+  $uid=cmf_get_current_user_id();
+  $data=Db::name('entstu_role')->where(['type'=>2,'uid'=>$uid])->select()->toArray();
   return $data;
 }
 //获取职位id
@@ -91,6 +93,26 @@ function get_zhi_info($catid)
 function get_zhiwei_name($catid)
 {
   $data=Db::name('ent_position')->where(['id'=>$catid])->value('title');
+  return $data;
+}
+
+//获取用户
+function get_userinfo()
+{
+  $uid                   = cmf_get_current_user_id();
+  $data=Db::name('user')->where(['entstu_id'=>$uid])->select()->toArray();
+  return $data;
+}
+function get_userinfolist()
+{
+  $uid                   = cmf_get_current_user_id();
+  $data=Db::name('user')->where(['id'=>$uid])->value('entstu_id');
+  return $data;
+}
+function get_users($uid)
+{
+
+  $data=Db::name('user')->where(['id'=>$uid])->value('user_login');
   return $data;
 }
 
@@ -117,6 +139,18 @@ function get_job($catid)
   return $data;
 }
 
+//获取招聘会日期
+function get_zpname($catid)
+{
+  $data=Db::name('jobfair')->where(['id'=>$catid])->value('title');
+  return $data;
+}
+//获取招聘会状态
+function get_zpstu($catid)
+{
+  $data=Db::name('jobfair')->where(['id'=>$catid])->value('status');
+  return $data;
+}
 //获取招聘会关联日期
 
 function get_zptime($catid)
@@ -131,6 +165,24 @@ function get_pqnum($catid)
   $data=Db::name('stu_pz')->where(['h_id'=>$catid,'uid'=>$uid,'status'=>1])->count('h_id');
   return $data;
 }
+
+// -----------------学校角色权限
+function get_sturole()
+{
+  $data= Db::name('entstu_access')->where('type',2)->select()->toArray();
+  return $data;
+}
+
+//前台导航显示
+function get_show()
+{
+   $uid=cmf_get_current_user_id();
+  $r_id= Db::name('entstu_roleuser')->where('admin_id',$uid)->value('role_id');
+   $c_id=Db::name('entstu_accrole')->where('role_id',$r_id)->value('acc_id');
+  return $c_id;
+}
+
+
 
 //获取学校职位管理
 
@@ -161,6 +213,14 @@ function get_gltime($id)
 {
   $uid=cmf_get_current_user_id();
    $confer = Db::name('stu_pz')->where('fair_id',$id)->where('uid',$uid)->find(); 
+    return $confer;   
+      
+}
+//获取学校信息通知
+function get_msg()
+{
+  $uid=cmf_get_current_user_id();
+   $confer = Db::name('stu_mess')->where('form_id',$uid)->where('type',2)->where('status',1)->count('status'); 
     return $confer;   
       
 }

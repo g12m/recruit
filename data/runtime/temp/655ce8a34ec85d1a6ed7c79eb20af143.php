@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:43:"themes/index/portal\scheduling\article.html";i:1599651498;s:72:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\base.html";i:1599651498;s:72:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\head.html";i:1599698875;s:76:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\con_left.html";i:1599724443;s:74:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\footer.html";i:1599439177;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:43:"themes/index/portal\scheduling\article.html";i:1599961069;s:72:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\base.html";i:1599651498;s:72:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\head.html";i:1599877169;s:76:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\con_left.html";i:1599900750;s:74:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\footer.html";i:1599439177;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -18,6 +18,15 @@
 <script src='/themes/index/public/assets/css/default/layui/layui.js'></script>
 <script src='/themes/index/public/assets/js/default/SuperSlide.js'></script>
 <script src='/themes/index/public/assets/js/default/index.js'></script>
+<script type="text/javascript">
+  //全局变量
+  var GV = {
+    ROOT: "/",
+    WEB_ROOT: "/",
+    JS_ROOT: "static/js/"
+  };
+</script>
+<script src="/static/js/wind.js"></script>
 
 <body class="layui-layout-body">
   <div class="layui-layout layui-layout-admin">
@@ -31,15 +40,23 @@
             <li class="layui-nav-item">
                   <a href="<?php echo url('portal/msg/index'); ?>">
                         <i class="layui-icon layui-icon-notice"></i>
+                        <?php $info=get_msg();if($info >= '1'): ?>
                         <span class="layui-badge-dot"></span>
+                        <?php endif; ?>
                   </a>
             </li>
             <li class="layui-nav-item">
                   <a href="javascript:;">
                         <?php $user=cmf_get_current_user_id();
+                     
+                        $uinfo=get_userinfolist();
+                     
                               $name=get_user_info($user);
-                        ?>
-                        <?php echo $name; ?>
+                              $zname=get_users($user);
+                        if(!(empty($uinfo) || (($uinfo instanceof \think\Collection || $uinfo instanceof \think\Paginator ) && $uinfo->isEmpty()))): ?>
+                        <?php echo $zname; else: ?>
+
+                        <?php echo $name; endif; ?>     
                   </a>
                   <dl class="layui-nav-child">
                         <dd><a href="<?php echo url('user/index/logout'); ?>">退出</a></dd>
@@ -57,19 +74,27 @@
       <ul class="layui-nav layui-nav-tree" lay-filter="test">
         <li class="layui-nav-item"><a href="<?php echo url('portal/msg/kanban'); ?>"><img src="/themes/index/public/assets/images/default/icon_kb.png"
               alt="">招聘大看板 <span class="jian">></span></a></li>
-        <li <?php if($url=="/scheduling"): ?>class="layui-nav-item layui-nav-itemed layui-this"<?php else: ?>class="layui-nav-item"<?php endif; ?>><a href="/scheduling"><img src="/themes/index/public/assets/images/default/icon_pq.png"
+        <li class="layui-nav-item" ><a href="<?php echo url('portal/scheduling/index'); ?>"><img src="/themes/index/public/assets/images/default/icon_pq.png"
               alt=""> 排期管理 <span class="jian">></span></a></li>
-        <li <?php if($url=="/confer"): ?>class="layui-nav-item layui-nav-itemed layui-this"<?php else: ?>class="layui-nav-item"<?php endif; ?>><a href="/confer"><img
+        <li class="layui-nav-item"><a href="<?php echo url('portal/confer/index'); ?>"><img
               src="/themes/index/public/assets/images/default/icon_hc.png" alt=""> 会场管理 <span class="jian">></span></a></li>
-        <li <?php if($url=="/sch_position"): ?>class="layui-nav-item layui-nav-itemed layui-this"<?php else: ?>class="layui-nav-item"<?php endif; ?>><a href="/sch_position"><img src="/themes/index/public/assets/images/default/icon_zw.png"
+        <li class="layui-nav-item"><a href="<?php echo url('portal/sch_position/index'); ?>"><img src="/themes/index/public/assets/images/default/icon_zw.png"
               alt=""> 职位管理 <span class="jian">></span></a></li>
-        <li <?php if($url=="/resume"): ?>class="layui-nav-item layui-nav-itemed layui-this"<?php else: ?>class="layui-nav-item"<?php endif; ?>><a href="/resume"><img src="/themes/index/public/assets/images/default/icon_jl.png"
+        <li class="layui-nav-item"><a href="<?php echo url('portal/resume/index'); ?>"><img src="/themes/index/public/assets/images/default/icon_jl.png"
               alt=""> 简历管理 <span class="jian">></span></a></li>
-        <li <?php if($url=="/sturole"): ?>class="layui-nav-item layui-nav-itemed layui-this"<?php else: ?>class="layui-nav-item"<?php endif; ?>><a href="/sturole"><img src="/themes/index/public/assets/images/default/icon_js.png"
+        <?php if(empty($uinfo) || (($uinfo instanceof \think\Collection || $uinfo instanceof \think\Paginator ) && $uinfo->isEmpty())): ?>
+        <li class="layui-nav-item"><a href="<?php echo url('portal/sturole/index'); ?>"><img src="/themes/index/public/assets/images/default/icon_js.png"
               alt=""> 角色管理 <span class="jian">></span></a></li>
-        <li <?php if($url=="/stu_role"): ?>class="layui-nav-item layui-nav-itemed layui-this"<?php else: ?>class="layui-nav-item"<?php endif; ?>><a href="/stu_role"><img src="/themes/index/public/assets/images/default/icon_ry.png"
+        <li class="layui-nav-item"><a href="<?php echo url('portal/sturole/pindex'); ?>"><img src="/themes/index/public/assets/images/default/icon_ry.png"
               alt=""> 人员管理 <span class="jian">></span></a></li>
+        <?php endif; ?>
       </ul>
+      <input type="hidden" id="daohang" value="<?php echo $daohang; ?>">
+      <script>
+            $(function () {
+                  $(".layui-side-scroll ul li").eq($("#daohang").val()).addClass('layui-this')
+            })
+      </script>
     </div>
   </div>
 
@@ -88,7 +113,9 @@
                        
                         <?php 
                             $res=json_decode($vo['alt_time'],true);
-                            $status=get_gltime($vo['id'])['status'];
+                           
+                            $status=get_zpstu($vo['id']);
+                         
                          if($status==1): if(empty($confer['fair_time']) || (($confer['fair_time'] instanceof \think\Collection || $confer['fair_time'] instanceof \think\Paginator ) && $confer['fair_time']->isEmpty())): ?>
                         <i>【备选日期】
                             <?php if(is_array($res) || $res instanceof \think\Collection || $res instanceof \think\Paginator): if( count($res)==0 ) : echo "" ;else: foreach($res as $key=>$v): ?>
@@ -119,16 +146,17 @@
                     <?php endforeach; endif; else: echo "" ;endif; ?>
                     <div class="btns">
                        
-                        <?php if($status==2): ?>
+                        <?php if($status==1): ?>
                             <button class="layui-btn btn-gl glzph" id="<?php echo $vo['id']; ?>">关联</button>
-                            <?php elseif($status==1): ?>
+                            <?php elseif($status==2): ?>
                                 <button class="layui-btn qxgl">取消关联</button>
                                 <input type="hidden" value="<?php echo $vo['id']; ?>" class="qxyy">
                                 <?php else: ?>
-                                <button class="layui-btn btn-gl glzph" id="<?php echo $vo['id']; ?>">关联</button>
-                                <!-- <button class="layui-btn btn-ysx">已失效</button> -->
+                                <!-- <button class="layui-btn btn-gl glzph" id="<?php echo $vo['id']; ?>">关联</button> -->
+                                <button class="layui-btn btn-ysx">已失效</button>
                         <?php endif; ?>
-                    
+                        
+                    <button class="layui-btn"><a href="<?php echo url('portal/zhibosch/index',array('id'=>$vo['id'])); ?>" target="_black">进入直播</a></button>
                     </div>
                     <div class="rightlogo">
                         <img src="/themes/index/public/assets/images/default/phone.png" alt="">
@@ -150,6 +178,7 @@
                                 <div class="xx-box-m">
                                     <i>【建议专业】<span><?php echo $v3['major']; ?></span></i>
                                     <i>【招聘人数】<span><?php echo $v3['num']; ?>人</span></i>
+                                    <i>【职位类型】<span><?php echo $v3['type']==1?"正式":"实习"?></span></i>
                                     <i>【薪资范围】<span><?php echo $v3['salary_min']; ?>~<?php echo $v3['salary_max']; ?></span></i>
                                     <i>【有效期】<span><?php echo date("Y年m月d日",$v3['effective_time']); ?></span></i>
                                 </div>

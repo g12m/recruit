@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:35:"themes/index/portal\msg\kanban.html";i:1599651498;s:72:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\head.html";i:1599698875;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:35:"themes/index/portal\msg\kanban.html";i:1599651498;s:72:"E:\phpStudy\PHPTutorial\WWW\zhaopin\public\themes\index\public\head.html";i:1599877169;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -18,6 +18,15 @@
 <script src='/themes/index/public/assets/css/default/layui/layui.js'></script>
 <script src='/themes/index/public/assets/js/default/SuperSlide.js'></script>
 <script src='/themes/index/public/assets/js/default/index.js'></script>
+<script type="text/javascript">
+  //全局变量
+  var GV = {
+    ROOT: "/",
+    WEB_ROOT: "/",
+    JS_ROOT: "static/js/"
+  };
+</script>
+<script src="/static/js/wind.js"></script>
 
 <body style="background: url(/themes/index/public/assets/images/default/bg_clear.jpg);" class="dkb">
     <script src="/themes/index/public/assets/js/default/echarts.min.js"></script>

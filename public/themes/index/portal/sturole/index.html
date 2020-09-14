@@ -52,18 +52,30 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <tr>
+                                <td>
+                                    <p>1</p>
+                                </td>
+                                <td>
+                                    <p>超级管理员</p>
+                                </td>
+                              
+                            </tr>
+                            <?php $num=2;?>
                            <foreach name="list" item="vo">
                             <tr>
                                 <td>
-                                    <p>{$vo.id}</p>
+                                    <p>{$num}</p>
                                 </td>
                                 <td>
                                     <p>{$vo.name}</p>
                                 </td>
-                                <td><button class="layui-btn btn-xq bjm" id="{$vo.id}">编辑</button><button
-                                        class="layui-btn btn-xq">删除</button><button class="layui-btn btn-xq bjsq">授权</button>
+                                <td><button class="layui-btn btn-xq bjm" id="{$vo.id}">编辑</button>
+                                    <button class="layui-btn btn-xq rdelete" id="{$vo.id}">删除</button>
+                                    <button class="layui-btn btn-xq bjsq sq" id="{$vo.id}">授权</button>
                                 </td>
                             </tr>
+                            <?php $num++;?>
                             </foreach>
                         </tbody>
                     </table>
@@ -98,23 +110,16 @@
             <button class="layui-btn qr">确认</button>
         </form>
     </div>
-    <div id="bjsq" class="tc">
-        <form action="">
+    <div id="bjsq" class="tc stu">
+        <form action="" method="POST">
+            <?php $list=get_sturole();?>
+            <foreach name="list" item="vo">
             <div class="layui-form-item">
                 <label>
-                    <input type="checkbox" name="dkb">招聘大看板
+                    <input type="checkbox" name="dkb" value="{$vo.id}">{$vo.name}
                 </label>
             </div>
-            <div class="layui-form-item">
-                <label>
-                    <input type="checkbox" name="pqgl">排期管理
-                </label>
-            </div>
-            <div class="layui-form-item">
-                <label>
-                    <input type="checkbox" name="rygl">人员管理
-                </label>
-            </div>
+             </foreach>
             <div class="layui-btn btn-qx qx">取消</div>
             <button class="layui-btn qr">确认</button>
         </form>

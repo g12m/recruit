@@ -56,6 +56,7 @@ class SettingController extends AdminBaseController
         $server_settings  = cmf_get_option('server_settings');
         $sms_setting  = cmf_get_option('sms_setting');
         $mark_setting   =  cmf_get_option('mark_setting');
+        $zhi_setting   =  cmf_get_option('zhi_setting');
         $this->assign('site_info', cmf_get_option('site_info'));
         $this->assign("admin_styles", $adminStyles);
         $this->assign("templates", []);
@@ -63,6 +64,7 @@ class SettingController extends AdminBaseController
         $this->assign("admin_settings", $adminSettings);
         $this->assign("cmf_settings", $cmfSettings);
         $this->assign("sms_setting", $sms_setting);
+        $this->assign("zhi_setting", $zhi_setting);
         $this->assign("mark_setting", $mark_setting);
         $this->assign("server_settings", $server_settings);
 
@@ -110,7 +112,9 @@ class SettingController extends AdminBaseController
             // mark 水印设置
             $mark_setting = $this->request->param('mark_setting/a');
             cmf_set_option('mark_setting',$mark_setting);
-
+            //直播设置
+              $zhi_setting = $this->request->param('zhi_setting/a');
+            cmf_set_option('zhi_setting',$zhi_setting);
             $adminSettings = $this->request->param('admin_settings/a');
 
             $routeModel = new RouteModel();

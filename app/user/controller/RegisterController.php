@@ -22,6 +22,7 @@ class RegisterController extends HomeBaseController
      */
     public function index()
     {
+       
         $type=$this->request->param('type');
        
         $redirect = $this->request->post("redirect");
@@ -45,10 +46,7 @@ class RegisterController extends HomeBaseController
 
         }
     }
-   public function reg_success()
-   {
-        return $this->fetch(":register_success");
-   }
+
     /**
      * 前台用户注册提交
      */
@@ -109,12 +107,15 @@ class RegisterController extends HomeBaseController
             } else {
                 $log = 2;
             }
-            $sessionLoginHttpReferer = session('login_http_referer');
-            $redirect                = empty($sessionLoginHttpReferer) ? cmf_get_root() . '/' : $sessionLoginHttpReferer;
+        
+            //$sessionLoginHttpReferer = session('login_http_referer');
+            //$redirect                = empty($sessionLoginHttpReferer) ? cmf_get_root() . '/' : $sessionLoginHttpReferer;
             switch ($log) {
                 case 0:
-                     header("location:'/user/register/reg_success.html'");
-                    // $this->success('注册成功', $this->reg_success());
+                  
+                   
+                     //header("location:portal/list/reg_success");
+                     $this->success('注册成功', '/portal/list/reg_success');
                     break;
                 case 1:
                     $this->error("您的账户已注册过");

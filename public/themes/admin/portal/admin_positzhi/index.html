@@ -41,6 +41,7 @@
             <foreach name="list" item="vo">
                 <tr>
                     <php>
+                        $arr=[];
                         $ress=get_schnum($vo['uid']);
                         $num=get_countsch($vo['uid']);
                         foreach($ress as $k=>$v)
